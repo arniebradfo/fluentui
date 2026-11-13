@@ -1,0 +1,11 @@
+{
+  "name": "@fluentui/react-head-components-preview-stories",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build-storybook": "yarn run -T storybook build -o ./dist/storybook"
+  },
+  "dependencies": {
+    "@fluentui/react-head-components-preview": "workspace:*"
+  }
+}

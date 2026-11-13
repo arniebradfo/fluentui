@@ -1,0 +1,40 @@
+{
+  "name": "react-head-components-preview-stories",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/react-components/react-head-components-preview/stories/src",
+  "tags": ["vNext", "platform:web", "type:stories", "react-head"],
+  "targets": {
+    "verify-catalog": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/stories",
+        "command": "node .storybook/verify-catalog.cjs"
+      }
+    },
+    "type-check": {
+      "dependsOn": []
+    },
+    "build-storybook": {
+      "dependsOn": [],
+      "inputs": [
+        "default",
+        "^production",
+        "{workspaceRoot}/.storybook/**",
+        "{workspaceRoot}/packages/react-components/react-headless-components-preview/stories/.storybook/css-modules-webpack.js"
+      ]
+    },
+    "storybook": {
+      "dependsOn": []
+    },
+    "test-browser": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build-storybook", "verify-catalog"],
+      "cache": false,
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/stories",
+        "command": "yarn run -T playwright test --config playwright.config.cjs"
+      }
+    }
+  }
+}
