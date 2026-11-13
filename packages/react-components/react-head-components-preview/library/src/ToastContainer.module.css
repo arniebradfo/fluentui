@@ -1,0 +1,21 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/* Public Toaster creates headless containers, without a container class/slot.
+ * The direct-div bridge shares this baseline without replacing those children. */
+@layer fluent-components {
+  .ToastContainer,
+  .Toaster__containers > div {
+    box-sizing: border-box;
+    margin-top: var(--spacingVerticalL);
+    pointer-events: all;
+    border-radius: var(--borderRadiusMedium);
+    outline-style: none;
+
+    &:focus-visible {
+      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+    }
+  }
+}

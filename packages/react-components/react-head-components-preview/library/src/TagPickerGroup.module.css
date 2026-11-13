@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-tag-picker/library/src/components/TagPickerGroup/useTagPickerGroupStyles.styles.ts.
+ * TagGroup supplies shared visuals; behavior stays in the public headless context.
+ */
+
+@layer fluent-components;
+
+.TagPickerGroup {
+  composes: TagGroup from './TagGroup.module.css';
+}
+
+@layer fluent-components {
+  .TagPickerGroup[data-picker-size] {
+    box-sizing: border-box;
+    cursor: text;
+    flex-wrap: wrap;
+    /* TagGroup's column-gap survives the upstream TagPicker gap shorthand. */
+    row-gap: var(--spacingVerticalXS);
+    padding-block: var(--spacingVerticalSNudge);
+    padding-inline: 0;
+
+    &[data-picker-size='large'],
+    &[data-picker-size='extra-large'] {
+      row-gap: var(--spacingVerticalSNudge);
+      padding-block: var(--spacingVerticalS);
+    }
+  }
+}

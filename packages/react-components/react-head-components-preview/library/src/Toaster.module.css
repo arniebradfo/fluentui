@@ -1,0 +1,49 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/* Keep native popover visibility; reset only its UA chrome and positioning. */
+@layer fluent-components {
+  .Toaster {
+    position: fixed;
+    inset: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    color: inherit;
+    overflow: visible;
+    width: 292px;
+    pointer-events: none;
+
+    &[data-toaster-position='top'],
+    &[data-toaster-position='top-start'],
+    &[data-toaster-position='top-end'] {
+      top: var(--fui-toast-offset-vertical, var(--spacingVerticalL));
+    }
+
+    &[data-toaster-position='bottom'],
+    &[data-toaster-position='bottom-start'],
+    &[data-toaster-position='bottom-end'] {
+      bottom: var(--fui-toast-offset-vertical, var(--spacingVerticalL));
+    }
+
+    &[data-toaster-position='top-start'],
+    &[data-toaster-position='bottom-start'] {
+      inset-inline-start: var(--fui-toast-offset-horizontal, var(--spacingHorizontalL));
+    }
+
+    &[data-toaster-position='top-end'],
+    &[data-toaster-position='bottom-end'] {
+      inset-inline-end: var(--fui-toast-offset-horizontal, var(--spacingHorizontalL));
+    }
+
+    &[data-toaster-position='top'],
+    &[data-toaster-position='bottom'] {
+      left: calc(50% + var(--fui-toast-offset-horizontal, 0px));
+      transform: translateX(-50%);
+    }
+  }
+}

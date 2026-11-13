@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Ported from @fluentui/react-card 9.7.4, useCardPreviewStyles.styles.ts.
+ * Local source: [useCardPreviewStyles.styles.raw.js](../../../node_modules/@fluentui/react-card/lib/components/CardPreview/useCardPreviewStyles.styles.raw.js).
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .CardPreview {
+    position: relative;
+
+    & > :not(.CardPreview__logo) {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .CardPreview__logo {
+    position: absolute;
+    inset-block-end: var(--spacingVerticalM);
+    inset-inline-start: var(--spacingHorizontalM);
+    width: 32px;
+    height: 32px;
+  }
+}

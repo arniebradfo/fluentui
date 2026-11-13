@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/* Public headless DialogBody has the content role formerly named DialogContent. */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .DialogBody {
+    padding: var(--strokeWidthThick);
+    margin: calc(var(--strokeWidthThick) * -1);
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase300);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase300);
+    overflow-y: auto;
+    min-height: 32px;
+    min-width: 0;
+    box-sizing: border-box;
+    grid-row: 2 / 2;
+    grid-column: 1 / -1;
+  }
+
+  @media screen and (max-height: 359px) {
+    .DialogBody {
+      overflow-y: unset;
+    }
+  }
+}

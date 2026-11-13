@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  /* Styles for the root slot */
+  .DrawerBody {
+    padding: 0 var(--spacingHorizontalXXL);
+    flex: 1;
+    align-self: stretch;
+    position: relative;
+    z-index: 1;
+    overflow: auto;
+
+    &:last-child {
+      padding-bottom: calc(var(--spacingVerticalXXL) + var(--strokeWidthThin));
+    }
+
+    &:first-child {
+      padding-top: calc(var(--spacingVerticalXXL) + var(--strokeWidthThin));
+    }
+  }
+}

@@ -1,0 +1,28 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Ported from @fluentui/react-breadcrumb 9.4.8, useBreadcrumbDividerStyles.styles.raw.js.
+ * Local source: [useBreadcrumbDividerStyles.styles.raw.js](../../../node_modules/@fluentui/react-breadcrumb/lib/components/BreadcrumbDivider/useBreadcrumbDividerStyles.styles.raw.js).
+ * The repository LICENSE-CODE and this package's README.md contain the MIT license.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  /* Styles for the root slot */
+  .BreadcrumbDivider {
+    display: flex;
+    font-size: var(--fontSizeBase400);
+
+    &[data-size='small'] {
+      font-size: var(--fontSizeBase200);
+    }
+
+    &[data-size='large'] {
+      font-size: var(--fontSizeBase500);
+    }
+  }
+}

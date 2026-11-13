@@ -1,0 +1,62 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Ported from @fluentui/react-color-picker 9.3.3.
+ * Local source: [useAlphaSliderStyles.styles.raw.js](../../../node_modules/@fluentui/react-color-picker/lib/components/AlphaSlider/useAlphaSliderStyles.styles.raw.js).
+ * Upstream delegates to ColorSlider; compose that same local foundation.
+ * Map shared thumb placement to the public alpha progress variable without changing
+ * either component's public --fui-*-progress property or duplicating positioning.
+ * Family-qualified overrides retain priority
+ * when CSS Modules emits the composed foundation through another family member.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .AlphaSlider {
+    composes: ColorSlider from './ColorSlider.module.css';
+
+    &[data-orientation] {
+      --fui-ColorSlider__thumb--progress: var(--fui-AlphaSlider--progress);
+    }
+  }
+
+  .AlphaSlider__input {
+    composes: ColorSlider__input from './ColorSlider.module.css';
+  }
+
+  /* Styles for the rail slot */
+  .AlphaSlider__rail {
+    composes: ColorSlider__rail from './ColorSlider.module.css';
+
+    /* Both attributes are resolved by the wrapper. This outranks ColorSlider's channel gradients. */
+    .AlphaSlider[data-orientation][data-shape] > & {
+      border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
+      background-color: var(--colorNeutralBackground1);
+      /* Token-based checkerboard keeps source copies independent of remote assets. */
+      background-image: linear-gradient(
+          var(--fui-AlphaSlider--direction),
+          transparent,
+          var(--fui-AlphaSlider__rail--color)
+        ),
+        repeating-conic-gradient(var(--colorNeutralBackground5) 0% 25%, transparent 0% 50%);
+      background-size: 100% 100%, var(--spacingHorizontalM) var(--spacingVerticalM);
+    }
+  }
+
+  /* Styles for the thumb slot */
+  .AlphaSlider__thumb {
+    composes: ColorSlider__thumb from './ColorSlider.module.css';
+
+    .AlphaSlider > & {
+      background-color: var(--colorNeutralBackground1);
+
+      &::before {
+        background-color: var(--fui-AlphaSlider__thumb--color);
+      }
+    }
+  }
+}

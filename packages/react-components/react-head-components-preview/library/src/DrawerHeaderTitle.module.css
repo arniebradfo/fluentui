@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  /* Styles for the root slot */
+  .DrawerHeaderTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: var(--spacingHorizontalS);
+  }
+
+  .DrawerHeaderTitle__heading {
+    composes: DialogTitle from './DialogTitle.module.css';
+  }
+
+  /* Styles for the action slot */
+  .DrawerHeaderTitle__action {
+    align-self: start;
+    margin-inline-end: calc(var(--spacingHorizontalS) * -1);
+  }
+}

@@ -1,0 +1,33 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-toolbar/library/src/components/Toolbar/useToolbarStyles.styles.ts.
+ * Native focusgroup navigation is supplied by the current public headless hook.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  /* Styles for the root slot */
+  .Toolbar {
+    display: flex;
+    align-items: center;
+    padding: var(--spacingVerticalXS) var(--spacingHorizontalS);
+
+    &[data-vertical] {
+      flex-direction: column;
+      width: fit-content;
+    }
+
+    &[data-size='small']:not([data-vertical]) {
+      padding: 0 var(--spacingHorizontalXS);
+    }
+
+    &[data-size='large']:not([data-vertical]) {
+      padding: var(--spacingVerticalXS) var(--spacingHorizontalXL);
+    }
+  }
+}

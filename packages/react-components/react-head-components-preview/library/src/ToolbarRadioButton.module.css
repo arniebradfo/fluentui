@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-toolbar/library/src/components/ToolbarRadioButton/useToolbarRadioButtonStyles.styles.ts.
+ * The Radio/Toggle style-selection and declarations are identical; reuse
+ * [ToolbarToggleButton.module.css](./ToolbarToggleButton.module.css), including its
+ * shared checked and high-contrast rules.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .ToolbarRadioButton {
+    composes: ToolbarToggleButton from './ToolbarToggleButton.module.css';
+  }
+
+  .ToolbarRadioButton__icon {
+    composes: ToolbarToggleButton__icon from './ToolbarToggleButton.module.css';
+  }
+}

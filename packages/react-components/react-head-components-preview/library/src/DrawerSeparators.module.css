@@ -1,0 +1,43 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/* The public drawer body and context own scroll state. */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .DrawerHeader:not([data-scroll-state='none'])::after,
+  .DrawerFooter:not([data-scroll-state='none'])::before {
+    height: var(--strokeWidthThin);
+    position: absolute;
+    inset-inline: 0;
+    opacity: 0;
+    background-color: var(--colorNeutralStroke1);
+    transition-duration: var(--durationNormal);
+    transition-property: opacity;
+    transition-timing-function: var(--curveEasyEase);
+    content: '';
+  }
+
+  .DrawerHeader::after {
+    bottom: 0;
+  }
+
+  .DrawerFooter::before {
+    top: 0;
+  }
+
+  .DrawerHeader:is([data-scroll-state='middle'], [data-scroll-state='bottom'])::after,
+  .DrawerFooter:is([data-scroll-state='middle'], [data-scroll-state='top'])::before {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .DrawerHeader:not([data-scroll-state='none'])::after,
+    .DrawerFooter:not([data-scroll-state='none'])::before {
+      transition-duration: 0ms;
+    }
+  }
+}

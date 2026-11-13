@@ -1,0 +1,328 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Carousel/Card behavior and visibility belong to the public headless family.
+ * The footer owns consumer children; its navigation controls use the styled Button adapter.
+ */
+
+@layer fluent-components;
+
+.TeachingPopoverSurface {
+  composes: PopoverSurface from './PopoverSurface.module.css';
+}
+
+@layer fluent-components {
+  /* Resolved-state specificity protects family rules from re-emitted composed foundations. */
+  .TeachingPopoverSurface[data-teaching-popover-surface][data-popover-surface] {
+    padding: var(--spacingVerticalL);
+    border-radius: var(--borderRadiusXLarge);
+    min-width: min(320px, 100vw);
+    box-sizing: border-box;
+  }
+
+  .TeachingPopoverHeader {
+    display: flex;
+    flex-direction: row;
+    color: var(--colorNeutralForeground3);
+    font-weight: var(--fontWeightSemibold);
+    font-size: var(--fontSizeBase200);
+    line-height: var(--lineHeightBase200);
+    padding-bottom: var(--spacingVerticalXS);
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &[data-appearance='brand'] {
+      color: var(--colorNeutralForegroundOnBrand);
+    }
+
+    &[data-appearance='inverted'] {
+      color: var(--colorNeutralForegroundStaticInverted);
+    }
+  }
+
+  .TeachingPopoverHeader__dismissButton,
+  .TeachingPopoverTitle__dismissButton {
+    position: relative;
+    border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase300);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase300);
+    background-color: var(--colorTransparentBackground);
+    box-sizing: border-box;
+    border-start-end-radius: var(--borderRadiusNone);
+    border-end-end-radius: var(--borderRadiusNone);
+    border-inline-end-style: none;
+    margin-inline-start: auto;
+
+    &:focus-visible {
+      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+      border-radius: var(--borderRadiusMedium);
+      border-color: var(--colorTransparentStroke);
+    }
+
+    &[data-appearance='brand'] {
+      color: var(--colorNeutralForegroundOnBrand);
+    }
+
+    &[data-appearance='inverted'] {
+      color: var(--colorNeutralForegroundStaticInverted);
+    }
+
+    &:disabled {
+      color: var(--colorNeutralForegroundDisabled);
+      cursor: default;
+    }
+  }
+
+  .TeachingPopoverHeader__dismissButton {
+    color: var(--colorNeutralForeground2);
+    padding: var(--spacingVerticalXS) var(--spacingHorizontalXS);
+  }
+
+  .TeachingPopoverHeader__icon {
+    height: var(--fontSizeBase200);
+    width: var(--fontSizeBase200);
+    line-height: var(--lineHeightBase200);
+    font-size: var(--fontSizeBase200);
+    align-items: center;
+    box-sizing: content-box;
+    display: inline-flex;
+    justify-content: center;
+    text-decoration-line: none;
+    vertical-align: middle;
+    position: relative;
+    background-color: var(--colorTransparentBackground);
+    color: var(--colorNeutralForeground2);
+    margin-inline-end: var(--spacingHorizontalXS);
+
+    &[data-appearance='brand'] {
+      color: var(--colorNeutralForegroundOnBrand);
+    }
+
+    &[data-appearance='inverted'] {
+      color: var(--colorNeutralForegroundStaticInverted);
+    }
+  }
+
+  .TeachingPopoverTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: var(--fontSizeBase400);
+    font-weight: var(--fontWeightSemibold);
+    color: var(--colorNeutralForeground1);
+    line-height: var(--lineHeightBase400);
+    padding-bottom: var(--spacingVerticalS);
+    margin-top: 0;
+    margin-bottom: 0;
+
+    &[data-appearance='brand'] {
+      color: var(--colorNeutralForegroundOnBrand);
+    }
+
+    &[data-appearance='inverted'] {
+      color: var(--colorNeutralForegroundStaticInverted);
+    }
+  }
+
+  .TeachingPopoverBody {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--spacingVerticalM);
+  }
+
+  .TeachingPopoverBody__media {
+    grid-area: media;
+    overflow: hidden;
+    width: auto;
+    margin-bottom: var(--spacingVerticalM);
+    vertical-align: middle;
+    justify-content: center;
+    display: flex;
+
+    &[data-media-length='short'] {
+      aspect-ratio: 288 / 117;
+    }
+
+    &[data-media-length='medium'] {
+      aspect-ratio: 288 / 176;
+    }
+
+    &[data-media-length='tall'] {
+      aspect-ratio: 1;
+    }
+  }
+
+  .TeachingPopoverFooter {
+    display: flex;
+    gap: var(--spacingHorizontalS);
+    padding-top: var(--spacingVerticalM);
+    flex-direction: column;
+
+    &[data-footer-layout='horizontal'] {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+  }
+
+  .TeachingPopoverCarouselFooter {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacingHorizontalS);
+
+    &[data-layout='centered'] {
+      justify-content: space-between;
+    }
+  }
+
+  .TeachingPopoverCarouselFooterButton[data-brand-nav='next']:not([aria-disabled='true']) {
+    color: var(--colorBrandForeground1);
+    border-color: var(--colorTransparentBackground);
+
+    &[data-brand-background] {
+      background-color: var(--colorNeutralForegroundOnBrand);
+    }
+
+    &:not([data-disabled], [data-disabled-focusable]) {
+      &:hover {
+        color: var(--colorCompoundBrandForeground1Hover);
+      }
+
+      &:hover:active,
+      &:active:focus-visible {
+        color: var(--colorCompoundBrandForeground1Pressed);
+      }
+
+      &[data-brand-background]:hover,
+      &[data-brand-background]:hover:active,
+      &[data-brand-background]:active:focus-visible {
+        background-color: var(--colorNeutralForegroundOnBrand);
+      }
+    }
+  }
+
+  .TeachingPopoverCarouselFooterButton[data-brand-nav='prev']:not([aria-disabled='true']) {
+    color: var(--colorNeutralForegroundOnBrand);
+    border-color: var(--colorNeutralForegroundOnBrand);
+
+    &[data-brand-background] {
+      background-color: var(--colorBrandBackground);
+    }
+
+    &:not([data-disabled], [data-disabled-focusable]) {
+      &:hover {
+        color: var(--colorNeutralForegroundOnBrand);
+        border-color: var(--colorNeutralForegroundOnBrand);
+      }
+
+      &:hover:active,
+      &:active:focus-visible {
+        color: var(--colorNeutralForegroundOnBrand);
+        border-color: var(--colorNeutralForegroundOnBrand);
+      }
+
+      &[data-brand-background]:hover {
+        background-color: var(--colorBrandBackgroundHover);
+      }
+
+      &[data-brand-background]:hover:active,
+      &[data-brand-background]:active:focus-visible {
+        background-color: var(--colorBrandBackgroundPressed);
+      }
+    }
+  }
+
+  .TeachingPopoverCarouselFooter {
+    &[data-layout='offset'] > :first-child {
+      margin-inline-end: auto;
+    }
+
+    /* The current renderer retains previous-first DOM order, including for native Tab. */
+    &[data-layout='offset'] > .TeachingPopoverCarouselFooter__previous {
+      order: 1;
+      margin-inline-end: 0;
+    }
+
+    &[data-layout='offset'] > .TeachingPopoverCarouselFooter__next {
+      order: 2;
+    }
+
+    &[data-layout='offset'][data-has-previous] > :nth-child(2) {
+      margin-inline-end: auto;
+    }
+  }
+
+  .TeachingPopoverCarouselNav {
+    display: flex;
+    flex-direction: row;
+    column-gap: var(--spacingHorizontalXS);
+    align-items: center;
+    justify-content: center;
+
+    &:focus-visible {
+      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+      border-radius: var(--borderRadiusMedium);
+      border-color: var(--colorTransparentStroke);
+    }
+  }
+
+  .TeachingPopoverCarouselNavButton {
+    display: flex;
+    cursor: pointer;
+    box-sizing: border-box;
+    height: 8px;
+    width: 8px;
+    border: none;
+    border-radius: var(--borderRadiusCircular);
+    padding: 0;
+    outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
+    background-color: color-mix(in srgb, var(--colorBrandBackground) 30%, var(--colorTransparentBackground));
+
+    &:focus-visible {
+      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+      border-radius: var(--borderRadiusMedium);
+      border-color: var(--colorTransparentStroke);
+    }
+
+    &[data-appearance='brand'] {
+      background-color: color-mix(in srgb, var(--colorNeutralForegroundOnBrand) 30%, var(--colorTransparentBackground));
+    }
+
+    &[data-selected] {
+      width: 16px;
+      border-radius: var(--borderRadiusMedium);
+      background-color: var(--colorBrandBackground);
+      opacity: 1;
+
+      &[data-appearance='brand'] {
+        background-color: var(--colorNeutralForegroundOnBrand);
+      }
+
+      @media (forced-colors: active) {
+        &,
+        &[data-appearance='brand'] {
+          background-color: CanvasText;
+        }
+      }
+    }
+  }
+
+  .TeachingPopoverCarouselPageCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .TeachingPopover__glyph {
+    display: inline;
+    fill: currentColor;
+  }
+}

@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components {
+  .MenuList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacingVerticalXXS);
+
+    &[data-menu-context] {
+      height: 100%;
+    }
+  }
+}

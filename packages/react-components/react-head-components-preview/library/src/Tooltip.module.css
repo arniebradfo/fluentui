@@ -1,0 +1,32 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/* The native hint popover owns visibility and top-layer behavior. */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .Tooltip__content {
+    composes: PopoverSurface from './PopoverSurface.module.css';
+
+    /* Survive size-specific foundation rules re-emitted by other composed families. */
+    &[data-tooltip-content][data-appearance] {
+      --fui-positioning-arrow-height: 8.484px;
+      --fui-positioning-arrow-offset: -4.242px;
+
+      box-sizing: border-box;
+      max-width: 240px;
+      cursor: default;
+      font-size: var(--fontSizeBase200);
+      line-height: var(--lineHeightBase200);
+      overflow-wrap: break-word;
+      padding: var(--spacingVerticalXS) calc(var(--spacingHorizontalM) - var(--strokeWidthThin))
+        var(--spacingVerticalSNudge);
+
+      filter: drop-shadow(0 0 var(--strokeWidthThick) var(--colorNeutralShadowAmbient))
+        drop-shadow(0 var(--spacingVerticalXS) var(--spacingVerticalS) var(--colorNeutralShadowKey));
+    }
+  }
+}

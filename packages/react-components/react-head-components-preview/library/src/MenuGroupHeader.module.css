@@ -1,0 +1,16 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components {
+  .MenuGroupHeader {
+    font-size: var(--fontSizeBase200);
+    color: var(--colorNeutralForeground3);
+    padding-inline: var(--spacingHorizontalS);
+    font-weight: var(--fontWeightSemibold);
+    height: 32px;
+    display: flex;
+    align-items: center;
+  }
+}

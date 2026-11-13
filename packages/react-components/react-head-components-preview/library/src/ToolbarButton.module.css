@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-toolbar/library/src/components/ToolbarButton/useToolbarButtonStyles.styles.ts.
+ * Button.module.css supplies the shared root and icon styles.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .ToolbarButton {
+    composes: Button from './Button.module.css';
+
+    &[data-vertical] {
+      flex-direction: column;
+    }
+
+    /* Retain the resolved-state priority over later composed Button sheets. */
+    &[data-vertical][data-has-icon][data-icon-position] .ToolbarButton__icon {
+      font-size: var(--fontSizeBase600);
+      margin: 0;
+    }
+  }
+
+  .ToolbarButton__icon {
+    composes: Button__icon from './Button.module.css';
+  }
+}

@@ -1,0 +1,237 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/* Shared visual foundation from react-menu's MenuItem and selectable checkmark styles. */
+@layer fluent-components {
+  .MenuItem {
+    border-radius: var(--borderRadiusMedium);
+    position: relative;
+    color: var(--colorNeutralForeground2);
+    background-color: var(--colorNeutralBackground1);
+    padding: var(--spacingVerticalSNudge);
+    box-sizing: border-box;
+    max-width: 290px;
+    min-height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: start;
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase300);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase300);
+    cursor: pointer;
+    gap: var(--spacingHorizontalXS);
+    user-select: none;
+
+    &:focus,
+    &:focus-visible {
+      outline-style: none;
+    }
+
+    /* The element with the focus outline needs position: relative. */
+    &:focus-visible {
+      border-color: transparent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+        border-radius: var(--borderRadiusMedium);
+        inset: calc(-1 * var(--strokeWidthThick));
+      }
+    }
+
+    &:not([data-disabled]):is(:hover, [data-submenu-open]) {
+      background-color: var(--colorNeutralBackground1Hover);
+      color: var(--colorNeutralForeground2Hover);
+
+      & > .MenuItem__icon {
+        color: var(--colorNeutralForeground2BrandSelected);
+      }
+
+      & > .MenuItem__content > .MenuItem__subText {
+        color: var(--colorNeutralForeground3Hover);
+      }
+    }
+
+    &:not([data-disabled]):hover:active {
+      background-color: var(--colorNeutralBackground1Pressed);
+      color: var(--colorNeutralForeground2Pressed);
+
+      & > .MenuItem__content > .MenuItem__subText {
+        color: var(--colorNeutralForeground3Pressed);
+      }
+    }
+
+    &[data-checked] > .MenuItem__checkmark {
+      visibility: visible;
+    }
+
+    &[data-multiline] {
+      & > .MenuItem__content {
+        display: flex;
+        flex-direction: column;
+      }
+
+      & > .MenuItem__secondaryContent,
+      & > .MenuItem__submenuIndicator {
+        align-self: center;
+      }
+    }
+
+    &[data-disabled] {
+      color: var(--colorNeutralForegroundDisabled);
+
+      & > .MenuItem__secondaryContent,
+      & > .MenuItem__content > .MenuItem__subText {
+        color: var(--colorNeutralForegroundDisabled);
+      }
+
+      &:hover,
+      &:hover:active {
+        color: var(--colorNeutralForegroundDisabled);
+        background-color: var(--colorNeutralBackground1);
+        cursor: not-allowed;
+
+        & > .MenuItem__icon,
+        & > .MenuItem__secondaryContent,
+        & > .MenuItem__content > .MenuItem__subText {
+          color: var(--colorNeutralForegroundDisabled);
+        }
+      }
+
+      & > .MenuItem__secondaryContent:hover {
+        background-color: var(--colorNeutralBackground1);
+        cursor: not-allowed;
+      }
+    }
+
+    /* High contrast styles */
+    @media (forced-colors: active) {
+      &:not([data-disabled]):is(:hover, [data-submenu-open]) {
+        forced-color-adjust: none;
+        background-color: Highlight;
+        color: HighlightText;
+
+        & > .MenuItem__icon,
+        & > .MenuItem__checkmark,
+        & > .MenuItem__secondaryContent,
+        & > .MenuItem__content > .MenuItem__subText {
+          color: HighlightText;
+        }
+      }
+
+      &:focus-visible::after {
+        border-color: Highlight;
+      }
+
+      &[data-disabled] {
+        color: GrayText;
+
+        & > .MenuItem__secondaryContent,
+        & > .MenuItem__content > .MenuItem__subText {
+          color: GrayText;
+        }
+
+        &:hover,
+        &:hover:active,
+        &:focus {
+          forced-color-adjust: auto;
+          color: GrayText;
+          background-color: Canvas;
+
+          & > .MenuItem__icon,
+          & > .MenuItem__checkmark,
+          & > .MenuItem__secondaryContent,
+          & > .MenuItem__content > .MenuItem__subText {
+            color: GrayText;
+          }
+        }
+      }
+    }
+  }
+
+  .MenuItem__content {
+    padding-inline: var(--spacingHorizontalXXS);
+    background-color: transparent;
+    flex-grow: 1;
+  }
+
+  .MenuItem__secondaryContent {
+    padding-inline: var(--spacingHorizontalXXS);
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase200);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase300);
+    color: var(--colorNeutralForeground3);
+
+    &:hover,
+    &:focus {
+      color: var(--colorNeutralForeground3Hover);
+    }
+  }
+
+  .MenuItem__icon,
+  .MenuItem__submenuIndicator {
+    width: 20px;
+    height: 20px;
+    font-size: var(--fontSizeBase500);
+    line-height: 0;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  .MenuItem__icon {
+    flex-shrink: 0;
+  }
+
+  /* Applies styles to a checkmark slot for selectable menu items. */
+  .MenuItem__checkmark {
+    margin-top: var(--spacingVerticalXXS);
+    width: 16px;
+    height: 16px;
+    font-size: var(--fontSizeBase400);
+    line-height: 0;
+    visibility: hidden;
+    flex-shrink: 0;
+  }
+
+  .MenuItem__subText {
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase100);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase100);
+    color: var(--colorNeutralForeground3);
+  }
+
+  .MenuItem__glyph {
+    display: inline;
+    line-height: 0;
+
+    &[data-menu-icon-kind='filled'] {
+      display: none;
+    }
+
+    @media (forced-colors: active) {
+      forced-color-adjust: auto;
+    }
+  }
+}
+
+/* Existing Griffel icon bundles can have unlayered visibility rules. */
+.MenuItem:not([data-disabled]):is(:hover, [data-submenu-open]) {
+  .MenuItem__glyph[data-menu-icon-kind='filled'],
+  :global(.fui-Icon-filled) {
+    display: inline;
+  }
+
+  .MenuItem__glyph[data-menu-icon-kind='regular'],
+  :global(.fui-Icon-regular) {
+    display: none;
+  }
+}

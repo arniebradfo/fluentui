@@ -1,0 +1,65 @@
+{
+  "name": "react-head-components-preview",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "packages/react-components/react-head-components-preview/library/src",
+  "tags": ["vNext", "platform:web", "react-head"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": [],
+      "syncGenerators": [],
+      "outputs": ["{projectRoot}/dist/source"],
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/library",
+        "commands": [
+          "yarn run -T tsc --project tsconfig.lib.json --noEmit --baseUrl .",
+          "node scripts/build-source.cjs"
+        ],
+        "parallel": false
+      }
+    },
+    "type-check": {
+      "executor": "@fluentui/workspace-plugin:type-check",
+      "dependsOn": []
+    },
+    "lint": {
+      "dependsOn": []
+    },
+    "verify-css": {
+      "executor": "nx:run-commands",
+      "dependsOn": [],
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/library",
+        "command": "node scripts/check-css.cjs"
+      }
+    },
+    "verify-consumer": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["build", "verify-css"],
+      "cache": false,
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/library",
+        "command": "node scripts/verify-consumer.cjs"
+      }
+    },
+    "preview-consumer": {
+      "executor": "nx:run-commands",
+      "dependsOn": [],
+      "cache": false,
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/library",
+        "command": "node scripts/serve-consumer.cjs"
+      }
+    },
+    "test-browser": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["verify-consumer"],
+      "cache": false,
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/library",
+        "command": "yarn run -T playwright test --config playwright.config.cjs"
+      }
+    }
+  }
+}

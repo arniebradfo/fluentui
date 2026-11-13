@@ -1,0 +1,35 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-tag-picker/library/src/components/TagPickerOption/useTagPickerOptionStyles.styles.ts.
+ * Option supplies shared visuals; public headless owns selection and active-descendant state.
+ */
+
+@layer fluent-components;
+
+.TagPickerOption {
+  composes: Option from './Option.module.css';
+}
+
+@layer fluent-components {
+  .TagPickerOption[data-has-secondary-content] {
+    /* Resolved-state specificity protects this grid from later composed Option sheets. */
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .TagPickerOption__secondaryContent {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    font-size: var(--fontSizeBase200);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase200);
+  }
+
+  .TagPickerOption__media {
+    grid-row-start: span 2;
+  }
+}

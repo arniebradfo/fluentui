@@ -1,0 +1,143 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-infolabel/library/src/components/InfoButton/useInfoButtonStyles.styles.ts.
+ * The styled PopoverSurface supplies the shared surface foundation.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  /* Styles for the root slot. */
+  .InfoButton {
+    align-items: center;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: center;
+    text-decoration-line: none;
+    vertical-align: middle;
+    position: relative;
+    background-color: var(--colorTransparentBackground);
+    color: var(--colorNeutralForeground2);
+    border-style: none;
+    border-radius: var(--borderRadiusMedium);
+    margin: 0;
+    padding: var(--spacingVerticalXS) var(--spacingHorizontalXS);
+
+    & [data-info-glyph='filled'] {
+      display: none;
+    }
+
+    & [data-info-glyph='regular'] {
+      display: inline-flex;
+    }
+
+    &[data-open] {
+      background-color: var(--colorTransparentBackgroundSelected);
+      color: var(--colorNeutralForeground2BrandSelected);
+
+      & [data-info-glyph='filled'] {
+        display: inline-flex;
+      }
+
+      & [data-info-glyph='regular'] {
+        display: none;
+      }
+    }
+
+    &:hover {
+      background-color: var(--colorTransparentBackgroundHover);
+      color: var(--colorNeutralForeground2BrandHover);
+      cursor: pointer;
+
+      & [data-info-glyph='filled'] {
+        display: inline-flex;
+      }
+
+      & [data-info-glyph='regular'] {
+        display: none;
+      }
+    }
+
+    &:hover:active {
+      background-color: var(--colorTransparentBackgroundPressed);
+      color: var(--colorNeutralForeground2BrandPressed);
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline-style: none;
+    }
+
+    &:focus-visible::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+      border-radius: var(--borderRadiusMedium);
+      inset: calc(-1 * var(--strokeWidthThick));
+    }
+
+    &[data-size='large'] {
+      padding: var(--spacingVerticalXXS) var(--spacingHorizontalXXS);
+    }
+
+    @media (forced-colors: active) {
+      color: CanvasText;
+
+      &[data-open] {
+        background-color: Highlight;
+        color: Canvas;
+      }
+
+      &:hover,
+      &:hover:active {
+        forced-color-adjust: none;
+        background-color: Highlight;
+        color: Canvas;
+      }
+
+      &:focus-visible::after {
+        border-color: Highlight;
+      }
+    }
+  }
+
+  .InfoButton__info[data-info-button-size] {
+    max-width: 264px;
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase200);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase200);
+
+    &[data-info-button-size='large'] {
+      font-size: var(--fontSizeBase300);
+      line-height: var(--lineHeightBase300);
+    }
+  }
+}
+
+/* Existing bundled consumer glyphs have unlayered visibility rules. */
+.InfoButton {
+  & :global(.fui-Icon-filled) {
+    display: none;
+  }
+
+  & :global(.fui-Icon-regular) {
+    display: inline-flex;
+  }
+
+  &:is(:hover, [data-open]) {
+    & :global(.fui-Icon-filled) {
+      display: inline-flex;
+    }
+
+    & :global(.fui-Icon-regular) {
+      display: none;
+    }
+  }
+}

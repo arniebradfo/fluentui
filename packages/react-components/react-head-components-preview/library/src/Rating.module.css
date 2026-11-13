@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Ported from @fluentui/react-rating 9.4.7, useRatingStyles.styles.ts.
+ * Local source: [useRatingStyles.styles.raw.js](../../../node_modules/@fluentui/react-rating/lib/components/Rating/useRatingStyles.styles.raw.js).
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  /* Styles for the root slot */
+  .Rating {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

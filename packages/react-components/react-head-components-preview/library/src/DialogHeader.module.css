@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/* DialogHeader is a public headless boundary. Consumers compose their own close action. */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .DialogHeader {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+    gap: var(--fui-Dialog--gap, var(--spacingHorizontalS));
+    grid-row: 1 / 1;
+    grid-column: 1 / -1;
+    min-width: 0;
+
+    &:has(> :nth-child(2)) {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components;
+
+.DrawerHeader {
+  composes: DrawerHeader from './DrawerSeparators.module.css';
+}
+
+@layer fluent-components {
+  /* The public hook always emits scroll state; this outranks shared class-only recipes. */
+  .DrawerHeader[data-scroll-state] {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--spacingVerticalXXL) var(--spacingHorizontalXXL) var(--spacingVerticalS);
+    gap: var(--spacingHorizontalS);
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+}

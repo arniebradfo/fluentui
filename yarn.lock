@@ -4440,13 +4440,40 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@fluentui/react-head-components-preview-stories@workspace:packages/react-components/react-head-components-preview/stories":
+  version: 0.0.0-use.local
+  resolution: "@fluentui/react-head-components-preview-stories@workspace:packages/react-components/react-head-components-preview/stories"
+  dependencies:
+    "@fluentui/react-head-components-preview": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@fluentui/react-head-components-preview@workspace:*, @fluentui/react-head-components-preview@workspace:packages/react-components/react-head-components-preview/library":
+  version: 0.0.0-use.local
+  resolution: "@fluentui/react-head-components-preview@workspace:packages/react-components/react-head-components-preview/library"
+  dependencies:
+    "@fluentui/react-button": "npm:^9.11.3"
+    "@fluentui/react-field": "npm:^9.5.6"
+    "@fluentui/react-headless-components-preview": "npm:0.4.1"
+    "@fluentui/react-icons": "npm:2.0.341"
+    "@fluentui/react-input": "npm:^9.8.9"
+    "@fluentui/react-jsx-runtime": "npm:^9.4.7"
+    "@fluentui/react-shared-contexts": "npm:^9.26.4"
+    "@fluentui/react-theme": "npm:^9.2.2"
+    "@fluentui/react-utilities": "npm:^9.27.0"
+  peerDependencies:
+    react: ">=18.0.0 <20.0.0"
+    react-dom: ">=18.0.0 <20.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@fluentui/react-headless-components-preview-stories@workspace:packages/react-components/react-headless-components-preview/stories":
   version: 0.0.0-use.local
   resolution: "@fluentui/react-headless-components-preview-stories@workspace:packages/react-components/react-headless-components-preview/stories"
   languageName: unknown
   linkType: soft
 
-"@fluentui/react-headless-components-preview@npm:*, @fluentui/react-headless-components-preview@workspace:packages/react-components/react-headless-components-preview/library":
+"@fluentui/react-headless-components-preview@npm:*, @fluentui/react-headless-components-preview@npm:0.4.1, @fluentui/react-headless-components-preview@workspace:packages/react-components/react-headless-components-preview/library":
   version: 0.0.0-use.local
   resolution: "@fluentui/react-headless-components-preview@workspace:packages/react-components/react-headless-components-preview/library"
   dependencies:
@@ -4644,7 +4671,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fluentui/react-icons@npm:^2.0.237, @fluentui/react-icons@npm:^2.0.239, @fluentui/react-icons@npm:^2.0.245, @fluentui/react-icons@npm:^2.0.306, @fluentui/react-icons@npm:^2.0.339":
+"@fluentui/react-icons@npm:2.0.341, @fluentui/react-icons@npm:^2.0.237, @fluentui/react-icons@npm:^2.0.239, @fluentui/react-icons@npm:^2.0.245, @fluentui/react-icons@npm:^2.0.306, @fluentui/react-icons@npm:^2.0.339":
   version: 2.0.341
   resolution: "@fluentui/react-icons@npm:2.0.341"
   dependencies:

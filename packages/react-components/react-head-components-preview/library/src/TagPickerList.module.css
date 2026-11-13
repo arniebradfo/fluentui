@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-tag-picker/library/src/components/TagPickerList/useTagPickerListStyles.styles.ts.
+ * The styled Listbox supplies popup visuals; public headless owns native positioning.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .TagPickerList {
+    box-shadow: var(--shadow16);
+    border-radius: var(--borderRadiusMedium);
+    max-height: 80vh;
+    box-sizing: border-box;
+  }
+}

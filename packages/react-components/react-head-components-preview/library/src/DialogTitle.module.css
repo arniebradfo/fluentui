@@ -1,0 +1,17 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .DialogTitle {
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase500);
+    font-weight: var(--fontWeightSemibold);
+    line-height: var(--lineHeightBase500);
+    margin: 0;
+    min-width: 0;
+  }
+}

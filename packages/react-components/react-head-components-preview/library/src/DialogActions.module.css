@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .DialogActions {
+    gap: var(--spacingHorizontalS);
+    height: fit-content;
+    box-sizing: border-box;
+    display: flex;
+    grid-row: 3 / 3;
+
+    &[data-position='end'] {
+      justify-self: end;
+      grid-column: 2 / 4;
+    }
+
+    &[data-position='start'] {
+      justify-self: start;
+      grid-column: 1 / 2;
+    }
+
+    &[data-position='start'][data-fluid] {
+      grid-column-end: 4;
+    }
+
+    &[data-position='end'][data-fluid] {
+      grid-column-start: 1;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .DialogActions {
+      flex-direction: column;
+      justify-self: stretch;
+
+      &[data-position='end'] {
+        grid-column-start: 1;
+        grid-row: 4 / auto;
+        justify-self: stretch;
+      }
+
+      &[data-position='start'] {
+        grid-column-end: 4;
+        grid-row: 3 / auto;
+        justify-self: stretch;
+      }
+    }
+  }
+}

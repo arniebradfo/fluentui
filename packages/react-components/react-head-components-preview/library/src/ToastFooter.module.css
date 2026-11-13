@@ -1,0 +1,14 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components {
+  .ToastFooter {
+    padding-top: var(--spacingVerticalL);
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacingHorizontalM) + var(--spacingHorizontalXXS));
+  }
+}

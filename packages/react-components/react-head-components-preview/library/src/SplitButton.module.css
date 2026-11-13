@@ -1,0 +1,100 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-button/library/src/components/SplitButton/useSplitButtonStyles.styles.ts.
+ * Typed slot adapters reuse Button and MenuButton. Joined corners and seams follow text direction.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .SplitButton {
+    /* Base styles */
+    display: inline-flex;
+    justify-content: stretch;
+    position: relative;
+    vertical-align: middle;
+
+    & > .SplitButton__primaryActionButton[data-shape] {
+      border-start-end-radius: 0;
+      border-end-end-radius: 0;
+    }
+
+    & > .SplitButton__menuButton[data-size][data-shape] {
+      border-inline-start-width: 0;
+      border-start-start-radius: 0;
+      border-end-start-radius: 0;
+      /* WCAG minimum pointer target size for immediately adjacent targets:
+       * https://w3c.github.io/wcag/guidelines/22/#target-size-minimum
+       */
+      min-width: 24px;
+    }
+
+    /* The enabled marker makes the seam stronger than Button's pressed border shorthand.
+     * Browser checks must retain the seam on hover/press/focus in both CSS import orders.
+     */
+    &[data-appearance='primary']:not([data-disabled], [data-disabled-focusable])
+      > .SplitButton__primaryActionButton[data-size][data-shape] {
+      border-inline-end-color: var(--colorNeutralStrokeOnBrand);
+    }
+
+    &:is([data-appearance='subtle'], [data-appearance='transparent']):not([data-disabled], [data-disabled-focusable])
+      > .SplitButton__primaryActionButton[data-size][data-shape] {
+      border-inline-end-color: var(--colorTransparentBackground);
+    }
+
+    &:is([data-appearance='subtle'], [data-appearance='transparent']):not(
+        [data-disabled],
+        [data-disabled-focusable]
+      ):hover
+      > .SplitButton__primaryActionButton[data-size][data-shape] {
+      border-inline-end-color: var(--colorTransparentBackgroundHover);
+    }
+
+    &:is([data-appearance='subtle'], [data-appearance='transparent']):not(
+        [data-disabled],
+        [data-disabled-focusable]
+      ):is(:hover:active, :active:focus-visible)
+      > .SplitButton__primaryActionButton[data-size][data-shape] {
+      border-inline-end-color: var(--colorTransparentBackgroundPressed);
+    }
+
+    /* Disabled styles */
+    &:is([data-disabled], [data-disabled-focusable])[data-appearance]
+      > .SplitButton__primaryActionButton[data-size][data-shape] {
+      border-inline-end-color: var(--colorNeutralStrokeDisabled);
+    }
+
+    /* High contrast styles */
+    @media (forced-colors: active) {
+      &[data-appearance='primary']:not([data-disabled], [data-disabled-focusable])
+        > .SplitButton__primaryActionButton[data-size][data-shape] {
+        border-inline-end-color: HighlightText;
+      }
+
+      &[data-appearance='primary']:not([data-disabled], [data-disabled-focusable]):is(:hover, :active:focus-visible)
+        > .SplitButton__primaryActionButton[data-size][data-shape] {
+        border-inline-end-color: Highlight;
+      }
+
+      &:is([data-disabled], [data-disabled-focusable])[data-appearance]
+        > .SplitButton__primaryActionButton[data-size][data-shape] {
+        border-inline-end-color: GrayText;
+      }
+    }
+  }
+
+  .SplitButton__primaryActionButton {
+    border-start-end-radius: 0;
+    border-end-end-radius: 0;
+  }
+
+  .SplitButton__menuButton {
+    border-inline-start-width: 0;
+    border-start-start-radius: 0;
+    border-end-start-radius: 0;
+  }
+}

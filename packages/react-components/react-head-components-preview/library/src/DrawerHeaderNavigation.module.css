@@ -1,0 +1,13 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  /* Styles for the root slot */
+  .DrawerHeaderNavigation {
+    margin: calc(var(--spacingVerticalS) * -1) calc(var(--spacingHorizontalL) * -1);
+  }
+}

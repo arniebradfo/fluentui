@@ -1,0 +1,126 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/* MenuItemSwitch has its own track, not a nested Switch control. */
+@layer fluent-components {
+  /* Thumb and track sizes used by the component: 2px clearance, 20px x 40px track. */
+  .MenuItemSwitch__switchIndicator {
+    border-radius: var(--borderRadiusCircular);
+    border: var(--strokeWidthThin) solid var(--colorNeutralStrokeAccessible);
+    line-height: 0;
+    box-sizing: border-box;
+    fill: currentColor;
+    flex-shrink: 0;
+    font-size: calc(var(--fontSizeBase500) - var(--spacingHorizontalXXS));
+    height: 20px;
+    width: 40px;
+    margin-inline-end: var(--spacingHorizontalXS);
+    transition-duration: var(--durationNormal);
+    transition-timing-function: var(--curveEasyEase);
+    transition-property: background, border, color;
+    color: var(--colorNeutralStrokeAccessible);
+
+    &:where(:hover) {
+      color: var(--colorNeutralStrokeAccessibleHover);
+      border-color: var(--colorNeutralStrokeAccessibleHover);
+    }
+
+    &:where(:hover:active) {
+      color: var(--colorNeutralStrokeAccessiblePressed);
+      border-color: var(--colorNeutralStrokeAccessiblePressed);
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition-duration: 0s;
+    }
+  }
+
+  .MenuItemSwitch__thumb {
+    display: inline;
+    line-height: 0;
+    transition-duration: var(--durationNormal);
+    transition-timing-function: var(--curveEasyEase);
+    transition-property: transform;
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition-duration: 0s;
+    }
+
+    @media (forced-colors: active) {
+      forced-color-adjust: auto;
+    }
+  }
+
+  [data-menu-item][data-checked] > .MenuItemSwitch__switchIndicator {
+    background-color: var(--colorCompoundBrandBackground);
+    color: var(--colorNeutralForegroundInverted);
+    border-color: var(--colorTransparentStroke);
+
+    & > .MenuItemSwitch__thumb,
+    & > :global(.fui-MenuItemSwitch__switchIndicator__circleFilled) {
+      transform: translateX(20px);
+    }
+
+    &:dir(rtl) {
+      & > .MenuItemSwitch__thumb,
+      & > :global(.fui-MenuItemSwitch__switchIndicator__circleFilled) {
+        transform: translateX(-20px);
+      }
+    }
+
+    &:where(:hover) {
+      color: var(--colorNeutralForegroundInverted);
+      background-color: var(--colorCompoundBrandBackgroundHover);
+      border-color: var(--colorTransparentStrokeInteractive);
+    }
+
+    &:where(:hover:active) {
+      color: var(--colorNeutralForegroundInverted);
+      background-color: var(--colorCompoundBrandBackgroundPressed);
+      border-color: var(--colorTransparentStrokeInteractive);
+    }
+  }
+
+  [data-menu-item][data-multiline] > .MenuItemSwitch__switchIndicator {
+    align-self: center;
+  }
+
+  [data-menu-item][data-disabled] > .MenuItemSwitch__switchIndicator {
+    color: var(--colorNeutralForegroundDisabled);
+    border-color: var(--colorNeutralStrokeDisabled);
+    background-color: transparent;
+  }
+
+  [data-menu-item][data-disabled][data-checked] > .MenuItemSwitch__switchIndicator {
+    color: var(--colorNeutralBackground1);
+    background-color: var(--colorNeutralBackgroundDisabled);
+  }
+
+  @media (forced-colors: active) {
+    .MenuItemSwitch__switchIndicator {
+      forced-color-adjust: none;
+      color: CanvasText;
+      border-color: CanvasText;
+      background-color: Canvas;
+    }
+
+    [data-menu-item][data-checked] > .MenuItemSwitch__switchIndicator {
+      color: HighlightText;
+      border-color: Highlight;
+      background-color: Highlight;
+    }
+
+    [data-menu-item][data-disabled] > .MenuItemSwitch__switchIndicator {
+      color: GrayText;
+      border-color: GrayText;
+      background-color: Canvas;
+    }
+
+    [data-menu-item][data-disabled][data-checked] > .MenuItemSwitch__switchIndicator {
+      color: Canvas;
+      background-color: GrayText;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-tag-picker/library/src/components/TagPickerOptionGroup/useTagPickerOptionGroupStyles.styles.ts.
+ * The public alias reuses the OptionGroup visual foundation.
+ */
+
+@layer fluent-components;
+
+.TagPickerOptionGroup {
+  composes: OptionGroup from './OptionGroup.module.css';
+}
+
+.TagPickerOptionGroup__label {
+  composes: OptionGroup__label from './OptionGroup.module.css';
+}

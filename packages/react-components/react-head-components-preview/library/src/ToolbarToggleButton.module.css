@@ -1,0 +1,56 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-toolbar/library/src/components/ToolbarToggleButton/useToolbarToggleButtonStyles.styles.ts.
+ * ToggleButton.module.css supplies the shared checked, disabled, and focus styles.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .ToolbarToggleButton {
+    composes: ToggleButton from './ToggleButton.module.css';
+
+    /* use subtle ToggleButton selected styles for Toolbar Radio selected state */
+    /* The toolbar's base checked colors win the delegated base colors, not its pseudo states.
+     * Include resolved state to survive later composed foundation selectors.
+     */
+    &[data-checked][data-appearance][data-shape='rounded']:not(
+        [data-disabled],
+        [data-disabled-focusable],
+        :hover,
+        :active:focus-visible
+      ) {
+      background-color: var(--colorSubtleBackgroundSelected);
+      color: var(--colorNeutralForeground2Selected);
+
+      @media (forced-colors: active) {
+        background-color: Highlight;
+        color: HighlightText;
+      }
+    }
+
+    &[data-checked]:not([data-disabled], [data-disabled-focusable]) .ToolbarToggleButton__icon {
+      color: var(--colorNeutralForeground2BrandSelected);
+    }
+
+    @media (forced-colors: active) {
+      &[data-checked]:not([data-disabled], [data-disabled-focusable])[data-appearance] .ToolbarToggleButton__icon {
+        color: inherit;
+        forced-color-adjust: inherit;
+
+        /* Fluent SVG icons explicitly opt back into automatic forced-color adjustment. */
+        & svg {
+          forced-color-adjust: inherit;
+        }
+      }
+    }
+  }
+
+  .ToolbarToggleButton__icon {
+    composes: ToggleButton__icon from './ToggleButton.module.css';
+  }
+}

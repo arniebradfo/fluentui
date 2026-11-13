@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Shared visual constants from @fluentui/react-tags 9.9.8.
+ * Local source: [useTagStyles.styles.raw.js](../../../node_modules/@fluentui/react-tags/lib/components/Tag/useTagStyles.styles.raw.js).
+ * Inherited by [InteractionTagPrimary styles](../../../node_modules/@fluentui/react-tags/lib/components/InteractionTagPrimary/useInteractionTagPrimaryStyles.styles.raw.js).
+ * The repository LICENSE-CODE and this package's README.md contain the MIT license.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .TagVisual {
+    /* Inner horizontal space left and right of Tag. */
+    --fui-tag-spacing: calc(var(--spacingHorizontalS) - var(--strokeWidthThin));
+    --fui-tag-icon-size: var(--fontSizeBase500);
+    --fui-tag-icon-spacing: var(--spacingHorizontalXS);
+    --fui-tag-media-spacing: var(--spacingHorizontalS);
+
+    &[data-size='small'] {
+      --fui-tag-spacing: calc(var(--spacingHorizontalSNudge) - var(--strokeWidthThin));
+      --fui-tag-icon-size: var(--fontSizeBase400);
+      --fui-tag-icon-spacing: var(--spacingHorizontalXXS);
+      --fui-tag-media-spacing: var(--spacingHorizontalSNudge);
+    }
+
+    &[data-size='extra-small'] {
+      --fui-tag-spacing: calc(var(--spacingHorizontalSNudge) - var(--strokeWidthThin));
+      --fui-tag-icon-size: var(--fontSizeBase200);
+      --fui-tag-icon-spacing: var(--spacingHorizontalXXS);
+      --fui-tag-media-spacing: var(--spacingHorizontalSNudge);
+    }
+  }
+}

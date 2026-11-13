@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-toolbar/library/src/components/ToolbarDivider/useToolbarDividerStyles.styles.ts.
+ * Divider.module.css supplies the shared separator styles.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .ToolbarDivider {
+    composes: Divider from './Divider.module.css';
+
+    /* Base styles. Delegated Divider wins display:flex in the actual merge order. */
+    max-width: var(--strokeWidthThin);
+    padding: 0 var(--spacingHorizontalM);
+
+    &[data-orientation='horizontal'] {
+      max-width: initial;
+    }
+  }
+
+  .ToolbarDivider__wrapper {
+    composes: Divider__wrapper from './Divider.module.css';
+  }
+}

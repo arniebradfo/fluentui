@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components;
+
+.DrawerFooter {
+  composes: DrawerFooter from './DrawerSeparators.module.css';
+}
+
+@layer fluent-components {
+  .DrawerFooter[data-scroll-state] {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--spacingVerticalL) var(--spacingHorizontalXXL) var(--spacingVerticalXXL);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: var(--spacingHorizontalS);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+  }
+}

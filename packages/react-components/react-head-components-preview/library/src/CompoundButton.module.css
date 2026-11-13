@@ -1,0 +1,160 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-button/library/src/components/CompoundButton/useCompoundButtonStyles.styles.ts.
+ * Button.module.css supplies the shared root and icon styles.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .CompoundButton {
+    composes: Button from './Button.module.css';
+
+    /* Base styles */
+    height: auto;
+
+    .CompoundButton__secondaryContent {
+      color: var(--colorNeutralForeground2);
+    }
+
+    &:not([data-disabled], [data-disabled-focusable]) {
+      &:hover .CompoundButton__secondaryContent {
+        color: var(--colorNeutralForeground2Hover);
+      }
+
+      &:is(:hover:active, :active:focus-visible) .CompoundButton__secondaryContent {
+        color: var(--colorNeutralForeground2Pressed);
+      }
+
+      /* Appearance variations */
+      &[data-appearance='primary'] {
+        .CompoundButton__secondaryContent,
+        &:hover .CompoundButton__secondaryContent,
+        &:is(:hover:active, :active:focus-visible) .CompoundButton__secondaryContent {
+          color: var(--colorNeutralForegroundOnBrand);
+        }
+      }
+
+      &[data-appearance='transparent'] {
+        &:hover .CompoundButton__secondaryContent {
+          color: var(--colorNeutralForeground2BrandHover);
+        }
+
+        &:is(:hover:active, :active:focus-visible) .CompoundButton__secondaryContent {
+          color: var(--colorNeutralForeground2BrandPressed);
+        }
+      }
+    }
+
+    /* Four root markers outrank Button's three-marker with-icon/icon-only sizing.
+     * The descendant icon also outranks Button's large icon, regardless of sheet order.
+     */
+    &[data-size][data-appearance] {
+      &[data-size='small'] {
+        padding: var(--spacingVerticalS) var(--spacingHorizontalS) var(--spacingVerticalMNudge);
+        font-size: var(--fontSizeBase300);
+        line-height: var(--lineHeightBase300);
+      }
+
+      &[data-size='medium'] {
+        padding: calc(var(--spacingVerticalL) - var(--spacingVerticalXXS)) var(--spacingHorizontalM)
+          var(--spacingVerticalL);
+      }
+
+      &[data-size='large'] {
+        padding: calc(var(--spacingVerticalXL) - var(--spacingVerticalXXS)) var(--spacingHorizontalL)
+          var(--spacingVerticalXL);
+      }
+
+      .CompoundButton__icon {
+        font-size: var(--fontSizeHero900);
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    /* Icon-only size variations */
+    &[data-icon-only][data-size] {
+      &[data-size='small'] {
+        padding: var(--spacingVerticalXS) var(--spacingHorizontalXS);
+        min-width: 48px;
+        max-width: 48px;
+      }
+
+      &[data-size='medium'] {
+        padding: var(--spacingVerticalSNudge) var(--spacingHorizontalSNudge);
+        min-width: 52px;
+        max-width: 52px;
+      }
+
+      &[data-size='large'] {
+        padding: var(--spacingVerticalS) var(--spacingHorizontalS);
+        min-width: 56px;
+        max-width: 56px;
+      }
+    }
+
+    /* Icon position variations */
+    &[data-size][data-has-primary-content][data-icon-position='before'] .CompoundButton__icon {
+      margin-inline-end: var(--spacingHorizontalM);
+    }
+
+    &[data-size][data-has-primary-content][data-icon-position='after'] .CompoundButton__icon {
+      margin-inline-start: var(--spacingHorizontalM);
+    }
+
+    /* Disabled styles */
+    &:is([data-disabled], [data-disabled-focusable]) .CompoundButton__secondaryContent {
+      color: var(--colorNeutralForegroundDisabled);
+    }
+
+    /* High contrast styles */
+    @media (forced-colors: active) {
+      &[data-appearance='primary'] .CompoundButton__secondaryContent {
+        color: HighlightText;
+      }
+
+      &:not([data-disabled], [data-disabled-focusable]):is(:hover, :active:focus-visible) {
+        .CompoundButton__secondaryContent {
+          color: Highlight;
+        }
+
+        &[data-appearance='subtle'] .CompoundButton__secondaryContent {
+          color: Canvas;
+        }
+      }
+
+      &:is([data-disabled], [data-disabled-focusable]) .CompoundButton__secondaryContent {
+        color: GrayText;
+      }
+    }
+  }
+
+  .CompoundButton__icon {
+    composes: Button__icon from './Button.module.css';
+  }
+
+  .CompoundButton__contentContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    &:dir(rtl) {
+      text-align: right;
+    }
+  }
+
+  .CompoundButton__secondaryContent {
+    line-height: 100%;
+    font-weight: var(--fontWeightRegular);
+    font-size: var(--fontSizeBase200);
+  }
+
+  .CompoundButton[data-size='large'] .CompoundButton__secondaryContent {
+    font-size: var(--fontSizeBase300);
+  }
+}

@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-infolabel/library/src/components/InfoLabel/useInfoLabelStyles.styles.ts.
+ * The styled Label and InfoButton supply their own visual foundations.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  /* Resolved-state specificity protects the derived slot rules from later foundation sheets. */
+  .InfoLabel[data-size] > .InfoLabel__label {
+    vertical-align: top;
+    cursor: inherit;
+    color: inherit;
+  }
+
+  .InfoLabel[data-size] > .InfoLabel__infoButton {
+    vertical-align: top;
+    /* Negative margin aligns the button with the text. */
+    margin-block: calc(0px - var(--spacingVerticalXXS));
+  }
+
+  .InfoLabel[data-size='large'] > .InfoLabel__infoButton {
+    /* Negative margin aligns the button with the text. */
+    margin-block: calc(-1 * var(--spacingVerticalXXS) / 2);
+  }
+}

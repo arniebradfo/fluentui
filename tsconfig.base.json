@@ -86,6 +86,12 @@
       "@fluentui/react-field": ["packages/react-components/react-field/library/src/index.ts"],
       "@fluentui/react-field-stories": ["packages/react-components/react-field/stories/src/index.ts"],
       "@fluentui/react-focus-management": ["packages/react-focus-management/src/index.ts"],
+      "@fluentui/react-head-components-preview": [
+        "packages/react-components/react-head-components-preview/library/src/index.ts"
+      ],
+      "@fluentui/react-head-components-preview-stories": [
+        "packages/react-components/react-head-components-preview/stories/src/index.ts"
+      ],
       "@fluentui/react-headless-components-preview-stories": [
         "packages/react-components/react-headless-components-preview/stories/src/index.ts"
       ],

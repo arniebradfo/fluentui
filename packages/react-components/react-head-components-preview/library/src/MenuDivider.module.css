@@ -1,0 +1,12 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+@layer fluent-components {
+  .MenuDivider {
+    margin: var(--spacingVerticalXS) calc(-1 * (var(--spacingHorizontalXS) + var(--strokeWidthThin)));
+    width: auto;
+    border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStroke2);
+  }
+}

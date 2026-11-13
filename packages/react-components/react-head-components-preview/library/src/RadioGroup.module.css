@@ -1,0 +1,22 @@
+/*
+ * Copyright (c) Microsoft Corporation.
+ * Licensed under the MIT license.
+ */
+
+/*
+ * Adapted from react-radio/library/src/components/RadioGroup/useRadioGroupStyles.styles.ts.
+ * Layout is visual only; native named radio inputs own keyboard navigation and selection.
+ */
+
+@layer fluent-components;
+
+@layer fluent-components {
+  .RadioGroup {
+    display: flex;
+    align-items: flex-start;
+
+    &[data-layout='vertical'] {
+      flex-direction: column;
+    }
+  }
+}

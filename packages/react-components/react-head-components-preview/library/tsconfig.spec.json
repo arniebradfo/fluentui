@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": ["jest", "node", "@testing-library/jest-dom", "static-assets", "environment", "focusgroup"]
+  },
+  "include": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/testing/**/*.ts", "src/testing/**/*.tsx"]
+}
