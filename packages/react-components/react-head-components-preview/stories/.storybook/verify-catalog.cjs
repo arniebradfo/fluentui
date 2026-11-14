@@ -123,7 +123,7 @@ assert.throws(
 );
 for (const issuer of [
   path.join(root, 'src/VisualParity.stories.tsx'),
-  path.resolve(root, '../library/src/Button.tsx'),
+  path.resolve(root, '../library/src/components/Button/Button.tsx'),
 ]) {
   const resource = { request: '@fluentui/react-components', contextInfo: { issuer } };
   plugin.newResource(resource);

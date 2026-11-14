@@ -16,10 +16,45 @@ not restore Griffel, Tabster, legacy portals or the old positioning engine.
 - [Runtime dependencies](./library/package.json): public npm version ranges, not
   workspace-only runtime imports.
 
+The source follows the headless layout: kebab-case entrypoints expose a component
+family, and its folder groups the implementation, styles, helpers and nested
+subcomponents.
+
+```text
+library/src/
+  button.ts
+  tree.ts
+  components/
+    Button/
+      Button.tsx
+      Button.module.css
+      index.ts
+    Tree/
+      Tree.tsx
+      index.ts
+      TreeItem/
+        TreeItem.tsx
+        TreeItem.module.css
+        index.ts
+      TreeItemLayout/
+        TreeItemLayout.tsx
+        TreeItemLayout.module.css
+        index.ts
+```
+
+For example, [tree.ts](./library/src/tree.ts) re-exports
+[components/Tree/index.ts](./library/src/components/Tree/index.ts).
+Implementations use concrete sibling imports rather than their own family barrel.
+Shared family styles remain at the family root where appropriate.
+
 ## Use in this workspace
 
 ```tsx
-import { Button, Field, FluentProvider, Input, webLightTheme } from '@fluentui/react-head-components-preview';
+import { Button } from '@fluentui/react-head-components-preview/button';
+import { Field } from '@fluentui/react-head-components-preview/field';
+import { FluentProvider } from '@fluentui/react-head-components-preview/provider';
+import { Input } from '@fluentui/react-head-components-preview/input';
+import { webLightTheme } from '@fluentui/react-head-components-preview/theme';
 
 export const Example = () => (
   <FluentProvider theme={webLightTheme}>
@@ -30,6 +65,12 @@ export const Example = () => (
   </FluentProvider>
 );
 ```
+
+There are 60 public family/utility subpaths. The root barrel retains the existing
+API. Selective imports rely on both these entrypoints and the package's CSS
+`sideEffects` metadata, not on folders alone.
+Use family subpaths for CSS isolation: the compatibility root barrel can retain
+the catalog's stylesheets even when only one component is used.
 
 `FluentProvider` is an optional DOM theme root. It supplies Fluent CSS variables,
 direction and target-document context. Partial nested themes merge with their
@@ -185,10 +226,13 @@ yarn playwright install chromium
 ```
 
 The verifier copies the source into `library/dist/consumer`, installs public npm
-dependencies with scripts disabled, type-checks without monorepo aliases, and
+dependencies and the local source package with scripts disabled, type-checks without monorepo aliases, and
 builds real CSS for normal and reversed foundation import orders. It checks
 retained production modules for Griffel/Tabster engines and for workspace
 resolution leaks. It uses React 19 for this initial consumer proof.
+Separate Button, Tree and NavItem entry bundles check that unused styled
+implementations and unrelated component CSS are absent. A root-barrel Button
+bundle separately reports its stylesheet cost rather than claiming CSS isolation.
 
 The preview serves that result at `http://127.0.0.1:8098`; `/reverse.html` uses the
 reversed import order. This fixture is for browser rendering, keyboard, forms,

@@ -7,13 +7,16 @@ const ts = require('typescript');
 async function main() {
   const root = path.resolve(__dirname, '..');
   const source = path.join(root, 'src');
-  const modules = fs.readdirSync(source).filter(name => name.endsWith('.module.css'));
+  const files = fs.readdirSync(source, { recursive: true });
+  const modules = files.filter(name => name.endsWith('.module.css'));
   const output = path.join(root, 'dist/css-maps.cjs');
   fs.mkdirSync(path.dirname(output), { recursive: true });
 
   await esbuild.build({
     stdin: {
-      contents: modules.map((name, index) => `export { default as m${index} } from './${name}';`).join('\n'),
+      contents: modules
+        .map((name, index) => `export { default as m${index} } from './${name.split(path.sep).join('/')}';`)
+        .join('\n'),
       resolveDir: source,
     },
     bundle: true,
@@ -24,16 +27,12 @@ async function main() {
     logLevel: 'warning',
   });
   const maps = require(output);
-  const classMaps = new Map(modules.map((name, index) => [name, maps[`m${index}`]]));
+  const classMaps = new Map(modules.map((name, index) => [path.resolve(source, name), maps[`m${index}`]]));
   let checked = 0;
 
-  for (const name of fs.readdirSync(source).filter(file => /\.tsx?$/.test(file) && !file.includes('.test.'))) {
-    const file = ts.createSourceFile(
-      name,
-      fs.readFileSync(path.join(source, name), 'utf8'),
-      ts.ScriptTarget.Latest,
-      true,
-    );
+  for (const name of files.filter(file => /\.tsx?$/.test(file) && !file.includes('.test.'))) {
+    const filePath = path.join(source, name);
+    const file = ts.createSourceFile(filePath, fs.readFileSync(filePath, 'utf8'), ts.ScriptTarget.Latest, true);
     const imports = new Map();
     for (const statement of file.statements) {
       if (
@@ -42,7 +41,7 @@ async function main() {
         statement.moduleSpecifier.text.endsWith('.module.css') &&
         statement.importClause?.name
       ) {
-        const css = path.basename(statement.moduleSpecifier.text);
+        const css = path.resolve(path.dirname(filePath), statement.moduleSpecifier.text);
         assert(classMaps.has(css), `${name}: missing CSS Module ${css}`);
         imports.set(statement.importClause.name.text, css);
       }

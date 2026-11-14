@@ -1,0 +1,31 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+export {
+  AvatarGroup,
+  avatarGroupClassNames,
+  AvatarGroupProvider,
+  partitionAvatarGroupItems,
+  useAvatarGroupContext,
+  useAvatarGroupContextValues,
+  type AvatarGroupContextValue,
+  type AvatarGroupContextValues,
+  type AvatarGroupProps,
+  type AvatarGroupSlots,
+  type AvatarGroupState,
+  type PartitionAvatarGroupItems,
+  type PartitionAvatarGroupItemsOptions,
+  AvatarGroupItem,
+  avatarGroupItemClassNames,
+  type AvatarGroupItemAvatarProps,
+  type AvatarGroupItemColor,
+  type AvatarGroupItemProps,
+  type AvatarGroupItemSlots,
+  type AvatarGroupItemState,
+  AvatarGroupPopover,
+  avatarGroupPopoverClassNames,
+  type AvatarGroupPopoverPopoverProps,
+  type AvatarGroupPopoverProps,
+  type AvatarGroupPopoverSlots,
+  type AvatarGroupPopoverState,
+} from './components/AvatarGroup/index.js';

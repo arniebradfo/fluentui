@@ -89,6 +89,9 @@
       "@fluentui/react-head-components-preview": [
         "packages/react-components/react-head-components-preview/library/src/index.ts"
       ],
+      "@fluentui/react-head-components-preview/*": [
+        "packages/react-components/react-head-components-preview/library/src/*.ts"
+      ],
       "@fluentui/react-head-components-preview-stories": [
         "packages/react-components/react-head-components-preview/stories/src/index.ts"
       ],

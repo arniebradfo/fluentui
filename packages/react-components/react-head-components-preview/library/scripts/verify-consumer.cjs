@@ -14,7 +14,10 @@ async function main() {
   }
   fs.mkdirSync(consumer, { recursive: true });
   fs.rmSync(path.join(consumer, 'components'), { recursive: true, force: true });
-  fs.cpSync(path.join(source, 'src'), path.join(consumer, 'components'), { recursive: true });
+  fs.rmSync(path.join(consumer, 'node_modules/@fluentui/react-head-components-preview'), {
+    recursive: true,
+    force: true,
+  });
   fs.cpSync(path.join(__dirname, 'consumer'), consumer, { recursive: true });
   fs.writeFileSync(
     path.join(consumer, 'package.json'),
@@ -26,6 +29,7 @@ async function main() {
         type: 'module',
         dependencies: {
           ...manifest.dependencies,
+          '@fluentui/react-head-components-preview': 'file:../source',
           '@microsoft/focusgroup-polyfill': '1.5.0',
           react: '19.2.0',
           'react-dom': '19.2.0',
@@ -40,6 +44,7 @@ async function main() {
     'npm',
     [
       'install',
+      '--install-links',
       '--ignore-scripts',
       '--no-audit',
       '--no-fund',
@@ -77,7 +82,10 @@ async function main() {
     metafile: true,
     logLevel: 'warning',
   };
-  const result = await esbuild.build({ ...browserOptions, entryPoints: ['App.tsx', 'reverse.tsx'] });
+  const result = await esbuild.build({
+    ...browserOptions,
+    entryPoints: ['App.tsx', 'reverse.tsx', 'LeafButton.tsx', 'LeafRootButton.tsx', 'LeafTree.tsx', 'LeafNavItem.tsx'],
+  });
   // Multiple entries get distinct CSS names. Match the server's single-entry graph.
   const hydration = await esbuild.build({ ...browserOptions, entryPoints: ['Hydrate.tsx'] });
   const metafile = {
@@ -99,6 +107,58 @@ async function main() {
     name => !path.resolve(consumer, name).startsWith(`${consumer}${path.sep}`),
   );
   assert.deepEqual(outsideInputs, [], 'The source consumer must not resolve workspace modules');
+  const packageSource = 'node_modules/@fluentui/react-head-components-preview/src/components/';
+  for (const [entry, family, expectedModules] of [
+    ['LeafButton', 'Button', ['Button.module.css']],
+    [
+      'LeafTree',
+      'Tree',
+      ['Tree.module.css', 'TreeItem/TreeItem.module.css', 'TreeItemLayout/TreeItemLayout.module.css'],
+    ],
+    ['LeafNavItem', 'Nav', ['Nav.module.css']],
+  ]) {
+    const output = metafile.outputs[`public/${entry}.js`];
+    assert(output.cssBundle, `${entry} did not emit component CSS`);
+    const css = metafile.outputs[output.cssBundle];
+    const included = Object.entries(css.inputs)
+      .filter(([, input]) => input.bytesInOutput > 0)
+      .map(([name]) => name)
+      .sort();
+    assert.deepEqual(
+      included,
+      expectedModules.map(name => `${packageSource}${family}/${name}`).sort(),
+      `${entry} retained unrelated component CSS`,
+    );
+    const unrelated = Object.entries(output.inputs)
+      .filter(
+        ([name, input]) =>
+          input.bytesInOutput > 0 && name.startsWith(packageSource) && !name.startsWith(`${packageSource}${family}/`),
+      )
+      .map(([name]) => name);
+    assert.deepEqual(unrelated, [], `${entry} retained unrelated styled implementations`);
+    if (entry === 'LeafNavItem') {
+      const siblings = Object.entries(output.inputs)
+        .filter(
+          ([name, input]) =>
+            input.bytesInOutput > 0 &&
+            name.startsWith(`${packageSource}Nav/`) &&
+            !name.startsWith(`${packageSource}Nav/NavItem/`) &&
+            name !== `${packageSource}Nav/addClassName.ts` &&
+            !name.endsWith('.module.css'),
+        )
+        .map(([name]) => name);
+      assert.deepEqual(siblings, [], 'NavItem retained unused sibling implementations');
+    }
+    console.log(
+      `Selective ${entry} import retained only ${family} implementations and ${included.length} CSS Module(s).`,
+    );
+  }
+  const rootOutput = metafile.outputs['public/LeafRootButton.js'];
+  const rootStyles = Object.keys(metafile.outputs[rootOutput.cssBundle].inputs);
+  assert(rootStyles.includes(`${packageSource}Button/Button.module.css`), 'Root Button import lost its styles');
+  console.log(
+    `Compatibility root Button import retains ${rootStyles.length} stylesheets; use family subpaths for CSS isolation.`,
+  );
   fs.writeFileSync(path.join(consumer, 'metafile.json'), JSON.stringify(metafile, null, 2));
   for (const [file, entry] of [
     ['index.html', 'App'],
@@ -119,7 +179,7 @@ async function main() {
     bundle: true,
     format: 'cjs',
     platform: 'node',
-    packages: 'external',
+    external: [...Object.keys(manifest.dependencies), 'react', 'react-dom'],
     loader: { '.module.css': 'local-css' },
     define: { 'process.env.NODE_ENV': '"production"' },
     logLevel: 'warning',

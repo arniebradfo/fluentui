@@ -9,5 +9,5 @@
     "noEmit": true,
     "lib": ["ES2022", "DOM"]
   },
-  "include": ["*.tsx", "*.d.ts", "components/**/*.ts", "components/**/*.tsx"]
+  "include": ["*.tsx", "*.d.ts"]
 }

@@ -9,7 +9,9 @@ dependencies listed in [package.json](./package.json), plus React and React DOM.
 Retain Microsoft's source attribution and the accompanying MIT license.
 
 ```tsx
-import { Button, FluentProvider, webLightTheme } from './src';
+import { Button } from './src/button';
+import { FluentProvider } from './src/provider';
+import { webLightTheme } from './src/theme';
 
 export const Example = () => (
   <FluentProvider theme={webLightTheme}>
@@ -22,6 +24,19 @@ These are raw TypeScript/TSX and CSS Modules, not precompiled JavaScript. Keep
 referenced sibling components and helpers. Your bundler must support CSS
 Modules, nesting, `composes` and cascade layers. TypeScript also needs the usual
 `*.module.css` declarations.
+
+Each kebab-case entrypoint re-exports an indexed family under
+`src/components/<Family>/`. Subcomponents have their own folders and indexes;
+their implementation, CSS and adjacent tests stay together. Shared family CSS
+and helpers can remain at the family root.
+
+Copy the relevant entrypoint and family folders, including referenced shared
+dependencies. The root entrypoint remains compatible with existing imports.
+For a copied package, preserve `sideEffects: ["**/*.css"]` from the manifest so
+bundlers can remove unused implementation modules without discarding used CSS.
+Family isolation does not imply declaration-level pruning inside shared CSS.
+Prefer the family entrypoints: a compatibility-root import can retain the
+catalog's stylesheets even when only one component is used.
 
 The source uses `.js` relative specifiers. Webpack source consumers need:
 

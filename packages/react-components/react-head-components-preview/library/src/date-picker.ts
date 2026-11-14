@@ -1,0 +1,21 @@
+// Copyright (c) Microsoft Corporation.
+// Licensed under the MIT license.
+
+export {
+  DatePicker,
+  datePickerClassNames,
+  defaultFormatDate,
+  defaultParseDate,
+  type DatePickerProps,
+  type DatePickerButtonProps,
+  type DatePickerInputProps,
+  type DatePickerComponent,
+  type DatePickerCalendarProps,
+  type DatePickerDateChangeData,
+  type DatePickerErrorMessageData,
+  type DatePickerErrorType,
+  type DatePickerOpenChangeData,
+  type DatePickerSlots,
+  type DatePickerState,
+  type DatePickerValidationResultData,
+} from './components/DatePicker/index.js';

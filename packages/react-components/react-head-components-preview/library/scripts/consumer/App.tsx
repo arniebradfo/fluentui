@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createRoot } from 'react-dom/client';
 import { polyfillBodyAndObserve } from '@microsoft/focusgroup-polyfill/shadowless';
 import { canUseDOM } from '@fluentui/react-utilities';
-import * as Catalog from './components/index';
+import * as Catalog from '@fluentui/react-head-components-preview';
 
 const {
   Avatar,
