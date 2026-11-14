@@ -1,18 +1,14 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-avatar 9.11.9 at reference ee9b499.
- * Local source: [useAvatarGroupPopoverStyles.styles.raw.js](../../../node_modules/@fluentui/react-avatar/lib/components/AvatarGroupPopover/useAvatarGroupPopoverStyles.styles.raw.js).
- * Source: https://unpkg.com/@fluentui/react-avatar@9.11.9/lib/components/AvatarGroupPopover/useAvatarGroupPopoverStyles.styles.raw.js
+ * Fluent style sources:
+ * - [useAvatarGroupPopoverStyles.styles.ts](../../../../../../react-avatar/library/src/components/AvatarGroupPopover/useAvatarGroupPopoverStyles.styles.ts)
+ * Headless component: [AvatarGroupPopover.tsx](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupPopover/AvatarGroupPopover.tsx).
+ * Headless state: [useAvatarGroupPopover.ts](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupPopover/useAvatarGroupPopover.ts).
+ * Headless render: [renderAvatarGroupPopover.tsx](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupPopover/renderAvatarGroupPopover.tsx).
+ * Icon stylesheet import: [Icon.css](../../../Icon.css); the icon package is an external dependency.
+ *
  * Tooltip content reuses the completed TooltipStyles visual slot adapter and CSS foundation.
- * Glyph: @fluentui/react-icons 2.0.343,
- * [useIconStyles.styles.raw.js](../../../node_modules/@fluentui/react-icons/lib/utils/useIconStyles.styles.raw.js),
- * [createFluentIcon.styles.raw.js](../../../node_modules/@fluentui/react-icons/lib/utils/createFluentIcon.styles.raw.js).
+ * Glyph: @fluentui/react-icons,
  * Native Popover/Trigger behavior remains in the current public renderer.
- * The repository LICENSE-CODE and this package's README.md contain the MIT license.
  */
 
 @layer fluent-components;

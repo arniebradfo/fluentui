@@ -1,11 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-card 9.7.4, useCardFooterStyles.styles.ts.
- * Local source: [useCardFooterStyles.styles.raw.js](../../../node_modules/@fluentui/react-card/lib/components/CardFooter/useCardFooterStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useCardFooterStyles.styles.ts](../../../../../../react-card/library/src/components/CardFooter/useCardFooterStyles.styles.ts)
+ * Headless component: [CardFooter.tsx](../../../../../../react-headless-components-preview/library/src/components/Card/CardFooter/CardFooter.tsx).
+ * Headless state: [useCardFooter.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardFooter/useCardFooter.ts).
+ * Headless render: [renderCardFooter.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardFooter/renderCardFooter.ts).
  */
 
 @layer fluent-components;

@@ -1,10 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-tag-picker/library/src/components/TagPickerOptionGroup/useTagPickerOptionGroupStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTagPickerOptionGroupStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerOptionGroup/useTagPickerOptionGroupStyles.styles.ts)
+ * - [useOptionGroupStyles.styles.ts](../../../../../../react-combobox/library/src/components/OptionGroup/useOptionGroupStyles.styles.ts)
+ * Headless alias: [TagPicker/index.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/index.ts).
+ * Headless component: [OptionGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/OptionGroup.tsx).
+ * Headless state: [useOptionGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/useOptionGroup.ts).
+ * Headless render: [renderOptionGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/renderOptionGroup.tsx).
+ * Composed CSS: [OptionGroup.module.css](../../Dropdown/OptionGroup/OptionGroup.module.css).
+ *
  * The public alias reuses the OptionGroup visual foundation.
  */
 

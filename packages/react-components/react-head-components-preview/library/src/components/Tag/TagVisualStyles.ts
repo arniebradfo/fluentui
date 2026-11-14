@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 import type { TagState } from '@fluentui/react-headless-components-preview/tag';
 import type { TagSize } from './TagVisualContext.js';
 

@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 export { Nav, navClassNames } from './Nav.js';
 export type { NavProps, NavSlots, NavState, NavItemValue, OnNavItemSelectData } from './Nav.js';
 

@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-infolabel/library/src/components/InfoButton/useInfoButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useInfoButtonStyles.styles.ts](../../../../../../react-infolabel/library/src/components/InfoButton/useInfoButtonStyles.styles.ts)
+ * Headless component: [InfoButton.tsx](../../../../../../react-headless-components-preview/library/src/components/InfoLabel/InfoButton/InfoButton.tsx).
+ * Headless state: [useInfoButton.tsx](../../../../../../react-headless-components-preview/library/src/components/InfoLabel/InfoButton/useInfoButton.tsx).
+ * Headless render: [renderInfoButton.tsx](../../../../../../react-headless-components-preview/library/src/components/InfoLabel/InfoButton/renderInfoButton.tsx).
+ *
  * The styled PopoverSurface supplies the shared surface foundation.
  */
 

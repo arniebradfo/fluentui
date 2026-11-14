@@ -1,13 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-progress 9.5.7, useProgressBarStyles.styles.ts.
- * Local source: [useProgressBarStyles.styles.raw.js](../../../node_modules/@fluentui/react-progress/lib/components/ProgressBar/useProgressBarStyles.styles.raw.js).
- * Motion source: [progressBarMotions.js](../../../node_modules/@fluentui/react-progress/lib/components/ProgressBar/progressBarMotions.js), @fluentui/react-progress 9.5.7.
- * Motion curve: [motionTokens.js](../../../node_modules/@fluentui/react-motion/lib/motions/motionTokens.js), @fluentui/react-motion 9.16.5.
+ * Fluent style sources:
+ * - [useProgressBarStyles.styles.ts](../../../../../react-progress/library/src/components/ProgressBar/useProgressBarStyles.styles.ts)
+ * Headless component: [ProgressBar.tsx](../../../../../react-headless-components-preview/library/src/components/ProgressBar/ProgressBar.tsx).
+ * Headless state: [useProgressBar.ts](../../../../../react-headless-components-preview/library/src/components/ProgressBar/useProgressBar.ts).
+ * Headless render: [renderProgressBar.tsx](../../../../../react-headless-components-preview/library/src/components/ProgressBar/renderProgressBar.tsx).
+ * Related Fluent sources: [progressBarMotions.ts](../../../../../react-progress/library/src/components/ProgressBar/progressBarMotions.ts), [motionTokens.ts](../../../../../react-motion/library/src/motions/motionTokens.ts).
+ *
  * CSS keyframes replace the visual motion slot, which the current headless props do not expose.
  * Native :dir() mirrors the gradient; upstream motion translates physically in both directions.
  */

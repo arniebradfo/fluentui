@@ -1,11 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-color-picker 9.3.3.
- * Local source: [useAlphaSliderStyles.styles.raw.js](../../../node_modules/@fluentui/react-color-picker/lib/components/AlphaSlider/useAlphaSliderStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useAlphaSliderStyles.styles.ts](../../../../../../react-color-picker/library/src/components/AlphaSlider/useAlphaSliderStyles.styles.ts)
+ * Headless component: [AlphaSlider.tsx](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/AlphaSlider/AlphaSlider.tsx).
+ * Headless state: [useAlphaSlider.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/AlphaSlider/useAlphaSlider.ts).
+ * Headless render: [renderAlphaSlider.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/AlphaSlider/renderAlphaSlider.ts).
+ * Composed CSS: [ColorSlider.module.css](../ColorSlider/ColorSlider.module.css).
+ *
  * Upstream delegates to ColorSlider; compose that same local foundation.
  * Map shared thumb placement to the public alpha progress variable without changing
  * either component's public --fui-*-progress property or duplicating positioning.

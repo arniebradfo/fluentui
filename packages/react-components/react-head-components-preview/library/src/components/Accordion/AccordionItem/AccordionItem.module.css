@@ -1,8 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
+ * Fluent style sources:
+ * - [useAccordionItemStyles.styles.ts](../../../../../../react-accordion/library/src/components/AccordionItem/useAccordionItemStyles.styles.ts)
+ * Headless component: [AccordionItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionItem/AccordionItem.tsx).
+ * Headless state: [useAccordionItem.ts](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionItem/useAccordionItem.ts).
+ * Headless render: [renderAccordionItem.ts](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionItem/renderAccordionItem.ts).
+ *
  * AccordionItem has no stock visual rules. Open and disabled state belong to headless.
  */

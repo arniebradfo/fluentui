@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-toolbar/library/src/components/ToolbarGroup/useToolbarGroupStyles.styles.ts.
+ * Fluent style sources:
+ * - [useToolbarGroupStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarGroup/useToolbarGroupStyles.styles.ts)
+ * Headless component: [ToolbarGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarGroup/ToolbarGroup.tsx).
+ * Headless state: [useToolbarGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarGroup/useToolbarGroup.ts).
+ * Headless render: [renderToolbarGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarGroup/renderToolbarGroup.ts).
+ *
  * ToolbarRadioGroup delegates to this exact style hook and has no separate stylesheet.
  */
 

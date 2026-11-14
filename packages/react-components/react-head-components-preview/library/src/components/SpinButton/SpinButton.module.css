@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-spinbutton/library/src/components/SpinButton/useSpinButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useSpinButtonStyles.styles.ts](../../../../../react-spinbutton/library/src/components/SpinButton/useSpinButtonStyles.styles.ts)
+ * Headless component: [SpinButton.tsx](../../../../../react-headless-components-preview/library/src/components/SpinButton/SpinButton.tsx).
+ * Headless state: [useSpinButton.ts](../../../../../react-headless-components-preview/library/src/components/SpinButton/useSpinButton.ts).
+ * Headless render: [renderSpinButton.tsx](../../../../../react-headless-components-preview/library/src/components/SpinButton/renderSpinButton.tsx).
+ *
  * Logical spacing and corners support RTL; focus uses native :focus-within.
  */
 

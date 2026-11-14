@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useInlineDrawerStyles.styles.ts](../../../../../react-drawer/library/src/components/InlineDrawer/useInlineDrawerStyles.styles.ts)
+ * - [useOverlayDrawerStyles.styles.ts](../../../../../react-drawer/library/src/components/OverlayDrawer/useOverlayDrawerStyles.styles.ts)
+ * Headless component: [Drawer.tsx](../../../../../react-headless-components-preview/library/src/components/Drawer/Drawer.tsx).
+ * Headless state: [useDrawer.ts](../../../../../react-headless-components-preview/library/src/components/Drawer/useDrawer.ts).
+ * Headless render: [renderDrawer.tsx](../../../../../react-headless-components-preview/library/src/components/Drawer/renderDrawer.tsx).
+ *
+ * Display belongs to each variant so closed native dialogs stay hidden.
  */
-
-/* Display belongs to each variant so closed native dialogs stay hidden. */
 
 @layer fluent-components;
 

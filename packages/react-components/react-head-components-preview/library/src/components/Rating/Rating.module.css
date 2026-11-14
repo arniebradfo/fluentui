@@ -1,11 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-rating 9.4.7, useRatingStyles.styles.ts.
- * Local source: [useRatingStyles.styles.raw.js](../../../node_modules/@fluentui/react-rating/lib/components/Rating/useRatingStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useRatingStyles.styles.ts](../../../../../react-rating/library/src/components/Rating/useRatingStyles.styles.ts)
+ * Headless component: [Rating.tsx](../../../../../react-headless-components-preview/library/src/components/Rating/Rating.tsx).
+ * Headless state: [useRating.tsx](../../../../../react-headless-components-preview/library/src/components/Rating/useRating.tsx).
+ * Headless render: [renderRating.tsx](../../../../../react-headless-components-preview/library/src/components/Rating/renderRating.tsx).
  */
 
 @layer fluent-components;

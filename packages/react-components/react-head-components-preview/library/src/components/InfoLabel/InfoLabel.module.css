@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-infolabel/library/src/components/InfoLabel/useInfoLabelStyles.styles.ts.
+ * Fluent style sources:
+ * - [useInfoLabelStyles.styles.ts](../../../../../react-infolabel/library/src/components/InfoLabel/useInfoLabelStyles.styles.ts)
+ * Headless component: [InfoLabel.tsx](../../../../../react-headless-components-preview/library/src/components/InfoLabel/InfoLabel.tsx).
+ * Headless state: [useInfoLabel.ts](../../../../../react-headless-components-preview/library/src/components/InfoLabel/useInfoLabel.ts).
+ * Headless render: [renderInfoLabel.tsx](../../../../../react-headless-components-preview/library/src/components/InfoLabel/renderInfoLabel.tsx).
+ *
  * The styled Label and InfoButton supply their own visual foundations.
  */
 

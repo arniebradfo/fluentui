@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useMenuSplitGroupStyles.styles.ts](../../../../../../react-menu/library/src/components/MenuSplitGroup/useMenuSplitGroupStyles.styles.ts)
+ * Headless component: [MenuSplitGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuSplitGroup/MenuSplitGroup.tsx).
+ * Headless state: [useMenuSplitGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuSplitGroup/useMenuSplitGroup.ts).
+ * Headless render: [renderMenuSplitGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuSplitGroup/renderMenuSplitGroup.tsx).
+ *
+ * :has() handles multiline alignment without adding mutation-driven state.
  */
 
-/* :has() handles multiline alignment without adding mutation-driven state. */
 @layer fluent-components {
   .MenuSplitGroup {
     display: flex;

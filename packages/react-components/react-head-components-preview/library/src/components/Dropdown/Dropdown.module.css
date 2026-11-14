@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-combobox/library/src/components/Dropdown/useDropdownStyles.styles.ts.
+ * Fluent style sources:
+ * - [useDropdownStyles.styles.ts](../../../../../react-combobox/library/src/components/Dropdown/useDropdownStyles.styles.ts)
+ * Headless component: [Dropdown.tsx](../../../../../react-headless-components-preview/library/src/components/Dropdown/Dropdown.tsx).
+ * Headless state: [useDropdown.ts](../../../../../react-headless-components-preview/library/src/components/Dropdown/useDropdown.ts).
+ * Headless render: [renderDropdown.tsx](../../../../../react-headless-components-preview/library/src/components/Dropdown/renderDropdown.tsx).
+ *
  * The styled Listbox supplies popup visuals; public headless owns native positioning.
  */
 

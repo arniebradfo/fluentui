@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-tag-picker/library/src/components/TagPickerList/useTagPickerListStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTagPickerListStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerList/useTagPickerListStyles.styles.ts)
+ * Headless component: [TagPickerList.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerList/TagPickerList.tsx).
+ * Headless state: [useTagPickerList.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerList/useTagPickerList.ts).
+ * Headless render: [renderTagPickerList.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerList/renderTagPickerList.tsx).
+ *
  * The styled Listbox supplies popup visuals; public headless owns native positioning.
  */
 

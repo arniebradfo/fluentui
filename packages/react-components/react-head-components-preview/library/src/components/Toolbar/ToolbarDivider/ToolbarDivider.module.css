@@ -1,10 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-toolbar/library/src/components/ToolbarDivider/useToolbarDividerStyles.styles.ts.
+ * Fluent style sources:
+ * - [useToolbarDividerStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarDivider/useToolbarDividerStyles.styles.ts)
+ * Headless component: [ToolbarDivider.tsx](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarDivider/ToolbarDivider.tsx).
+ * Headless state: [useToolbarDivider.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarDivider/useToolbarDivider.ts).
+ * Headless render: [renderToolbarDivider.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarDivider/renderToolbarDivider.ts).
+ * Composed CSS: [Divider.module.css](../../Divider/Divider.module.css).
+ *
  * Divider.module.css supplies the shared separator styles.
  */
 

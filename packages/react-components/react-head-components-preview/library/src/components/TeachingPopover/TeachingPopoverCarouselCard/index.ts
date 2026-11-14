@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 export { TeachingPopoverCarouselCard, teachingPopoverCarouselCardClassNames } from './TeachingPopoverCarouselCard.js';
 export type {
   TeachingPopoverCarouselCardProps,

@@ -1,10 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-button/library/src/components/MenuButton/useMenuButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useMenuButtonStyles.styles.ts](../../../../../react-button/library/src/components/MenuButton/useMenuButtonStyles.styles.ts)
+ * Headless component: [MenuButton.tsx](../../../../../react-headless-components-preview/library/src/components/MenuButton/MenuButton.tsx).
+ * Headless state: [useMenuButton.ts](../../../../../react-headless-components-preview/library/src/components/MenuButton/useMenuButton.ts).
+ * Headless render: [renderMenuButton.ts](../../../../../react-headless-components-preview/library/src/components/MenuButton/renderMenuButton.ts).
+ * Composed CSS: [Button.module.css](../Button/Button.module.css).
+ *
  * Button.module.css supplies the shared root and icon styles.
  */
 

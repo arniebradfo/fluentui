@@ -1,12 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-toolbar/library/src/components/ToolbarRadioButton/useToolbarRadioButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useToolbarRadioButtonStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarRadioButton/useToolbarRadioButtonStyles.styles.ts)
+ * - [useToolbarToggleButtonStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarToggleButton/useToolbarToggleButtonStyles.styles.ts)
+ * Headless component: [ToolbarRadioButton.tsx](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarRadioButton/ToolbarRadioButton.tsx).
+ * Headless state: [useToolbarRadioButton.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarRadioButton/useToolbarRadioButton.ts).
+ * Headless render: [renderToolbarRadioButton.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarRadioButton/renderToolbarRadioButton.ts).
+ * Composed CSS: [ToolbarToggleButton.module.css](../ToolbarToggleButton/ToolbarToggleButton.module.css).
+ *
  * The Radio/Toggle style-selection and declarations are identical; reuse
- * [ToolbarToggleButton.module.css](./ToolbarToggleButton.module.css), including its
  * shared checked and high-contrast rules.
  */
 

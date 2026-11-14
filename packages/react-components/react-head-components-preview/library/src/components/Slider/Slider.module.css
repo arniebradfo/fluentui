@@ -1,12 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-slider 9.6.8, useSliderStyles.styles.ts.
- * Local source: [useSliderStyles.styles.raw.js](../../../node_modules/@fluentui/react-slider/lib/components/Slider/useSliderStyles.styles.raw.js).
- * Focus dependency: [createFocusOutlineStyle.js](../../../node_modules/@fluentui/react-tabster/lib/focus/createFocusOutlineStyle.js).
+ * Fluent style sources:
+ * - [useSliderStyles.styles.ts](../../../../../react-slider/library/src/components/Slider/useSliderStyles.styles.ts)
+ * Headless component: [Slider.tsx](../../../../../react-headless-components-preview/library/src/components/Slider/Slider.tsx).
+ * Headless state: [useSlider.ts](../../../../../react-headless-components-preview/library/src/components/Slider/useSlider.ts).
+ * Headless render: [renderSlider.tsx](../../../../../react-headless-components-preview/library/src/components/Slider/renderSlider.tsx).
+ * Related Fluent sources: [createFocusOutlineStyle.ts](../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ *
  * The public headless hook already supplies resolved --fui-Slider--progress,
  * --fui-Slider--steps-percent, and --fui-Slider--direction. Do not normalize them again.
  * Native input :focus-visible replaces the legacy focus-within attribute selector.

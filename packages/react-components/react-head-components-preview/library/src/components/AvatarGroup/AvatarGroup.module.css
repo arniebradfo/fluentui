@@ -1,17 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-avatar 9.11.9 at reference ee9b499.
- * Local sources:
- * [useAvatarGroupStyles.styles.raw.js](../../../node_modules/@fluentui/react-avatar/lib/components/AvatarGroup/useAvatarGroupStyles.styles.raw.js),
- * [useAvatarGroupItemStyles.styles.raw.js](../../../node_modules/@fluentui/react-avatar/lib/components/AvatarGroupItem/useAvatarGroupItemStyles.styles.raw.js),
- * [useAvatarStyles.styles.raw.js](../../../node_modules/@fluentui/react-avatar/lib/components/Avatar/useAvatarStyles.styles.raw.js).
- * Source: https://unpkg.com/@fluentui/react-avatar@9.11.9/lib/components/AvatarGroup/useAvatarGroupStyles.styles.raw.js
+ * Fluent style sources:
+ * - [useAvatarGroupStyles.styles.ts](../../../../../react-avatar/library/src/components/AvatarGroup/useAvatarGroupStyles.styles.ts)
+ * - [useAvatarGroupItemStyles.styles.ts](../../../../../react-avatar/library/src/components/AvatarGroupItem/useAvatarGroupItemStyles.styles.ts)
+ * - [useAvatarStyles.styles.ts](../../../../../react-avatar/library/src/components/Avatar/useAvatarStyles.styles.ts)
+ * Headless component: [AvatarGroup.tsx](../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroup.tsx).
+ * Headless state: [useAvatarGroup.ts](../../../../../react-headless-components-preview/library/src/components/AvatarGroup/useAvatarGroup.ts).
+ * Headless render: [renderAvatarGroup.ts](../../../../../react-headless-components-preview/library/src/components/AvatarGroup/renderAvatarGroup.ts).
+ *
  * Shared size/child rules port useSizeStyles and useGroupChildClassName once for the family.
- * The repository LICENSE-CODE and this package's README.md contain the MIT license.
  */
 
 @layer fluent-components;

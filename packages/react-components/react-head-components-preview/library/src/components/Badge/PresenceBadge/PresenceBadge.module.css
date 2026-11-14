@@ -1,15 +1,12 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported directly from @fluentui/react-badge 9.5.7.
- * Local source: [usePresenceBadgeStyles.styles.raw.js](../../../node_modules/@fluentui/react-badge/lib/components/PresenceBadge/usePresenceBadgeStyles.styles.raw.js).
- * Source: https://unpkg.com/@fluentui/react-badge@9.5.7/lib/components/PresenceBadge/usePresenceBadgeStyles.styles.raw.js
+ * Fluent style sources:
+ * - [usePresenceBadgeStyles.styles.ts](../../../../../../react-badge/library/src/components/PresenceBadge/usePresenceBadgeStyles.styles.ts)
+ * Headless component: [PresenceBadge.tsx](../../../../../../react-headless-components-preview/library/src/components/Badge/PresenceBadge/PresenceBadge.tsx).
+ * Headless state: [usePresenceBadge.ts](../../../../../../react-headless-components-preview/library/src/components/Badge/PresenceBadge/usePresenceBadge.ts).
+ * Headless render: [renderPresenceBadge.ts](../../../../../../react-headless-components-preview/library/src/components/Badge/PresenceBadge/renderPresenceBadge.ts).
+ *
  * PresenceBadge does not delegate to useBadgeStyles; its independent baseline is intentional.
- * Default glyphs use the style-free public @fluentui/react-icons 2.0.343 headless SVG entries.
- * The repository LICENSE-CODE and this package's README.md contain the MIT license.
+ * Default glyphs use the style-free public @fluentui/react-icons headless SVG entries.
  */
 
 @layer fluent-components;

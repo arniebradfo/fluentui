@@ -1,15 +1,12 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-rating 9.4.7, useRatingDisplayStyles.styles.ts.
- * Local source: [useRatingDisplayStyles.styles.raw.js](../../../node_modules/@fluentui/react-rating/lib/components/RatingDisplay/useRatingDisplayStyles.styles.raw.js).
- * Root flex/wrap foundation reuses [Rating.module.css](./Rating.module.css), sourced from
- * [useRatingStyles.styles.raw.js](../../../node_modules/@fluentui/react-rating/lib/components/Rating/useRatingStyles.styles.raw.js).
- * Both Rating and RatingDisplay compose the single RatingItem implementation/style foundation:
- * [useRatingItemStyles.styles.raw.js](../../../node_modules/@fluentui/react-rating/lib/components/RatingItem/useRatingItemStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useRatingDisplayStyles.styles.ts](../../../../../react-rating/library/src/components/RatingDisplay/useRatingDisplayStyles.styles.ts)
+ * - [useRatingStyles.styles.ts](../../../../../react-rating/library/src/components/Rating/useRatingStyles.styles.ts)
+ * - [useRatingItemStyles.styles.ts](../../../../../react-rating/library/src/components/RatingItem/useRatingItemStyles.styles.ts)
+ * Headless component: [RatingDisplay.tsx](../../../../../react-headless-components-preview/library/src/components/RatingDisplay/RatingDisplay.tsx).
+ * Headless state: [useRatingDisplay.tsx](../../../../../react-headless-components-preview/library/src/components/RatingDisplay/useRatingDisplay.tsx).
+ * Headless render: [renderRatingDisplay.tsx](../../../../../react-headless-components-preview/library/src/components/RatingDisplay/renderRatingDisplay.tsx).
+ * Composed CSS: [Rating.module.css](../Rating/Rating.module.css).
  */
 
 @layer fluent-components;

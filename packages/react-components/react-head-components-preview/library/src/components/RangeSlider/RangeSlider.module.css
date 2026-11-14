@@ -1,12 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-range-slider-preview 0.1.0, useRangeSliderStyles.styles.ts.
- * Local source: [useRangeSliderStyles.styles.raw.js](../../../node_modules/@fluentui/react-range-slider-preview/lib/components/RangeSlider/useRangeSliderStyles.styles.raw.js).
- * Focus dependency: [createFocusOutlineStyle.js](../../../node_modules/@fluentui/react-tabster/lib/focus/createFocusOutlineStyle.js).
+ * Fluent style sources:
+ * - [useRangeSliderStyles.styles.ts](../../../../../react-range-slider-preview/library/src/components/RangeSlider/useRangeSliderStyles.styles.ts)
+ * Headless component: [RangeSlider.tsx](../../../../../react-headless-components-preview/library/src/components/RangeSlider/RangeSlider.tsx).
+ * Headless state: [useRangeSlider.ts](../../../../../react-headless-components-preview/library/src/components/RangeSlider/useRangeSlider.ts).
+ * Headless render: [renderRangeSlider.tsx](../../../../../react-headless-components-preview/library/src/components/RangeSlider/renderRangeSlider.tsx).
+ * Related Fluent sources: [createFocusOutlineStyle.ts](../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ *
  * Sizes, colors, rail, and thumb geometry intentionally match Slider.module.css.
  * The public headless hook supplies resolved --fui-RangeSlider--start-progress,
  * --fui-RangeSlider--end-progress, --fui-RangeSlider--steps-percent, and

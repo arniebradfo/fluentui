@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-tag-picker/library/src/components/TagPickerInput/useTagPickerInputStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTagPickerInputStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerInput/useTagPickerInputStyles.styles.ts)
+ * Headless component: [TagPickerInput.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerInput/TagPickerInput.tsx).
+ * Headless state: [useTagPickerInput.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerInput/useTagPickerInput.ts).
+ * Headless render: [renderTagPickerInput.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerInput/renderTagPickerInput.tsx).
+ *
  * The public headless hook writes --fluent-TagPickerInput__width. Its exact behavior-owned
  * name is retained; no second measurement or query controller is added.
  */

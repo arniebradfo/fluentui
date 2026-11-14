@@ -1,6 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useToastBodyStyles.styles.ts](../../../../../../react-toast/library/src/components/ToastBody/useToastBodyStyles.styles.ts)
+ * Headless component: [ToastBody.tsx](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastBody/ToastBody.tsx).
+ * Headless state: [useToastBody.ts](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastBody/useToastBody.ts).
+ * Headless render: [renderToastBody.ts](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastBody/renderToastBody.ts).
  */
 
 @layer fluent-components {

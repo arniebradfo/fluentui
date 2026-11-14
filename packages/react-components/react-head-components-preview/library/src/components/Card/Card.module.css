@@ -1,12 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-card 9.7.4, useCardStyles.styles.ts.
- * Local source: [useCardStyles.styles.raw.js](../../../node_modules/@fluentui/react-card/lib/components/Card/useCardStyles.styles.raw.js).
- * Inherited focus reference: [createFocusOutlineStyle.js](../../../node_modules/@fluentui/react-tabster/lib/focus/createFocusOutlineStyle.js), @fluentui/react-tabster 9.26.19.
+ * Fluent style sources:
+ * - [useCardStyles.styles.ts](../../../../../react-card/library/src/components/Card/useCardStyles.styles.ts)
+ * Headless component: [Card.tsx](../../../../../react-headless-components-preview/library/src/components/Card/Card.tsx).
+ * Headless state: [useCard.ts](../../../../../react-headless-components-preview/library/src/components/Card/useCard.ts).
+ * Headless render: [renderCard.tsx](../../../../../react-headless-components-preview/library/src/components/Card/renderCard.tsx).
+ * Related Fluent sources: [createFocusOutlineStyle.ts](../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ *
  * Native :focus-visible replaces Tabster focus attributes and pseudo-border focus machinery.
  */
 

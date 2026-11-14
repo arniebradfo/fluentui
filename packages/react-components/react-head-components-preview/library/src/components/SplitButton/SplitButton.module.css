@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-button/library/src/components/SplitButton/useSplitButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useSplitButtonStyles.styles.ts](../../../../../react-button/library/src/components/SplitButton/useSplitButtonStyles.styles.ts)
+ * Headless component: [SplitButton.tsx](../../../../../react-headless-components-preview/library/src/components/SplitButton/SplitButton.tsx).
+ * Headless state: [useSplitButton.ts](../../../../../react-headless-components-preview/library/src/components/SplitButton/useSplitButton.ts).
+ * Headless render: [renderSplitButton.tsx](../../../../../react-headless-components-preview/library/src/components/SplitButton/renderSplitButton.tsx).
+ *
  * Typed slot adapters reuse Button and MenuButton. Joined corners and seams follow text direction.
  */
 

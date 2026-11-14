@@ -1,9 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
+ * Fluent style sources:
+ * - [useDatePickerStyles.styles.ts](../../../../../react-datepicker-compat/library/src/components/DatePicker/useDatePickerStyles.styles.ts)
+ * - [useInputStyles.styles.ts](../../../../../react-input/library/src/components/Input/useInputStyles.styles.ts)
+ * Headless component: [DatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/DatePicker.tsx).
+ * Headless state: [useDatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/useDatePicker.tsx).
+ * Headless render: [renderDatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/renderDatePicker.tsx).
+ *
  * Field chrome follows react-input; the surface follows react-datepicker-compat.
  * Headless differences: the non-editable field is a native button rather than a read-only input,
  * and the popup is a native top-layer popover; the positioning hook owns inset, margin and anchoring.

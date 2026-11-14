@@ -1,11 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-tree 9.17.1, useTreeStyles.styles.ts.
- * Local source: [useTreeStyles.styles.raw.js](../../../node_modules/@fluentui/react-headless-components-preview/node_modules/@fluentui/react-tree/lib/components/Tree/useTreeStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useTreeStyles.styles.ts](../../../../../react-tree/library/src/components/Tree/useTreeStyles.styles.ts)
+ * Headless component: [Tree.tsx](../../../../../react-headless-components-preview/library/src/components/Tree/Tree.tsx).
+ * Headless state: [useTree.ts](../../../../../react-headless-components-preview/library/src/components/Tree/useTree.ts).
+ * Headless render: [renderTree.ts](../../../../../react-headless-components-preview/library/src/components/Tree/renderTree.ts).
+ *
  * The headless hook sets data-navigation-mode only on the root tree, so its absence
  * replaces v9's `state.level > 1` subtree check.
  */

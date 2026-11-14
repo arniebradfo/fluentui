@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-toolbar/library/src/components/Toolbar/useToolbarStyles.styles.ts.
+ * Fluent style sources:
+ * - [useToolbarStyles.styles.ts](../../../../../react-toolbar/library/src/components/Toolbar/useToolbarStyles.styles.ts)
+ * Headless component: [Toolbar.tsx](../../../../../react-headless-components-preview/library/src/components/Toolbar/Toolbar.tsx).
+ * Headless state: [useToolbar.ts](../../../../../react-headless-components-preview/library/src/components/Toolbar/useToolbar.ts).
+ * Headless render: [renderToolbar.ts](../../../../../react-headless-components-preview/library/src/components/Toolbar/renderToolbar.ts).
+ *
  * Native focusgroup navigation is supplied by the current public headless hook.
  */
 

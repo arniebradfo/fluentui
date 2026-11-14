@@ -1,6 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useMessageBarStyles.styles.ts](../../../../../react-message-bar/library/src/components/MessageBar/useMessageBarStyles.styles.ts)
+ * Headless component: [MessageBar.tsx](../../../../../react-headless-components-preview/library/src/components/MessageBar/MessageBar.tsx).
+ * Headless state: [useMessageBar.ts](../../../../../react-headless-components-preview/library/src/components/MessageBar/useMessageBar.ts).
+ * Headless render: [renderMessageBar.ts](../../../../../react-headless-components-preview/library/src/components/MessageBar/renderMessageBar.ts).
  */
 
 @layer fluent-components {

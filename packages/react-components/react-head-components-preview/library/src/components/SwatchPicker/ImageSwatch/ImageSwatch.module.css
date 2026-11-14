@@ -1,11 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-swatch-picker 9.6.3, useImageSwatchStyles.styles.ts.
- * Local source: [useImageSwatchStyles.styles.raw.js](../../../node_modules/@fluentui/react-swatch-picker/lib/components/ImageSwatch/useImageSwatchStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useImageSwatchStyles.styles.ts](../../../../../../react-swatch-picker/library/src/components/ImageSwatch/useImageSwatchStyles.styles.ts)
+ * Headless component: [ImageSwatch.tsx](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ImageSwatch/ImageSwatch.tsx).
+ * Headless state: [useImageSwatch.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ImageSwatch/useImageSwatch.ts).
+ * Headless render: [renderImageSwatch.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ImageSwatch/renderImageSwatch.ts).
+ *
  * Native :focus-visible replaces legacy Tabster focus attributes.
  */
 

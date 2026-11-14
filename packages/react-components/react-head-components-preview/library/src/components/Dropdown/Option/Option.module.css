@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-combobox/library/src/components/Option/useOptionStyles.styles.ts.
+ * Fluent style sources:
+ * - [useOptionStyles.styles.ts](../../../../../../react-combobox/library/src/components/Option/useOptionStyles.styles.ts)
+ * Headless component: [Option.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Option/Option.tsx).
+ * Headless state: [useOption.ts](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Option/useOption.ts).
+ * Headless render: [renderOption.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Option/renderOption.tsx).
+ *
  * Active-descendant state is supplied by the public headless component.
  */
 

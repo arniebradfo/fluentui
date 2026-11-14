@@ -1,12 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-spinner 9.8.7, useSpinnerStyles.styles.ts.
- * Local source: [useSpinnerStyles.styles.raw.js](../../../node_modules/@fluentui/react-spinner/lib/components/Spinner/useSpinnerStyles.styles.raw.js).
- * Inherited Label foundation: [useLabelStyles.styles.raw.js](../../../node_modules/@fluentui/react-label/lib/components/Label/useLabelStyles.styles.raw.js), @fluentui/react-label 9.4.6.
+ * Fluent style sources:
+ * - [useSpinnerStyles.styles.ts](../../../../../react-spinner/library/src/components/Spinner/useSpinnerStyles.styles.ts)
+ * - [useLabelStyles.styles.ts](../../../../../react-label/library/src/components/Label/useLabelStyles.styles.ts)
+ * Headless component: [Spinner.tsx](../../../../../react-headless-components-preview/library/src/components/Spinner/Spinner.tsx).
+ * Headless state: [useSpinner.ts](../../../../../react-headless-components-preview/library/src/components/Spinner/useSpinner.ts).
+ * Headless render: [renderSpinner.tsx](../../../../../react-headless-components-preview/library/src/components/Spinner/renderSpinner.tsx).
+ *
  * Native :dir() selectors and mirrored keyframes preserve Griffel's RTL flipping.
  */
 

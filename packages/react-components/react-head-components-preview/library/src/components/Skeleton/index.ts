@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 export { Skeleton, skeletonClassNames, type SkeletonProps, type SkeletonSlots } from './Skeleton.js';
 export {
   SkeletonItem,

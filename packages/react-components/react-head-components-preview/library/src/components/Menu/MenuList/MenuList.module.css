@@ -1,6 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useMenuListStyles.styles.ts](../../../../../../react-menu/library/src/components/MenuList/useMenuListStyles.styles.ts)
+ * Headless component: [MenuList.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuList/MenuList.tsx).
+ * Headless state: [useMenuList.ts](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuList/useMenuList.ts).
+ * Headless render: [renderMenuList.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuList/renderMenuList.tsx).
  */
 
 @layer fluent-components {

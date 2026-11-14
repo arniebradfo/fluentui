@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 import type { TooltipState } from '@fluentui/react-headless-components-preview/tooltip';
 import styles from './Tooltip.module.css';
 

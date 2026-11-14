@@ -1,10 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-textarea/library/src/components/Textarea/useTextareaStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTextareaStyles.styles.ts](../../../../../react-textarea/library/src/components/Textarea/useTextareaStyles.styles.ts)
+ * Headless component: [Textarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/Textarea.tsx).
+ * Headless state: [useTextarea.ts](../../../../../react-headless-components-preview/library/src/components/Textarea/useTextarea.ts).
+ * Headless render: [renderTextarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/renderTextarea.tsx).
  */
 
 @layer fluent-components;

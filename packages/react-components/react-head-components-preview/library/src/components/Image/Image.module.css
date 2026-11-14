@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-image/library/src/components/Image/useImageStyles.styles.ts.
+ * Fluent style sources:
+ * - [useImageStyles.styles.ts](../../../../../react-image/library/src/components/Image/useImageStyles.styles.ts)
+ * Headless component: [Image.tsx](../../../../../react-headless-components-preview/library/src/components/Image/Image.tsx).
+ * Headless state: [useImage.ts](../../../../../react-headless-components-preview/library/src/components/Image/useImage.ts).
+ * Headless render: [renderImage.tsx](../../../../../react-headless-components-preview/library/src/components/Image/renderImage.tsx).
+ *
  * Native :dir() preserves Griffel's RTL object-position adjustment.
  */
 

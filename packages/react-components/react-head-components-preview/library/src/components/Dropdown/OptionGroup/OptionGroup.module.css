@@ -1,10 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-combobox/library/src/components/OptionGroup/useOptionGroupStyles.styles.ts.
+ * Fluent style sources:
+ * - [useOptionGroupStyles.styles.ts](../../../../../../react-combobox/library/src/components/OptionGroup/useOptionGroupStyles.styles.ts)
+ * Headless component: [OptionGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/OptionGroup.tsx).
+ * Headless state: [useOptionGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/useOptionGroup.ts).
+ * Headless render: [renderOptionGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/renderOptionGroup.tsx).
  */
 
 @layer fluent-components;

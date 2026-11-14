@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 import * as React from 'react';
 import { ChevronLeftFilled, ChevronLeftRegular } from '@fluentui/react-icons/headless/svg/chevron-left';
 import { ChevronRightFilled, ChevronRightRegular } from '@fluentui/react-icons/headless/svg/chevron-right';

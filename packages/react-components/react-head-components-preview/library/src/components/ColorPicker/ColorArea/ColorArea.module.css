@@ -1,12 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-color-picker 9.3.3.
- * Local source: [useColorAreaStyles.styles.raw.js](../../../node_modules/@fluentui/react-color-picker/lib/components/ColorArea/useColorAreaStyles.styles.raw.js).
- * Focus source: [createFocusOutlineStyle.js](../../../node_modules/@fluentui/react-tabster/lib/focus/createFocusOutlineStyle.js).
+ * Fluent style sources:
+ * - [useColorAreaStyles.styles.ts](../../../../../../react-color-picker/library/src/components/ColorArea/useColorAreaStyles.styles.ts)
+ * Headless component: [ColorArea.tsx](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorArea/ColorArea.tsx).
+ * Headless state: [useColorArea.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorArea/useColorArea.ts).
+ * Headless render: [renderColorArea.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorArea/renderColorArea.ts).
+ * Related Fluent sources: [createFocusOutlineStyle.ts](../../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ *
  * Native input :focus-visible replaces legacy focus-within attributes.
  * The current public hook measures physical pointer X and handles Left/Right physically
  * in both text directions. Keep its gradient and thumb on that same physical axis,

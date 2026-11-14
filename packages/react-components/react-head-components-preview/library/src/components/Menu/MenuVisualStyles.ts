@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 import styles from './MenuItem/MenuItem.module.css';
 
 export const menuItemClassNames = {

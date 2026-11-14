@@ -1,8 +1,5 @@
 'use client';
 
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 import * as React from 'react';
 import { useMergedRefs, type ForwardRefComponent } from '@fluentui/react-utilities';
 import { InlineDrawer, type InlineDrawerProps } from './InlineDrawer/InlineDrawer.js';

@@ -1,13 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-breadcrumb 9.4.8, useBreadcrumbStyles.styles.raw.js.
- * Local source: [useBreadcrumbStyles.styles.raw.js](../../../node_modules/@fluentui/react-breadcrumb/lib/components/Breadcrumb/useBreadcrumbStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useBreadcrumbStyles.styles.ts](../../../../../react-breadcrumb/library/src/components/Breadcrumb/useBreadcrumbStyles.styles.ts)
+ * Headless component: [Breadcrumb.tsx](../../../../../react-headless-components-preview/library/src/components/Breadcrumb/Breadcrumb.tsx).
+ * Headless state: [useBreadcrumb.ts](../../../../../react-headless-components-preview/library/src/components/Breadcrumb/useBreadcrumb.ts).
+ * Headless render: [renderBreadcrumb.tsx](../../../../../react-headless-components-preview/library/src/components/Breadcrumb/renderBreadcrumb.tsx).
+ *
  * The upstream root has no declarations.
- * The repository LICENSE-CODE and this package's README.md contain the MIT license.
  */
 
 @layer fluent-components;

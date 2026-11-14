@@ -1,15 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-swatch-picker 9.6.3, useColorSwatchStyles.styles.ts.
- * Local source: [useColorSwatchStyles.styles.raw.js](../../../node_modules/@fluentui/react-swatch-picker/lib/components/ColorSwatch/useColorSwatchStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useColorSwatchStyles.styles.ts](../../../../../../react-swatch-picker/library/src/components/ColorSwatch/useColorSwatchStyles.styles.ts)
+ * Headless component: [ColorSwatch.tsx](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ColorSwatch/ColorSwatch.tsx).
+ * Headless state: [useColorSwatch.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ColorSwatch/useColorSwatch.ts).
+ * Headless render: [renderColorSwatch.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ColorSwatch/renderColorSwatch.ts).
+ * Icon stylesheet import: [Icon.css](../../../Icon.css); the icon package is an external dependency.
+ *
  * Native :focus-visible replaces legacy Tabster focus attributes.
- * Default glyph styles: @fluentui/react-icons 2.0.343,
- * [useIconStyles.styles.js](../../../node_modules/@fluentui/react-icons/lib/utils/useIconStyles.styles.js)
- * and [createFluentIcon.styles.raw.js](../../../node_modules/@fluentui/react-icons/lib/utils/createFluentIcon.styles.raw.js).
+ * Default glyph styles: @fluentui/react-icons,
  */
 
 @layer fluent-components;

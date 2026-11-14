@@ -1,11 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-color-picker 9.3.3.
- * Local source: [useColorPickerStyles.styles.raw.js](../../../node_modules/@fluentui/react-color-picker/lib/components/ColorPicker/useColorPickerStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useColorPickerStyles.styles.ts](../../../../../react-color-picker/library/src/components/ColorPicker/useColorPickerStyles.styles.ts)
+ * Headless component: [ColorPicker.tsx](../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorPicker.tsx).
+ * Headless state: [useColorPicker.ts](../../../../../react-headless-components-preview/library/src/components/ColorPicker/useColorPicker.ts).
+ * Headless render: [renderColorPicker.ts](../../../../../react-headless-components-preview/library/src/components/ColorPicker/renderColorPicker.ts).
  */
 
 @layer fluent-components;

@@ -1,10 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-tag-picker/library/src/components/TagPickerOption/useTagPickerOptionStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTagPickerOptionStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerOption/useTagPickerOptionStyles.styles.ts)
+ * Headless component: [TagPickerOption.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerOption/TagPickerOption.tsx).
+ * Headless state: [useTagPickerOption.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerOption/useTagPickerOption.ts).
+ * Headless render: [renderTagPickerOption.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerOption/renderTagPickerOption.tsx).
+ * Composed CSS: [Option.module.css](../../Dropdown/Option/Option.module.css).
+ *
  * Option supplies shared visuals; public headless owns selection and active-descendant state.
  */
 

@@ -1,10 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-toolbar/library/src/components/ToolbarButton/useToolbarButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useToolbarButtonStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarButton/useToolbarButtonStyles.styles.ts)
+ * Headless component: [ToolbarButton.tsx](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarButton/ToolbarButton.tsx).
+ * Headless state: [useToolbarButton.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarButton/useToolbarButton.ts).
+ * Headless render: [renderToolbarButton.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarButton/renderToolbarButton.ts).
+ * Composed CSS: [Button.module.css](../../Button/Button.module.css).
+ *
  * Button.module.css supplies the shared root and icon styles.
  */
 

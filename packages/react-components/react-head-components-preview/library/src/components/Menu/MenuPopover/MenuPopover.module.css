@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useMenuPopoverStyles.styles.ts](../../../../../../react-menu/library/src/components/MenuPopover/useMenuPopoverStyles.styles.ts)
+ * Headless component: [MenuPopover.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuPopover/MenuPopover.tsx).
+ * Headless state: [useMenuPopover.ts](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuPopover/useMenuPopover.ts).
+ * Headless render: [renderMenuPopover.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuPopover/renderMenuPopover.tsx).
+ *
+ * Native visibility and CSS anchor positioning are owned by the headless hook.
  */
 
-/* Native visibility and CSS anchor positioning are owned by the headless hook. */
 @layer fluent-components {
   .MenuPopover {
     margin: 0;

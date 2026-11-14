@@ -1,10 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-button/library/src/components/ToggleButton/useToggleButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useToggleButtonStyles.styles.ts](../../../../../react-button/library/src/components/ToggleButton/useToggleButtonStyles.styles.ts)
+ * Headless component: [ToggleButton.tsx](../../../../../react-headless-components-preview/library/src/components/ToggleButton/ToggleButton.tsx).
+ * Headless state: [useToggleButton.ts](../../../../../react-headless-components-preview/library/src/components/ToggleButton/useToggleButton.ts).
+ * Headless render: [renderToggleButton.ts](../../../../../react-headless-components-preview/library/src/components/ToggleButton/renderToggleButton.ts).
+ * Composed CSS: [Button.module.css](../Button/Button.module.css).
+ *
  * Button.module.css supplies the shared root and icon styles.
  * Focus indicators use native :focus-visible.
  */

@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 export { TeachingPopoverSurface, teachingPopoverSurfaceClassNames } from './TeachingPopoverSurface.js';
 export type {
   TeachingPopoverSurfaceProps,

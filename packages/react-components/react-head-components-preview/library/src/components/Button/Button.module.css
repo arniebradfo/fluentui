@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-button/library/src/components/Button/useButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useButtonStyles.styles.ts](../../../../../react-button/library/src/components/Button/useButtonStyles.styles.ts)
+ * Headless component: [Button.tsx](../../../../../react-headless-components-preview/library/src/components/Button/Button.tsx).
+ * Headless state: [useButton.ts](../../../../../react-headless-components-preview/library/src/components/Button/useButton.ts).
+ * Headless render: [renderButton.ts](../../../../../react-headless-components-preview/library/src/components/Button/renderButton.ts).
+ *
  * Focus indicators use native :focus-visible.
  */
 

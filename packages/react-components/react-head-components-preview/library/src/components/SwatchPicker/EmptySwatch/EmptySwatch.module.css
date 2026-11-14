@@ -1,11 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-swatch-picker 9.6.3, useEmptySwatchStyles.styles.ts.
- * Local source: [useEmptySwatchStyles.styles.raw.js](../../../node_modules/@fluentui/react-swatch-picker/lib/components/EmptySwatch/useEmptySwatchStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useEmptySwatchStyles.styles.ts](../../../../../../react-swatch-picker/library/src/components/EmptySwatch/useEmptySwatchStyles.styles.ts)
+ * Headless component: [EmptySwatch.tsx](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/EmptySwatch/EmptySwatch.tsx).
+ * Headless state: [useEmptySwatch.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/EmptySwatch/useEmptySwatch.ts).
+ * Headless render: [renderEmptySwatch.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/EmptySwatch/renderEmptySwatch.ts).
+ *
  * The native button retains its own keyboard focus indicator.
  */
 

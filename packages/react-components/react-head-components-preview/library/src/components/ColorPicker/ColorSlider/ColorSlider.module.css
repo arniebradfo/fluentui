@@ -1,11 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-color-picker 9.3.3.
- * Local source: [useColorSliderStyles.styles.raw.js](../../../node_modules/@fluentui/react-color-picker/lib/components/ColorSlider/useColorSliderStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useColorSliderStyles.styles.ts](../../../../../../react-color-picker/library/src/components/ColorSlider/useColorSliderStyles.styles.ts)
+ * Headless component: [ColorSlider.tsx](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/ColorSlider.tsx).
+ * Headless state: [useColorSlider.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/useColorSlider.ts).
+ * Headless render: [renderColorSlider.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/renderColorSlider.ts).
+ *
  * The public hook owns the resolved --fui-Slider-* variables and data-channel/orientation.
  * Logical horizontal thumb placement replaces Griffel's RTL mirroring.
  * Native vertical range direction stays rtl in both text directions, keeping max at

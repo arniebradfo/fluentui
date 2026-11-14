@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-checkbox/library/src/components/Checkbox/useCheckboxStyles.styles.ts.
+ * Fluent style sources:
+ * - [useCheckboxStyles.styles.ts](../../../../../react-checkbox/library/src/components/Checkbox/useCheckboxStyles.styles.ts)
+ * Headless component: [Checkbox.tsx](../../../../../react-headless-components-preview/library/src/components/Checkbox/Checkbox.tsx).
+ * Headless state: [useCheckbox.ts](../../../../../react-headless-components-preview/library/src/components/Checkbox/useCheckbox.ts).
+ * Headless render: [renderCheckbox.tsx](../../../../../react-headless-components-preview/library/src/components/Checkbox/renderCheckbox.tsx).
+ *
  * The styled Label supplies typography; native :focus-visible supplies keyboard modality.
  */
 

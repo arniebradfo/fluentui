@@ -1,10 +1,14 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useToastContainerStyles.styles.ts](../../../../../../react-toast/library/src/components/ToastContainer/useToastContainerStyles.styles.ts)
+ * Headless component: [ToastContainer.tsx](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastContainer/ToastContainer.tsx).
+ * Headless state: [useToastContainer.ts](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastContainer/useToastContainer.ts).
+ * Headless render: [renderToastContainer.tsx](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastContainer/renderToastContainer.tsx).
+ *
+ * Public Toaster creates headless containers, without a container class/slot.
+ * The direct-div bridge shares this baseline without replacing those children.
  */
 
-/* Public Toaster creates headless containers, without a container class/slot.
- * The direct-div bridge shares this baseline without replacing those children. */
 @layer fluent-components {
   .ToastContainer,
   .Toaster__containers > div {

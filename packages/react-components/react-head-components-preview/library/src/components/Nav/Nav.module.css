@@ -1,6 +1,20 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useNavStyles.styles.ts](../../../../../react-nav/library/src/components/Nav/useNavStyles.styles.ts)
+ * - [useNavItemStyles.styles.ts](../../../../../react-nav/library/src/components/NavItem/useNavItemStyles.styles.ts)
+ * - [useNavSubItemStyles.styles.ts](../../../../../react-nav/library/src/components/NavSubItem/useNavSubItemStyles.styles.ts)
+ * - [useNavCategoryItem.styles.ts](../../../../../react-nav/library/src/components/NavCategoryItem/useNavCategoryItem.styles.ts)
+ * - [useNavSubItemGroupStyles.styles.ts](../../../../../react-nav/library/src/components/NavSubItemGroup/useNavSubItemGroupStyles.styles.ts)
+ * - [useNavDividerStyles.styles.ts](../../../../../react-nav/library/src/components/NavDivider/useNavDividerStyles.styles.ts)
+ * - [useNavSectionHeaderStyles.styles.ts](../../../../../react-nav/library/src/components/NavSectionHeader/useNavSectionHeaderStyles.styles.ts)
+ * - [useNavDrawerStyles.styles.ts](../../../../../react-nav/library/src/components/NavDrawer/useNavDrawerStyles.styles.ts)
+ * - [useNavDrawerHeaderStyles.styles.ts](../../../../../react-nav/library/src/components/NavDrawerHeader/useNavDrawerHeaderStyles.styles.ts)
+ * - [useNavDrawerBodyStyles.styles.ts](../../../../../react-nav/library/src/components/NavDrawerBody/useNavDrawerBodyStyles.styles.ts)
+ * - [useNavDrawerFooterStyles.styles.ts](../../../../../react-nav/library/src/components/NavDrawerFooter/useNavDrawerFooterStyles.styles.ts)
+ * Headless family: [Nav/index.ts](../../../../../react-headless-components-preview/library/src/components/Nav/index.ts).
+ * Headless component: [Nav.tsx](../../../../../react-headless-components-preview/library/src/components/Nav/Nav.tsx).
+ * Headless state: [useNav.ts](../../../../../react-headless-components-preview/library/src/components/Nav/useNav.ts).
+ * Headless render: [renderNav.tsx](../../../../../react-headless-components-preview/library/src/components/Nav/renderNav.tsx).
  */
 
 @layer fluent-components {

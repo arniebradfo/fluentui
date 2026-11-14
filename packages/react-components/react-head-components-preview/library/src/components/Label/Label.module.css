@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-label/library/src/components/Label/useLabelStyles.styles.ts.
+ * Fluent style sources:
+ * - [useLabelStyles.styles.ts](../../../../../react-label/library/src/components/Label/useLabelStyles.styles.ts)
+ * Headless component: [Label.tsx](../../../../../react-headless-components-preview/library/src/components/Label/Label.tsx).
+ * Headless state: [useLabel.ts](../../../../../react-headless-components-preview/library/src/components/Label/useLabel.ts).
+ * Headless render: [renderLabel.ts](../../../../../react-headless-components-preview/library/src/components/Label/renderLabel.ts).
+ *
  * Logical required-indicator padding preserves Griffel's RTL flipping.
  */
 

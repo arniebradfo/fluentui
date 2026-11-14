@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useMenuItemSwitchStyles.styles.ts](../../../../../../react-menu/library/src/components/MenuItemSwitch/useMenuItemSwitchStyles.styles.ts)
+ * Headless component: [MenuItemSwitch.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItemSwitch/MenuItemSwitch.tsx).
+ * Headless state: [useMenuItemSwitch.ts](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItemSwitch/useMenuItemSwitch.ts).
+ * Headless render: [renderMenuItemSwitch.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItemSwitch/renderMenuItemSwitch.tsx).
+ *
+ * MenuItemSwitch has its own track, not a nested Switch control.
  */
 
-/* MenuItemSwitch has its own track, not a nested Switch control. */
 @layer fluent-components {
   /* Thumb and track sizes used by the component: 2px clearance, 20px x 40px track. */
   .MenuItemSwitch__switchIndicator {

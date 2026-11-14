@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useOverlayDrawerStyles.styles.ts](../../../../../../react-drawer/library/src/components/OverlayDrawer/useOverlayDrawerStyles.styles.ts)
+ * Headless component: [OverlayDrawer.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/OverlayDrawer.tsx).
+ * Headless state: [useOverlayDrawer.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/useOverlayDrawer.ts).
+ * Headless render: [renderOverlayDrawer.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/renderOverlayDrawer.tsx).
+ * Composed CSS: [Drawer.module.css](../Drawer.module.css).
+ *
+ * The public dialog surface owns the native top layer, focus and closed-state hiding.
  */
-
-/* The public dialog surface owns the native top layer, focus and closed-state hiding. */
 
 @layer fluent-components;
 

@@ -1,9 +1,19 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useDrawerHeaderStyles.styles.ts](../../../../../react-drawer/library/src/components/DrawerHeader/useDrawerHeaderStyles.styles.ts)
+ * - [useDrawerFooterStyles.styles.ts](../../../../../react-drawer/library/src/components/DrawerFooter/useDrawerFooterStyles.styles.ts)
+ * Headless component: [DrawerHeader.tsx](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeader/DrawerHeader.tsx).
+ * Headless state: [useDrawerHeader.ts](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeader/useDrawerHeader.ts).
+ * Headless render: [renderDrawerHeader.ts](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeader/renderDrawerHeader.ts).
+ * Headless component: [DrawerFooter.tsx](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/DrawerFooter.tsx).
+ * Headless state: [useDrawerFooter.ts](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/useDrawerFooter.ts).
+ * Headless render: [renderDrawerFooter.ts](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/renderDrawerFooter.ts).
+ * Headless component: [DrawerBody.tsx](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerBody/DrawerBody.tsx).
+ * Headless state: [useDrawerBody.ts](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerBody/useDrawerBody.ts).
+ * Headless render: [renderDrawerBody.ts](../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerBody/renderDrawerBody.ts).
+ *
+ * The public drawer body and context own scroll state.
  */
-
-/* The public drawer body and context own scroll state. */
 
 @layer fluent-components;
 

@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 export { TeachingPopover, type TeachingPopoverProps } from './TeachingPopover.js';
 export { useTeachingPopoverContextValues } from '@fluentui/react-headless-components-preview/teaching-popover';
 export type {

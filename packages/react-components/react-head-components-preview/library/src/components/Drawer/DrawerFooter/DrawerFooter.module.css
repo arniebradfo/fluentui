@@ -1,6 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useDrawerFooterStyles.styles.ts](../../../../../../react-drawer/library/src/components/DrawerFooter/useDrawerFooterStyles.styles.ts)
+ * Headless component: [DrawerFooter.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/DrawerFooter.tsx).
+ * Headless state: [useDrawerFooter.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/useDrawerFooter.ts).
+ * Headless render: [renderDrawerFooter.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/renderDrawerFooter.ts).
+ * Composed CSS: [DrawerSeparators.module.css](../DrawerSeparators.module.css).
  */
 
 @layer fluent-components;

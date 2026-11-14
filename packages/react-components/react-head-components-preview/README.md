@@ -47,6 +47,11 @@ For example, [tree.ts](./library/src/tree.ts) re-exports
 Implementations use concrete sibling imports rather than their own family barrel.
 Shared family styles remain at the family root where appropriate.
 
+CSS Module provenance comments link to checked-in Fluent style definitions and
+headless component/state/render sources. Shared styles and aliases list their
+actual sources; native Text is identified as having no headless counterpart.
+These are checkout-relative references, not generated files in `node_modules`.
+
 ## Use in this workspace
 
 ```tsx
@@ -254,5 +259,6 @@ and are not committed.
 The SSR fixture covers Provider, Button, Field, Input and Checkbox. These checks
 are not an exhaustive pixel, browser or assistive-technology certification.
 
-All source retains Microsoft's MIT attribution. The original product-specific
-README and infrastructure are not a runbook for this package.
+The repository MIT license applies to these sources. Exported recipes include
+the complete license notice; per-file copyright banners are omitted. The original
+product-specific README and infrastructure are not a runbook for this package.

@@ -1,6 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useDrawerHeaderTitleStyles.styles.ts](../../../../../../react-drawer/library/src/components/DrawerHeaderTitle/useDrawerHeaderTitleStyles.styles.ts)
+ * Headless component: [DrawerHeaderTitle.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeaderTitle/DrawerHeaderTitle.tsx).
+ * Headless state: [useDrawerHeaderTitle.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeaderTitle/useDrawerHeaderTitle.ts).
+ * Headless render: [renderDrawerHeaderTitle.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeaderTitle/renderDrawerHeaderTitle.ts).
+ * Composed CSS: [DialogTitle.module.css](../../Dialog/DialogTitle/DialogTitle.module.css).
  */
 
 @layer fluent-components;

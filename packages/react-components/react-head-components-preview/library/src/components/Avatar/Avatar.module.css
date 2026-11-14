@@ -1,16 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported directly from @fluentui/react-avatar 9.11.9 at reference 86a8705.
- * Local source: [useAvatarStyles.styles.raw.js](../../../node_modules/@fluentui/react-avatar/lib/components/Avatar/useAvatarStyles.styles.raw.js).
- * Source: https://unpkg.com/@fluentui/react-avatar@9.11.9/lib/components/Avatar/useAvatarStyles.styles.raw.js
- * Default glyph baseline: @fluentui/react-icons 2.0.343
- * [useIconStyles.styles.raw.js](../../../node_modules/@fluentui/react-icons/lib/utils/useIconStyles.styles.raw.js).
- * [createFluentIcon.styles.raw.js](../../../node_modules/@fluentui/react-icons/lib/utils/createFluentIcon.styles.raw.js).
- * The repository LICENSE-CODE and this package's README.md contain the MIT license.
+ * Fluent style sources:
+ * - [useAvatarStyles.styles.ts](../../../../../react-avatar/library/src/components/Avatar/useAvatarStyles.styles.ts)
+ * Headless component: [Avatar.tsx](../../../../../react-headless-components-preview/library/src/components/Avatar/Avatar.tsx).
+ * Headless state: [useAvatar.ts](../../../../../react-headless-components-preview/library/src/components/Avatar/useAvatar.ts).
+ * Headless render: [renderAvatar.tsx](../../../../../react-headless-components-preview/library/src/components/Avatar/renderAvatar.tsx).
+ * Icon stylesheet import: [Icon.css](../../Icon.css); the icon package is an external dependency.
+ *
  * Logical positioning and :dir() preserve Griffel's RTL badge placement and mask cutout.
  * Avatar's native image slot does not delegate to react-image's styling foundation.
  */

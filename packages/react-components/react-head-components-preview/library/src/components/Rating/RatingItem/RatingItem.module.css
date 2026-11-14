@@ -1,16 +1,15 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-rating 9.4.7, useRatingItemStyles.styles.ts.
- * Local source: [useRatingItemStyles.styles.raw.js](../../../node_modules/@fluentui/react-rating/lib/components/RatingItem/useRatingItemStyles.styles.raw.js).
- * Inherited focus reference: @fluentui/react-tabster 9.26.19,
- * [createFocusOutlineStyle.js](../../../node_modules/@fluentui/react-tabster/lib/focus/createFocusOutlineStyle.js).
+ * Fluent style sources:
+ * - [useRatingItemStyles.styles.ts](../../../../../../react-rating/library/src/components/RatingItem/useRatingItemStyles.styles.ts)
+ * Headless component: [RatingItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Rating/RatingItem/RatingItem.tsx).
+ * Headless state: [useRatingItem.ts](../../../../../../react-headless-components-preview/library/src/components/Rating/RatingItem/useRatingItem.ts).
+ * Headless render: [renderRatingItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Rating/RatingItem/renderRatingItem.tsx).
+ * Related Fluent sources: [createFocusOutlineStyle.ts](../../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ * Icon stylesheet import: [Icon.css](../../../Icon.css); the icon package is an external dependency.
+ *
+ * Inherited focus reference: @fluentui/react-tabster,
  * Native :focus-visible replaces legacy focus attributes; half-fill clipping uses logical edges.
- * Owned default glyph forced-color rule: @fluentui/react-icons 2.0.343,
- * [createFluentIcon.styles.raw.js](../../../node_modules/@fluentui/react-icons/lib/utils/createFluentIcon.styles.raw.js).
+ * Owned default glyph forced-color rule: @fluentui/react-icons,
  */
 
 @layer fluent-components;

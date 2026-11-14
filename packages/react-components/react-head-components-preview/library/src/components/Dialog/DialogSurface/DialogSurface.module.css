@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useDialogSurfaceStyles.styles.ts](../../../../../../react-dialog/library/src/components/DialogSurface/useDialogSurfaceStyles.styles.ts)
+ * - [useDialogBodyStyles.styles.ts](../../../../../../react-dialog/library/src/components/DialogBody/useDialogBodyStyles.styles.ts)
+ * Headless component: [DialogSurface.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogSurface/DialogSurface.tsx).
+ * Headless state: [useDialogSurface.ts](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogSurface/useDialogSurface.ts).
+ * Headless render: [renderDialogSurface.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogSurface/renderDialogSurface.tsx).
+ *
+ * The native surface owns layout; DialogBody is the content area, not the old body grid.
  */
-
-/* The native surface owns layout; DialogBody is the content area, not the old body grid. */
 
 @layer fluent-components;
 

@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-combobox/library/src/components/Listbox/useListboxStyles.styles.ts.
+ * Fluent style sources:
+ * - [useListboxStyles.styles.ts](../../../../../../react-combobox/library/src/components/Listbox/useListboxStyles.styles.ts)
+ * Headless component: [Listbox.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Listbox/Listbox.tsx).
+ * Headless state: [useListbox.ts](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Listbox/useListbox.ts).
+ * Headless render: [renderListbox.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Listbox/renderListbox.tsx).
+ *
  * Closed popovers retain the UA display:none; only open or explicitly inline listboxes use flex.
  */
 

@@ -1,11 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-card 9.7.4, useCardPreviewStyles.styles.ts.
- * Local source: [useCardPreviewStyles.styles.raw.js](../../../node_modules/@fluentui/react-card/lib/components/CardPreview/useCardPreviewStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useCardPreviewStyles.styles.ts](../../../../../../react-card/library/src/components/CardPreview/useCardPreviewStyles.styles.ts)
+ * Headless component: [CardPreview.tsx](../../../../../../react-headless-components-preview/library/src/components/Card/CardPreview/CardPreview.tsx).
+ * Headless state: [useCardPreview.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardPreview/useCardPreview.ts).
+ * Headless render: [renderCardPreview.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardPreview/renderCardPreview.ts).
  */
 
 @layer fluent-components;

@@ -1,13 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-tabs 9.12.6, useTabListStyles.styles.ts.
- * Local source: [useTabListStyles.styles.raw.js](../../../node_modules/@fluentui/react-tabs/lib/components/TabList/useTabListStyles.styles.raw.js).
- * Headless behavior: @fluentui/react-headless-components-preview 0.4.1 /tab-list.
- * See README.md and the repository MIT license (LICENSE-CODE).
+ * Fluent style sources:
+ * - [useTabListStyles.styles.ts](../../../../../react-tabs/library/src/components/TabList/useTabListStyles.styles.ts)
+ * Headless component: [TabList.tsx](../../../../../react-headless-components-preview/library/src/components/TabList/TabList.tsx).
+ * Headless state: [useTabList.ts](../../../../../react-headless-components-preview/library/src/components/TabList/useTabList.ts).
+ * Headless render: [renderTabList.tsx](../../../../../react-headless-components-preview/library/src/components/TabList/renderTabList.tsx).
+ *
+ * Headless behavior: @fluentui/react-headless-components-preview /tab-list.
  */
 
 @layer fluent-components;

@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useMenuItemStyles.styles.ts](../../../../../../react-menu/library/src/components/MenuItem/useMenuItemStyles.styles.ts)
+ * Headless component: [MenuItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItem/MenuItem.tsx).
+ * Headless state: [useMenuItem.ts](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItem/useMenuItem.ts).
+ * Headless render: [renderMenuItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItem/renderMenuItem.tsx).
+ *
+ * Shared visual foundation from react-menu's MenuItem and selectable checkmark styles.
  */
 
-/* Shared visual foundation from react-menu's MenuItem and selectable checkmark styles. */
 @layer fluent-components {
   .MenuItem {
     border-radius: var(--borderRadiusMedium);

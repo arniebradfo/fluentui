@@ -1,9 +1,12 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useDialogContentStyles.styles.ts](../../../../../../react-dialog/library/src/components/DialogContent/useDialogContentStyles.styles.ts)
+ * Headless component: [DialogBody.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogBody/DialogBody.tsx).
+ * Headless state: [useDialogBody.ts](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogBody/useDialogBody.ts).
+ * Headless render: [renderDialogBody.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogBody/renderDialogBody.tsx).
+ *
+ * Public headless DialogBody has the content role formerly named DialogContent.
  */
-
-/* Public headless DialogBody has the content role formerly named DialogContent. */
 
 @layer fluent-components;
 

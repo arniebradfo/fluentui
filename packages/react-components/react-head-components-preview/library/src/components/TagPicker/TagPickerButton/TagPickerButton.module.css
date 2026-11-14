@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-tag-picker/library/src/components/TagPickerButton/useTagPickerButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTagPickerButtonStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerButton/useTagPickerButtonStyles.styles.ts)
+ * Headless component: [TagPickerButton.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerButton/TagPickerButton.tsx).
+ * Headless state: [useTagPickerButton.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerButton/useTagPickerButton.ts).
+ * Headless render: [renderTagPickerButton.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerButton/renderTagPickerButton.tsx).
+ *
  * Size is owned by the enclosing TagPicker.
  */
 

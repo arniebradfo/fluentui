@@ -1,17 +1,15 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-tabs 9.12.6, useTabStyles.styles.ts and
+ * Fluent style sources:
+ * - [useTabStyles.styles.ts](../../../../../../react-tabs/library/src/components/Tab/useTabStyles.styles.ts)
+ * - [useTabAnimatedIndicator.styles.ts](../../../../../../react-tabs/library/src/components/Tab/useTabAnimatedIndicator.styles.ts)
+ * Headless component: [Tab.tsx](../../../../../../react-headless-components-preview/library/src/components/TabList/Tab/Tab.tsx).
+ * Headless state: [useTab.ts](../../../../../../react-headless-components-preview/library/src/components/TabList/Tab/useTab.ts).
+ * Headless render: [renderTab.tsx](../../../../../../react-headless-components-preview/library/src/components/TabList/Tab/renderTab.tsx).
+ *
  * useTabAnimatedIndicator.styles.ts (CSS only; no private animation/registration hook).
- * Local sources: [useTabStyles.styles.raw.js](../../../node_modules/@fluentui/react-tabs/lib/components/Tab/useTabStyles.styles.raw.js)
- * and [useTabAnimatedIndicator.styles.raw.js](../../../node_modules/@fluentui/react-tabs/lib/components/Tab/useTabAnimatedIndicator.styles.raw.js).
- * Headless behavior: @fluentui/react-headless-components-preview 0.4.1 /tab-list.
+ * Headless behavior: @fluentui/react-headless-components-preview /tab-list.
  * Native :focus-visible replaces legacy focus attributes. The selected indicator is local to
  * its tab; the old JavaScript slide between registered tabs is intentionally not recreated.
- * See README.md and the repository MIT license (LICENSE-CODE).
  */
 
 @layer fluent-components;

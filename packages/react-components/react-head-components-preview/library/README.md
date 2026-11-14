@@ -6,7 +6,8 @@ private and is not a production-ready v9 replacement.
 
 Copy the [source](./src) into your application and install the public runtime
 dependencies listed in [package.json](./package.json), plus React and React DOM.
-Retain Microsoft's source attribution and the accompanying MIT license.
+Retain the accompanying repository MIT license, including its copyright and
+permission notice, when copying or adapting the source.
 
 ```tsx
 import { Button } from './src/button';
@@ -37,6 +38,10 @@ bundlers can remove unused implementation modules without discarding used CSS.
 Family isolation does not imply declaration-level pruning inside shared CSS.
 Prefer the family entrypoints: a compatibility-root import can retain the
 catalog's stylesheets even when only one component is used.
+
+CSS provenance comments point to the checked-in Fluent style and headless
+sources in the original workspace. Those source-reference links are for working
+in that checkout; they are not runtime imports or additional files to copy.
 
 The source uses `.js` relative specifiers. Webpack source consumers need:
 

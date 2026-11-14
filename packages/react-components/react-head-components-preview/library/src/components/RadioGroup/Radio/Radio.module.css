@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-radio/library/src/components/Radio/useRadioStyles.styles.ts.
+ * Fluent style sources:
+ * - [useRadioStyles.styles.ts](../../../../../../react-radio/library/src/components/Radio/useRadioStyles.styles.ts)
+ * Headless component: [Radio.tsx](../../../../../../react-headless-components-preview/library/src/components/RadioGroup/Radio/Radio.tsx).
+ * Headless state: [useRadio.ts](../../../../../../react-headless-components-preview/library/src/components/RadioGroup/Radio/useRadio.ts).
+ * Headless render: [renderRadio.tsx](../../../../../../react-headless-components-preview/library/src/components/RadioGroup/Radio/renderRadio.tsx).
+ *
  * The styled Label supplies typography; native :focus-visible supplies keyboard modality.
  */
 

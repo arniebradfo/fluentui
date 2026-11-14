@@ -1,12 +1,17 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Visual foundation: react-calendar-compat Calendar, CalendarDayGrid and CalendarPicker styles.
+ * Fluent style sources:
+ * - [useCalendarStyles.styles.ts](../../../../../react-calendar-compat/library/src/components/Calendar/useCalendarStyles.styles.ts)
+ * - [useCalendarDayStyles.styles.ts](../../../../../react-calendar-compat/library/src/components/CalendarDay/useCalendarDayStyles.styles.ts)
+ * - [useCalendarDayGridStyles.styles.ts](../../../../../react-calendar-compat/library/src/components/CalendarDayGrid/useCalendarDayGridStyles.styles.ts)
+ * - [useCalendarPickerStyles.styles.ts](../../../../../react-calendar-compat/library/src/components/CalendarPicker/useCalendarPickerStyles.styles.ts)
+ * - [useCalendarMonthStyles.styles.ts](../../../../../react-calendar-compat/library/src/components/CalendarMonth/useCalendarMonthStyles.styles.ts)
+ * - [useCalendarYearStyles.styles.ts](../../../../../react-calendar-compat/library/src/components/CalendarYear/useCalendarYearStyles.styles.ts)
+ * Headless family: [Calendar/index.ts](../../../../../react-headless-components-preview/library/src/components/Calendar/index.ts).
+ * Headless component: [Calendar.tsx](../../../../../react-headless-components-preview/library/src/components/Calendar/Calendar.tsx).
+ * Headless state: [useCalendar.tsx](../../../../../react-headless-components-preview/library/src/components/Calendar/useCalendar.tsx).
+ * Headless render: [renderCalendar.tsx](../../../../../react-headless-components-preview/library/src/components/Calendar/renderCalendar.tsx).
+ *
  * Headless differences: the roving tab stop is the grid cell (td or div[role=gridcell]), so the
- * focus outline is drawn on the cell. Selection, today, bounds and month membership come from
  * data attributes rather than generated classes. The v9 slide/fade transitions are not ported.
  * Physical spacing is expressed logically for RTL; focus uses native :focus-visible.
  */

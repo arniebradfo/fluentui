@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useInlineDrawerStyles.styles.ts](../../../../../../react-drawer/library/src/components/InlineDrawer/useInlineDrawerStyles.styles.ts)
+ * Headless component: [InlineDrawer.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/InlineDrawer/InlineDrawer.tsx).
+ * Headless state: [useInlineDrawer.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/InlineDrawer/useInlineDrawer.ts).
+ * Headless render: [renderInlineDrawer.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/InlineDrawer/renderInlineDrawer.tsx).
+ * Composed CSS: [Drawer.module.css](../Drawer.module.css).
+ *
+ * The public hook owns mounting. Closed mounted inline content is not focusable.
  */
-
-/* The public hook owns mounting. Closed mounted inline content is not focusable. */
 
 @layer fluent-components;
 

@@ -1,9 +1,23 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
+ * Fluent style sources:
+ * - [useTeachingPopoverSurfaceStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverSurface/useTeachingPopoverSurfaceStyles.styles.ts)
+ * - [useTeachingPopoverHeaderStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverHeader/useTeachingPopoverHeaderStyles.styles.ts)
+ * - [useTeachingPopoverTitleStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverTitle/useTeachingPopoverTitleStyles.styles.ts)
+ * - [useTeachingPopoverBodyStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverBody/useTeachingPopoverBodyStyles.styles.ts)
+ * - [useTeachingPopoverFooterStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverFooter/useTeachingPopoverFooterStyles.styles.ts)
+ * - [useTeachingPopoverCarouselStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarousel/useTeachingPopoverCarouselStyles.styles.ts)
+ * - [useTeachingPopoverCarouselCardStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselCard/useTeachingPopoverCarouselCardStyles.styles.ts)
+ * - [useTeachingPopoverCarouselFooterStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselFooter/useTeachingPopoverCarouselFooterStyles.styles.ts)
+ * - [useTeachingPopoverCarouselFooterButtonStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselFooterButton/useTeachingPopoverCarouselFooterButtonStyles.styles.ts)
+ * - [useTeachingPopoverCarouselNavStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselNav/useTeachingPopoverCarouselNavStyles.styles.ts)
+ * - [useTeachingPopoverCarouselNavButtonStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselNavButton/useTeachingPopoverCarouselNavButtonStyles.styles.ts)
+ * - [useTeachingPopoverCarouselPageCountStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselPageCount/useTeachingPopoverCarouselPageCountStyles.styles.ts)
+ * Headless family: [TeachingPopover/index.ts](../../../../../react-headless-components-preview/library/src/components/TeachingPopover/index.ts).
+ * Headless component: [TeachingPopover.tsx](../../../../../react-headless-components-preview/library/src/components/TeachingPopover/TeachingPopover.tsx).
+ * Headless state: [useTeachingPopover.ts](../../../../../react-headless-components-preview/library/src/components/TeachingPopover/useTeachingPopover.ts).
+ * Headless render: [renderTeachingPopover.tsx](../../../../../react-headless-components-preview/library/src/components/TeachingPopover/renderTeachingPopover.tsx).
+ * Composed CSS: [PopoverSurface.module.css](../Popover/PopoverSurface/PopoverSurface.module.css).
+ *
  * Carousel/Card behavior and visibility belong to the public headless family.
  * The footer owns consumer children; its navigation controls use the styled Button adapter.
  */

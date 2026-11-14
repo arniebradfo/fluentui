@@ -1,11 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-card 9.7.4, useCardHeaderStyles.styles.ts.
- * Local source: [useCardHeaderStyles.styles.raw.js](../../../node_modules/@fluentui/react-card/lib/components/CardHeader/useCardHeaderStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useCardHeaderStyles.styles.ts](../../../../../../react-card/library/src/components/CardHeader/useCardHeaderStyles.styles.ts)
+ * Headless component: [CardHeader.tsx](../../../../../../react-headless-components-preview/library/src/components/Card/CardHeader/CardHeader.tsx).
+ * Headless state: [useCardHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardHeader/useCardHeader.ts).
+ * Headless render: [renderCardHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardHeader/renderCardHeader.ts).
  */
 
 @layer fluent-components;

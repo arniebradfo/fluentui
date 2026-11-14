@@ -1,12 +1,12 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-list 9.7.0.
- * Local source: [useListItemStyles.styles.raw.js](../../../node_modules/@fluentui/react-list/lib/components/ListItem/useListItemStyles.styles.raw.js).
- * Focus source: @fluentui/react-tabster 9.26.19 [createCustomFocusIndicatorStyle.js](../../../node_modules/@fluentui/react-tabster/lib/focus/createCustomFocusIndicatorStyle.js).
+ * Fluent style sources:
+ * - [useListItemStyles.styles.ts](../../../../../../react-list/library/src/components/ListItem/useListItemStyles.styles.ts)
+ * - [useCheckboxStyles.styles.ts](../../../../../../react-checkbox/library/src/components/Checkbox/useCheckboxStyles.styles.ts)
+ * Headless component: [ListItem.tsx](../../../../../../react-headless-components-preview/library/src/components/List/ListItem/ListItem.tsx).
+ * Headless state: [useListItem.ts](../../../../../../react-headless-components-preview/library/src/components/List/ListItem/useListItem.ts).
+ * Headless render: [renderListItem.tsx](../../../../../../react-headless-components-preview/library/src/components/List/ListItem/renderListItem.tsx).
+ * Related Fluent sources: [createCustomFocusIndicatorStyle.ts](../../../../../../react-tabster/src/focus/createCustomFocusIndicatorStyle.ts).
+ *
  * Native :focus-visible replaces legacy focus attributes; no focus runtime is imported.
  */
 

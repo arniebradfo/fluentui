@@ -1,15 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-breadcrumb 9.4.8, useBreadcrumbButtonStyles.styles.raw.js.
- * Local source: [useBreadcrumbButtonStyles.styles.raw.js](../../../node_modules/@fluentui/react-breadcrumb/lib/components/BreadcrumbButton/useBreadcrumbButtonStyles.styles.raw.js).
- * Inherited baseline: @fluentui/react-button 9.11.1,
- * [useButtonStyles.styles.raw.js](../../../node_modules/@fluentui/react-button/lib/components/Button/useButtonStyles.styles.raw.js).
- * The existing [Button.module.css](./Button.module.css) supplies that baseline through CSS Modules composition.
- * The repository LICENSE-CODE and this package's README.md contain the MIT license.
+ * Fluent style sources:
+ * - [useBreadcrumbButtonStyles.styles.ts](../../../../../../react-breadcrumb/library/src/components/BreadcrumbButton/useBreadcrumbButtonStyles.styles.ts)
+ * - [useButtonStyles.styles.ts](../../../../../../react-button/library/src/components/Button/useButtonStyles.styles.ts)
+ * Headless component: [BreadcrumbButton.tsx](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbButton/BreadcrumbButton.tsx).
+ * Headless state: [useBreadcrumbButton.ts](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbButton/useBreadcrumbButton.ts).
+ * Headless render: [renderBreadcrumbButton.ts](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbButton/renderBreadcrumbButton.ts).
+ * Composed CSS: [Button.module.css](../../Button/Button.module.css).
+ *
+ * Inherited baseline: @fluentui/react-button,
  * Native :focus-visible, logical RTL spacing, forced-colors, reduced-motion, and the Firefox focus fix
  * come from the reused Button foundation.
  */

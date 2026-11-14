@@ -1,6 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useMenuDividerStyles.styles.ts](../../../../../../react-menu/library/src/components/MenuDivider/useMenuDividerStyles.styles.ts)
+ * Headless component: [MenuDivider.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuDivider/MenuDivider.tsx).
+ * Headless state: [useMenuDivider.ts](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuDivider/useMenuDivider.ts).
+ * Headless render: [renderMenuDivider.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuDivider/renderMenuDivider.tsx).
  */
 
 @layer fluent-components {

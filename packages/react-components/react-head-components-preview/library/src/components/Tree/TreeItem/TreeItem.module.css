@@ -1,12 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-tree 9.17.1, useTreeItemStyles.styles.ts.
- * Local source: [useTreeItemStyles.styles.raw.js](../../../node_modules/@fluentui/react-headless-components-preview/node_modules/@fluentui/react-tree/lib/components/TreeItem/useTreeItemStyles.styles.raw.js).
- * Focus dependency: [createCustomFocusIndicatorStyle.js](../../../node_modules/@fluentui/react-tabster/lib/focus/createCustomFocusIndicatorStyle.js).
+ * Fluent style sources:
+ * - [useTreeItemStyles.styles.ts](../../../../../../react-tree/library/src/components/TreeItem/useTreeItemStyles.styles.ts)
+ * Headless component: [TreeItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItem/TreeItem.tsx).
+ * Headless state: [useTreeItem.ts](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItem/useTreeItem.ts).
+ * Headless render: [renderTreeItem.ts](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItem/renderTreeItem.ts).
+ * Related Fluent sources: [createCustomFocusIndicatorStyle.ts](../../../../../../react-tabster/src/focus/createCustomFocusIndicatorStyle.ts).
+ *
  * The --fluent-TreeItem--level indentation token is set inline by TreeItem.tsx for every
  * level instead of v9's ten static level classes plus inline fallback.
  * Native :focus-visible replaces the Tabster focus-visible attribute; the indicator is drawn

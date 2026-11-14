@@ -1,12 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-breadcrumb 9.4.8, useBreadcrumbDividerStyles.styles.raw.js.
- * Local source: [useBreadcrumbDividerStyles.styles.raw.js](../../../node_modules/@fluentui/react-breadcrumb/lib/components/BreadcrumbDivider/useBreadcrumbDividerStyles.styles.raw.js).
- * The repository LICENSE-CODE and this package's README.md contain the MIT license.
+ * Fluent style sources:
+ * - [useBreadcrumbDividerStyles.styles.ts](../../../../../../react-breadcrumb/library/src/components/BreadcrumbDivider/useBreadcrumbDividerStyles.styles.ts)
+ * Headless component: [BreadcrumbDivider.tsx](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbDivider/BreadcrumbDivider.tsx).
+ * Headless state: [useBreadcrumbDivider.ts](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbDivider/useBreadcrumbDivider.ts).
+ * Headless render: [renderBreadcrumbDivider.ts](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbDivider/renderBreadcrumbDivider.ts).
  */
 
 @layer fluent-components;

@@ -1,10 +1,8 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-text/library/src/components/Text/useTextStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTextStyles.styles.ts](../../../../../react-text/library/src/components/Text/useTextStyles.styles.ts)
+ * Native styled component: [Text.tsx](./Text.tsx); there is no headless Text primitive.
+ *
  * Text is a local native primitive; neither the styled component nor its hook is imported.
  */
 

@@ -1,11 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-skeleton 9.7.7, useSkeletonItemStyles.styles.ts.
- * Local source: [useSkeletonItemStyles.styles.raw.js](../../../node_modules/@fluentui/react-skeleton/lib/components/SkeletonItem/useSkeletonItemStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useSkeletonItemStyles.styles.ts](../../../../../../react-skeleton/library/src/components/SkeletonItem/useSkeletonItemStyles.styles.ts)
+ * Headless component: [SkeletonItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Skeleton/SkeletonItem/SkeletonItem.tsx).
+ * Headless state: [useSkeletonItem.ts](../../../../../../react-headless-components-preview/library/src/components/Skeleton/SkeletonItem/useSkeletonItem.ts).
+ * Headless render: [renderSkeletonItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Skeleton/SkeletonItem/renderSkeletonItem.tsx).
+ *
  * Native :dir() selectors and mirrored keyframes preserve Griffel's RTL flipping.
  */
 

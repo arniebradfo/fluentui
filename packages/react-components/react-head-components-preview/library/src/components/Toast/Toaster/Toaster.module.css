@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useToasterStyles.styles.ts](../../../../../../react-toast/library/src/components/Toaster/useToasterStyles.styles.ts)
+ * Headless component: [Toaster.tsx](../../../../../../react-headless-components-preview/library/src/components/Toast/Toaster/Toaster.tsx).
+ * Headless state: [useToaster.tsx](../../../../../../react-headless-components-preview/library/src/components/Toast/Toaster/useToaster.tsx).
+ * Headless render: [renderToaster.tsx](../../../../../../react-headless-components-preview/library/src/components/Toast/Toaster/renderToaster.tsx).
+ *
+ * Keep native popover visibility; reset only its UA chrome and positioning.
  */
 
-/* Keep native popover visibility; reset only its UA chrome and positioning. */
 @layer fluent-components {
   .Toaster {
     position: fixed;

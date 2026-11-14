@@ -1,13 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-tree 9.17.1, useTreeItemLayoutStyles.styles.ts.
- * Local source: [useTreeItemLayoutStyles.styles.raw.js](../../../node_modules/@fluentui/react-headless-components-preview/node_modules/@fluentui/react-tree/lib/components/TreeItemLayout/useTreeItemLayoutStyles.styles.raw.js).
- * Default chevron and rotation: [TreeItemChevron.js](../../../node_modules/@fluentui/react-headless-components-preview/node_modules/@fluentui/react-tree/lib/components/TreeItemChevron.js).
- * Selector visuals: [Checkbox.module.css](./Checkbox.module.css) and [Radio.module.css](./Radio.module.css).
+ * Fluent style sources:
+ * - [useTreeItemLayoutStyles.styles.ts](../../../../../../react-tree/library/src/components/TreeItemLayout/useTreeItemLayoutStyles.styles.ts)
+ * - [useCheckboxStyles.styles.ts](../../../../../../react-checkbox/library/src/components/Checkbox/useCheckboxStyles.styles.ts)
+ * - [useRadioStyles.styles.ts](../../../../../../react-radio/library/src/components/Radio/useRadioStyles.styles.ts)
+ * Headless component: [TreeItemLayout.tsx](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItemLayout/TreeItemLayout.tsx).
+ * Headless state: [useTreeItemLayout.ts](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItemLayout/useTreeItemLayout.ts).
+ * Headless render: [renderTreeItemLayout.ts](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItemLayout/renderTreeItemLayout.ts).
+ * Related Fluent sources: [TreeItemChevron.tsx](../../../../../../react-tree/library/src/components/TreeItemChevron.tsx).
+ *
  * Leaf/branch indentation and the chevron's open rotation read the parent TreeItem's
  * headless data-item-type and data-open; size and appearance come from data attributes
  * the wrapper sets from the root tree context.

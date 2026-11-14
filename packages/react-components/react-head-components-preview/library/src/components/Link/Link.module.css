@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-link/library/src/components/Link/useLinkStyles.styles.ts.
+ * Fluent style sources:
+ * - [useLinkStyles.styles.ts](../../../../../react-link/library/src/components/Link/useLinkStyles.styles.ts)
+ * Headless component: [Link.tsx](../../../../../react-headless-components-preview/library/src/components/Link/Link.tsx).
+ * Headless state: [useLink.ts](../../../../../react-headless-components-preview/library/src/components/Link/useLink.ts).
+ * Headless render: [renderLink.tsx](../../../../../react-headless-components-preview/library/src/components/Link/renderLink.tsx).
+ *
  * Native :focus-visible replaces the legacy focus-visibility machinery.
  * Logical text alignment preserves Griffel's RTL flipping.
  */

@@ -1,10 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-search/library/src/components/SearchBox/useSearchBoxStyles.styles.ts.
+ * Fluent style sources:
+ * - [useSearchBoxStyles.styles.ts](../../../../../react-search/library/src/components/SearchBox/useSearchBoxStyles.styles.ts)
+ * Headless component: [SearchBox.tsx](../../../../../react-headless-components-preview/library/src/components/SearchBox/SearchBox.tsx).
+ * Headless state: [useSearchBox.ts](../../../../../react-headless-components-preview/library/src/components/SearchBox/useSearchBox.ts).
+ * Headless render: [renderSearchBox.tsx](../../../../../react-headless-components-preview/library/src/components/SearchBox/renderSearchBox.tsx).
+ * Composed CSS: [Input.module.css](../Input/Input.module.css).
+ *
  * Input supplies the shared field styling through CSS Modules composition.
  */
 

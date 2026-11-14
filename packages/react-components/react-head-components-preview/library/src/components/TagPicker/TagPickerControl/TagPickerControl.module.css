@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-tag-picker/library/src/components/TagPickerControl/useTagPickerControlStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTagPickerControlStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerControl/useTagPickerControlStyles.styles.ts)
+ * Headless component: [TagPickerControl.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/TagPickerControl.tsx).
+ * Headless state: [useTagPickerControl.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/useTagPickerControl.ts).
+ * Headless render: [renderTagPickerControl.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/renderTagPickerControl.tsx).
+ *
  * Public headless owns the measured --fui-TagPickerControl-aside-width variable.
  */
 

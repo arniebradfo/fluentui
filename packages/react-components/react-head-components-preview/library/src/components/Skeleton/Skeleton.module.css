@@ -1,11 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-skeleton 9.7.7, useSkeletonStyles.styles.ts.
- * Local source: [useSkeletonStyles.styles.raw.js](../../../node_modules/@fluentui/react-skeleton/lib/components/Skeleton/useSkeletonStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useSkeletonStyles.styles.ts](../../../../../react-skeleton/library/src/components/Skeleton/useSkeletonStyles.styles.ts)
+ * Headless component: [Skeleton.tsx](../../../../../react-headless-components-preview/library/src/components/Skeleton/Skeleton.tsx).
+ * Headless state: [useSkeleton.ts](../../../../../react-headless-components-preview/library/src/components/Skeleton/useSkeleton.ts).
+ * Headless render: [renderSkeleton.tsx](../../../../../react-headless-components-preview/library/src/components/Skeleton/renderSkeleton.tsx).
  */
 
 @layer fluent-components;

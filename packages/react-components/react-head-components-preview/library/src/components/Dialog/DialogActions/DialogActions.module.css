@@ -1,6 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useDialogActionsStyles.styles.ts](../../../../../../react-dialog/library/src/components/DialogActions/useDialogActionsStyles.styles.ts)
+ * Headless component: [DialogActions.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogActions/DialogActions.tsx).
+ * Headless state: [useDialogActions.ts](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogActions/useDialogActions.ts).
+ * Headless render: [renderDialogActions.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogActions/renderDialogActions.tsx).
  */
 
 @layer fluent-components;

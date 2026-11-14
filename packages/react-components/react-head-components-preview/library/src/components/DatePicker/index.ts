@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 export { DatePicker, datePickerClassNames, defaultFormatDate, defaultParseDate } from './DatePicker.js';
 export type {
   DatePickerProps,

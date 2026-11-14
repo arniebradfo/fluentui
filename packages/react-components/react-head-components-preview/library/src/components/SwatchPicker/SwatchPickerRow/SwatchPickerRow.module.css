@@ -1,11 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-swatch-picker 9.6.3, useSwatchPickerRowStyles.styles.ts.
- * Local source: [useSwatchPickerRowStyles.styles.raw.js](../../../node_modules/@fluentui/react-swatch-picker/lib/components/SwatchPickerRow/useSwatchPickerRowStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useSwatchPickerRowStyles.styles.ts](../../../../../../react-swatch-picker/library/src/components/SwatchPickerRow/useSwatchPickerRowStyles.styles.ts)
+ * Headless component: [SwatchPickerRow.tsx](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/SwatchPickerRow/SwatchPickerRow.tsx).
+ * Headless state: [useSwatchPickerRow.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/SwatchPickerRow/useSwatchPickerRow.ts).
+ * Headless render: [renderSwatchPickerRow.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/SwatchPickerRow/renderSwatchPickerRow.ts).
  */
 
 @layer fluent-components;

@@ -1,11 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-list 9.7.0.
- * Local source: [useListStyles.styles.raw.js](../../../node_modules/@fluentui/react-list/lib/components/List/useListStyles.styles.raw.js).
+ * Fluent style sources:
+ * - [useListStyles.styles.ts](../../../../../react-list/library/src/components/List/useListStyles.styles.ts)
+ * Headless component: [List.tsx](../../../../../react-headless-components-preview/library/src/components/List/List.tsx).
+ * Headless state: [useList.ts](../../../../../react-headless-components-preview/library/src/components/List/useList.ts).
+ * Headless render: [renderList.tsx](../../../../../react-headless-components-preview/library/src/components/List/renderList.tsx).
  */
 
 @layer fluent-components;

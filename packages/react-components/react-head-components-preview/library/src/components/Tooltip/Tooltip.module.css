@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useTooltipStyles.styles.ts](../../../../../react-tooltip/library/src/components/Tooltip/useTooltipStyles.styles.ts)
+ * Headless component: [Tooltip.tsx](../../../../../react-headless-components-preview/library/src/components/Tooltip/Tooltip.tsx).
+ * Headless state: [useTooltip.ts](../../../../../react-headless-components-preview/library/src/components/Tooltip/useTooltip.ts).
+ * Headless render: [renderTooltip.tsx](../../../../../react-headless-components-preview/library/src/components/Tooltip/renderTooltip.tsx).
+ * Composed CSS: [PopoverSurface.module.css](../Popover/PopoverSurface/PopoverSurface.module.css).
+ *
+ * The native hint popover owns visibility and top-layer behavior.
  */
-
-/* The native hint popover owns visibility and top-layer behavior. */
 
 @layer fluent-components;
 

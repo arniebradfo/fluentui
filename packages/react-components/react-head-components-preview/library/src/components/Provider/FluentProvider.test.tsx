@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import { useFluent_unstable } from '@fluentui/react-shared-contexts';

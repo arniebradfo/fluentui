@@ -1,14 +1,12 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Ported from @fluentui/react-accordion 9.12.5.
- * Local source: [useAccordionHeaderStyles.styles.raw.js](../../../node_modules/@fluentui/react-accordion/lib/components/AccordionHeader/useAccordionHeaderStyles.styles.raw.js).
- * Default-chevron selection/rotation: [useAccordionHeader.js](../../../node_modules/@fluentui/react-accordion/lib/components/AccordionHeader/useAccordionHeader.js).
- * Focus outline (@fluentui/react-tabster 9.26.19): [createFocusOutlineStyle.js](../../../node_modules/@fluentui/react-tabster/lib/focus/createFocusOutlineStyle.js).
- * Default SVG display/line-height (@fluentui/react-icons 2.0.343): [useIconStyles.styles.js](../../../node_modules/@fluentui/react-icons/lib/utils/useIconStyles.styles.js); no raw style module is shipped for that helper.
+ * Fluent style sources:
+ * - [useAccordionHeaderStyles.styles.ts](../../../../../../react-accordion/library/src/components/AccordionHeader/useAccordionHeaderStyles.styles.ts)
+ * Headless component: [AccordionHeader.tsx](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionHeader/AccordionHeader.tsx).
+ * Headless state: [useAccordionHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionHeader/useAccordionHeader.ts).
+ * Headless render: [renderAccordionHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionHeader/renderAccordionHeader.ts).
+ * Related Fluent sources: [useAccordionHeader.tsx](../../../../../../react-accordion/library/src/components/AccordionHeader/useAccordionHeader.tsx), [createFocusOutlineStyle.ts](../../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ * Icon stylesheet import: [Icon.css](../../../Icon.css); the icon package is an external dependency.
+ *
  * Native :focus-visible replaces legacy focus attributes; logical spacing preserves RTL.
  */
 

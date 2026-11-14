@@ -1,9 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
+ * Fluent style sources:
+ * - [usePopoverSurfaceStyles.styles.ts](../../../../../../react-popover/library/src/components/PopoverSurface/usePopoverSurfaceStyles.styles.ts)
+ * Headless component: [PopoverSurface.tsx](../../../../../../react-headless-components-preview/library/src/components/Popover/PopoverSurface/PopoverSurface.tsx).
+ * Headless state: [usePopoverSurface.ts](../../../../../../react-headless-components-preview/library/src/components/Popover/PopoverSurface/usePopoverSurface.ts).
+ * Headless render: [renderPopoverSurface.tsx](../../../../../../react-headless-components-preview/library/src/components/Popover/PopoverSurface/renderPopoverSurface.tsx).
+ *
  * The public native positioning hook owns anchor placement and flipping.
  * Arrows follow its resolved physical side. Their cross-axis location is a
  * surface-center/edge approximation, not measured alignment to the trigger.

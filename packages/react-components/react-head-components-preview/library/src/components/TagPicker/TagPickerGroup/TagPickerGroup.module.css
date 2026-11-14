@@ -1,10 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-tag-picker/library/src/components/TagPickerGroup/useTagPickerGroupStyles.styles.ts.
+ * Fluent style sources:
+ * - [useTagPickerGroupStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerGroup/useTagPickerGroupStyles.styles.ts)
+ * Headless component: [TagPickerGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerGroup/TagPickerGroup.tsx).
+ * Headless state: [useTagPickerGroup.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerGroup/useTagPickerGroup.ts).
+ * Headless render: [renderTagPickerGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerGroup/renderTagPickerGroup.tsx).
+ * Composed CSS: [TagGroup.module.css](../../TagGroup/TagGroup.module.css).
+ *
  * TagGroup supplies shared visuals; behavior stays in the public headless context.
  */
 

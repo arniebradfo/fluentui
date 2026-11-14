@@ -1,9 +1,13 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useMessageBarActionsStyles.styles.ts](../../../../../../react-message-bar/library/src/components/MessageBarActions/useMessageBarActionsStyles.styles.ts)
+ * Headless component: [MessageBarActions.tsx](../../../../../../react-headless-components-preview/library/src/components/MessageBar/MessageBarActions/MessageBarActions.tsx).
+ * Headless state: [useMessageBarActions.ts](../../../../../../react-headless-components-preview/library/src/components/MessageBar/MessageBarActions/useMessageBarActions.ts).
+ * Headless render: [renderMessageBarActions.ts](../../../../../../react-headless-components-preview/library/src/components/MessageBar/MessageBarActions/renderMessageBarActions.ts).
+ *
+ * containerAction is a sibling of the root, not its descendant.
  */
 
-/* containerAction is a sibling of the root, not its descendant. */
 @layer fluent-components {
   .MessageBarActions {
     grid-area: secondaryActions;

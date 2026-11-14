@@ -1,10 +1,11 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-toolbar/library/src/components/ToolbarToggleButton/useToolbarToggleButtonStyles.styles.ts.
+ * Fluent style sources:
+ * - [useToolbarToggleButtonStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarToggleButton/useToolbarToggleButtonStyles.styles.ts)
+ * Headless component: [ToolbarToggleButton.tsx](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarToggleButton/ToolbarToggleButton.tsx).
+ * Headless state: [useToolbarToggleButton.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarToggleButton/useToolbarToggleButton.ts).
+ * Headless render: [renderToolbarToggleButton.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarToggleButton/renderToolbarToggleButton.ts).
+ * Composed CSS: [ToggleButton.module.css](../../ToggleButton/ToggleButton.module.css).
+ *
  * ToggleButton.module.css supplies the shared checked, disabled, and focus styles.
  */
 

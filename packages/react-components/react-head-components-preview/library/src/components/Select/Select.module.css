@@ -1,10 +1,10 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-select/library/src/components/Select/useSelectStyles.styles.ts.
+ * Fluent style sources:
+ * - [useSelectStyles.styles.ts](../../../../../react-select/library/src/components/Select/useSelectStyles.styles.ts)
+ * Headless component: [Select.tsx](../../../../../react-headless-components-preview/library/src/components/Select/Select.tsx).
+ * Headless state: [useSelect.ts](../../../../../react-headless-components-preview/library/src/components/Select/useSelect.ts).
+ * Headless render: [renderSelect.tsx](../../../../../react-headless-components-preview/library/src/components/Select/renderSelect.tsx).
+ *
  * Logical positioning supports RTL; focus uses native :focus-within.
  */
 

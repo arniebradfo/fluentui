@@ -1,6 +1,3 @@
-// Copyright (c) Microsoft Corporation.
-// Licensed under the MIT license.
-
 export { TeachingPopoverHeader, teachingPopoverHeaderClassNames } from './TeachingPopoverHeader.js';
 export type {
   TeachingPopoverHeaderProps,

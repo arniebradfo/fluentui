@@ -1,9 +1,12 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
+ * Fluent style sources:
+ * - [useDialogBodyStyles.styles.ts](../../../../../../react-dialog/library/src/components/DialogBody/useDialogBodyStyles.styles.ts)
+ * Headless component: [DialogHeader.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogHeader/DialogHeader.tsx).
+ * Headless state: [useDialogHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogHeader/useDialogHeader.ts).
+ * Headless render: [renderDialogHeader.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogHeader/renderDialogHeader.tsx).
+ *
+ * DialogHeader is a public headless boundary. Consumers compose their own close action.
  */
-
-/* DialogHeader is a public headless boundary. Consumers compose their own close action. */
 
 @layer fluent-components;
 

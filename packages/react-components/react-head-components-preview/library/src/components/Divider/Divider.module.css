@@ -1,10 +1,9 @@
 /*
- * Copyright (c) Microsoft Corporation.
- * Licensed under the MIT license.
- */
-
-/*
- * Adapted from react-divider/library/src/components/Divider/useDividerStyles.styles.ts.
+ * Fluent style sources:
+ * - [useDividerStyles.styles.ts](../../../../../react-divider/library/src/components/Divider/useDividerStyles.styles.ts)
+ * Headless component: [Divider.tsx](../../../../../react-headless-components-preview/library/src/components/Divider/Divider.tsx).
+ * Headless state: [useDivider.ts](../../../../../react-headless-components-preview/library/src/components/Divider/useDivider.ts).
+ * Headless render: [renderDivider.ts](../../../../../react-headless-components-preview/library/src/components/Divider/renderDivider.ts).
  */
 
 @layer fluent-components;
