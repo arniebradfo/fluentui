@@ -8,6 +8,11 @@ The existing v9 components remain unchanged. The new wrappers add Fluent visual
 defaults, CSS Modules and default icons to current headless behavior. They do
 not restore Griffel, Tabster, legacy portals or the old positioning engine.
 
+The priorities are human-visible similarity to stock v9 and simple, editable
+source. Exact pixels, DOM structure and old APIs are not goals when matching
+them would add disproportionate complexity. Small visual differences need
+review, not increasingly complicated compatibility code.
+
 ## Layout
 
 - [library/src](./library/src): source recipes, CSS Modules and focused tests.
@@ -214,6 +219,54 @@ Storybook reuses reviewed v9 story bodies through an explicit importer allowlist
 and test-only facade. It never globally aliases component packages or silently
 falls back to old styled components. Griffel used for reference demos or demo
 layout is not evidence that the copied runtime requires it.
+
+### Paired v9 visual review
+
+```sh
+yarn nx run react-head-components-preview-stories:test-visual
+yarn nx run react-head-components-preview-stories:review-visual
+```
+
+The first command builds the same existing v9 visual-test stories twice: once
+with stock components and once with the CSS Modules candidates. It currently
+reuses the Button, Checkbox, Input interaction and basic Menu modules from
+`apps/vr-tests-react-components`. The original stories, theme variants and
+StoryWright interaction steps remain unchanged.
+
+Only reviewed story imports, the shared theme-variant helper and the visual
+preview's provider are redirected. Runtime dependency imports are not aliased.
+The test-only provider adapter removes `applyStylesToPortals`, which has no
+equivalent job for native top-layer surfaces. There is no old-component fallback.
+
+Playwright runs the original StoryWright steps in Chromium at the same viewport,
+theme and font environment. Each reference image is captured from stock v9 in
+that run, rather than approved from a candidate image. Both sides must expose
+the same stories and steps. Browser errors and unsupported steps fail explicitly.
+Do not use `--update-snapshots`; candidate snapshot updates are rejected.
+
+The [HTML report](./stories/dist/visual-report/index.html) includes both images
+for every captured state, plus Playwright's image differences for failed
+comparisons. The review command serves it at `http://127.0.0.1:8102`.
+Screenshots, references and traces stay in ignored `stories/dist` directories.
+
+The initial run covers 79 upstream scenarios and 193 paired captures. Of those,
+71 scenarios fall within the screen's budget; eight flag differences for review
+(six high-contrast Button edge cases and two Menu cases with a native focus
+indicator). This is 172 captures within budget and 21 flagged captures, not an
+approved exception list. The separate image-screen control passes.
+
+This is a review screen, not a perceptual certification or a requirement for
+zero differing pixels. Playwright ignores small per-pixel color differences
+with `threshold: 0.2`, then permits at most the smaller of 50 differing pixels
+and 1% of the image. Cropped image dimensions must still match. A control test
+checks that a one-pixel mark is tolerated but a missing Button is detected.
+High-contrast theme stories do not emulate the browser's forced-colors mode.
+
+The command exits nonzero when a comparison exceeds that budget. Inspect the
+images before deciding whether a difference warrants a simple style correction
+or is an acceptable tradeoff. Do not mask controls, broadly increase tolerances,
+or restore old runtime machinery merely to get a green report. The initial
+coverage is not a claim about the full catalog, motion or other browsers.
 
 ### Public-npm consumer
 

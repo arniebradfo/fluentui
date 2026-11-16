@@ -4,6 +4,11 @@ Experimental Fluent visuals on public
 `@fluentui/react-headless-components-preview@0.4.1` behavior. This package is
 private and is not a production-ready v9 replacement.
 
+The goals are a stock-v9 appearance that looks the same to a person and simple,
+editable source. Small reviewed visual differences are acceptable when exact
+matching would add complexity. Keep API changes small where practical, without
+recreating obsolete behavior or styling engines.
+
 Copy the [source](./src) into your application and install the public runtime
 dependencies listed in [package.json](./package.json), plus React and React DOM.
 Retain the accompanying repository MIT license, including its copyright and

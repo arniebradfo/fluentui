@@ -4,6 +4,16 @@
   "projectType": "library",
   "sourceRoot": "packages/react-components/react-head-components-preview/stories/src",
   "tags": ["vNext", "platform:web", "type:stories", "react-head"],
+  "namedInputs": {
+    "visual": [
+      "default",
+      "{workspaceRoot}/.storybook/**",
+      "{workspaceRoot}/apps/vr-tests-react-components/src/**",
+      "{workspaceRoot}/apps/vr-tests-react-components/.storybook/preview.js",
+      "{workspaceRoot}/packages/react-components/react-head-components-preview/library/src/**",
+      "{workspaceRoot}/packages/react-components/react-headless-components-preview/stories/.storybook/css-modules-webpack.js"
+    ]
+  },
   "targets": {
     "verify-catalog": {
       "executor": "nx:run-commands",
@@ -34,6 +44,45 @@
       "options": {
         "cwd": "packages/react-components/react-head-components-preview/stories",
         "command": "yarn run -T playwright test --config playwright.config.cjs"
+      }
+    },
+    "build-visual-reference": {
+      "executor": "nx:run-commands",
+      "inputs": ["visual", "^production"],
+      "outputs": ["{projectRoot}/dist/visual-reference"],
+      "cache": true,
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/stories",
+        "command": "yarn run -T storybook build --config-dir .storybook/visual --output-dir dist/visual-reference",
+        "env": { "STORYBOOK_HEAD_IMPLEMENTATION": "reference" }
+      }
+    },
+    "build-visual-candidate": {
+      "executor": "nx:run-commands",
+      "inputs": ["visual", "^production"],
+      "outputs": ["{projectRoot}/dist/visual-candidate"],
+      "cache": true,
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/stories",
+        "command": "yarn run -T storybook build --config-dir .storybook/visual --output-dir dist/visual-candidate",
+        "env": { "STORYBOOK_HEAD_IMPLEMENTATION": "candidate" }
+      }
+    },
+    "test-visual": {
+      "executor": "nx:run-commands",
+      "dependsOn": ["verify-catalog", "build-visual-reference", "build-visual-candidate"],
+      "cache": false,
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/stories",
+        "command": "yarn run -T playwright test --config playwright.visual.config.cjs"
+      }
+    },
+    "review-visual": {
+      "executor": "nx:run-commands",
+      "cache": false,
+      "options": {
+        "cwd": "packages/react-components/react-head-components-preview/stories",
+        "command": "yarn run -T playwright show-report dist/visual-report --host 127.0.0.1 --port 8102"
       }
     }
   }

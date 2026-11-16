@@ -132,3 +132,60 @@ for (const issuer of [
 console.log(
   `Verified ${imported.size} stock-story mappings and their facade imports; ${scenarioCount} scenarios. Unreviewed stock stories fail closed; comparison and runtime imports stay untouched.`,
 );
+
+const visualDir = path.join(__dirname, 'visual');
+const loadVisualConfig = implementation => {
+  const context = {
+    __dirname: visualDir,
+    module: { exports: {} },
+    process: { env: { STORYBOOK_HEAD_IMPLEMENTATION: implementation } },
+    require(request) {
+      return request === '../main' ? { webpackFinal: config => config } : require(request);
+    },
+  };
+  vm.runInNewContext(fs.readFileSync(path.join(visualDir, 'main.js'), 'utf8'), context);
+  return context.module.exports;
+};
+assert.throws(() => loadVisualConfig('unknown'), /build-visual-reference/);
+const referenceConfig = loadVisualConfig('reference');
+const candidateConfig = loadVisualConfig('candidate');
+assert.deepEqual([...referenceConfig.stories], [...candidateConfig.stories]);
+for (const file of candidateConfig.stories) {
+  assert(fs.existsSync(file), `Missing upstream visual story: ${file}`);
+}
+for (const [implementation, config] of [
+  ['reference', referenceConfig],
+  ['candidate', candidateConfig],
+]) {
+  const replacement = config
+    .webpackFinal({ plugins: [] }, {})
+    .plugins.find(item => item instanceof require('webpack').NormalModuleReplacementPlugin);
+  const issuer = config.stories.find(file => file.endsWith('/Button/Button.stories.tsx'));
+  const resource = { request: '@fluentui/react-button', contextInfo: { issuer } };
+  replacement.newResource(resource);
+  assert.equal(
+    resource.request,
+    implementation === 'reference' ? '@fluentui/react-button' : path.resolve(root, '../library/src/button.ts'),
+  );
+  assert.throws(
+    () => replacement.newResource({ request: '@fluentui/react-spinner', contextInfo: { issuer } }),
+    /unmapped Fluent import/,
+  );
+  assert.throws(
+    () =>
+      replacement.newResource({
+        request: '@fluentui/react-button',
+        contextInfo: { issuer: path.join(path.dirname(issuer), 'UnreviewedHelper.tsx') },
+      }),
+    /unapproved helper import/,
+  );
+  const runtime = {
+    request: '@fluentui/react-button',
+    contextInfo: { issuer: path.resolve(root, '../../react-headless-components-preview/library/src/button.ts') },
+  };
+  replacement.newResource(runtime);
+  assert.equal(runtime.request, '@fluentui/react-button');
+}
+console.log(
+  `Verified ${candidateConfig.stories.length} paired visual source modules; reference imports, candidate redirection and runtime isolation.`,
+);
