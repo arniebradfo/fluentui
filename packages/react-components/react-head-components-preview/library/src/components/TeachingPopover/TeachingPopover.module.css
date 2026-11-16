@@ -79,7 +79,7 @@
     &:focus-visible {
       outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
       border-radius: var(--borderRadiusMedium);
-      border-color: var(--colorTransparentStroke);
+      border-color: transparent;
     }
 
     &[data-appearance='brand'] {
@@ -284,7 +284,7 @@
     &:focus-visible {
       outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
       border-radius: var(--borderRadiusMedium);
-      border-color: var(--colorTransparentStroke);
+      border-color: transparent;
     }
   }
 
@@ -297,17 +297,17 @@
     border: none;
     border-radius: var(--borderRadiusCircular);
     padding: 0;
-    outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
-    background-color: color-mix(in srgb, var(--colorBrandBackground) 30%, var(--colorTransparentBackground));
+    outline: var(--strokeWidthThin) solid transparent;
+    background-color: color-mix(in srgb, var(--colorBrandBackground) 30%, transparent);
 
     &:focus-visible {
       outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
       border-radius: var(--borderRadiusMedium);
-      border-color: var(--colorTransparentStroke);
+      border-color: transparent;
     }
 
     &[data-appearance='brand'] {
-      background-color: color-mix(in srgb, var(--colorNeutralForegroundOnBrand) 30%, var(--colorTransparentBackground));
+      background-color: color-mix(in srgb, var(--colorNeutralForegroundOnBrand) 30%, transparent);
     }
 
     &[data-selected] {

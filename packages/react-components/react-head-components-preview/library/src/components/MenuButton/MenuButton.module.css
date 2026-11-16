@@ -16,9 +16,12 @@
     composes: Button from '../Button/Button.module.css';
 
     /* Appearance variations. Hover/press continue to use the delegated Button rules. */
-    &[data-open][data-appearance]:not([data-disabled], [data-disabled-focusable], :hover, :active:focus-visible) {
+    &[data-open][data-appearance]:not(:hover, :active:focus-visible) {
       background-color: var(--colorNeutralBackground1Selected);
-      color: var(--colorNeutralForeground1Selected);
+
+      &:is([data-appearance='outline'], [data-appearance='secondary']) {
+        color: var(--colorNeutralForeground1Selected);
+      }
 
       &:not(:focus-visible) {
         border-color: var(--colorNeutralStroke1Selected);
@@ -30,10 +33,9 @@
 
       &[data-appearance='primary'] {
         background-color: var(--colorBrandBackgroundSelected);
-        color: var(--colorNeutralForegroundOnBrand);
 
         &:not(:focus-visible) {
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
         }
       }
 
@@ -42,7 +44,7 @@
         color: var(--colorNeutralForeground2Selected);
 
         &:not(:focus-visible) {
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
         }
       }
 
@@ -51,12 +53,12 @@
         color: var(--colorNeutralForeground2BrandSelected);
 
         &:not(:focus-visible) {
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
         }
       }
     }
 
-    &[data-open][data-appearance='outline']:not([data-disabled], [data-disabled-focusable], :focus-visible) {
+    &[data-open][data-appearance='outline']:not(:focus-visible) {
       border-width: var(--strokeWidthThicker);
     }
 
@@ -93,7 +95,7 @@
 }
 
 /* Preserve the completed Button's narrow exception for existing unlayered bundled icons. */
-.MenuButton[data-open]:not([data-disabled], [data-disabled-focusable]) .MenuButton__icon {
+.MenuButton[data-open] .MenuButton__icon {
   :global(.fui-Icon-filled) {
     display: inline;
   }

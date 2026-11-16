@@ -4445,6 +4445,7 @@ __metadata:
   resolution: "@fluentui/react-head-components-preview-stories@workspace:packages/react-components/react-head-components-preview/stories"
   dependencies:
     "@fluentui/react-head-components-preview": "workspace:*"
+    pngjs: "npm:^7.0.0"
   languageName: unknown
   linkType: soft
 

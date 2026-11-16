@@ -73,7 +73,7 @@
     }
 
     &:focus-within {
-      outline: var(--strokeWidthThick) solid var(--colorTransparentStroke);
+      outline: var(--strokeWidthThick) solid transparent;
 
       &::after {
         /* Animation for focus IN. */

@@ -32,7 +32,7 @@
 
     /* Windows high contrast mode focus indicator. */
     &:focus-within {
-      outline: var(--strokeWidthThick) solid var(--colorTransparentStroke);
+      outline: var(--strokeWidthThick) solid transparent;
     }
 
     /* Bottom focus border, shared with Input, Select, and SpinButton. */

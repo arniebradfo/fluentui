@@ -10,10 +10,16 @@ if (!['reference', 'candidate'].includes(implementation)) {
 const vrtRoot = path.resolve(__dirname, '../../../../../../apps/vr-tests-react-components');
 const stories = [
   'Button/Button.stories.tsx',
+  'Button/CompoundButton.stories.tsx',
+  'Button/MenuButton.stories.tsx',
+  'Button/SplitButton.stories.tsx',
+  'Button/ToggleButton.stories.tsx',
   'Checkbox/Checkbox.stories.tsx',
   'Input/InputInteractions.stories.tsx',
   'Menu/Menu.stories.tsx',
+  'Menu/MenuIconSlottedContent.stories.tsx',
 ].map(file => path.join(vrtRoot, 'src/stories', file));
+stories.push(path.join(__dirname, 'IconStates.stories.tsx'));
 const importers = new Set([
   ...stories,
   path.join(vrtRoot, 'src/utilities/getStoryVariant.tsx'),
@@ -21,12 +27,13 @@ const importers = new Set([
 ]);
 const replacements = new Map(
   [
-    ['button', 'button.ts'],
     ['checkbox', 'checkbox.ts'],
     ['input', 'input.ts'],
     ['menu', 'menu.ts'],
   ].map(([name, entry]) => [`@fluentui/react-${name}`, path.resolve(__dirname, '../../../library/src', entry)]),
 );
+replacements.set('@fluentui/react-button', path.join(__dirname, 'components.ts'));
+replacements.set('@fluentui/react-components', path.join(__dirname, 'components.ts'));
 replacements.set('@fluentui/react-provider', path.join(__dirname, 'provider.tsx'));
 const foundations = new Set(['@fluentui/react-icons', '@fluentui/react-theme', '@fluentui/react-utilities']);
 
@@ -36,6 +43,7 @@ module.exports = {
   typescript: { reactDocgen: false },
   webpackFinal(config, options) {
     const result = catalogMain.webpackFinal(config, options);
+    result.module = { ...result.module, strictExportPresence: true };
     result.plugins.push(
       new DefinePlugin({ __HEAD_VISUAL_IMPLEMENTATION__: JSON.stringify(implementation) }),
       new NormalModuleReplacementPlugin(/^@fluentui\/react-/, resource => {

@@ -5,7 +5,8 @@
  * Headless state: [useButton.ts](../../../../../react-headless-components-preview/library/src/components/Button/useButton.ts).
  * Headless render: [renderButton.ts](../../../../../react-headless-components-preview/library/src/components/Button/renderButton.ts).
  *
- * Focus indicators use native :focus-visible.
+ * Focus indicators use native :focus-visible. Structural transparent borders
+ * must not use colorTransparentStroke, which is visible in high-contrast themes.
  */
 
 @layer fluent-components;
@@ -71,19 +72,19 @@
 
       &[data-appearance='primary'] {
         background-color: var(--colorBrandBackground);
-        border-color: var(--colorTransparentStroke);
+        border-color: transparent;
         color: var(--colorNeutralForegroundOnBrand);
 
         &:hover {
           background-color: var(--colorBrandBackgroundHover);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForegroundOnBrand);
         }
 
         &:hover:active,
         &:active:focus-visible {
           background-color: var(--colorBrandBackgroundPressed);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForegroundOnBrand);
         }
       }
@@ -100,12 +101,12 @@
 
       &[data-appearance='subtle'] {
         background-color: var(--colorSubtleBackground);
-        border-color: var(--colorTransparentStroke);
+        border-color: transparent;
         color: var(--colorNeutralForeground2);
 
         &:hover {
           background-color: var(--colorSubtleBackgroundHover);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForeground2Hover);
 
           .Button__icon {
@@ -116,7 +117,7 @@
         &:hover:active,
         &:active:focus-visible {
           background-color: var(--colorSubtleBackgroundPressed);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForeground2Pressed);
 
           .Button__icon {
@@ -127,19 +128,19 @@
 
       &[data-appearance='transparent'] {
         background-color: var(--colorTransparentBackground);
-        border-color: var(--colorTransparentStroke);
+        border-color: transparent;
         color: var(--colorNeutralForeground2);
 
         &:hover {
           background-color: var(--colorTransparentBackgroundHover);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForeground2BrandHover);
         }
 
         &:hover:active,
         &:active:focus-visible {
           background-color: var(--colorTransparentBackgroundPressed);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForeground2BrandPressed);
         }
       }
@@ -254,7 +255,7 @@
       }
 
       &:is([data-appearance='primary'], [data-appearance='subtle'], [data-appearance='transparent']) {
-        border-color: var(--colorTransparentStroke);
+        border-color: transparent;
       }
 
       &:focus-visible:not(:active) {

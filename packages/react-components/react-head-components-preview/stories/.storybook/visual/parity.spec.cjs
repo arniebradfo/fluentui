@@ -5,6 +5,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { test, expect } = require('@playwright/test');
 const { PlayWrightExecutor } = require('storywright/lib/StoryWrightProcessor/PlayWrightExecutor');
+const { compareExactPixels } = require('./exact-pixels.cjs');
+const { PNG } = require('pngjs');
 
 const readStories = implementation => {
   const index = JSON.parse(
@@ -38,7 +40,7 @@ const supportedSteps = new Set([
 ]);
 const screenshotOptions = { animations: 'disabled', caret: 'hide' };
 
-async function openStory(page, story, implementation) {
+async function openStory(page, story, implementation, args = '') {
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
   page.on('console', message => {
@@ -47,12 +49,21 @@ async function openStory(page, story, implementation) {
     }
   });
   const port = implementation === 'reference' ? 8100 : 8101;
-  await page.goto(`http://127.0.0.1:${port}/iframe.html?id=${encodeURIComponent(story.id)}&viewMode=story`);
+  const storyArgs = args ? `&args=${encodeURIComponent(args)}` : '';
+  await page.goto(`http://127.0.0.1:${port}/iframe.html?id=${encodeURIComponent(story.id)}&viewMode=story${storyArgs}`);
   await expect(page.locator(`[data-visual-implementation="${implementation}"]`)).toBeVisible();
   await expect(page.locator('.sb-errordisplay')).toBeHidden();
   await page.locator('html').evaluate(root => root.ownerDocument.fonts.ready);
   await page.mouse.move(639, 479);
   return errors;
+}
+
+async function finishAnimations(locator) {
+  await locator.evaluate(root => {
+    for (const animation of root.getAnimations({ subtree: true })) {
+      animation.finish();
+    }
+  });
 }
 
 async function readSteps(page, story) {
@@ -96,11 +107,28 @@ for (const story of stories) {
             : await page.screenshot(screenshotOptions);
           await testInfo.attach(`${implementation}: ${label}`, { body: image, contentType: 'image/png' });
           if (implementation === 'reference') {
-            referenceFrames.push({ name, selector });
+            referenceFrames.push({ name, selector, image });
             writeReference(testInfo, name, image);
           } else {
-            expect({ name, selector }).toEqual(referenceFrames[frame - 1]);
-            expect.soft(image, `${story.id}: ${label}`).toMatchSnapshot(name);
+            const reference = referenceFrames[frame - 1];
+            expect({ name, selector }).toEqual({ name: reference.name, selector: reference.selector });
+            if (testInfo.config.metadata.exactPixels) {
+              const { diff, ...comparison } = compareExactPixels(reference.image, image);
+              testInfo.annotations.push({
+                type: 'exact pixels',
+                description: `${name}: ${JSON.stringify(comparison)}`,
+              });
+              if (diff) {
+                await testInfo.attach(`exact diff: ${label}`, { body: diff, contentType: 'image/png' });
+              }
+              expect.soft(comparison, `${story.id}: ${label}`).toEqual({
+                differentPixels: 0,
+                expectedSize: comparison.expectedSize,
+                actualSize: comparison.expectedSize,
+              });
+            } else {
+              expect.soft(image, `${story.id}: ${label}`).toMatchSnapshot(name);
+            }
           }
         };
         // Reuse StoryWright's interaction executor; only route its captures into Playwright's image reports.
@@ -119,12 +147,14 @@ for (const story of stories) {
   });
 }
 
-test('image screen tolerates tiny noise but detects a missing component', async ({ page }, testInfo) => {
+test('comparison control checks one-pixel noise and a missing component', async ({ page }, testInfo) => {
   const story = stories.find(entry => entry.id === 'button-converged--default');
   assert(story, 'The visual control requires the upstream default Button story.');
   const errors = await openStory(page, story, 'reference');
   const name = 'screen-control.png';
-  writeReference(testInfo, name, await page.screenshot(screenshotOptions));
+  const reference = await page.screenshot(screenshotOptions);
+  writeReference(testInfo, name, reference);
+  expect(compareExactPixels(reference, reference).differentPixels).toBe(0);
   await page.locator('[data-visual-implementation]').evaluate(root => {
     const marker = root.ownerDocument.createElement('span');
     Object.assign(marker.style, {
@@ -137,10 +167,142 @@ test('image screen tolerates tiny noise but detects a missing component', async 
     });
     root.append(marker);
   });
-  expect(await page.screenshot(screenshotOptions)).toMatchSnapshot(name);
+  const tinyChange = await page.screenshot(screenshotOptions);
+  expect(compareExactPixels(reference, tinyChange).differentPixels).toBe(1);
+  if (!testInfo.config.metadata.exactPixels) {
+    expect(tinyChange).toMatchSnapshot(name);
+  }
   await page.locator('.fui-Button').evaluate(button => {
     button.style.visibility = 'hidden';
   });
-  expect(await page.screenshot(screenshotOptions)).not.toMatchSnapshot(name);
+  const missingComponent = await page.screenshot(screenshotOptions);
+  expect(compareExactPixels(reference, missingComponent).differentPixels).toBeGreaterThan(1);
+  if (!testInfo.config.metadata.exactPixels) {
+    expect(missingComponent).not.toMatchSnapshot(name);
+  }
   expect(errors).toEqual([]);
 });
+
+test('exact comparison counts tiny color, alpha and dimension differences', () => {
+  const image = (width, color) => {
+    const png = new PNG({ width, height: 1 });
+    for (let x = 0; x < width; x++) {
+      png.data.set(color, x * 4);
+    }
+    return PNG.sync.write(png);
+  };
+  const original = image(1, [200, 200, 200, 255]);
+  expect(compareExactPixels(original, image(1, [201, 200, 200, 255])).differentPixels).toBe(1);
+  expect(compareExactPixels(original, image(1, [200, 200, 200, 254])).differentPixels).toBe(1);
+  expect(compareExactPixels(original, image(2, [200, 200, 200, 255])).differentPixels).toBe(1);
+});
+
+test('icon colors and bundled variants match v9 without a pixel tolerance', async ({ context }, testInfo) => {
+  const observations = {};
+  for (const implementation of ['reference', 'candidate']) {
+    observations[implementation] = [];
+    for (const variant of ['subtle', 'transparent', 'disabled', 'high-contrast']) {
+      const story = stories.find(entry => entry.id === `css-modules-shared-icon-states--${variant}`);
+      assert(story, `Missing icon state fixture: ${variant}`);
+      const page = await context.newPage();
+      try {
+        const errors = await openStory(page, story, implementation);
+        const groups = page.locator('[data-icon-case]');
+        const read = async group => {
+          await finishAnimations(group);
+          return group.locator('svg[data-visual-bundle]').evaluateAll(icons =>
+            icons.map(icon => ({
+              kind: icon.classList.contains('fui-Icon-filled') ? 'filled' : 'regular',
+              visible: icon.ownerDocument.defaultView.getComputedStyle(icon).display !== 'none',
+              color: icon.ownerDocument.defaultView.getComputedStyle(icon).color,
+            })),
+          );
+        };
+        for (const group of await groups.all()) {
+          const name = await group.getAttribute('data-icon-case');
+          const initial = await read(group);
+          expect(initial).toHaveLength(2);
+          await page.locator(`#icon-${name}`).hover();
+          const hover = await read(group);
+          observations[implementation].push({ variant, name, initial, hover });
+        }
+        expect(errors).toEqual([]);
+      } finally {
+        await page.close();
+      }
+    }
+  }
+  await testInfo.attach('icon states', {
+    body: Buffer.from(JSON.stringify(observations, null, 2)),
+    contentType: 'application/json',
+  });
+  expect(observations.candidate).toEqual(observations.reference);
+  const button = observations.candidate.find(entry => entry.variant === 'subtle' && entry.name === 'button');
+  expect(button.hover.find(icon => icon.visible).color).not.toBe(button.initial.find(icon => icon.visible).color);
+});
+
+test('expanded primary disabled MenuButton matches the stock selected-state precedence', async ({
+  context,
+}, testInfo) => {
+  const story = stories.find(entry => entry.id === 'css-modules-shared-icon-states--disabled');
+  assert(story, 'Missing disabled icon fixture.');
+  const observations = {};
+  for (const implementation of ['reference', 'candidate']) {
+    const page = await context.newPage();
+    try {
+      const errors = await openStory(page, story, implementation, 'appearance:primary');
+      await expect(page.locator('[data-visual-appearance="primary"]')).toBeVisible();
+      observations[implementation] = {};
+      for (const [state, id] of [
+        ['closed', 'icon-menu'],
+        ['expanded', 'icon-expanded'],
+      ]) {
+        const button = page.locator(`#${id}`);
+        await expect(button).toBeDisabled();
+        await finishAnimations(button);
+        observations[implementation][state] = await button.evaluate(node => {
+          const css = node.ownerDocument.defaultView.getComputedStyle(node);
+          return { background: css.backgroundColor, color: css.color };
+        });
+      }
+      expect(errors).toEqual([]);
+    } finally {
+      await page.close();
+    }
+  }
+  await testInfo.attach('expanded disabled precedence', {
+    body: Buffer.from(JSON.stringify(observations, null, 2)),
+    contentType: 'application/json',
+  });
+  expect(observations.candidate).toEqual(observations.reference);
+  expect(observations.reference.expanded.background).not.toBe(observations.reference.closed.background);
+});
+
+for (const implementation of ['reference', 'candidate']) {
+  test(`${implementation} Menu preserves keyboard focus with its own visibility policy`, async ({ page }, testInfo) => {
+    const story = stories.find(entry => entry.id === 'menu-converged-basic--default');
+    assert(story, 'Missing upstream Menu fixture.');
+    const errors = await openStory(page, story, implementation);
+    const first = page.getByRole('menuitem', { name: 'Cut', exact: true });
+    await expect(first).toBeFocused();
+    const initial = await first.evaluate(item => ({
+      nativeFocusVisible: item.matches(':focus-visible'),
+      fluentFocusVisible: item.hasAttribute('data-fui-focus-visible'),
+      indicator: item.ownerDocument.defaultView.getComputedStyle(item, '::after').content,
+    }));
+    await testInfo.attach('initial focus policy', {
+      body: Buffer.from(JSON.stringify(initial)),
+      contentType: 'application/json',
+    });
+    expect(initial.indicator !== 'none').toBe(
+      implementation === 'candidate' ? initial.nativeFocusVisible : initial.fluentFocusVisible,
+    );
+    await page.keyboard.press('ArrowDown');
+    const next = page.getByRole('menuitem', { name: 'Edit', exact: true });
+    await expect(next).toBeFocused();
+    await expect
+      .poll(() => next.evaluate(item => item.ownerDocument.defaultView.getComputedStyle(item, '::after').content))
+      .not.toBe('none');
+    expect(errors).toEqual([]);
+  });
+}

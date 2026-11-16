@@ -225,18 +225,29 @@ layout is not evidence that the copied runtime requires it.
 ```sh
 yarn nx run react-head-components-preview-stories:test-visual
 yarn nx run react-head-components-preview-stories:review-visual
+
+# No color threshold, pixel budget or anti-aliasing exclusion
+yarn nx run react-head-components-preview-stories:test-visual:exact
+yarn nx run react-head-components-preview-stories:review-visual:exact
 ```
 
 The first command builds the same existing v9 visual-test stories twice: once
 with stock components and once with the CSS Modules candidates. It currently
-reuses the Button, Checkbox, Input interaction and basic Menu modules from
-`apps/vr-tests-react-components`. The original stories, theme variants and
-StoryWright interaction steps remain unchanged.
+reuses nine modules from `apps/vr-tests-react-components`: all five Button
+variants, Checkbox, Input interactions and two Menu modules. These contribute
+191 unchanged upstream scenarios. Four local icon-state scenarios cover
+combinations missing from those modules: subtle/transparent, disabled,
+expanded, checked and high-contrast states across the Button variants and Input.
+This is 195 scenarios and 595 paired captures, not proxy coverage for the
+remaining component families.
 
 Only reviewed story imports, the shared theme-variant helper and the visual
 preview's provider are redirected. Runtime dependency imports are not aliased.
 The test-only provider adapter removes `applyStylesToPortals`, which has no
 equivalent job for native top-layer surfaces. There is no old-component fallback.
+The test-only component facade maps the stock button aggregate and the local
+fixture's umbrella imports to explicit candidate family entrypoints. Missing
+exports fail the build rather than producing a misleading runtime comparison.
 
 Playwright runs the original StoryWright steps in Chromium at the same viewport,
 theme and font environment. Each reference image is captured from stock v9 in
@@ -249,18 +260,73 @@ for every captured state, plus Playwright's image differences for failed
 comparisons. The review command serves it at `http://127.0.0.1:8102`.
 Screenshots, references and traces stay in ignored `stories/dist` directories.
 
-The initial run covers 79 upstream scenarios and 193 paired captures. Of those,
-71 scenarios fall within the screen's budget; eight flag differences for review
-(six high-contrast Button edge cases and two Menu cases with a native focus
-indicator). This is 172 captures within budget and 21 flagged captures, not an
-approved exception list. The separate image-screen control passes.
-
 This is a review screen, not a perceptual certification or a requirement for
 zero differing pixels. Playwright ignores small per-pixel color differences
 with `threshold: 0.2`, then permits at most the smaller of 50 differing pixels
 and 1% of the image. Cropped image dimensions must still match. A control test
 checks that a one-pixel mark is tolerated but a missing Button is detected.
 High-contrast theme stories do not emulate the browser's forced-colors mode.
+
+The exact configuration decodes PNGs with `pngjs` and compares every RGBA
+channel and the image dimensions. It does not use Playwright's anti-aliasing
+exclusion, which still exists when its color threshold is zero. Any changed
+pixel fails, including a one-level color or alpha difference. Red-on-white
+exact difference masks and both source images are attached to the separate
+[exact report](./stories/dist/visual-exact-report/index.html), served on port 8103. Per-frame counts are recorded in its annotations and
+`stories/dist/visual-exact-results/report.json`.
+
+Separate browser contracts compare actual icon colors and regular/filled
+visibility with no tolerance, after finite CSS transitions finish. They also
+check that keyboard navigation retains visible focus in both implementations.
+Small but meaningful icon color changes must not rely on the image budget.
+
+#### Source corrections and focus policy
+
+The original 79-scenario screen flagged eight cases. Its exact baseline had
+170 identical captures out of 193 and flagged one additional Circular Button
+state: 39 edge pixels differed by only one channel level.
+
+The source audit found literal `transparent` borders and field focus outlines
+that had been translated to `colorTransparentStroke`. That token is intentionally
+visible in high-contrast themes, so it is not an alias for structural
+transparency. Corrections follow the source roles in Button, ToggleButton,
+MenuButton, Select, Input, SpinButton, Textarea, Combobox, Dropdown, TagPicker
+control, TeachingPopover and the Checkbox/Radio/Switch focus outlines. Existing
+token-based strokes in surfaces, sliders and similar components stay themed.
+Button composition also carries the shared fix to its other variants, Toolbar
+buttons and BreadcrumbButton; this does not certify every composition visually.
+
+Expanded MenuButton styling follows the stock selected-state rules even when
+the native button is disabled. The disabled attribute and interaction blocking
+remain intact; its background, icon variant and selected foreground are not
+necessarily styled like a closed disabled control.
+
+Menu's remaining focus-policy difference is not a missing style declaration.
+Both implementations focus the item, but stock v9 paints from Tabster's
+`data-fui-focus-visible` marker and the candidate paints from native
+`:focus-visible`. The browser can show the latter after programmatic focus
+without setting the former. Keyboard focus is retained and tested; no legacy
+focus runtime or screenshot mask is added to hide this difference.
+
+#### Latest full comparison
+
+| Check                | Scenarios within the check | Captures within the check |
+| -------------------- | -------------------------- | ------------------------- |
+| Normal review screen | 191 / 195                  | 587 / 595                 |
+| Exact RGBA equality  | 188 / 195                  | 584 / 595                 |
+
+Both runs flag four Menu scenarios (basic and slotted-icon, each LTR/RTL)
+because of the focus policy above. Exact mode also flags one frame each in
+Button Default RTL, CompoundButton Transparent and ToggleButton Default:
+16, 1 and 14 changed pixels, respectively. These small residuals remain
+visible in the report rather than being approved or hidden.
+
+The strict icon color/variant, keyboard focus, raw-comparator controls and
+primary expanded-disabled MenuButton comparison pass. The latter compares
+computed styles with real stock v9 and checks that both controls remain
+disabled; it is not an assumption that all disabled backgrounds are identical.
+The existing 63 catalog/browser comparisons and 10 public-npm consumer browser
+checks also pass after the source corrections.
 
 The command exits nonzero when a comparison exceeds that budget. Inspect the
 images before deciding whether a difference warrants a simple style correction

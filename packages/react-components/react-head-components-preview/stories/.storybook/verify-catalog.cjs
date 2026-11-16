@@ -165,7 +165,7 @@ for (const [implementation, config] of [
   replacement.newResource(resource);
   assert.equal(
     resource.request,
-    implementation === 'reference' ? '@fluentui/react-button' : path.resolve(root, '../library/src/button.ts'),
+    implementation === 'reference' ? '@fluentui/react-button' : path.join(visualDir, 'components.ts'),
   );
   assert.throws(
     () => replacement.newResource({ request: '@fluentui/react-spinner', contextInfo: { issuer } }),

@@ -75,6 +75,9 @@
       "options": {
         "cwd": "packages/react-components/react-head-components-preview/stories",
         "command": "yarn run -T playwright test --config playwright.visual.config.cjs"
+      },
+      "configurations": {
+        "exact": { "env": { "FLUENTUI_VISUAL_EXACT": "1" } }
       }
     },
     "review-visual": {
@@ -83,6 +86,11 @@
       "options": {
         "cwd": "packages/react-components/react-head-components-preview/stories",
         "command": "yarn run -T playwright show-report dist/visual-report --host 127.0.0.1 --port 8102"
+      },
+      "configurations": {
+        "exact": {
+          "command": "yarn run -T playwright show-report dist/visual-exact-report --host 127.0.0.1 --port 8103"
+        }
       }
     }
   }

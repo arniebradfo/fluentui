@@ -169,7 +169,7 @@
 
   .Select__select {
     appearance: none;
-    border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
+    border: var(--strokeWidthThin) solid transparent;
     border-radius: var(--borderRadiusMedium);
     box-shadow: none;
     box-sizing: border-box;
@@ -200,7 +200,7 @@
     line-height: var(--lineHeightBase300);
 
     &:focus {
-      outline: var(--strokeWidthThick) solid var(--colorTransparentStroke);
+      outline: var(--strokeWidthThick) solid transparent;
     }
   }
 

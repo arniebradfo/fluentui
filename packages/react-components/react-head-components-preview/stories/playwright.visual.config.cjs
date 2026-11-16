@@ -3,19 +3,29 @@
 const path = require('node:path');
 const { defineConfig } = require('@playwright/test');
 
+const exactPixels = process.env.FLUENTUI_VISUAL_EXACT === '1';
+const output = exactPixels ? 'visual-exact' : 'visual';
+
 module.exports = defineConfig({
   testDir: './.storybook/visual',
   testMatch: '**/*.spec.cjs',
-  outputDir: './dist/visual-results',
-  snapshotPathTemplate: path.join(__dirname, 'dist/visual-reference-images/{testName}/{arg}{ext}'),
+  outputDir: `./dist/${output}-results`,
+  snapshotPathTemplate: path.join(__dirname, `dist/${output}-reference-images/{testName}/{arg}{ext}`),
+  metadata: { exactPixels },
   updateSnapshots: 'none',
   workers: 1,
   retries: 0,
   forbidOnly: true,
   timeout: 60000,
-  reporter: [['list'], ['html', { outputFolder: './dist/visual-report', open: 'never' }]],
+  reporter: [
+    ['list'],
+    ['html', { outputFolder: `./dist/${output}-report`, open: 'never' }],
+    ['json', { outputFile: `./dist/${output}-results/report.json` }],
+  ],
   expect: {
-    toMatchSnapshot: { threshold: 0.2, maxDiffPixels: 50, maxDiffPixelRatio: 0.01 },
+    toMatchSnapshot: exactPixels
+      ? { threshold: 0, maxDiffPixels: 0, maxDiffPixelRatio: 0 }
+      : { threshold: 0.2, maxDiffPixels: 50, maxDiffPixelRatio: 0.01 },
   },
   use: {
     browserName: 'chromium',

@@ -47,6 +47,9 @@ catalog's stylesheets even when only one component is used.
 CSS provenance comments point to the checked-in Fluent style and headless
 sources in the original workspace. Those source-reference links are for working
 in that checkout; they are not runtime imports or additional files to copy.
+Preserve the source's structural `transparent` values. In particular,
+`colorTransparentStroke` becomes visible in high-contrast themes and is not an
+alias for an always-transparent border or focus outline.
 
 The source uses `.js` relative specifiers. Webpack source consumers need:
 
@@ -75,6 +78,10 @@ and [polyfill guidance](https://storybooks.fluentui.dev/headless/llms/overview-p
 The library does not install global polyfills.
 
 Use the current headless contracts, not assumptions about legacy v9 DOM.
+Focus indicators use native `:focus-visible`, not v9's Tabster visibility marker.
+Programmatically focused native overlays can therefore show an indicator in
+states where stock v9 does not. Do not remove visible keyboard focus to force
+identical screenshots.
 Unsupported Table/DataGrid, Carousel, FlatTree and other unpublished headless
 families have no old styled fallback. Text preset exports and full motion/arrow
 parity are not included. Complete browser, accessibility and design-system

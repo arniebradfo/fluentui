@@ -7,5 +7,8 @@
   },
   "dependencies": {
     "@fluentui/react-head-components-preview": "workspace:*"
+  },
+  "devDependencies": {
+    "pngjs": "^7.0.0"
   }
 }

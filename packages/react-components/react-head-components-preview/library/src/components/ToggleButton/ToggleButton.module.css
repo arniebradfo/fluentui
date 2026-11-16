@@ -60,7 +60,7 @@
 
         &[data-appearance='primary'] {
           background-color: var(--colorBrandBackgroundSelected);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForegroundOnBrand);
 
           &:hover {
@@ -72,14 +72,14 @@
           }
 
           &:is(:hover, :active:focus-visible) {
-            border-color: var(--colorTransparentStroke);
+            border-color: transparent;
             color: var(--colorNeutralForegroundOnBrand);
           }
         }
 
         &[data-appearance='subtle'] {
           background-color: var(--colorSubtleBackgroundSelected);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForeground2Selected);
 
           &:hover {
@@ -93,13 +93,13 @@
           }
 
           &:is(:hover, :active:focus-visible) {
-            border-color: var(--colorTransparentStroke);
+            border-color: transparent;
           }
         }
 
         &[data-appearance='transparent'] {
           background-color: var(--colorTransparentBackgroundSelected);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForeground2BrandSelected);
 
           &:hover {
@@ -113,7 +113,7 @@
           }
 
           &:is(:hover, :active:focus-visible) {
-            border-color: var(--colorTransparentStroke);
+            border-color: transparent;
           }
         }
 
@@ -133,7 +133,7 @@
         /* Opt-in accessible checked styles */
         &[data-accessible] {
           background-color: var(--colorBrandBackground);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForegroundOnBrand);
 
           &:hover {
@@ -145,7 +145,7 @@
           }
 
           &:is(:hover, :active:focus-visible) {
-            border-color: var(--colorTransparentStroke);
+            border-color: transparent;
             color: var(--colorNeutralForegroundOnBrand);
           }
 
@@ -229,7 +229,7 @@
 
         &[data-accessible] {
           background-color: var(--colorBrandBackground);
-          border-color: var(--colorTransparentStroke);
+          border-color: transparent;
           color: var(--colorNeutralForegroundOnBrand);
 
           &:hover {

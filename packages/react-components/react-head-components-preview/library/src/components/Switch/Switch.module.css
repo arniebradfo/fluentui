@@ -25,7 +25,7 @@
     /* The element with the focus outline needs position: relative so the pseudo-element
        can be properly positioned. Native input focus-visible supplies keyboard modality. */
     &:has(> .Switch__input:focus-visible) {
-      border-color: var(--colorTransparentStroke);
+      border-color: transparent;
 
       &::after {
         content: '';

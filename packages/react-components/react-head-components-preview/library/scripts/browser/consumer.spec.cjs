@@ -6,9 +6,15 @@ for (const route of ['/', '/reverse.html']) {
     const regular = page.getByTestId('default-button');
     await expect(regular).toHaveAttribute('data-shape', 'rounded');
     await expect(regular).toHaveCSS('border-radius', '4px');
-    for (const id of ['disabled-closed', 'disabled-open']) {
-      await expect(page.getByTestId(id)).toHaveCSS('background-color', 'rgb(240, 240, 240)');
-      await expect(page.getByTestId(id)).toHaveCSS('color', 'rgb(189, 189, 189)');
+    // Stock MenuButton keeps its selected background while expanded, even when disabled.
+    for (const [id, background] of [
+      ['disabled-closed', 'rgb(240, 240, 240)'],
+      ['disabled-open', 'rgb(15, 84, 140)'],
+    ]) {
+      const button = page.getByTestId(id);
+      await expect(button).toBeDisabled();
+      await expect(button).toHaveCSS('background-color', background);
+      await expect(button).toHaveCSS('color', 'rgb(189, 189, 189)');
     }
     await expect(page.getByTestId('override-button')).not.toHaveCSS('background-color', 'rgb(255, 255, 255)');
     await expect(page.getByTestId('avatar16')).toHaveText('A');
