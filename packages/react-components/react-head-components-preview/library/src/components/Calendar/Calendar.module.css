@@ -13,8 +13,8 @@
  * Headless state: [useCalendar.tsx](../../../../../react-headless-components-preview/library/src/components/Calendar/useCalendar.tsx).
  * Headless render: [renderCalendar.tsx](../../../../../react-headless-components-preview/library/src/components/Calendar/renderCalendar.tsx).
  *
- * Headless differences: the roving tab stop is the grid cell (td or div[role=gridcell]), so the
- * data attributes rather than generated classes. The v9 slide/fade transitions are not ported.
+ * Headless differences: the roving tab stop is the grid cell (td or div[role=gridcell]).
+ * Visual states use data attributes rather than generated classes. The v9 slide/fade transitions are not ported.
  * Physical spacing is expressed logically for RTL; focus uses native :focus-visible.
  */
 
@@ -35,10 +35,12 @@
 
     &[data-side-by-side] {
       grid-template-columns: auto auto auto;
+      grid-template-rows: auto 1fr;
 
       & > .CalendarDay,
       & > .Calendar__divider {
         grid-row: span 2;
+        align-self: stretch;
       }
     }
   }
@@ -71,7 +73,7 @@
     grid-column: -2 / -1;
     justify-self: end;
     height: 30px;
-    margin-block: calc(var(--spacingVerticalXXS) + var(--strokeWidthThin)) var(--spacingVerticalS);
+    margin-block: calc(var(--spacingVerticalXXS) + var(--strokeWidthThin)) 0;
     margin-inline-end: var(--spacingHorizontalL);
     padding-block: 0;
     padding-inline: var(--spacingHorizontalXS);
@@ -169,11 +171,13 @@
       &:hover {
         background-color: var(--colorBrandBackgroundInvertedHover);
         color: var(--colorBrandForegroundOnLightHover);
+        outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
       }
 
       &:hover:active {
         background-color: var(--colorBrandBackgroundInvertedPressed);
         color: var(--colorBrandForegroundOnLightPressed);
+        outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
       }
 
       &:focus-visible {
@@ -207,11 +211,13 @@
 
     &:hover {
       background-color: var(--colorBrandBackgroundInvertedHover);
-      color: var(--colorNeutralForeground1Static);
+      color: var(--colorBrandForegroundOnLightHover);
+      outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
     }
 
     &:hover:active {
       background-color: var(--colorBrandBackgroundInvertedPressed);
+      color: var(--colorBrandForegroundOnLightPressed);
     }
 
     &:focus-visible {
@@ -237,7 +243,7 @@
   .CalendarDay__grid {
     box-sizing: border-box;
     width: var(--fui-CalendarDay--width);
-    margin-block: var(--spacingVerticalXS) var(--spacingVerticalMNudge);
+    margin-block: var(--spacingVerticalXS) 0;
     margin-inline: auto;
     border-collapse: collapse;
     border-spacing: 0;
@@ -246,12 +252,11 @@
     text-align: center;
 
     & th[role='columnheader'] {
-      height: 28px;
-      padding: 0;
+      padding: var(--spacingVerticalXXS) var(--spacingHorizontalXXS);
       color: var(--colorNeutralForeground1);
       font-size: var(--fontSizeBase200);
       font-weight: var(--fontWeightRegular);
-      line-height: var(--lineHeightBase500);
+      line-height: var(--lineHeightBase300);
       text-align: center;
     }
 
@@ -325,6 +330,16 @@
         color: var(--colorNeutralForeground4);
       }
 
+      &[data-range-hovered]:not([data-outside-bounds]) {
+        background-color: var(--colorBrandBackgroundInvertedHover);
+        color: var(--colorNeutralForeground1Static);
+      }
+
+      &[data-range-pressed]:not([data-outside-bounds]) {
+        background-color: var(--colorBrandBackgroundInvertedPressed);
+        color: var(--colorNeutralForeground1Static);
+      }
+
       &[data-selected] > button {
         background-color: var(--colorBrandBackgroundInvertedSelected);
         border-color: var(--colorBrandStroke1);
@@ -379,18 +394,53 @@
       }
 
       @media (forced-colors: active) {
+        &[data-range-hovered]:not([data-outside-bounds]) {
+          outline: var(--strokeWidthThin) solid Highlight;
+          z-index: 3;
+
+          &[data-today] > button::before {
+            background-color: Highlight;
+          }
+        }
+
+        &[data-range-pressed]:not([data-outside-bounds]) {
+          background-color: Window;
+          border-color: Highlight;
+          color: Highlight;
+        }
+
+        &[data-outside-month] {
+          color: GrayText;
+        }
+
         &[data-selected] > button {
           background-color: Highlight;
+          border-color: Highlight;
           color: HighlightText;
           forced-color-adjust: none;
         }
 
         &[data-today] > button::before {
           background-color: WindowText;
+          forced-color-adjust: none;
         }
 
         &[data-today] > button {
           color: Window;
+
+          & > span:first-child {
+            color: Window;
+            forced-color-adjust: none;
+          }
+        }
+
+        & > button > span[aria-hidden] {
+          background-color: WindowText;
+          forced-color-adjust: none;
+        }
+
+        &:is([data-selected], [data-today]) > button > span[aria-hidden] {
+          background-color: Window;
         }
 
         &[data-outside-bounds] {
@@ -400,7 +450,7 @@
     }
   }
 
-  /* The native grid includes multi-day day-mode and standalone CalendarDay ranges. */
+  /* Join multi-day selections; hover/press also applies to ordinary single-day cells above. */
   .CalendarDay__grid[aria-multiselectable='true'] .CalendarDay__body td[role='gridcell'] {
     &[data-selected] {
       border-radius: 0;
@@ -422,14 +472,6 @@
     &:first-of-type[data-selected] {
       border-start-start-radius: var(--borderRadiusMedium);
       border-end-start-radius: var(--borderRadiusMedium);
-    }
-
-    &[data-range-hovered]:not([data-selected]) {
-      background-color: var(--colorBrandBackgroundInvertedHover);
-    }
-
-    &[data-range-pressed]:not([data-selected]) {
-      background-color: var(--colorBrandBackgroundInvertedPressed);
     }
 
     @media (forced-colors: active) {
@@ -491,11 +533,13 @@
       &:hover {
         background-color: var(--colorBrandBackgroundInvertedHover);
         color: var(--colorBrandForegroundOnLightHover);
+        outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
       }
 
       &:hover:active {
         background-color: var(--colorBrandBackgroundInvertedPressed);
         color: var(--colorBrandForegroundOnLightPressed);
+        outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
       }
 
       &:focus-visible {
@@ -554,10 +598,24 @@
       &:hover > button {
         background-color: var(--colorBrandBackgroundInvertedHover);
         color: var(--colorNeutralForeground1Static);
+        outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
+
+        @media (forced-colors: active) {
+          background-color: Window;
+          color: WindowText;
+          forced-color-adjust: none;
+          outline-color: Highlight;
+        }
       }
 
       &:hover:active > button {
         background-color: var(--colorBrandBackgroundInvertedPressed);
+
+        @media (forced-colors: active) {
+          background-color: Window;
+          color: Highlight;
+          forced-color-adjust: none;
+        }
       }
 
       &[data-outside-bounds] {
@@ -568,12 +626,18 @@
         & > button {
           background-color: transparent;
           color: inherit;
+
+          /* In v9, :disabled keeps this token over the less-specific forced-colors rule. */
+          &:disabled {
+            color: var(--colorNeutralForegroundDisabled);
+          }
         }
       }
 
       @media (forced-colors: active) {
         &[data-outside-bounds] {
           color: GrayText;
+          forced-color-adjust: none;
         }
       }
     }
@@ -602,7 +666,7 @@
 
     @media (forced-colors: active) {
       background-color: Highlight;
-      color: HighlightText;
+      color: Window;
       forced-color-adjust: none;
 
       &:hover:active {

@@ -53,9 +53,14 @@ Implementations use concrete sibling imports rather than their own family barrel
 Shared family styles remain at the family root where appropriate.
 
 CSS Module provenance comments link to checked-in Fluent style definitions and
-headless component/state/render sources. Shared styles and aliases list their
-actual sources; native Text is identified as having no headless counterpart.
-These are checkout-relative references, not generated files in `node_modules`.
+headless component/state/render sources. Applicable modules also link to the
+headless Storybook CSS, including the native
+[Dialog examples](../react-headless-components-preview/stories/src/Dialog/dialog.module.css).
+Those examples help verify current slots, attributes and browser behavior; their
+custom appearance is not the Fluent v9 visual specification. Shared styles and
+aliases list their actual sources. Native Text and the styled Provider have no
+corresponding headless story stylesheet. These are checkout-relative references,
+not generated files in `node_modules`.
 
 ## Use in this workspace
 
@@ -116,10 +121,13 @@ produce compiled JavaScript or an aggregate `styles.css`. Keep sibling files
 referenced by a copied component. The catalog is deliberately easy to edit,
 not a set of dependency-free single-file snippets.
 
-Component CSS is in the `fluent-components` cascade layer. Ordinary, unlayered
+Most component CSS is in the `fluent-components` cascade layer. Ordinary, unlayered
 consumer CSS wins over that layer. Putting a class last in a `className` string
 does not determine CSS precedence. Inline styles still follow normal CSS rules.
 Composition-specific selectors must also retain their intended specificity.
+Bundled-icon visibility rules are deliberately unlayered so the icon package's
+unlayered display utilities cannot defeat the selected regular/filled variant.
+Consumer overrides of those visibility rules must also account for specificity.
 Webpack needs `.js` extension aliases for these raw TypeScript sources; see the
 [source-consumer guide](./library/README.md). Server/client builds must agree on
 their CSS Module identifiers.
@@ -219,6 +227,39 @@ Storybook reuses reviewed v9 story bodies through an explicit importer allowlist
 and test-only facade. It never globally aliases component packages or silently
 falls back to old styled components. Griffel used for reference demos or demo
 layout is not evidence that the copied runtime requires it.
+
+### CSS source review
+
+The source review covers all 58 component folders, 130 CSS Modules and 169
+implementation files, plus shared icon and style-free exports. The 128
+modules with a corresponding headless example link to 58 actual story
+stylesheets. All 803 local provenance targets were checked. Text and Provider
+document their lack of a corresponding headless story stylesheet.
+
+Most edits only add references. Styling corrections are confined to eight
+modules: Tab, Combobox, Dropdown, DatePicker, Calendar, MenuSplitGroup, Nav and
+Toaster. They address effective state-selector precedence, missing inherited
+styles, bundled-icon visibility, spacing and forced-colors treatment. Editable
+DatePicker also separates its visual `size` type from numeric `input.size`.
+No source-proven styling correction was needed for Dialog, Drawer, Popover,
+Tooltip, InfoLabel or TeachingPopover.
+
+Focused browser regressions use real stock v9 components as the oracle for
+computed colors, visible icon variants, interaction states and geometry.
+Calendar measurements cover six five/six-week side-by-side and overlay states.
+Root heights, weekday headers and Today placement match; the side-by-side root
+retains a one-pixel intrinsic width difference from its explicit panel border.
+The native headless footer remains a root sibling rather than recreating the old
+DOM structure.
+
+This source review is not a full visual or accessibility certification. Its
+computed-style regressions do not expand or rerun the paired screenshot suite
+described below.
+
+An intermittent, stackless `AbortError: The user aborted a request.` also seen
+in earlier native-layer probes can fail the Nav interaction test's runtime-error
+gate after its visual comparisons pass. Its origin remains unresolved. The
+exception is not filtered, and no unrelated motion or focus engine is patched.
 
 ### Paired v9 visual review
 

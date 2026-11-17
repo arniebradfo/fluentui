@@ -39,12 +39,12 @@
 
     &[data-toaster-position='top-start'],
     &[data-toaster-position='bottom-start'] {
-      inset-inline-start: var(--fui-toast-offset-horizontal, var(--spacingHorizontalL));
+      inset-inline-start: var(--fui-toast-offset-horizontal, var(--spacingHorizontalXL));
     }
 
     &[data-toaster-position='top-end'],
     &[data-toaster-position='bottom-end'] {
-      inset-inline-end: var(--fui-toast-offset-horizontal, var(--spacingHorizontalL));
+      inset-inline-end: var(--fui-toast-offset-horizontal, var(--spacingHorizontalXL));
     }
 
     &[data-toaster-position='top'],

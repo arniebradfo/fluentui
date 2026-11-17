@@ -1,6 +1,12 @@
 import * as React from 'react';
 import { useId } from '@fluentui/react-utilities';
 import {
+  FluentProvider as StockProvider,
+  MenuItem as StockMenuItem,
+  MenuList as StockMenuList,
+  MenuSplitGroup as StockMenuSplitGroup,
+} from '@fluentui/react-components';
+import {
   Button,
   Dialog,
   DialogActions,
@@ -14,11 +20,13 @@ import {
   DrawerHeader,
   DrawerHeaderTitle,
   Field,
+  FluentProvider,
   Input,
   Menu,
   MenuItem,
   MenuList,
   MenuPopover,
+  MenuSplitGroup,
   MenuTrigger,
   OverlayDrawer,
   Popover,
@@ -28,6 +36,7 @@ import {
   Text,
   Tooltip,
   tokens,
+  webLightTheme,
 } from '../../library/src';
 import type { DialogModalType } from '../../library/src';
 
@@ -172,4 +181,39 @@ export const TooltipDescription = () => (
   <Tooltip content="Saves your project settings" relationship="description">
     <Button>Save project</Button>
   </Tooltip>
+);
+
+export const SplitSeparatorComparison = () => (
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+      gap: tokens.spacingHorizontalXXL,
+    }}
+  >
+    <StockProvider theme={webLightTheme} dir="rtl" data-testid="stock-split">
+      <StockMenuList>
+        <StockMenuSplitGroup data-testid="plain-split">
+          <StockMenuItem>Save</StockMenuItem>
+          <StockMenuItem aria-label="More save options" hasSubmenu />
+        </StockMenuSplitGroup>
+        <StockMenuSplitGroup data-testid="multiline-split">
+          <StockMenuItem subText="Additional details">Save with details</StockMenuItem>
+          <StockMenuItem aria-label="More detailed save options" hasSubmenu />
+        </StockMenuSplitGroup>
+      </StockMenuList>
+    </StockProvider>
+    <FluentProvider theme={webLightTheme} dir="rtl" data-testid="candidate-split">
+      <MenuList>
+        <MenuSplitGroup data-testid="plain-split">
+          <MenuItem>Save</MenuItem>
+          <MenuItem aria-label="More save options" hasSubmenu />
+        </MenuSplitGroup>
+        <MenuSplitGroup data-testid="multiline-split">
+          <MenuItem subText="Additional details">Save with details</MenuItem>
+          <MenuItem aria-label="More detailed save options" hasSubmenu />
+        </MenuSplitGroup>
+      </MenuList>
+    </FluentProvider>
+  </div>
 );

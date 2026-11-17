@@ -139,21 +139,6 @@
     & :global(.fui-Icon-regular) {
       grid-area: icon;
     }
-
-    & :global(.fui-Icon-filled) {
-      display: none;
-    }
-  }
-
-  :is(.NavItem, .NavCategoryItem)[data-selected]:not([data-disabled]) .NavItem__icon {
-    & :global(.fui-Icon-filled) {
-      display: inline;
-      color: var(--colorNeutralForeground2BrandSelected);
-    }
-
-    & :global(.fui-Icon-regular) {
-      display: none;
-    }
   }
 
   .NavCategoryItem__expandIcon {
@@ -198,16 +183,17 @@
     align-items: center;
     flex-grow: 0;
     margin-block: var(--spacingVerticalXS);
-    color: var(--colorNeutralForeground2);
+    color: var(--colorNeutralForeground1);
     font-family: var(--fontFamilyBase);
     font-size: var(--fontSizeBase200);
+    font-weight: var(--fontWeightRegular);
     line-height: var(--lineHeightBase200);
 
     &::before,
     &::after {
       content: '';
       flex: 1;
-      border-block-start: var(--strokeWidthThin) solid var(--colorNeutralStroke2);
+      border-block-start: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
     }
   }
 
@@ -363,9 +349,18 @@
     padding: 0 var(--spacingHorizontalXS) 0 var(--spacingHorizontalMNudge);
     row-gap: var(--spacingVerticalXXS);
     overflow: auto;
+
+    &:first-child {
+      padding-top: calc(var(--spacingVerticalXXL) + var(--strokeWidthThin));
+    }
+
+    &:last-child {
+      padding-bottom: calc(var(--spacingVerticalXXL) + var(--strokeWidthThin));
+    }
   }
 
   .NavDrawerFooter {
+    align-items: center;
     row-gap: var(--spacingVerticalXXS);
     padding: var(--spacingVerticalXXS) var(--spacingHorizontalXS) var(--spacingVerticalXXS)
       var(--spacingHorizontalMNudge);
@@ -415,5 +410,27 @@
     to {
       transform: none;
     }
+  }
+}
+
+/* Existing Griffel icon bundles can have unlayered visibility rules. */
+.NavItem__icon {
+  & :global(.fui-Icon-filled) {
+    display: none;
+  }
+
+  & :global(.fui-Icon-regular) {
+    display: inline;
+  }
+}
+
+:is(.NavItem, .NavCategoryItem)[data-selected]:not([data-disabled]) .NavItem__icon {
+  & :global(.fui-Icon-filled) {
+    display: inline;
+    color: var(--colorNeutralForeground2BrandSelected);
+  }
+
+  & :global(.fui-Icon-regular) {
+    display: none;
   }
 }

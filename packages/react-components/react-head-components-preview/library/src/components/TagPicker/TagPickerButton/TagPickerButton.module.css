@@ -7,7 +7,8 @@
  * Headless state: [useTagPickerButton.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerButton/useTagPickerButton.ts).
  * Headless render: [renderTagPickerButton.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerButton/renderTagPickerButton.tsx).
  *
- * Size is owned by the enclosing TagPicker.
+ * Size is owned by the enclosing TagPicker. The family story sheet styles the surrounding
+ * control; it has no button-specific selector.
  */
 
 @layer fluent-components;

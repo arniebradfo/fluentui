@@ -87,13 +87,18 @@
       border-bottom-color: var(--colorNeutralStrokeAccessible);
 
       &:not([data-disabled]) {
+        /* Match upstream's focus-within < hover < active Griffel bucket priority. */
+        &:focus-within {
+          border-color: var(--colorNeutralStroke1Pressed);
+          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
+        }
+
         &:hover {
           border-color: var(--colorNeutralStroke1Hover);
           border-bottom-color: var(--colorNeutralStrokeAccessibleHover);
         }
 
-        &:active,
-        &:focus-within {
+        &:active {
           border-color: var(--colorNeutralStroke1Pressed);
           border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
         }

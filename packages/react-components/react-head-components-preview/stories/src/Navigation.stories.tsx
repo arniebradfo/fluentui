@@ -1,6 +1,23 @@
 import * as React from 'react';
 import {
+  Button as StockButton,
+  FluentProvider as StockProvider,
+  Nav as StockNav,
+  NavCategory as StockNavCategory,
+  NavCategoryItem as StockNavCategoryItem,
+  NavDivider as StockNavDivider,
+  NavDrawer as StockNavDrawer,
+  NavDrawerBody as StockNavDrawerBody,
+  NavDrawerFooter as StockNavDrawerFooter,
+  NavDrawerHeader as StockNavDrawerHeader,
+  NavItem as StockNavItem,
+  NavSubItem as StockNavSubItem,
+  NavSubItemGroup as StockNavSubItemGroup,
+} from '@fluentui/react-components';
+import { bundleIcon, Home20Filled, Home20Regular } from '@fluentui/react-icons';
+import {
   Button,
+  FluentProvider,
   Nav,
   NavCategory,
   NavCategoryItem,
@@ -15,6 +32,7 @@ import {
   NavSubItemGroup,
   Text,
   tokens,
+  webLightTheme,
 } from '../../library/src';
 import type { NavItemValue } from '../../library/src';
 
@@ -120,3 +138,98 @@ export const OverlayNavigationDrawer = () => {
     </>
   );
 };
+
+const NavigationGlyph = bundleIcon(Home20Filled, Home20Regular);
+const regressionLayout: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'flex-start',
+  gap: tokens.spacingVerticalL,
+  fontWeight: tokens.fontWeightSemibold,
+};
+const regressionDrawer: React.CSSProperties = {
+  height: `calc(${tokens.spacingVerticalXXXL} * 6)`,
+};
+
+export const StockStyleRegressions = () => (
+  <div
+    style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+      gap: tokens.spacingHorizontalXXL,
+    }}
+  >
+    <StockProvider theme={webLightTheme} style={regressionLayout} data-testid="stock-navigation">
+      <StockNav aria-label="Icon switching" defaultSelectedValue="other">
+        <StockNavItem value="home" icon={<NavigationGlyph filled />}>
+          Icon target
+        </StockNavItem>
+        <StockNavItem value="other">Other item</StockNavItem>
+        <StockNavCategory value="category">
+          <StockNavCategoryItem icon={<NavigationGlyph />}>Icon category</StockNavCategoryItem>
+          <StockNavSubItemGroup>
+            <StockNavSubItem value="nested">Nested item</StockNavSubItem>
+          </StockNavSubItemGroup>
+        </StockNavCategory>
+        <StockNavDivider>Section</StockNavDivider>
+        <StockNavDivider />
+      </StockNav>
+      <StockNavDrawer type="inline" open style={regressionDrawer} data-testid="body-only">
+        <StockNavDrawerBody>
+          <StockNavItem value="only">Body only</StockNavItem>
+        </StockNavDrawerBody>
+      </StockNavDrawer>
+      <StockNavDrawer type="inline" open style={regressionDrawer} data-testid="header-body">
+        <StockNavDrawerHeader>Header</StockNavDrawerHeader>
+        <StockNavDrawerBody>
+          <StockNavItem value="last">Body after header</StockNavItem>
+        </StockNavDrawerBody>
+      </StockNavDrawer>
+      <StockNavDrawer type="inline" open style={regressionDrawer} data-testid="body-footer">
+        <StockNavDrawerBody>
+          <StockNavItem value="first">Body before footer</StockNavItem>
+        </StockNavDrawerBody>
+        <StockNavDrawerFooter>
+          <StockButton>Footer action</StockButton>
+          <StockNavItem value="footer">Full-width footer item</StockNavItem>
+        </StockNavDrawerFooter>
+      </StockNavDrawer>
+    </StockProvider>
+    <FluentProvider theme={webLightTheme} style={regressionLayout} data-testid="candidate-navigation">
+      <Nav aria-label="Icon switching" defaultSelectedValue="other">
+        <NavItem value="home" icon={<NavigationGlyph filled />}>
+          Icon target
+        </NavItem>
+        <NavItem value="other">Other item</NavItem>
+        <NavCategory value="category">
+          <NavCategoryItem icon={<NavigationGlyph />}>Icon category</NavCategoryItem>
+          <NavSubItemGroup>
+            <NavSubItem value="nested">Nested item</NavSubItem>
+          </NavSubItemGroup>
+        </NavCategory>
+        <NavDivider>Section</NavDivider>
+        <NavDivider />
+      </Nav>
+      <NavDrawer type="inline" open style={regressionDrawer} data-testid="body-only">
+        <NavDrawerBody>
+          <NavItem value="only">Body only</NavItem>
+        </NavDrawerBody>
+      </NavDrawer>
+      <NavDrawer type="inline" open style={regressionDrawer} data-testid="header-body">
+        <NavDrawerHeader>Header</NavDrawerHeader>
+        <NavDrawerBody>
+          <NavItem value="last">Body after header</NavItem>
+        </NavDrawerBody>
+      </NavDrawer>
+      <NavDrawer type="inline" open style={regressionDrawer} data-testid="body-footer">
+        <NavDrawerBody>
+          <NavItem value="first">Body before footer</NavItem>
+        </NavDrawerBody>
+        <NavDrawerFooter>
+          <Button>Footer action</Button>
+          <NavItem value="footer">Full-width footer item</NavItem>
+        </NavDrawerFooter>
+      </NavDrawer>
+    </FluentProvider>
+  </div>
+);

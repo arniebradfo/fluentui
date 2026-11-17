@@ -44,8 +44,10 @@ Family isolation does not imply declaration-level pruning inside shared CSS.
 Prefer the family entrypoints: a compatibility-root import can retain the
 catalog's stylesheets even when only one component is used.
 
-CSS provenance comments point to the checked-in Fluent style and headless
-sources in the original workspace. Those source-reference links are for working
+CSS provenance comments point to the checked-in Fluent style, headless behavior
+and applicable headless Storybook CSS sources in the original workspace.
+The story styles demonstrate current DOM and native-browser requirements, not
+necessarily the stock v9 appearance. Those source-reference links are for working
 in that checkout; they are not runtime imports or additional files to copy.
 Preserve the source's structural `transparent` values. In particular,
 `colorTransparentStroke` becomes visible in high-contrast themes and is not an
@@ -71,11 +73,17 @@ provide your own theme root.
 
 Component rules use the `fluent-components` layer. Unlayered consumer CSS
 overrides that layer; class-name string order is not CSS precedence.
+Bundled-icon visibility rules are unlayered to override the icon package's
+unlayered display utilities. Custom visibility overrides must also account for
+their selector specificity.
 
 Initialize focusgroup support before rendering when the browser needs it. See
 the public headless [browser support](https://storybooks.fluentui.dev/headless/llms/overview-browser-support.txt)
 and [polyfill guidance](https://storybooks.fluentui.dev/headless/llms/overview-polyfills-fallbacks.txt).
 The library does not install global polyfills.
+
+DatePicker's `size` selects its Fluent visual size, including editable mode.
+Use numeric `input.size` for the editable input's native character-width hint.
 
 Use the current headless contracts, not assumptions about legacy v9 DOM.
 Focus indicators use native `:focus-visible`, not v9's Tabster visibility marker.

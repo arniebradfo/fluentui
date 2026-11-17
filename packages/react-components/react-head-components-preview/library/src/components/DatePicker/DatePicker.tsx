@@ -39,7 +39,7 @@ export const datePickerClassNames = {
 type DatePickerVisualProps = {
   /** Field chrome, matching Input. @default 'outline' */
   appearance?: 'outline' | 'underline' | 'filled-darker' | 'filled-lighter';
-  /** Inherits Field size when omitted. @default 'medium' */
+  /** Inherits Field size when omitted. Use input.size for the native character width. @default 'medium' */
   size?: 'small' | 'medium' | 'large';
 };
 
@@ -50,7 +50,7 @@ type DatePickerStyledCalendar = { calendar?: NonNullable<Slot<DatePickerCalendar
 export type DatePickerButtonProps = Omit<HeadlessDatePickerButtonProps, 'calendar'> &
   DatePickerStyledCalendar &
   DatePickerVisualProps;
-export type DatePickerInputProps = Omit<HeadlessDatePickerInputProps, 'calendar'> &
+export type DatePickerInputProps = Omit<HeadlessDatePickerInputProps, 'calendar' | 'size'> &
   DatePickerStyledCalendar &
   DatePickerVisualProps;
 export type DatePickerProps = DatePickerButtonProps | DatePickerInputProps;

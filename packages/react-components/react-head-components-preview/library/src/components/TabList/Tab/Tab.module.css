@@ -387,7 +387,9 @@
       }
 
       @media (forced-colors: active) {
-        &:not([data-disabled]):hover {
+        /* Match the selected appearance's theme hover specificity. */
+        &:not([data-disabled]):hover,
+        &[data-selected]:not([data-disabled]):hover {
           background-color: Highlight;
           forced-color-adjust: none;
 

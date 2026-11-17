@@ -242,7 +242,7 @@
   .DatePicker__trigger {
     display: flex;
     align-items: center;
-    gap: var(--spacingHorizontalXXS);
+    gap: var(--fui-input-slot-padding);
     padding-inline: var(--fui-input-combined-padding) var(--fui-input-root-padding);
     cursor: inherit;
     text-align: start;

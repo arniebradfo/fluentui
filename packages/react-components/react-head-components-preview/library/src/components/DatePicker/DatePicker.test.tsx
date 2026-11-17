@@ -49,6 +49,17 @@ describe('styled DatePicker', () => {
     expect(container.querySelector('.fui-DatePicker')).not.toHaveAttribute('data-visual-invalid');
   });
 
+  it('separates editable visual size from the native input character width', () => {
+    const ref = React.createRef<HTMLInputElement>();
+    const { getByRole } = render(
+      <DatePicker allowTextInput ref={ref} aria-label="Due date" size="large" input={{ size: 17 }} today={today} />,
+    );
+    const input = getByRole('textbox');
+    expect(ref.current).toBe(input);
+    expect(input).toHaveAttribute('size', '17');
+    expect(input.closest('.fui-DatePicker')).toHaveAttribute('data-size', 'large');
+  });
+
   it('preserves editable input refs and internal validation callbacks', () => {
     const ref = React.createRef<HTMLInputElement>();
     const onValidationResult = jest.fn();
