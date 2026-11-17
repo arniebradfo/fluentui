@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useDrawerFooterStyles.styles.ts](../../../../../../react-drawer/library/src/components/DrawerFooter/useDrawerFooterStyles.styles.ts)
+ * Headless story styles:
+ * - [drawer.module.css](../../../../../../react-headless-components-preview/stories/src/Drawer/drawer.module.css)
  * Headless component: [DrawerFooter.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/DrawerFooter.tsx).
  * Headless state: [useDrawerFooter.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/useDrawerFooter.ts).
  * Headless render: [renderDrawerFooter.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerFooter/renderDrawerFooter.ts).

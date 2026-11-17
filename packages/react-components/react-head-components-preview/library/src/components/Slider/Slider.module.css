@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useSliderStyles.styles.ts](../../../../../react-slider/library/src/components/Slider/useSliderStyles.styles.ts)
+ * Headless story styles:
+ * - [slider.module.css](../../../../../react-headless-components-preview/stories/src/Slider/slider.module.css)
  * Headless component: [Slider.tsx](../../../../../react-headless-components-preview/library/src/components/Slider/Slider.tsx).
  * Headless state: [useSlider.ts](../../../../../react-headless-components-preview/library/src/components/Slider/useSlider.ts).
  * Headless render: [renderSlider.tsx](../../../../../react-headless-components-preview/library/src/components/Slider/renderSlider.tsx).

@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useToolbarDividerStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarDivider/useToolbarDividerStyles.styles.ts)
+ * Headless story styles:
+ * - [toolbar.module.css](../../../../../../react-headless-components-preview/stories/src/Toolbar/toolbar.module.css)
+ * - [divider.module.css](../../../../../../react-headless-components-preview/stories/src/Divider/divider.module.css)
  * Headless component: [ToolbarDivider.tsx](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarDivider/ToolbarDivider.tsx).
  * Headless state: [useToolbarDivider.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarDivider/useToolbarDivider.ts).
  * Headless render: [renderToolbarDivider.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarDivider/renderToolbarDivider.ts).

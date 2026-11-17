@@ -12,6 +12,9 @@
  * - [useTeachingPopoverCarouselNavStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselNav/useTeachingPopoverCarouselNavStyles.styles.ts)
  * - [useTeachingPopoverCarouselNavButtonStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselNavButton/useTeachingPopoverCarouselNavButtonStyles.styles.ts)
  * - [useTeachingPopoverCarouselPageCountStyles.styles.ts](../../../../../react-teaching-popover/library/src/components/TeachingPopoverCarouselPageCount/useTeachingPopoverCarouselPageCountStyles.styles.ts)
+ * Headless story styles:
+ * - [teaching-popover.module.css](../../../../../react-headless-components-preview/stories/src/TeachingPopover/teaching-popover.module.css)
+ * - [popover.module.css](../../../../../react-headless-components-preview/stories/src/Popover/popover.module.css)
  * Headless family: [TeachingPopover/index.ts](../../../../../react-headless-components-preview/library/src/components/TeachingPopover/index.ts).
  * Headless component: [TeachingPopover.tsx](../../../../../react-headless-components-preview/library/src/components/TeachingPopover/TeachingPopover.tsx).
  * Headless state: [useTeachingPopover.ts](../../../../../react-headless-components-preview/library/src/components/TeachingPopover/useTeachingPopover.ts).

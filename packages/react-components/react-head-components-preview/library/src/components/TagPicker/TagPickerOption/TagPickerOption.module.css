@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useTagPickerOptionStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerOption/useTagPickerOptionStyles.styles.ts)
+ * Headless story styles:
+ * - [tag-picker.module.css](../../../../../../react-headless-components-preview/stories/src/TagPicker/tag-picker.module.css)
+ * - [dropdown.module.css](../../../../../../react-headless-components-preview/stories/src/Dropdown/dropdown.module.css)
  * Headless component: [TagPickerOption.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerOption/TagPickerOption.tsx).
  * Headless state: [useTagPickerOption.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerOption/useTagPickerOption.ts).
  * Headless render: [renderTagPickerOption.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerOption/renderTagPickerOption.tsx).

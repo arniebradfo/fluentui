@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useDropdownStyles.styles.ts](../../../../../react-combobox/library/src/components/Dropdown/useDropdownStyles.styles.ts)
+ * Headless story styles:
+ * - [dropdown.module.css](../../../../../react-headless-components-preview/stories/src/Dropdown/dropdown.module.css)
  * Headless component: [Dropdown.tsx](../../../../../react-headless-components-preview/library/src/components/Dropdown/Dropdown.tsx).
  * Headless state: [useDropdown.ts](../../../../../react-headless-components-preview/library/src/components/Dropdown/useDropdown.ts).
  * Headless render: [renderDropdown.tsx](../../../../../react-headless-components-preview/library/src/components/Dropdown/renderDropdown.tsx).

@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useCheckboxStyles.styles.ts](../../../../../react-checkbox/library/src/components/Checkbox/useCheckboxStyles.styles.ts)
+ * Headless story styles:
+ * - [checkbox.module.css](../../../../../react-headless-components-preview/stories/src/Checkbox/checkbox.module.css)
  * Headless component: [Checkbox.tsx](../../../../../react-headless-components-preview/library/src/components/Checkbox/Checkbox.tsx).
  * Headless state: [useCheckbox.ts](../../../../../react-headless-components-preview/library/src/components/Checkbox/useCheckbox.ts).
  * Headless render: [renderCheckbox.tsx](../../../../../react-headless-components-preview/library/src/components/Checkbox/renderCheckbox.tsx).

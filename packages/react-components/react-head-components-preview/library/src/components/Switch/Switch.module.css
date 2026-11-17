@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useSwitchStyles.styles.ts](../../../../../react-switch/library/src/components/Switch/useSwitchStyles.styles.ts)
+ * Headless story styles:
+ * - [switch.module.css](../../../../../react-headless-components-preview/stories/src/Switch/switch.module.css)
  * Headless component: [Switch.tsx](../../../../../react-headless-components-preview/library/src/components/Switch/Switch.tsx).
  * Headless state: [useSwitch.ts](../../../../../react-headless-components-preview/library/src/components/Switch/useSwitch.ts).
  * Headless render: [renderSwitch.tsx](../../../../../react-headless-components-preview/library/src/components/Switch/renderSwitch.tsx).

@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useAvatarStyles.styles.ts](../../../../../react-avatar/library/src/components/Avatar/useAvatarStyles.styles.ts)
+ * Headless story styles:
+ * - [avatar.module.css](../../../../../react-headless-components-preview/stories/src/Avatar/avatar.module.css)
+ * - [presence-badge.module.css](../../../../../react-headless-components-preview/stories/src/PresenceBadge/presence-badge.module.css)
  * Headless component: [Avatar.tsx](../../../../../react-headless-components-preview/library/src/components/Avatar/Avatar.tsx).
  * Headless state: [useAvatar.ts](../../../../../react-headless-components-preview/library/src/components/Avatar/useAvatar.ts).
  * Headless render: [renderAvatar.tsx](../../../../../react-headless-components-preview/library/src/components/Avatar/renderAvatar.tsx).

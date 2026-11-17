@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useLinkStyles.styles.ts](../../../../../react-link/library/src/components/Link/useLinkStyles.styles.ts)
+ * Headless story styles:
+ * - [link.module.css](../../../../../react-headless-components-preview/stories/src/Link/link.module.css)
  * Headless component: [Link.tsx](../../../../../react-headless-components-preview/library/src/components/Link/Link.tsx).
  * Headless state: [useLink.ts](../../../../../react-headless-components-preview/library/src/components/Link/useLink.ts).
  * Headless render: [renderLink.tsx](../../../../../react-headless-components-preview/library/src/components/Link/renderLink.tsx).

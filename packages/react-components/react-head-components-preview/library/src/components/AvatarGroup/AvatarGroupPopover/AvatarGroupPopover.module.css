@@ -1,6 +1,10 @@
 /*
  * Fluent style sources:
  * - [useAvatarGroupPopoverStyles.styles.ts](../../../../../../react-avatar/library/src/components/AvatarGroupPopover/useAvatarGroupPopoverStyles.styles.ts)
+ * Headless story styles:
+ * - [avatar-group.module.css](../../../../../../react-headless-components-preview/stories/src/AvatarGroup/avatar-group.module.css)
+ * - [popover.module.css](../../../../../../react-headless-components-preview/stories/src/Popover/popover.module.css)
+ * - [tooltip.module.css](../../../../../../react-headless-components-preview/stories/src/Tooltip/tooltip.module.css)
  * Headless component: [AvatarGroupPopover.tsx](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupPopover/AvatarGroupPopover.tsx).
  * Headless state: [useAvatarGroupPopover.ts](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupPopover/useAvatarGroupPopover.ts).
  * Headless render: [renderAvatarGroupPopover.tsx](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupPopover/renderAvatarGroupPopover.tsx).

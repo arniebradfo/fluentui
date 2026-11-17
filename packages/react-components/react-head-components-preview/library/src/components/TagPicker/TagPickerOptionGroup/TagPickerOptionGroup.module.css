@@ -2,6 +2,9 @@
  * Fluent style sources:
  * - [useTagPickerOptionGroupStyles.styles.ts](../../../../../../react-tag-picker/library/src/components/TagPickerOptionGroup/useTagPickerOptionGroupStyles.styles.ts)
  * - [useOptionGroupStyles.styles.ts](../../../../../../react-combobox/library/src/components/OptionGroup/useOptionGroupStyles.styles.ts)
+ * Headless story styles:
+ * - [tag-picker.module.css](../../../../../../react-headless-components-preview/stories/src/TagPicker/tag-picker.module.css)
+ * - [dropdown.module.css](../../../../../../react-headless-components-preview/stories/src/Dropdown/dropdown.module.css)
  * Headless alias: [TagPicker/index.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/index.ts).
  * Headless component: [OptionGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/OptionGroup.tsx).
  * Headless state: [useOptionGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/useOptionGroup.ts).

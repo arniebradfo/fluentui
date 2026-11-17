@@ -2,6 +2,9 @@
  * Fluent style sources:
  * - [useDatePickerStyles.styles.ts](../../../../../react-datepicker-compat/library/src/components/DatePicker/useDatePickerStyles.styles.ts)
  * - [useInputStyles.styles.ts](../../../../../react-input/library/src/components/Input/useInputStyles.styles.ts)
+ * Headless story styles:
+ * - [date-picker.module.css](../../../../../react-headless-components-preview/stories/src/DatePicker/date-picker.module.css)
+ * - [calendar.module.css](../../../../../react-headless-components-preview/stories/src/Calendar/calendar.module.css)
  * Headless component: [DatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/DatePicker.tsx).
  * Headless state: [useDatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/useDatePicker.tsx).
  * Headless render: [renderDatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/renderDatePicker.tsx).

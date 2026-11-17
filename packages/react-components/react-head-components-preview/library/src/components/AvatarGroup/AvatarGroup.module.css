@@ -3,6 +3,8 @@
  * - [useAvatarGroupStyles.styles.ts](../../../../../react-avatar/library/src/components/AvatarGroup/useAvatarGroupStyles.styles.ts)
  * - [useAvatarGroupItemStyles.styles.ts](../../../../../react-avatar/library/src/components/AvatarGroupItem/useAvatarGroupItemStyles.styles.ts)
  * - [useAvatarStyles.styles.ts](../../../../../react-avatar/library/src/components/Avatar/useAvatarStyles.styles.ts)
+ * Headless story styles:
+ * - [avatar-group.module.css](../../../../../react-headless-components-preview/stories/src/AvatarGroup/avatar-group.module.css)
  * Headless component: [AvatarGroup.tsx](../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroup.tsx).
  * Headless state: [useAvatarGroup.ts](../../../../../react-headless-components-preview/library/src/components/AvatarGroup/useAvatarGroup.ts).
  * Headless render: [renderAvatarGroup.ts](../../../../../react-headless-components-preview/library/src/components/AvatarGroup/renderAvatarGroup.ts).

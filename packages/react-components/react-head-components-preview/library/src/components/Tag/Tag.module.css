@@ -1,6 +1,10 @@
 /*
  * Fluent style sources:
  * - [useTagStyles.styles.ts](../../../../../react-tags/library/src/components/Tag/useTagStyles.styles.ts)
+ * Headless story styles:
+ * - [tag.module.css](../../../../../react-headless-components-preview/stories/src/Tags/Tag/tag.module.css)
+ * - [tagGroup.module.css](../../../../../react-headless-components-preview/stories/src/Tags/TagGroup/tagGroup.module.css)
+ * - [tag-picker.module.css](../../../../../react-headless-components-preview/stories/src/TagPicker/tag-picker.module.css)
  * Headless component: [Tag.tsx](../../../../../react-headless-components-preview/library/src/components/Tag/Tag.tsx).
  * Headless state: [useTag.ts](../../../../../react-headless-components-preview/library/src/components/Tag/useTag.ts).
  * Headless render: [renderTag.ts](../../../../../react-headless-components-preview/library/src/components/Tag/renderTag.ts).

@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useMenuButtonStyles.styles.ts](../../../../../react-button/library/src/components/MenuButton/useMenuButtonStyles.styles.ts)
+ * Headless story styles:
+ * - [menu-button.module.css](../../../../../react-headless-components-preview/stories/src/MenuButton/menu-button.module.css)
+ * - [button.module.css](../../../../../react-headless-components-preview/stories/src/Button/button.module.css)
  * Headless component: [MenuButton.tsx](../../../../../react-headless-components-preview/library/src/components/MenuButton/MenuButton.tsx).
  * Headless state: [useMenuButton.ts](../../../../../react-headless-components-preview/library/src/components/MenuButton/useMenuButton.ts).
  * Headless render: [renderMenuButton.ts](../../../../../react-headless-components-preview/library/src/components/MenuButton/renderMenuButton.ts).

@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useSkeletonStyles.styles.ts](../../../../../react-skeleton/library/src/components/Skeleton/useSkeletonStyles.styles.ts)
+ * Headless story styles:
+ * - [skeleton.module.css](../../../../../react-headless-components-preview/stories/src/Skeleton/skeleton.module.css)
  * Headless component: [Skeleton.tsx](../../../../../react-headless-components-preview/library/src/components/Skeleton/Skeleton.tsx).
  * Headless state: [useSkeleton.ts](../../../../../react-headless-components-preview/library/src/components/Skeleton/useSkeleton.ts).
  * Headless render: [renderSkeleton.tsx](../../../../../react-headless-components-preview/library/src/components/Skeleton/renderSkeleton.tsx).

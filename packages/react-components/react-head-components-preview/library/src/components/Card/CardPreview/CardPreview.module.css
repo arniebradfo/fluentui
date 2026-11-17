@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useCardPreviewStyles.styles.ts](../../../../../../react-card/library/src/components/CardPreview/useCardPreviewStyles.styles.ts)
+ * Headless story styles:
+ * - [card.module.css](../../../../../../react-headless-components-preview/stories/src/Card/card.module.css)
  * Headless component: [CardPreview.tsx](../../../../../../react-headless-components-preview/library/src/components/Card/CardPreview/CardPreview.tsx).
  * Headless state: [useCardPreview.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardPreview/useCardPreview.ts).
  * Headless render: [renderCardPreview.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardPreview/renderCardPreview.ts).

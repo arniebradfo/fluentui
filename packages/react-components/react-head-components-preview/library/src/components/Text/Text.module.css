@@ -1,6 +1,7 @@
 /*
  * Fluent style sources:
  * - [useTextStyles.styles.ts](../../../../../react-text/library/src/components/Text/useTextStyles.styles.ts)
+ * Headless story styles: none; the native Text primitive has no headless counterpart.
  * Native styled component: [Text.tsx](./Text.tsx); there is no headless Text primitive.
  *
  * Text is a local native primitive; neither the styled component nor its hook is imported.

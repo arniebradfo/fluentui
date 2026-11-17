@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [usePresenceBadgeStyles.styles.ts](../../../../../../react-badge/library/src/components/PresenceBadge/usePresenceBadgeStyles.styles.ts)
+ * Headless story styles:
+ * - [presence-badge.module.css](../../../../../../react-headless-components-preview/stories/src/PresenceBadge/presence-badge.module.css)
  * Headless component: [PresenceBadge.tsx](../../../../../../react-headless-components-preview/library/src/components/Badge/PresenceBadge/PresenceBadge.tsx).
  * Headless state: [usePresenceBadge.ts](../../../../../../react-headless-components-preview/library/src/components/Badge/PresenceBadge/usePresenceBadge.ts).
  * Headless render: [renderPresenceBadge.ts](../../../../../../react-headless-components-preview/library/src/components/Badge/PresenceBadge/renderPresenceBadge.ts).

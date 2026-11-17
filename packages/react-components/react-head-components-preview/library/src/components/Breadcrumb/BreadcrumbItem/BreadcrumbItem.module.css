@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useBreadcrumbItemStyles.styles.ts](../../../../../../react-breadcrumb/library/src/components/BreadcrumbItem/useBreadcrumbItemStyles.styles.ts)
+ * Headless story styles:
+ * - [breadcrumb.module.css](../../../../../../react-headless-components-preview/stories/src/Breadcrumb/breadcrumb.module.css)
  * Headless component: [BreadcrumbItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbItem/BreadcrumbItem.tsx).
  * Headless state: [useBreadcrumbItem.ts](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbItem/useBreadcrumbItem.ts).
  * Headless render: [renderBreadcrumbItem.ts](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbItem/renderBreadcrumbItem.ts).

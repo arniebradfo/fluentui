@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useBadgeStyles.styles.ts](../../../../../../react-badge/library/src/components/Badge/useBadgeStyles.styles.ts)
+ * Headless story styles:
+ * - [badge.module.css](../../../../../../react-headless-components-preview/stories/src/Badge/badge.module.css)
  * Headless component: [Badge.tsx](../../../../../../react-headless-components-preview/library/src/components/Badge/Badge/Badge.tsx).
  * Headless state: [useBadge.ts](../../../../../../react-headless-components-preview/library/src/components/Badge/Badge/useBadge.ts).
  * Headless render: [renderBadge.tsx](../../../../../../react-headless-components-preview/library/src/components/Badge/Badge/renderBadge.tsx).

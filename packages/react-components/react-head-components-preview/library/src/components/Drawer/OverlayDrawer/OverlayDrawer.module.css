@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useOverlayDrawerStyles.styles.ts](../../../../../../react-drawer/library/src/components/OverlayDrawer/useOverlayDrawerStyles.styles.ts)
+ * Headless story styles:
+ * - [drawer.module.css](../../../../../../react-headless-components-preview/stories/src/Drawer/drawer.module.css)
  * Headless component: [OverlayDrawer.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/OverlayDrawer.tsx).
  * Headless state: [useOverlayDrawer.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/useOverlayDrawer.ts).
  * Headless render: [renderOverlayDrawer.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/renderOverlayDrawer.tsx).

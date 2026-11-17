@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useComboboxStyles.styles.ts](../../../../../react-combobox/library/src/components/Combobox/useComboboxStyles.styles.ts)
+ * Headless story styles:
+ * - [combobox.module.css](../../../../../react-headless-components-preview/stories/src/Combobox/combobox.module.css)
  * Headless component: [Combobox.tsx](../../../../../react-headless-components-preview/library/src/components/Combobox/Combobox.tsx).
  * Headless state: [useCombobox.ts](../../../../../react-headless-components-preview/library/src/components/Combobox/useCombobox.ts).
  * Headless render: [renderCombobox.tsx](../../../../../react-headless-components-preview/library/src/components/Combobox/renderCombobox.tsx).

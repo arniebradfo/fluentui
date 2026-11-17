@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useSearchBoxStyles.styles.ts](../../../../../react-search/library/src/components/SearchBox/useSearchBoxStyles.styles.ts)
+ * Headless story styles:
+ * - [input.module.css](../../../../../react-headless-components-preview/stories/src/Input/input.module.css)
  * Headless component: [SearchBox.tsx](../../../../../react-headless-components-preview/library/src/components/SearchBox/SearchBox.tsx).
  * Headless state: [useSearchBox.ts](../../../../../react-headless-components-preview/library/src/components/SearchBox/useSearchBox.ts).
  * Headless render: [renderSearchBox.tsx](../../../../../react-headless-components-preview/library/src/components/SearchBox/renderSearchBox.tsx).

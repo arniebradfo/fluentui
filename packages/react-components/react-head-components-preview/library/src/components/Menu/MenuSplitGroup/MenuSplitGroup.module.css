@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useMenuSplitGroupStyles.styles.ts](../../../../../../react-menu/library/src/components/MenuSplitGroup/useMenuSplitGroupStyles.styles.ts)
+ * Headless story styles:
+ * - [menu.module.css](../../../../../../react-headless-components-preview/stories/src/Menu/menu.module.css)
  * Headless component: [MenuSplitGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuSplitGroup/MenuSplitGroup.tsx).
  * Headless state: [useMenuSplitGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuSplitGroup/useMenuSplitGroup.ts).
  * Headless render: [renderMenuSplitGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuSplitGroup/renderMenuSplitGroup.tsx).

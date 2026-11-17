@@ -2,6 +2,9 @@
  * Fluent style sources:
  * - [useSpinnerStyles.styles.ts](../../../../../react-spinner/library/src/components/Spinner/useSpinnerStyles.styles.ts)
  * - [useLabelStyles.styles.ts](../../../../../react-label/library/src/components/Label/useLabelStyles.styles.ts)
+ * Headless story styles:
+ * - [spinner.module.css](../../../../../react-headless-components-preview/stories/src/Spinner/spinner.module.css)
+ * - [label.module.css](../../../../../react-headless-components-preview/stories/src/Label/label.module.css)
  * Headless component: [Spinner.tsx](../../../../../react-headless-components-preview/library/src/components/Spinner/Spinner.tsx).
  * Headless state: [useSpinner.ts](../../../../../react-headless-components-preview/library/src/components/Spinner/useSpinner.ts).
  * Headless render: [renderSpinner.tsx](../../../../../react-headless-components-preview/library/src/components/Spinner/renderSpinner.tsx).

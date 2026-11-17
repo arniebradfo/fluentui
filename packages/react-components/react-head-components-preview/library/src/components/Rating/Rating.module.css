@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useRatingStyles.styles.ts](../../../../../react-rating/library/src/components/Rating/useRatingStyles.styles.ts)
+ * Headless story styles:
+ * - [rating.module.css](../../../../../react-headless-components-preview/stories/src/Rating/rating.module.css)
  * Headless component: [Rating.tsx](../../../../../react-headless-components-preview/library/src/components/Rating/Rating.tsx).
  * Headless state: [useRating.tsx](../../../../../react-headless-components-preview/library/src/components/Rating/useRating.tsx).
  * Headless render: [renderRating.tsx](../../../../../react-headless-components-preview/library/src/components/Rating/renderRating.tsx).

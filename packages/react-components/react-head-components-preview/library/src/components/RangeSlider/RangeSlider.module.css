@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useRangeSliderStyles.styles.ts](../../../../../react-range-slider-preview/library/src/components/RangeSlider/useRangeSliderStyles.styles.ts)
+ * Headless story styles:
+ * - [range-slider.module.css](../../../../../react-headless-components-preview/stories/src/RangeSlider/range-slider.module.css)
  * Headless component: [RangeSlider.tsx](../../../../../react-headless-components-preview/library/src/components/RangeSlider/RangeSlider.tsx).
  * Headless state: [useRangeSlider.ts](../../../../../react-headless-components-preview/library/src/components/RangeSlider/useRangeSlider.ts).
  * Headless render: [renderRangeSlider.tsx](../../../../../react-headless-components-preview/library/src/components/RangeSlider/renderRangeSlider.tsx).

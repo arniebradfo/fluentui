@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useTextareaStyles.styles.ts](../../../../../react-textarea/library/src/components/Textarea/useTextareaStyles.styles.ts)
+ * Headless story styles:
+ * - [textarea.module.css](../../../../../react-headless-components-preview/stories/src/Textarea/textarea.module.css)
  * Headless component: [Textarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/Textarea.tsx).
  * Headless state: [useTextarea.ts](../../../../../react-headless-components-preview/library/src/components/Textarea/useTextarea.ts).
  * Headless render: [renderTextarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/renderTextarea.tsx).

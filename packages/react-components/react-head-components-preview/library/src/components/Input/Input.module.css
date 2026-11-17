@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useInputStyles.styles.ts](../../../../../react-input/library/src/components/Input/useInputStyles.styles.ts)
+ * Headless story styles:
+ * - [input.module.css](../../../../../react-headless-components-preview/stories/src/Input/input.module.css)
+ * - [chat-input.module.css](../../../../../react-headless-components-preview/stories/src/Input/chat-input.module.css)
  * Headless component: [Input.tsx](../../../../../react-headless-components-preview/library/src/components/Input/Input.tsx).
  * Headless state: [useInput.ts](../../../../../react-headless-components-preview/library/src/components/Input/useInput.ts).
  * Headless render: [renderInput.tsx](../../../../../react-headless-components-preview/library/src/components/Input/renderInput.tsx).

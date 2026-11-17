@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useColorSwatchStyles.styles.ts](../../../../../../react-swatch-picker/library/src/components/ColorSwatch/useColorSwatchStyles.styles.ts)
+ * Headless story styles:
+ * - [swatch-picker.module.css](../../../../../../react-headless-components-preview/stories/src/SwatchPicker/swatch-picker.module.css)
  * Headless component: [ColorSwatch.tsx](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ColorSwatch/ColorSwatch.tsx).
  * Headless state: [useColorSwatch.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ColorSwatch/useColorSwatch.ts).
  * Headless render: [renderColorSwatch.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/ColorSwatch/renderColorSwatch.ts).

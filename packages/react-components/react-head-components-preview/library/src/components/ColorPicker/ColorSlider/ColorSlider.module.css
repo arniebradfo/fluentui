@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useColorSliderStyles.styles.ts](../../../../../../react-color-picker/library/src/components/ColorSlider/useColorSliderStyles.styles.ts)
+ * Headless story styles:
+ * - [color-picker.module.css](../../../../../../react-headless-components-preview/stories/src/ColorPicker/color-picker.module.css)
  * Headless component: [ColorSlider.tsx](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/ColorSlider.tsx).
  * Headless state: [useColorSlider.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/useColorSlider.ts).
  * Headless render: [renderColorSlider.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/renderColorSlider.ts).

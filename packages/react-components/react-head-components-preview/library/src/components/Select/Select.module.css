@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useSelectStyles.styles.ts](../../../../../react-select/library/src/components/Select/useSelectStyles.styles.ts)
+ * Headless story styles:
+ * - [select.module.css](../../../../../react-headless-components-preview/stories/src/Select/select.module.css)
  * Headless component: [Select.tsx](../../../../../react-headless-components-preview/library/src/components/Select/Select.tsx).
  * Headless state: [useSelect.ts](../../../../../react-headless-components-preview/library/src/components/Select/useSelect.ts).
  * Headless render: [renderSelect.tsx](../../../../../react-headless-components-preview/library/src/components/Select/renderSelect.tsx).

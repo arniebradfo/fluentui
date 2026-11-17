@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useToolbarGroupStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarGroup/useToolbarGroupStyles.styles.ts)
+ * Headless story styles:
+ * - [toolbar.module.css](../../../../../../react-headless-components-preview/stories/src/Toolbar/toolbar.module.css)
  * Headless component: [ToolbarGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarGroup/ToolbarGroup.tsx).
  * Headless state: [useToolbarGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarGroup/useToolbarGroup.ts).
  * Headless render: [renderToolbarGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarGroup/renderToolbarGroup.ts).

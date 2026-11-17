@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useInfoLabelStyles.styles.ts](../../../../../react-infolabel/library/src/components/InfoLabel/useInfoLabelStyles.styles.ts)
+ * Headless story styles:
+ * - [info-label.module.css](../../../../../react-headless-components-preview/stories/src/InfoLabel/info-label.module.css)
  * Headless component: [InfoLabel.tsx](../../../../../react-headless-components-preview/library/src/components/InfoLabel/InfoLabel.tsx).
  * Headless state: [useInfoLabel.ts](../../../../../react-headless-components-preview/library/src/components/InfoLabel/useInfoLabel.ts).
  * Headless render: [renderInfoLabel.tsx](../../../../../react-headless-components-preview/library/src/components/InfoLabel/renderInfoLabel.tsx).

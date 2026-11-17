@@ -1,6 +1,10 @@
 /*
  * Fluent style sources:
  * - [useOptionGroupStyles.styles.ts](../../../../../../react-combobox/library/src/components/OptionGroup/useOptionGroupStyles.styles.ts)
+ * Headless story styles:
+ * - [dropdown.module.css](../../../../../../react-headless-components-preview/stories/src/Dropdown/dropdown.module.css)
+ * - [combobox.module.css](../../../../../../react-headless-components-preview/stories/src/Combobox/combobox.module.css)
+ * - [tag-picker.module.css](../../../../../../react-headless-components-preview/stories/src/TagPicker/tag-picker.module.css)
  * Headless component: [OptionGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/OptionGroup.tsx).
  * Headless state: [useOptionGroup.ts](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/useOptionGroup.ts).
  * Headless render: [renderOptionGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/renderOptionGroup.tsx).

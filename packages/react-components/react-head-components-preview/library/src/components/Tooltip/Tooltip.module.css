@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useTooltipStyles.styles.ts](../../../../../react-tooltip/library/src/components/Tooltip/useTooltipStyles.styles.ts)
+ * Headless story styles:
+ * - [tooltip.module.css](../../../../../react-headless-components-preview/stories/src/Tooltip/tooltip.module.css)
+ * - [popover.module.css](../../../../../react-headless-components-preview/stories/src/Popover/popover.module.css)
  * Headless component: [Tooltip.tsx](../../../../../react-headless-components-preview/library/src/components/Tooltip/Tooltip.tsx).
  * Headless state: [useTooltip.ts](../../../../../react-headless-components-preview/library/src/components/Tooltip/useTooltip.ts).
  * Headless render: [renderTooltip.tsx](../../../../../react-headless-components-preview/library/src/components/Tooltip/renderTooltip.tsx).

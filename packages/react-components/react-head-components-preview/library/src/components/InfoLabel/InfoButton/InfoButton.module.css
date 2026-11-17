@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useInfoButtonStyles.styles.ts](../../../../../../react-infolabel/library/src/components/InfoButton/useInfoButtonStyles.styles.ts)
+ * Headless story styles:
+ * - [info-label.module.css](../../../../../../react-headless-components-preview/stories/src/InfoLabel/info-label.module.css)
+ * - [popover.module.css](../../../../../../react-headless-components-preview/stories/src/Popover/popover.module.css)
  * Headless component: [InfoButton.tsx](../../../../../../react-headless-components-preview/library/src/components/InfoLabel/InfoButton/InfoButton.tsx).
  * Headless state: [useInfoButton.tsx](../../../../../../react-headless-components-preview/library/src/components/InfoLabel/InfoButton/useInfoButton.tsx).
  * Headless render: [renderInfoButton.tsx](../../../../../../react-headless-components-preview/library/src/components/InfoLabel/InfoButton/renderInfoButton.tsx).

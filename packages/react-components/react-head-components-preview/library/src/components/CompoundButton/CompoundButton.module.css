@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useCompoundButtonStyles.styles.ts](../../../../../react-button/library/src/components/CompoundButton/useCompoundButtonStyles.styles.ts)
+ * Headless story styles:
+ * - [compound-button.module.css](../../../../../react-headless-components-preview/stories/src/CompoundButton/compound-button.module.css)
+ * - [button.module.css](../../../../../react-headless-components-preview/stories/src/Button/button.module.css)
  * Headless component: [CompoundButton.tsx](../../../../../react-headless-components-preview/library/src/components/CompoundButton/CompoundButton.tsx).
  * Headless state: [useCompoundButton.ts](../../../../../react-headless-components-preview/library/src/components/CompoundButton/useCompoundButton.ts).
  * Headless render: [renderCompoundButton.ts](../../../../../react-headless-components-preview/library/src/components/CompoundButton/renderCompoundButton.ts).

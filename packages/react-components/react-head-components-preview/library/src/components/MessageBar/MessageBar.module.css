@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useMessageBarStyles.styles.ts](../../../../../react-message-bar/library/src/components/MessageBar/useMessageBarStyles.styles.ts)
+ * Headless story styles:
+ * - [message-bar.module.css](../../../../../react-headless-components-preview/stories/src/MessageBar/message-bar.module.css)
  * Headless component: [MessageBar.tsx](../../../../../react-headless-components-preview/library/src/components/MessageBar/MessageBar.tsx).
  * Headless state: [useMessageBar.ts](../../../../../react-headless-components-preview/library/src/components/MessageBar/useMessageBar.ts).
  * Headless render: [renderMessageBar.ts](../../../../../react-headless-components-preview/library/src/components/MessageBar/renderMessageBar.ts).

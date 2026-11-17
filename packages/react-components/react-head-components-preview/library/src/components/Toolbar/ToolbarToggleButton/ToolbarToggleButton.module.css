@@ -1,6 +1,10 @@
 /*
  * Fluent style sources:
  * - [useToolbarToggleButtonStyles.styles.ts](../../../../../../react-toolbar/library/src/components/ToolbarToggleButton/useToolbarToggleButtonStyles.styles.ts)
+ * Headless story styles:
+ * - [toolbar.module.css](../../../../../../react-headless-components-preview/stories/src/Toolbar/toolbar.module.css)
+ * - [toggle-button.module.css](../../../../../../react-headless-components-preview/stories/src/ToggleButton/toggle-button.module.css)
+ * - [button.module.css](../../../../../../react-headless-components-preview/stories/src/Button/button.module.css)
  * Headless component: [ToolbarToggleButton.tsx](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarToggleButton/ToolbarToggleButton.tsx).
  * Headless state: [useToolbarToggleButton.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarToggleButton/useToolbarToggleButton.ts).
  * Headless render: [renderToolbarToggleButton.ts](../../../../../../react-headless-components-preview/library/src/components/Toolbar/ToolbarToggleButton/renderToolbarToggleButton.ts).

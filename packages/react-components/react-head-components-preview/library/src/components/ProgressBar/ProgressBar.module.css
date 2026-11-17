@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useProgressBarStyles.styles.ts](../../../../../react-progress/library/src/components/ProgressBar/useProgressBarStyles.styles.ts)
+ * Headless story styles:
+ * - [progress-bar.module.css](../../../../../react-headless-components-preview/stories/src/ProgressBar/progress-bar.module.css)
  * Headless component: [ProgressBar.tsx](../../../../../react-headless-components-preview/library/src/components/ProgressBar/ProgressBar.tsx).
  * Headless state: [useProgressBar.ts](../../../../../react-headless-components-preview/library/src/components/ProgressBar/useProgressBar.ts).
  * Headless render: [renderProgressBar.tsx](../../../../../react-headless-components-preview/library/src/components/ProgressBar/renderProgressBar.tsx).

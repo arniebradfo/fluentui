@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useToggleButtonStyles.styles.ts](../../../../../react-button/library/src/components/ToggleButton/useToggleButtonStyles.styles.ts)
+ * Headless story styles:
+ * - [toggle-button.module.css](../../../../../react-headless-components-preview/stories/src/ToggleButton/toggle-button.module.css)
+ * - [button.module.css](../../../../../react-headless-components-preview/stories/src/Button/button.module.css)
  * Headless component: [ToggleButton.tsx](../../../../../react-headless-components-preview/library/src/components/ToggleButton/ToggleButton.tsx).
  * Headless state: [useToggleButton.ts](../../../../../react-headless-components-preview/library/src/components/ToggleButton/useToggleButton.ts).
  * Headless render: [renderToggleButton.ts](../../../../../react-headless-components-preview/library/src/components/ToggleButton/renderToggleButton.ts).

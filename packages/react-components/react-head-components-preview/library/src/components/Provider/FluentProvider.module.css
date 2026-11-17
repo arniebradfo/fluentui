@@ -1,6 +1,7 @@
 /*
  * Fluent style sources:
  * - [useFluentProviderStyles.styles.ts](../../../../../react-provider/library/src/components/FluentProvider/useFluentProviderStyles.styles.ts)
+ * Headless story styles: none; the context-only Provider has no story CSS Module.
  * Headless component: [Provider.tsx](../../../../../react-headless-components-preview/library/src/components/Provider/Provider.tsx).
  * Headless state: [useProvider.ts](../../../../../react-headless-components-preview/library/src/components/Provider/useProvider.ts).
  * Headless render: [renderProvider.tsx](../../../../../react-headless-components-preview/library/src/components/Provider/renderProvider.tsx).

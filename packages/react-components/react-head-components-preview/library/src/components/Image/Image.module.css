@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useImageStyles.styles.ts](../../../../../react-image/library/src/components/Image/useImageStyles.styles.ts)
+ * Headless story styles:
+ * - [image.module.css](../../../../../react-headless-components-preview/stories/src/Image/image.module.css)
  * Headless component: [Image.tsx](../../../../../react-headless-components-preview/library/src/components/Image/Image.tsx).
  * Headless state: [useImage.ts](../../../../../react-headless-components-preview/library/src/components/Image/useImage.ts).
  * Headless render: [renderImage.tsx](../../../../../react-headless-components-preview/library/src/components/Image/renderImage.tsx).

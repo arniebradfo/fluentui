@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useTabListStyles.styles.ts](../../../../../react-tabs/library/src/components/TabList/useTabListStyles.styles.ts)
+ * Headless story styles:
+ * - [tab-list.module.css](../../../../../react-headless-components-preview/stories/src/TabList/tab-list.module.css)
  * Headless component: [TabList.tsx](../../../../../react-headless-components-preview/library/src/components/TabList/TabList.tsx).
  * Headless state: [useTabList.ts](../../../../../react-headless-components-preview/library/src/components/TabList/useTabList.ts).
  * Headless render: [renderTabList.tsx](../../../../../react-headless-components-preview/library/src/components/TabList/renderTabList.tsx).

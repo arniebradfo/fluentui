@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useToastContainerStyles.styles.ts](../../../../../../react-toast/library/src/components/ToastContainer/useToastContainerStyles.styles.ts)
+ * Headless story styles:
+ * - [toast.module.css](../../../../../../react-headless-components-preview/stories/src/Toast/toast.module.css)
  * Headless component: [ToastContainer.tsx](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastContainer/ToastContainer.tsx).
  * Headless state: [useToastContainer.ts](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastContainer/useToastContainer.ts).
  * Headless render: [renderToastContainer.tsx](../../../../../../react-headless-components-preview/library/src/components/Toast/ToastContainer/renderToastContainer.tsx).

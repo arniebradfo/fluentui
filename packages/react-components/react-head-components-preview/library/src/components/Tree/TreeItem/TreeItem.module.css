@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useTreeItemStyles.styles.ts](../../../../../../react-tree/library/src/components/TreeItem/useTreeItemStyles.styles.ts)
+ * Headless story styles:
+ * - [tree.module.css](../../../../../../react-headless-components-preview/stories/src/Tree/tree.module.css)
  * Headless component: [TreeItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItem/TreeItem.tsx).
  * Headless state: [useTreeItem.ts](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItem/useTreeItem.ts).
  * Headless render: [renderTreeItem.ts](../../../../../../react-headless-components-preview/library/src/components/Tree/TreeItem/renderTreeItem.ts).

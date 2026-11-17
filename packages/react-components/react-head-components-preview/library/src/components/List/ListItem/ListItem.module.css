@@ -2,6 +2,8 @@
  * Fluent style sources:
  * - [useListItemStyles.styles.ts](../../../../../../react-list/library/src/components/ListItem/useListItemStyles.styles.ts)
  * - [useCheckboxStyles.styles.ts](../../../../../../react-checkbox/library/src/components/Checkbox/useCheckboxStyles.styles.ts)
+ * Headless story styles:
+ * - [list.module.css](../../../../../../react-headless-components-preview/stories/src/List/list.module.css)
  * Headless component: [ListItem.tsx](../../../../../../react-headless-components-preview/library/src/components/List/ListItem/ListItem.tsx).
  * Headless state: [useListItem.ts](../../../../../../react-headless-components-preview/library/src/components/List/ListItem/useListItem.ts).
  * Headless render: [renderListItem.tsx](../../../../../../react-headless-components-preview/library/src/components/List/ListItem/renderListItem.tsx).

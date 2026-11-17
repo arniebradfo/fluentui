@@ -3,6 +3,10 @@
  * - [usePersonaStyles.styles.ts](../../../../../react-persona/library/src/components/Persona/usePersonaStyles.styles.ts)
  * - [useAvatarStyles.styles.ts](../../../../../react-avatar/library/src/components/Avatar/useAvatarStyles.styles.ts)
  * - [usePresenceBadgeStyles.styles.ts](../../../../../react-badge/library/src/components/PresenceBadge/usePresenceBadgeStyles.styles.ts)
+ * Headless story styles:
+ * - [persona.module.css](../../../../../react-headless-components-preview/stories/src/Persona/persona.module.css)
+ * - [avatar.module.css](../../../../../react-headless-components-preview/stories/src/Avatar/avatar.module.css)
+ * - [presence-badge.module.css](../../../../../react-headless-components-preview/stories/src/PresenceBadge/presence-badge.module.css)
  * Headless component: [Persona.tsx](../../../../../react-headless-components-preview/library/src/components/Persona/Persona.tsx).
  * Headless state: [usePersona.ts](../../../../../react-headless-components-preview/library/src/components/Persona/usePersona.ts).
  * Headless render: [renderPersona.tsx](../../../../../react-headless-components-preview/library/src/components/Persona/renderPersona.tsx).

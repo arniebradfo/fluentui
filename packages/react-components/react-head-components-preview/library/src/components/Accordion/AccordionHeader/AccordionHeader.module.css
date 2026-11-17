@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useAccordionHeaderStyles.styles.ts](../../../../../../react-accordion/library/src/components/AccordionHeader/useAccordionHeaderStyles.styles.ts)
+ * Headless story styles:
+ * - [accordion.module.css](../../../../../../react-headless-components-preview/stories/src/Accordion/accordion.module.css)
  * Headless component: [AccordionHeader.tsx](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionHeader/AccordionHeader.tsx).
  * Headless state: [useAccordionHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionHeader/useAccordionHeader.ts).
  * Headless render: [renderAccordionHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Accordion/AccordionHeader/renderAccordionHeader.ts).

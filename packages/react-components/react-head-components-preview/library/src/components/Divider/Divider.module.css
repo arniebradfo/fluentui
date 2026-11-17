@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useDividerStyles.styles.ts](../../../../../react-divider/library/src/components/Divider/useDividerStyles.styles.ts)
+ * Headless story styles:
+ * - [divider.module.css](../../../../../react-headless-components-preview/stories/src/Divider/divider.module.css)
  * Headless component: [Divider.tsx](../../../../../react-headless-components-preview/library/src/components/Divider/Divider.tsx).
  * Headless state: [useDivider.ts](../../../../../react-headless-components-preview/library/src/components/Divider/useDivider.ts).
  * Headless render: [renderDivider.ts](../../../../../react-headless-components-preview/library/src/components/Divider/renderDivider.ts).

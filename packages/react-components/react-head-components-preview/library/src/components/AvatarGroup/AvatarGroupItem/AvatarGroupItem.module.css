@@ -1,6 +1,9 @@
 /*
  * Fluent style sources:
  * - [useAvatarGroupItemStyles.styles.ts](../../../../../../react-avatar/library/src/components/AvatarGroupItem/useAvatarGroupItemStyles.styles.ts)
+ * Headless story styles:
+ * - [avatar-group.module.css](../../../../../../react-headless-components-preview/stories/src/AvatarGroup/avatar-group.module.css)
+ * - [avatar.module.css](../../../../../../react-headless-components-preview/stories/src/Avatar/avatar.module.css)
  * Headless component: [AvatarGroupItem.tsx](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupItem/AvatarGroupItem.tsx).
  * Headless state: [useAvatarGroupItem.ts](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupItem/useAvatarGroupItem.ts).
  * Headless render: [renderAvatarGroupItem.ts](../../../../../../react-headless-components-preview/library/src/components/AvatarGroup/AvatarGroupItem/renderAvatarGroupItem.ts).

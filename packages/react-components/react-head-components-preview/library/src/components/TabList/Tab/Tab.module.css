@@ -2,6 +2,8 @@
  * Fluent style sources:
  * - [useTabStyles.styles.ts](../../../../../../react-tabs/library/src/components/Tab/useTabStyles.styles.ts)
  * - [useTabAnimatedIndicator.styles.ts](../../../../../../react-tabs/library/src/components/Tab/useTabAnimatedIndicator.styles.ts)
+ * Headless story styles:
+ * - [tab-list.module.css](../../../../../../react-headless-components-preview/stories/src/TabList/tab-list.module.css)
  * Headless component: [Tab.tsx](../../../../../../react-headless-components-preview/library/src/components/TabList/Tab/Tab.tsx).
  * Headless state: [useTab.ts](../../../../../../react-headless-components-preview/library/src/components/TabList/Tab/useTab.ts).
  * Headless render: [renderTab.tsx](../../../../../../react-headless-components-preview/library/src/components/TabList/Tab/renderTab.tsx).

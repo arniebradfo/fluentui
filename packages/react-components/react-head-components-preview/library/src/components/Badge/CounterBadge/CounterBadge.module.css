@@ -2,6 +2,9 @@
  * Fluent style sources:
  * - [useCounterBadgeStyles.styles.ts](../../../../../../react-badge/library/src/components/CounterBadge/useCounterBadgeStyles.styles.ts)
  * - [useBadgeStyles.styles.ts](../../../../../../react-badge/library/src/components/Badge/useBadgeStyles.styles.ts)
+ * Headless story styles:
+ * - [counter-badge.module.css](../../../../../../react-headless-components-preview/stories/src/CounterBadge/counter-badge.module.css)
+ * - [badge.module.css](../../../../../../react-headless-components-preview/stories/src/Badge/badge.module.css)
  * Headless component: [CounterBadge.tsx](../../../../../../react-headless-components-preview/library/src/components/Badge/CounterBadge/CounterBadge.tsx).
  * Headless state: [useCounterBadge.ts](../../../../../../react-headless-components-preview/library/src/components/Badge/CounterBadge/useCounterBadge.ts).
  * Headless render: [renderCounterBadge.ts](../../../../../../react-headless-components-preview/library/src/components/Badge/CounterBadge/renderCounterBadge.ts).

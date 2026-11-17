@@ -1,6 +1,10 @@
 /*
  * Fluent style sources:
  * - [useListboxStyles.styles.ts](../../../../../../react-combobox/library/src/components/Listbox/useListboxStyles.styles.ts)
+ * Headless story styles:
+ * - [dropdown.module.css](../../../../../../react-headless-components-preview/stories/src/Dropdown/dropdown.module.css)
+ * - [combobox.module.css](../../../../../../react-headless-components-preview/stories/src/Combobox/combobox.module.css)
+ * - [tag-picker.module.css](../../../../../../react-headless-components-preview/stories/src/TagPicker/tag-picker.module.css)
  * Headless component: [Listbox.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Listbox/Listbox.tsx).
  * Headless state: [useListbox.ts](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Listbox/useListbox.ts).
  * Headless render: [renderListbox.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/Listbox/renderListbox.tsx).

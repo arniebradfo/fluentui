@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useMenuItemSwitchStyles.styles.ts](../../../../../../react-menu/library/src/components/MenuItemSwitch/useMenuItemSwitchStyles.styles.ts)
+ * Headless story styles:
+ * - [menu.module.css](../../../../../../react-headless-components-preview/stories/src/Menu/menu.module.css)
  * Headless component: [MenuItemSwitch.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItemSwitch/MenuItemSwitch.tsx).
  * Headless state: [useMenuItemSwitch.ts](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItemSwitch/useMenuItemSwitch.ts).
  * Headless render: [renderMenuItemSwitch.tsx](../../../../../../react-headless-components-preview/library/src/components/Menu/MenuItemSwitch/renderMenuItemSwitch.tsx).

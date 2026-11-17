@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useFieldStyles.styles.ts](../../../../../react-field/library/src/components/Field/useFieldStyles.styles.ts)
+ * Headless story styles:
+ * - [field.module.css](../../../../../react-headless-components-preview/stories/src/Field/field.module.css)
  * Headless component: [Field.tsx](../../../../../react-headless-components-preview/library/src/components/Field/Field.tsx).
  * Headless state: [useField.ts](../../../../../react-headless-components-preview/library/src/components/Field/useField.ts).
  * Headless render: [renderField.tsx](../../../../../react-headless-components-preview/library/src/components/Field/renderField.tsx).

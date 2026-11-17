@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [usePopoverSurfaceStyles.styles.ts](../../../../../../react-popover/library/src/components/PopoverSurface/usePopoverSurfaceStyles.styles.ts)
+ * Headless story styles:
+ * - [popover.module.css](../../../../../../react-headless-components-preview/stories/src/Popover/popover.module.css)
  * Headless component: [PopoverSurface.tsx](../../../../../../react-headless-components-preview/library/src/components/Popover/PopoverSurface/PopoverSurface.tsx).
  * Headless state: [usePopoverSurface.ts](../../../../../../react-headless-components-preview/library/src/components/Popover/PopoverSurface/usePopoverSurface.ts).
  * Headless render: [renderPopoverSurface.tsx](../../../../../../react-headless-components-preview/library/src/components/Popover/PopoverSurface/renderPopoverSurface.tsx).

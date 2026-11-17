@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useRadioGroupStyles.styles.ts](../../../../../react-radio/library/src/components/RadioGroup/useRadioGroupStyles.styles.ts)
+ * Headless story styles:
+ * - [radio-group.module.css](../../../../../react-headless-components-preview/stories/src/RadioGroup/radio-group.module.css)
  * Headless component: [RadioGroup.tsx](../../../../../react-headless-components-preview/library/src/components/RadioGroup/RadioGroup.tsx).
  * Headless state: [useRadioGroup.ts](../../../../../react-headless-components-preview/library/src/components/RadioGroup/useRadioGroup.ts).
  * Headless render: [renderRadioGroup.tsx](../../../../../react-headless-components-preview/library/src/components/RadioGroup/renderRadioGroup.tsx).

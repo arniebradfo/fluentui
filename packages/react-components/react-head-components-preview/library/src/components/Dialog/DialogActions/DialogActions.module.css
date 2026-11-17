@@ -1,6 +1,8 @@
 /*
  * Fluent style sources:
  * - [useDialogActionsStyles.styles.ts](../../../../../../react-dialog/library/src/components/DialogActions/useDialogActionsStyles.styles.ts)
+ * Headless story styles:
+ * - [dialog.module.css](../../../../../../react-headless-components-preview/stories/src/Dialog/dialog.module.css)
  * Headless component: [DialogActions.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogActions/DialogActions.tsx).
  * Headless state: [useDialogActions.ts](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogActions/useDialogActions.ts).
  * Headless render: [renderDialogActions.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogActions/renderDialogActions.tsx).
