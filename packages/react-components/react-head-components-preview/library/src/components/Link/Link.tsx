@@ -35,7 +35,6 @@ export const Link: ForwardRefComponent<LinkProps> = React.forwardRef<HTMLSpanEle
       'data-appearance': appearance,
       'data-background-appearance': backgroundAppearance,
       'data-inline': inline ? '' : undefined,
-      'data-has-href': state.root.as === 'a' && state.root.href ? '' : undefined,
     });
     state.root.className = [linkClassNames.root, styles.Link, state.root.className].filter(Boolean).join(' ');
 

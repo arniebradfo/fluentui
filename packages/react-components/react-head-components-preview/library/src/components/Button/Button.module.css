@@ -48,8 +48,7 @@
         cursor: pointer;
       }
 
-      &:hover:active,
-      &:active:focus-visible {
+      &:is(:hover:active, :active:focus-visible) {
         background-color: var(--colorNeutralBackground1Pressed);
         border-color: var(--colorNeutralStroke1Pressed);
         color: var(--colorNeutralForeground1Pressed);
@@ -57,15 +56,14 @@
       }
 
       /* Appearance variations */
-      &[data-appearance='outline'] {
+      &:is([data-appearance='outline'], [data-appearance='transparent']) {
         background-color: var(--colorTransparentBackground);
 
         &:hover {
           background-color: var(--colorTransparentBackgroundHover);
         }
 
-        &:hover:active,
-        &:active:focus-visible {
+        &:is(:hover:active, :active:focus-visible) {
           background-color: var(--colorTransparentBackgroundPressed);
         }
       }
@@ -77,19 +75,20 @@
 
         &:hover {
           background-color: var(--colorBrandBackgroundHover);
-          border-color: transparent;
-          color: var(--colorNeutralForegroundOnBrand);
         }
 
-        &:hover:active,
-        &:active:focus-visible {
+        &:is(:hover:active, :active:focus-visible) {
           background-color: var(--colorBrandBackgroundPressed);
+        }
+
+        &:hover,
+        &:is(:hover:active, :active:focus-visible) {
           border-color: transparent;
           color: var(--colorNeutralForegroundOnBrand);
         }
       }
 
-      /* Fluent keeps subtle/transparent hover borders transparent even with keyboard focus. */
+      /* Keep this before subtle/transparent so their hover borders win during keyboard focus. */
       &:focus-visible:not(:active) {
         border-color: var(--colorStrokeFocus2);
 
@@ -114,8 +113,7 @@
           }
         }
 
-        &:hover:active,
-        &:active:focus-visible {
+        &:is(:hover:active, :active:focus-visible) {
           background-color: var(--colorSubtleBackgroundPressed);
           border-color: transparent;
           color: var(--colorNeutralForeground2Pressed);
@@ -127,19 +125,15 @@
       }
 
       &[data-appearance='transparent'] {
-        background-color: var(--colorTransparentBackground);
         border-color: transparent;
         color: var(--colorNeutralForeground2);
 
         &:hover {
-          background-color: var(--colorTransparentBackgroundHover);
           border-color: transparent;
           color: var(--colorNeutralForeground2BrandHover);
         }
 
-        &:hover:active,
-        &:active:focus-visible {
-          background-color: var(--colorTransparentBackgroundPressed);
+        &:is(:hover:active, :active:focus-visible) {
           border-color: transparent;
           color: var(--colorNeutralForeground2BrandPressed);
         }
@@ -159,8 +153,7 @@
 
         &[data-appearance] {
           &:hover,
-          &:hover:active,
-          &:active:focus-visible {
+          &:is(:hover:active, :active:focus-visible) {
             background-color: HighlightText;
             border-color: Highlight;
             color: Highlight;
@@ -179,8 +172,7 @@
 
         &[data-appearance='transparent'] {
           &:hover,
-          &:hover:active,
-          &:active:focus-visible {
+          &:is(:hover:active, :active:focus-visible) {
             background-color: var(--colorTransparentBackground);
           }
         }

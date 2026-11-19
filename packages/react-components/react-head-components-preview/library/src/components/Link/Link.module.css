@@ -40,8 +40,7 @@
       border-style: none;
     }
 
-    /* Overrides when an href is present so the Link renders as an anchor. */
-    &[data-has-href] {
+    &:any-link:where(:not([href=''])) {
       font-size: inherit;
     }
 

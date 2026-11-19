@@ -20,16 +20,14 @@
   .RatingItem {
     position: relative;
 
-    &:focus,
-    &:focus-visible {
+    &:focus {
       outline-style: none;
     }
 
     /* The element with the focus outline needs position: relative so that the
      * pseudo-element can be properly positioned.
      */
-    &:focus-visible,
-    &:has(:focus-visible) {
+    &:is(:focus-visible, :has(:focus-visible)) {
       border-color: transparent;
 
       &::after {
