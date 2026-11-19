@@ -6,12 +6,15 @@
  * Headless component: [SpinButton.tsx](../../../../../react-headless-components-preview/library/src/components/SpinButton/SpinButton.tsx).
  * Headless state: [useSpinButton.ts](../../../../../react-headless-components-preview/library/src/components/SpinButton/useSpinButton.ts).
  * Headless render: [renderSpinButton.tsx](../../../../../react-headless-components-preview/library/src/components/SpinButton/renderSpinButton.tsx).
+ * Composed CSS: [FieldFocus.module.css](../../styles/FieldFocus.module.css).
  *
  * Logical spacing and corners support RTL; focus uses native :focus-within.
  */
 
 @layer fluent-components {
   .SpinButton {
+    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+
     --fui-spinbutton-button-hover-background: var(--colorSubtleBackgroundHover);
     --fui-spinbutton-button-pressed-background: var(--colorSubtleBackgroundPressed);
 
@@ -46,47 +49,15 @@
       border-radius: var(--borderRadiusMedium);
     }
 
+    /* Align the focus line to the outer edge, above the ::before border. */
     &::after {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
       inset-inline: 0;
       bottom: 0;
       z-index: 20;
-      /* Maintaining the correct corner radius:
-       * Use the whole radius as the height and round only the bottom corners.
-       * max() keeps the focus border visible even when borderRadiusMedium is 0.
-       */
-      height: max(var(--strokeWidthThick), var(--borderRadiusMedium));
-      border-bottom-left-radius: var(--borderRadiusMedium);
-      border-bottom-right-radius: var(--borderRadiusMedium);
-      /* Flat 2px border: clip the little "horns" from border-bottom.
-       * A border rather than a gradient also lets consumers override its color.
-       */
-      border-bottom: var(--strokeWidthThick) solid var(--colorCompoundBrandStroke);
-      clip-path: inset(calc(100% - var(--strokeWidthThick)) 0 0 0);
-      /* Animation for focus OUT. Retain the source's delay declaration and browser fallback. */
-      transform: scaleX(0);
-      transition-property: transform;
-      transition-duration: var(--durationUltraFast);
-      transition-delay: var(--curveAccelerateMid);
     }
 
     &:focus-within {
       outline: var(--strokeWidthThick) solid transparent;
-
-      &::after {
-        /* Animation for focus IN. */
-        transform: scaleX(1);
-        transition-property: transform;
-        transition-duration: var(--durationNormal);
-        transition-delay: var(--curveDecelerateMid);
-      }
-    }
-
-    &:focus-within:active::after {
-      /* A second click while the field is already focused. */
-      border-bottom-color: var(--colorCompoundBrandStrokePressed);
     }
 
     &[data-size='small'] {
@@ -211,14 +182,6 @@
     &[data-spin-state='down'] > .SpinButton__decrementButton:enabled {
       color: var(--colorNeutralForeground3Pressed);
       background-color: var(--fui-spinbutton-button-pressed-background);
-    }
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      &::after,
-      &:focus-within::after {
-        transition-duration: 0.01ms;
-        transition-delay: 0.01ms;
-      }
     }
   }
 

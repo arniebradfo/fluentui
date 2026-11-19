@@ -7,12 +7,15 @@
  * Headless component: [Input.tsx](../../../../../react-headless-components-preview/library/src/components/Input/Input.tsx).
  * Headless state: [useInput.ts](../../../../../react-headless-components-preview/library/src/components/Input/useInput.ts).
  * Headless render: [renderInput.tsx](../../../../../react-headless-components-preview/library/src/components/Input/renderInput.tsx).
+ * Composed CSS: [FieldFocus.module.css](../../styles/FieldFocus.module.css).
  *
  * Logical spacing supports RTL; native :focus-within drives the focus indicator.
  */
 
 @layer fluent-components {
   .Input {
+    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+
     /* With no contentBefore or contentAfter, the input slot uses combined padding to increase its hit target.
      * If there is contentBefore or contentAfter, then the root and input slots use their individual padding.
      */
@@ -40,52 +43,14 @@
     border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
     border-bottom-color: var(--colorNeutralStrokeAccessible);
 
-    /* This is all for the bottom focus border.
-     * It's supposed to be 2px flat all the way across and match the radius of the field's corners.
-     */
+    /* Extend the focus line from the padding edge over the root border. */
     &::after {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
       inset-inline: calc(-1 * var(--strokeWidthThin));
       bottom: calc(-1 * var(--strokeWidthThin));
-      /* Maintaining the correct corner radius:
-       * Use the whole border-radius as the height and only put radii on the bottom corners.
-       * (Otherwise the radius would be automatically reduced to fit available space.)
-       * max() ensures the focus border still shows up even if borderRadiusMedium is set to 0.
-       */
-      height: max(var(--strokeWidthThick), var(--borderRadiusMedium));
-      border-bottom-left-radius: var(--borderRadiusMedium);
-      border-bottom-right-radius: var(--borderRadiusMedium);
-      /* Flat 2px border:
-       * By default border-bottom will cause little "horns" on the ends. The clip-path trims them off.
-       * This could use background: linear-gradient(...), but border-bottom makes the color easier to override.
-       */
-      border-bottom: var(--strokeWidthThick) solid var(--colorCompoundBrandStroke);
-      clip-path: inset(calc(100% - var(--strokeWidthThick)) 0 0 0);
-      /* Animation for focus OUT */
-      transform: scaleX(0);
-      transition-property: transform;
-      transition-duration: var(--durationUltraFast);
-      /* Retain the source's delay declaration, including its browser fallback. */
-      transition-delay: var(--curveAccelerateMid);
     }
 
     &:focus-within {
       outline: var(--strokeWidthThick) solid transparent;
-
-      &::after {
-        /* Animation for focus IN */
-        transform: scaleX(1);
-        transition-property: transform;
-        transition-duration: var(--durationNormal);
-        transition-delay: var(--curveDecelerateMid);
-      }
-    }
-
-    &:focus-within:active::after {
-      /* This is if the user clicks the field again while it's already focused. */
-      border-bottom-color: var(--colorCompoundBrandStrokePressed);
     }
 
     &[data-size='small'] {
@@ -230,14 +195,6 @@
 
       @media (forced-colors: active) {
         border-color: GrayText;
-      }
-    }
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      &::after,
-      &:focus-within::after {
-        transition-duration: 0.01ms;
-        transition-delay: 0.01ms;
       }
     }
   }
