@@ -1,0 +1,85 @@
+/*
+ * Fluent style sources:
+ * - [useDropdownStyles.styles.ts](../../../../react-combobox/library/src/components/Dropdown/useDropdownStyles.styles.ts)
+ * - [useComboboxStyles.styles.ts](../../../../react-combobox/library/src/components/Combobox/useComboboxStyles.styles.ts)
+ * Headless story styles:
+ * - [dropdown.module.css](../../../../react-headless-components-preview/stories/src/Dropdown/dropdown.module.css)
+ * - [combobox.module.css](../../../../react-headless-components-preview/stories/src/Combobox/combobox.module.css)
+ * Headless state:
+ * - [useDropdown.ts](../../../../react-headless-components-preview/library/src/components/Dropdown/useDropdown.ts)
+ * - [useCombobox.ts](../../../../react-headless-components-preview/library/src/components/Combobox/useCombobox.ts)
+ *
+ * Dropdown and Combobox keep their layout, focus indicators, and popup styles local.
+ */
+
+@layer fluent-components {
+  .PickerFrame {
+    border-radius: var(--borderRadiusMedium);
+
+    &[data-appearance='outline'] {
+      background-color: var(--colorNeutralBackground1);
+      border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
+      border-bottom-color: var(--colorNeutralStrokeAccessible);
+
+      &:not([data-disabled]) {
+        /* Match upstream's focus-within < hover < active Griffel bucket priority. */
+        &:focus-within {
+          border-color: var(--colorNeutralStroke1Pressed);
+          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
+        }
+
+        &:hover {
+          border-color: var(--colorNeutralStroke1Hover);
+          border-bottom-color: var(--colorNeutralStrokeAccessibleHover);
+        }
+
+        &:active {
+          border-color: var(--colorNeutralStroke1Pressed);
+          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
+        }
+      }
+    }
+
+    &[data-appearance='underline'] {
+      background-color: var(--colorTransparentBackground);
+      border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStrokeAccessible);
+      border-radius: 0;
+    }
+
+    &[data-appearance='filled-lighter'] {
+      background-color: var(--colorNeutralBackground1);
+      border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
+    }
+
+    &[data-appearance='filled-darker'] {
+      background-color: var(--colorNeutralBackground3);
+      border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
+    }
+
+    &[data-invalid]:not([data-invalid='false'], [data-invalid='grammar'], [data-invalid='spelling']) {
+      /* Give the invalid border extra specificity on hover. */
+      &:not(:focus-within),
+      &:hover:not(:focus-within) {
+        border-color: var(--colorPaletteRedBorder2);
+      }
+
+      &[data-appearance='underline'] {
+        &:not(:focus-within),
+        &:hover:not(:focus-within) {
+          border-color: initial;
+          border-bottom-color: var(--colorPaletteRedBorder2);
+        }
+      }
+    }
+
+    &[data-disabled][data-appearance] {
+      cursor: not-allowed;
+      background-color: var(--colorTransparentBackground);
+      border-color: var(--colorNeutralStrokeDisabled);
+
+      @media (forced-colors: active) {
+        border-color: GrayText;
+      }
+    }
+  }
+}

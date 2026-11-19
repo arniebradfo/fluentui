@@ -6,18 +6,20 @@
  * Headless component: [Combobox.tsx](../../../../../react-headless-components-preview/library/src/components/Combobox/Combobox.tsx).
  * Headless state: [useCombobox.ts](../../../../../react-headless-components-preview/library/src/components/Combobox/useCombobox.ts).
  * Headless render: [renderCombobox.tsx](../../../../../react-headless-components-preview/library/src/components/Combobox/renderCombobox.tsx).
+ * Composed CSS: [PickerFrame.module.css](../../styles/PickerFrame.module.css).
  *
  * The styled Listbox supplies popup visuals; public headless owns native positioning.
  */
 
 @layer fluent-components {
   .Combobox {
+    composes: PickerFrame from '../../styles/PickerFrame.module.css';
+
     --fui-combobox-end-padding: var(--spacingHorizontalMNudge);
     --fui-combobox-icon-margin: var(--spacingHorizontalXXS);
     --fui-combobox-icon-size: var(--fontSizeBase500);
 
     align-items: center;
-    border-radius: var(--borderRadiusMedium);
     box-sizing: border-box;
     column-gap: var(--spacingHorizontalXXS);
     display: inline-grid;
@@ -77,71 +79,6 @@
 
       column-gap: var(--spacingHorizontalSNudge);
       height: 40px;
-    }
-
-    &[data-appearance='outline'] {
-      background-color: var(--colorNeutralBackground1);
-      border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
-      border-bottom-color: var(--colorNeutralStrokeAccessible);
-
-      &:not([data-disabled]) {
-        /* Match upstream's focus-within < hover < active Griffel bucket priority. */
-        &:focus-within {
-          border-color: var(--colorNeutralStroke1Pressed);
-          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
-        }
-
-        &:hover {
-          border-color: var(--colorNeutralStroke1Hover);
-          border-bottom-color: var(--colorNeutralStrokeAccessibleHover);
-        }
-
-        &:active {
-          border-color: var(--colorNeutralStroke1Pressed);
-          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
-        }
-      }
-    }
-
-    &[data-appearance='underline'] {
-      background-color: var(--colorTransparentBackground);
-      border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStrokeAccessible);
-      border-radius: 0;
-    }
-
-    &[data-appearance='filled-lighter'] {
-      background-color: var(--colorNeutralBackground1);
-      border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
-    }
-
-    &[data-appearance='filled-darker'] {
-      background-color: var(--colorNeutralBackground3);
-      border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
-    }
-
-    &[data-invalid]:not([data-invalid='false'], [data-invalid='grammar'], [data-invalid='spelling']) {
-      &:not(:focus-within),
-      &:hover:not(:focus-within) {
-        border-color: var(--colorPaletteRedBorder2);
-      }
-
-      &[data-appearance='underline'] {
-        &:not(:focus-within),
-        &:hover:not(:focus-within) {
-          border-color: initial;
-          border-bottom-color: var(--colorPaletteRedBorder2);
-        }
-      }
-    }
-
-    &[data-disabled][data-appearance] {
-      cursor: not-allowed;
-      background-color: var(--colorTransparentBackground);
-      border-color: var(--colorNeutralStrokeDisabled);
-
-      @media (forced-colors: active) {
-        border-color: GrayText;
-      }
     }
 
     @media screen and (prefers-reduced-motion: reduce) {
