@@ -118,8 +118,10 @@ foundation dependencies** are the public packages.
 
 The build produces raw source recipes under `library/dist/source`; it does not
 produce compiled JavaScript or an aggregate `styles.css`. Keep sibling files
-referenced by a copied component. The catalog is deliberately easy to edit,
-not a set of dependency-free single-file snippets.
+referenced by a copied component, including any composed
+[shared styles](./library/src/styles). These modules follow the component's
+imports; do not load them as a global stylesheet. The catalog is deliberately
+easy to edit, not a set of dependency-free single-file snippets.
 
 Most component CSS is in the `fluent-components` cascade layer. Ordinary, unlayered
 consumer CSS wins over that layer. Putting a class last in a `className` string
@@ -131,6 +133,30 @@ Consumer overrides of those visibility rules must also account for specificity.
 Webpack needs `.js` extension aliases for these raw TypeScript sources; see the
 [source-consumer guide](./library/README.md). Server/client builds must agree on
 their CSS Module identifiers.
+
+### Shared style recipes
+
+- [PickerFrame](./library/src/styles/PickerFrame.module.css) gives Dropdown and
+  Combobox one source for appearance, validation, and disabled styles. Layout,
+  focus indicators, and popup rules stay local. TagPickerControl shares some
+  rules, but its validation states need a separate comparison. Select paints
+  its frame on the native `<select>`, not on the wrapper.
+- [FieldFocus](./library/src/styles/FieldFocus.module.css) draws and animates
+  the same focus line for Input and SpinButton. SearchBox inherits it through
+  Input. Each control still positions the line and handles its own outline.
+  Keep the differing focus and motion rules in Select, Textarea, and the pickers
+  until the shared part can be extracted without adding flags.
+- [ModalBackdrop](./library/src/styles/ModalBackdrop.module.css) shares the
+  backdrop colors for Dialog and OverlayDrawer. It does not set `display`,
+  position a surface, or control modality. Tooltip and TeachingPopover already
+  compose PopoverSurface; a listbox or menu need not use those surface styles.
+
+Prefer local selector grouping when it preserves specificity. `:is()` takes the
+specificity of its strongest branch, and `:where()` adds none. Use `:has()` for
+relationships the rendered DOM actually guarantees, not as a substitute for
+headless state. For composed styles, test the affected states with both sheets
+loaded in either order. Equal-specificity rules in the same layer can still
+depend on bundler output order; keep consumer overrides unlayered.
 
 ## Browser and API contract
 
