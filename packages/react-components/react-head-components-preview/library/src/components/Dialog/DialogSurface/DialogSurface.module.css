@@ -7,12 +7,15 @@
  * Headless component: [DialogSurface.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogSurface/DialogSurface.tsx).
  * Headless state: [useDialogSurface.ts](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogSurface/useDialogSurface.ts).
  * Headless render: [renderDialogSurface.tsx](../../../../../../react-headless-components-preview/library/src/components/Dialog/DialogSurface/renderDialogSurface.tsx).
+ * Composed CSS: [ModalBackdrop.module.css](../../../styles/ModalBackdrop.module.css).
  *
  * The native surface owns layout; DialogBody is the content area, not the old body grid.
  */
 
 @layer fluent-components {
   .DialogSurface {
+    composes: ModalBackdrop from '../../../styles/ModalBackdrop.module.css';
+
     --fui-Dialog--surface-padding: var(--spacingHorizontalXXL);
     --fui-Dialog--gap: var(--spacingHorizontalS);
 
@@ -43,15 +46,6 @@
     &[open],
     &:popover-open {
       display: grid;
-    }
-
-    &::backdrop {
-      background-color: var(--colorBackgroundOverlay);
-    }
-
-    &[data-dialog-nested]::backdrop,
-    &[data-modal-type='non-modal']::backdrop {
-      background-color: var(--colorTransparentBackground);
     }
 
     &:focus {
