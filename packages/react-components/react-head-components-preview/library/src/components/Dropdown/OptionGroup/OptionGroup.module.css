@@ -10,8 +10,6 @@
  * Headless render: [renderOptionGroup.tsx](../../../../../../react-headless-components-preview/library/src/components/Dropdown/OptionGroup/renderOptionGroup.tsx).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .OptionGroup {
     display: flex;

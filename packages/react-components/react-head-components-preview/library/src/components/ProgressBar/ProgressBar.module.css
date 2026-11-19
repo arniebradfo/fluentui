@@ -12,8 +12,6 @@
  * Native :dir() mirrors the gradient; upstream motion translates physically in both directions.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot. */
   .ProgressBar {

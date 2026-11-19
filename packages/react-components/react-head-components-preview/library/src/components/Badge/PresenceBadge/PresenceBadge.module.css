@@ -11,8 +11,6 @@
  * Default glyphs use the style-free public @fluentui/react-icons headless SVG entries.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .PresenceBadge {
     display: inline-flex;

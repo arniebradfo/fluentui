@@ -8,8 +8,6 @@
  * Headless render: [renderTextarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/renderTextarea.tsx).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root (wrapper) slot. */
   .Textarea {

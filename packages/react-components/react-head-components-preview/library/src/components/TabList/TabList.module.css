@@ -10,8 +10,6 @@
  * Headless behavior: @fluentui/react-headless-components-preview /tab-list.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot. */
   .TabList {

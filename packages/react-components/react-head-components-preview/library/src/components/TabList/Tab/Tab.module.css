@@ -14,8 +14,6 @@
  * its tab; the old JavaScript slide between registered tabs is intentionally not recreated.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot. */
   .Tab {

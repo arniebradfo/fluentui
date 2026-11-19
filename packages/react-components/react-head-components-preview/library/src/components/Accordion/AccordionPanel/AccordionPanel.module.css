@@ -11,8 +11,6 @@
  * CSS hides closed panels independently of inert serialization, without a legacy collapseMotion slot.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .AccordionPanel {

@@ -8,8 +8,6 @@
  * Headless render: [renderBreadcrumbDivider.ts](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbDivider/renderBreadcrumbDivider.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .BreadcrumbDivider {

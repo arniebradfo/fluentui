@@ -11,8 +11,6 @@
  * Logical spacing supports RTL; native :focus-within drives the focus indicator.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Input {
     /* With no contentBefore or contentAfter, the input slot uses combined padding to increase its hit target.

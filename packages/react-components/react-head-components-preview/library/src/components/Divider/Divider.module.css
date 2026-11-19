@@ -8,8 +8,6 @@
  * Headless render: [renderDivider.ts](../../../../../react-headless-components-preview/library/src/components/Divider/renderDivider.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Divider {
     --fui-divider-content-spacing: var(--spacingHorizontalM);

@@ -11,8 +11,6 @@
  * Display belongs to each variant so closed native dialogs stay hidden.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Default shared styles for the Drawer component */
   .Drawer {

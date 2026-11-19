@@ -12,8 +12,6 @@
  * Native :focus-visible replaces legacy focus attributes; logical spacing preserves RTL.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .AccordionHeader {
     color: var(--colorNeutralForeground1);

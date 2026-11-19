@@ -11,8 +11,6 @@
  * name is retained; no second measurement or query controller is added.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .TagPickerInput {
     background-color: var(--colorTransparentBackground);

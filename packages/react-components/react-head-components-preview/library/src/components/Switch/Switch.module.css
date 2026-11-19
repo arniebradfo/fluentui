@@ -10,8 +10,6 @@
  * Logical placement and :dir(rtl) preserve thumb direction; native focus supplies modality.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Switch {
     align-items: flex-start;

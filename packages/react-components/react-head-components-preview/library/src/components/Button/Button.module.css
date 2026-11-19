@@ -11,8 +11,6 @@
  * must not use colorTransparentStroke, which is visible in high-contrast themes.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Button {
     --fui-button-focus-radius: var(--borderRadiusMedium);

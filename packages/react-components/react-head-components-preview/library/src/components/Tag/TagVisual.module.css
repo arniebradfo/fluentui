@@ -16,8 +16,6 @@
  * Headless render: [renderInteractionTagPrimary.ts](../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagPrimary/renderInteractionTagPrimary.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .TagVisual {
     /* Inner horizontal space left and right of Tag. */

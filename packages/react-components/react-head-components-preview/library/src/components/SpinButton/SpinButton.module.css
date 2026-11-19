@@ -10,8 +10,6 @@
  * Logical spacing and corners support RTL; focus uses native :focus-within.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .SpinButton {
     --fui-spinbutton-button-hover-background: var(--colorSubtleBackgroundHover);

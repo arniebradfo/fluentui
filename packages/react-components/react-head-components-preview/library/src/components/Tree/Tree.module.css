@@ -11,8 +11,6 @@
  * replaces v9's `state.level > 1` subtree check.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Tree {
     display: flex;

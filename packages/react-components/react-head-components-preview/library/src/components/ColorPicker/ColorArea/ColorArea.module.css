@@ -14,8 +14,6 @@
  * rather than copying Griffel's RTL mirroring of the old visual styles.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .ColorArea {

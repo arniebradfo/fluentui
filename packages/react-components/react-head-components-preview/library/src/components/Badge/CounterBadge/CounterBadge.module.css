@@ -12,8 +12,6 @@
  * Hidden state comes from the current public headless hook, including numeric zero children.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .CounterBadge {
     &[data-dot] {

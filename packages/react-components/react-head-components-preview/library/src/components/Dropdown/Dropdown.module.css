@@ -10,8 +10,6 @@
  * The styled Listbox supplies popup visuals; public headless owns native positioning.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Dropdown {
     --fui-dropdown-icon-size: var(--fontSizeBase500);

@@ -21,8 +21,6 @@
  * feature probe and -webkit-appearance: slider-vertical fallback are not needed.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .RangeSlider {

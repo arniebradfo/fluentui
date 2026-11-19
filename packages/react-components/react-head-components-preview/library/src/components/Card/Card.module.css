@@ -11,8 +11,6 @@
  * Native :focus-visible replaces Tabster focus attributes and pseudo-border focus machinery.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Card {
     overflow: hidden;

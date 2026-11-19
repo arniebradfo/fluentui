@@ -14,8 +14,6 @@
  * on the item's own layout, as in v9.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .TreeItem {
     position: relative;

@@ -8,8 +8,6 @@
  * Headless render: [renderSwatchPickerRow.ts](../../../../../../react-headless-components-preview/library/src/components/SwatchPicker/SwatchPickerRow/renderSwatchPickerRow.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .SwatchPickerRow {
     display: flex;

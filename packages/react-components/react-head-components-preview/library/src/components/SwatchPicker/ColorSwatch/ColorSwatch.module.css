@@ -12,8 +12,6 @@
  * Default glyph styles: @fluentui/react-icons,
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .ColorSwatch {

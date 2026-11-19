@@ -15,8 +15,6 @@
  * when CSS Modules emits the composed foundation through another family member.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .AlphaSlider {
     composes: ColorSlider from '../ColorSlider/ColorSlider.module.css';

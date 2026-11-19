@@ -10,8 +10,6 @@
  * The styled Label slot supplies its own visual foundation.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Field {
     /* Size of the icon in the validation message. */

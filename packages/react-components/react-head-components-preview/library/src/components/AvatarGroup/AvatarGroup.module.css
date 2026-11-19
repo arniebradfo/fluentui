@@ -12,8 +12,6 @@
  * Shared size/child rules port useSizeStyles and useGroupChildClassName once for the family.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .AvatarGroup {
     display: inline-flex;

@@ -12,8 +12,6 @@
  * Native :focus-visible replaces legacy focus attributes; no focus runtime is imported.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .ListItem {
     padding: 0;

@@ -10,8 +10,6 @@
  * The native button retains its own keyboard focus indicator.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .EmptySwatch {
     background-color: var(--colorTransparentBackground);

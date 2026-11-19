@@ -13,8 +13,6 @@
  * Focus indicators use native :focus-visible.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .ToggleButton {
     composes: Button from '../Button/Button.module.css';

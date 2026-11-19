@@ -11,8 +11,6 @@
  * control; it has no button-specific selector.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .TagPickerButton {
     align-items: center;

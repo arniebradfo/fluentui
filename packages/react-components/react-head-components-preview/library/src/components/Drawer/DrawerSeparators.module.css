@@ -17,8 +17,6 @@
  * The public drawer body and context own scroll state.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .DrawerHeader:not([data-scroll-state='none'])::after,
   .DrawerFooter:not([data-scroll-state='none'])::before {

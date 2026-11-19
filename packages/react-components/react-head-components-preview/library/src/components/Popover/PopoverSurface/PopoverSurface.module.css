@@ -12,8 +12,6 @@
  * surface-center/edge approximation, not measured alignment to the trigger.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .PopoverSurface {
     /* The arrow is a square rotated 45 degrees. Multiply its triangle height by sqrt(2)

@@ -10,8 +10,6 @@
  * The styled Label and InfoButton supply their own visual foundations.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Resolved-state specificity protects the derived slot rules from later foundation sheets. */
   .InfoLabel[data-size] > .InfoLabel__label {

@@ -12,8 +12,6 @@
  * Closed popovers retain the UA display:none; only open or explicitly inline listboxes use flex.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Listbox {
     background-color: var(--colorNeutralBackground1);

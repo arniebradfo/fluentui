@@ -8,8 +8,6 @@
  * Headless render: [renderBreadcrumbItem.ts](../../../../../../react-headless-components-preview/library/src/components/Breadcrumb/BreadcrumbItem/renderBreadcrumbItem.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .BreadcrumbItem {
     display: flex;

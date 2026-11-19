@@ -12,8 +12,6 @@
  * Composed CSS: [Rating.module.css](../Rating/Rating.module.css).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .RatingDisplay {

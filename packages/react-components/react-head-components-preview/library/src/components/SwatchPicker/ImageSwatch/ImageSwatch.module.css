@@ -10,8 +10,6 @@
  * Native :focus-visible replaces legacy Tabster focus attributes.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .ImageSwatch {
     display: inline-flex;

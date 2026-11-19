@@ -20,8 +20,6 @@
  * Logical properties replace Griffel's automatic RTL flipping.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .TreeItemLayout {
     display: flex;

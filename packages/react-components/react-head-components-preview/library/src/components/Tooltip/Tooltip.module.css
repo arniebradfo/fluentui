@@ -12,8 +12,6 @@
  * The native hint popover owns visibility and top-layer behavior.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Tooltip__content {
     composes: PopoverSurface from '../Popover/PopoverSurface/PopoverSurface.module.css';

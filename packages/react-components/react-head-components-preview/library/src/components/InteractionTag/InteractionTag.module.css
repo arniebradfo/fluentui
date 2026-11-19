@@ -9,8 +9,6 @@
  * Headless render: [renderInteractionTag.ts](../../../../../react-headless-components-preview/library/src/components/InteractionTag/renderInteractionTag.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .InteractionTag {
     display: inline-flex;

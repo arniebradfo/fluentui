@@ -15,8 +15,6 @@
  * come from the reused Button foundation.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .BreadcrumbButton {
     composes: Button from '../../Button/Button.module.css';

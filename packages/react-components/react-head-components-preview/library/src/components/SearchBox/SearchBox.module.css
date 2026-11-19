@@ -11,8 +11,6 @@
  * Input supplies the shared field styling through CSS Modules composition.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .SearchBox {
     composes: Input from '../Input/Input.module.css';

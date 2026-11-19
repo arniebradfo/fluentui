@@ -8,8 +8,6 @@
  * Headless render: [renderSwatchPicker.ts](../../../../../react-headless-components-preview/library/src/components/SwatchPicker/renderSwatchPicker.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .SwatchPicker {

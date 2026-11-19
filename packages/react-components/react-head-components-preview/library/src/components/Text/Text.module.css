@@ -7,8 +7,6 @@
  * Text is a local native primitive; neither the styled component nor its hook is imported.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .Text {

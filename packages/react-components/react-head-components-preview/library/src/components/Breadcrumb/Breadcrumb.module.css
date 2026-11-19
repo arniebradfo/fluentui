@@ -10,8 +10,6 @@
  * The upstream root has no declarations.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Breadcrumb__list {
     list-style-type: none;

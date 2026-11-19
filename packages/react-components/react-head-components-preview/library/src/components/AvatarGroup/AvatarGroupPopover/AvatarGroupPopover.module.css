@@ -15,8 +15,6 @@
  * Native Popover/Trigger behavior remains in the current public renderer.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .AvatarGroupPopover__content {
     list-style-type: none;

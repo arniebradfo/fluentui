@@ -13,8 +13,6 @@
  * Focus uses native :focus-visible instead of legacy focus attributes. No motion is defined upstream.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Tag {
     composes: TagVisual from './TagVisual.module.css';

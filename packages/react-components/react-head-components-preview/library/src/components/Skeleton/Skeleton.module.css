@@ -8,8 +8,6 @@
  * Headless render: [renderSkeleton.tsx](../../../../../react-headless-components-preview/library/src/components/Skeleton/renderSkeleton.tsx).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Apply styling to the Skeleton slots based on the state. */
   .Skeleton {

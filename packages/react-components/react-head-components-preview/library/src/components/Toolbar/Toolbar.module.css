@@ -10,8 +10,6 @@
  * Native focusgroup navigation is supplied by the current public headless hook.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .Toolbar {

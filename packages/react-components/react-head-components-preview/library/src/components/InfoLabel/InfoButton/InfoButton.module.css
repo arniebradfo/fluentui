@@ -11,8 +11,6 @@
  * The styled PopoverSurface supplies the shared surface foundation.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot. */
   .InfoButton {

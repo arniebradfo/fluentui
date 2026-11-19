@@ -11,8 +11,6 @@
  * The native surface owns layout; DialogBody is the content area, not the old body grid.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .DialogSurface {
     --fui-Dialog--surface-padding: var(--spacingHorizontalXXL);

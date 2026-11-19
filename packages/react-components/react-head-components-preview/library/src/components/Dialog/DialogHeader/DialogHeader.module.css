@@ -10,8 +10,6 @@
  * DialogHeader is a public headless boundary. Consumers compose their own close action.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .DialogHeader {
     display: grid;

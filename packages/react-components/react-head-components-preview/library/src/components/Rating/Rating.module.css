@@ -8,8 +8,6 @@
  * Headless render: [renderRating.tsx](../../../../../react-headless-components-preview/library/src/components/Rating/renderRating.tsx).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .Rating {

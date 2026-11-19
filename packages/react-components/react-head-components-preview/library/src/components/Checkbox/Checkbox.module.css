@@ -10,8 +10,6 @@
  * The styled Label supplies typography; native :focus-visible supplies keyboard modality.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Checkbox {
     position: relative;

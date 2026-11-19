@@ -18,8 +18,6 @@
  * Physical spacing is expressed logically for RTL; focus uses native :focus-visible.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Calendar {
     display: inline-grid;

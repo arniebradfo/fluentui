@@ -10,8 +10,6 @@
  * Native :dir() selectors and mirrored keyframes preserve Griffel's RTL flipping.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot. */
   .SkeletonItem {

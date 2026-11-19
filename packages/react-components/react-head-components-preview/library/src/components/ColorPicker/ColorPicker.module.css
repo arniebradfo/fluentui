@@ -8,8 +8,6 @@
  * Headless render: [renderColorPicker.ts](../../../../../react-headless-components-preview/library/src/components/ColorPicker/renderColorPicker.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .ColorPicker {

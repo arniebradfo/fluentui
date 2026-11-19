@@ -12,8 +12,6 @@
  * Native :dir() selectors and mirrored keyframes preserve Griffel's RTL flipping.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Spinner {
     display: flex;

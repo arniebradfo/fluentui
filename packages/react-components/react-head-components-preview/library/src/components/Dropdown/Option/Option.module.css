@@ -12,8 +12,6 @@
  * Active-descendant state is supplied by the public headless component.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Option {
     align-items: center;

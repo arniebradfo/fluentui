@@ -10,8 +10,6 @@
  * Native :dir() preserves Griffel's RTL object-position adjustment.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Image {
     /* Base styles */

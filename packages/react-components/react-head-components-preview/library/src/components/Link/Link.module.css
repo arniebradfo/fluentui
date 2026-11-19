@@ -11,8 +11,6 @@
  * Logical text alignment preserves Griffel's RTL flipping.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Common styles. */
   .Link {

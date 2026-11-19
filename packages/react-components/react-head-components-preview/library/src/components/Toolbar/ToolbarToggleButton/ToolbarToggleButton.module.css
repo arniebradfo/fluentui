@@ -13,8 +13,6 @@
  * ToggleButton.module.css supplies the shared checked, disabled, and focus styles.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .ToolbarToggleButton {
     composes: ToggleButton from '../../ToggleButton/ToggleButton.module.css';

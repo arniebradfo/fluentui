@@ -8,8 +8,6 @@
  * Headless render: [renderCardFooter.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardFooter/renderCardFooter.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .CardFooter {
     display: flex;

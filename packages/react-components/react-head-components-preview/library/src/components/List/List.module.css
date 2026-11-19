@@ -8,8 +8,6 @@
  * Headless render: [renderList.tsx](../../../../../react-headless-components-preview/library/src/components/List/renderList.tsx).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .List {
     padding: 0;

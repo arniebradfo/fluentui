@@ -12,8 +12,6 @@
  * Divider.module.css supplies the shared separator styles.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .ToolbarDivider {
     composes: Divider from '../../Divider/Divider.module.css';

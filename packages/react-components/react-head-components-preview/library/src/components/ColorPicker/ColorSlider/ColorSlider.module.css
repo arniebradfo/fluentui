@@ -13,8 +13,6 @@
  * the top instead of mirroring the input independently of its rail and thumb.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .ColorSlider {

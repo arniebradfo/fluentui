@@ -14,8 +14,6 @@
  * Native :focus-visible replaces legacy focus attributes. No motion is defined upstream.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .InteractionTagPrimary {
     composes: TagVisual from '../../Tag/TagVisual.module.css';

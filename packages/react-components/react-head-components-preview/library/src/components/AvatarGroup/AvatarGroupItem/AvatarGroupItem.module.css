@@ -11,8 +11,6 @@
  * Avatar/PresenceBadge visuals are supplied by the completed local slot adapters.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .AvatarGroupItem {
     align-items: center;

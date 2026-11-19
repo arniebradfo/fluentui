@@ -10,8 +10,6 @@
  * Logical positioning supports RTL; focus uses native :focus-within.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Select {
     --fui-select-icon-size: var(--fontSizeBase500);

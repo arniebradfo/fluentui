@@ -15,8 +15,6 @@
  * Persona uses native text spans and typography styles, not styled Text components or presets.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Persona {
     --fui-Persona__avatar--spacing: var(--spacingHorizontalS);

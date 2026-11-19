@@ -12,8 +12,6 @@
  * Button.module.css supplies the shared root and icon styles.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .ToolbarButton {
     composes: Button from '../../Button/Button.module.css';

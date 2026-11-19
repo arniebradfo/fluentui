@@ -15,8 +15,6 @@
  * shared checked and high-contrast rules.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .ToolbarRadioButton {
     composes: ToolbarToggleButton from '../ToolbarToggleButton/ToolbarToggleButton.module.css';

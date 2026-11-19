@@ -10,8 +10,6 @@
  * ToolbarRadioGroup delegates to this exact style hook and has no separate stylesheet.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .ToolbarGroup {
     display: flex;

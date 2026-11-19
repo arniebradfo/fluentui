@@ -8,8 +8,6 @@
  * Headless render: [renderCardHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Card/CardHeader/renderCardHeader.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .CardHeader {
     --fui-CardHeader--gap: var(--spacingHorizontalM);

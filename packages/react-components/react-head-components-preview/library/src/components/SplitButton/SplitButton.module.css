@@ -12,8 +12,6 @@
  * Typed slot adapters reuse Button and MenuButton. Joined corners and seams follow text direction.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .SplitButton {
     /* Base styles */

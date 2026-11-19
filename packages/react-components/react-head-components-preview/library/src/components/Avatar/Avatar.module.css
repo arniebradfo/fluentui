@@ -13,8 +13,6 @@
  * Avatar's native image slot does not delegate to react-image's styling foundation.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .Avatar {
     --fui-Avatar-size: 32px;

@@ -10,8 +10,6 @@
  * Public headless owns the measured --fui-TagPickerControl-aside-width variable.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .TagPickerControl {
     align-items: center;

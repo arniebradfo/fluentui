@@ -10,8 +10,6 @@
  * Composed CSS: [DialogTitle.module.css](../../Dialog/DialogTitle/DialogTitle.module.css).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   /* Styles for the root slot */
   .DrawerHeaderTitle {

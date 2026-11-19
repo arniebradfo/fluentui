@@ -11,8 +11,6 @@
  * Native :focus-visible replaces legacy focus attributes. No motion is defined upstream.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .InteractionTagSecondary {
     /* Reset default button style. */

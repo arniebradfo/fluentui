@@ -8,8 +8,6 @@
  * Headless render: [renderTagGroup.ts](../../../../../react-headless-components-preview/library/src/components/TagGroup/renderTagGroup.ts).
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .TagGroup {
     display: inline-flex;

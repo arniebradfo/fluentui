@@ -10,8 +10,6 @@
  * Public headless DialogBody has the content role formerly named DialogContent.
  */
 
-@layer fluent-components;
-
 @layer fluent-components {
   .DialogBody {
     padding: var(--strokeWidthThick);
