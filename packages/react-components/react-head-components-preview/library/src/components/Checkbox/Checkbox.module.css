@@ -6,47 +6,21 @@
  * Headless component: [Checkbox.tsx](../../../../../react-headless-components-preview/library/src/components/Checkbox/Checkbox.tsx).
  * Headless state: [useCheckbox.ts](../../../../../react-headless-components-preview/library/src/components/Checkbox/useCheckbox.ts).
  * Headless render: [renderCheckbox.tsx](../../../../../react-headless-components-preview/library/src/components/Checkbox/renderCheckbox.tsx).
+ * Composed CSS: [FocusRing.module.css](../../styles/FocusRing.module.css).
  *
  * The styled Label supplies typography; native :focus-visible supplies keyboard modality.
  */
 
 @layer fluent-components {
   .Checkbox {
+    composes: FocusRing from '../../styles/FocusRing.module.css';
+
     position: relative;
     display: inline-flex;
     cursor: pointer;
     max-width: fit-content;
     vertical-align: middle;
     color: var(--colorNeutralForeground3);
-
-    &:focus,
-    &:focus-visible {
-      outline-style: none;
-    }
-
-    /* The element with the focus outline needs position: relative so that the
-     * pseudo-element can be properly positioned. Use native keyboard-visible focus within the root.
-     */
-    &:focus-visible,
-    &:has(:focus-visible) {
-      border-color: transparent;
-
-      &::after {
-        content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-        border-radius: var(--borderRadiusMedium);
-        inset: calc(-1 * var(--strokeWidthThick));
-      }
-
-      @media (forced-colors: active) {
-        &::after {
-          border-color: Highlight;
-        }
-      }
-    }
 
     /* CSS variables used internally in Checkbox's styles */
     &:not([data-disabled]) {

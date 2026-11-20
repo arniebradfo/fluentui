@@ -6,78 +6,31 @@
  * Headless component: [Textarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/Textarea.tsx).
  * Headless state: [useTextarea.ts](../../../../../react-headless-components-preview/library/src/components/Textarea/useTextarea.ts).
  * Headless render: [renderTextarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/renderTextarea.tsx).
+ * Composed CSS: [FieldFocus.module.css](../../styles/FieldFocus.module.css).
  */
 
 @layer fluent-components {
   /* Styles for the root (wrapper) slot. */
   .Textarea {
+    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+
     display: inline-flex;
     box-sizing: border-box;
     position: relative;
-    /* Padding needed so the focus indicator does not overlap the resize handle.
-     * This should match the focus indicator size.
-     */
+    /* Reserve one stroke below the native resize handle for the FieldFocus line. */
     padding: 0 0 var(--strokeWidthThick);
     margin: 0;
     border-radius: var(--borderRadiusMedium);
     vertical-align: top;
 
     &:not([data-disabled]) {
-      /* This is all for the bottom focus border.
-       * It's supposed to be 2px flat all the way across and match the radius of the field's corners.
-       */
       &::after {
-        box-sizing: border-box;
-        content: '';
-        position: absolute;
         inset-inline: calc(-1 * var(--strokeWidthThin));
         bottom: calc(-1 * var(--strokeWidthThin));
-        /* Maintaining the correct corner radius:
-         * Use the whole border-radius as the height and only put radii on the bottom corners.
-         * (Otherwise the radius would be automatically reduced to fit available space.)
-         * max() ensures the focus border still shows up even if borderRadiusMedium is set to 0.
-         */
-        height: max(var(--strokeWidthThick), var(--borderRadiusMedium));
-        border-bottom-left-radius: var(--borderRadiusMedium);
-        border-bottom-right-radius: var(--borderRadiusMedium);
-        /* Flat 2px border:
-         * By default border-bottom will cause little "horns" on the ends. The clip-path trims them off.
-         * This could use background: linear-gradient(...), but border-bottom makes the color easier to override.
-         */
-        border-bottom: var(--strokeWidthThick) solid var(--colorCompoundBrandStroke);
-        clip-path: inset(calc(100% - var(--strokeWidthThick)) 0 0);
-        /* Animation for focus OUT */
-        transform: scaleX(0);
-        transition-property: transform;
-        transition-duration: var(--durationUltraFast);
-        transition-delay: var(--curveAccelerateMid);
-
-        @media screen and (prefers-reduced-motion: reduce) {
-          transition-duration: 0.01ms;
-          transition-delay: 0.01ms;
-        }
       }
 
       &:focus-within {
         outline: var(--strokeWidthThick) solid transparent;
-
-        &::after {
-          /* Animation for focus IN */
-          transform: scaleX(1);
-          transition-property: transform;
-          transition-duration: var(--durationNormal);
-          transition-delay: var(--curveDecelerateMid);
-
-          @media screen and (prefers-reduced-motion: reduce) {
-            transition-duration: 0.01ms;
-            transition-delay: 0.01ms;
-          }
-        }
-      }
-
-      &:focus-within:active::after {
-        /* This is if the user clicks the field again while it's already focused. */
-        border-bottom-color: var(--colorCompoundBrandStrokePressed);
       }
 
       &[data-appearance='filled-darker'],
@@ -129,6 +82,11 @@
     &[data-disabled] {
       background-color: var(--colorTransparentBackground);
       border: var(--strokeWidthThin) solid var(--colorNeutralStrokeDisabled);
+
+      /* Do not generate the shared focus line for a disabled field. */
+      &::after {
+        content: none;
+      }
 
       @media (forced-colors: active) {
         border-color: GrayText;

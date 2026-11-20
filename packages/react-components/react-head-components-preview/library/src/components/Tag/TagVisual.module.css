@@ -2,6 +2,7 @@
  * Fluent style sources:
  * - [useTagStyles.styles.ts](../../../../../react-tags/library/src/components/Tag/useTagStyles.styles.ts)
  * - [useInteractionTagPrimaryStyles.styles.ts](../../../../../react-tags/library/src/components/InteractionTagPrimary/useInteractionTagPrimaryStyles.styles.ts)
+ * - [useInteractionTagSecondaryStyles.styles.ts](../../../../../react-tags/library/src/components/InteractionTagSecondary/useInteractionTagSecondaryStyles.styles.ts)
  * Headless story styles:
  * - [tag.module.css](../../../../../react-headless-components-preview/stories/src/Tags/Tag/tag.module.css)
  * - [interactionTag.module.css](../../../../../react-headless-components-preview/stories/src/Tags/InteractionTag/interactionTag.module.css)
@@ -24,18 +25,97 @@
     --fui-tag-icon-spacing: var(--spacingHorizontalXS);
     --fui-tag-media-spacing: var(--spacingHorizontalS);
 
-    &[data-size='small'] {
+    &:is([data-size='small'], [data-size='extra-small']) {
       --fui-tag-spacing: calc(var(--spacingHorizontalSNudge) - var(--strokeWidthThin));
-      --fui-tag-icon-size: var(--fontSizeBase400);
       --fui-tag-icon-spacing: var(--spacingHorizontalXXS);
       --fui-tag-media-spacing: var(--spacingHorizontalSNudge);
     }
 
-    &[data-size='extra-small'] {
-      --fui-tag-spacing: calc(var(--spacingHorizontalSNudge) - var(--strokeWidthThin));
-      --fui-tag-icon-size: var(--fontSizeBase200);
-      --fui-tag-icon-spacing: var(--spacingHorizontalXXS);
-      --fui-tag-media-spacing: var(--spacingHorizontalSNudge);
+    &[data-size='small'] {
+      --fui-tag-icon-size: var(--fontSizeBase400);
     }
+
+    &[data-size='extra-small'] {
+      --fui-tag-icon-size: var(--fontSizeBase200);
+    }
+  }
+
+  .TagExtraSmallHitArea[data-size='extra-small'] {
+    position: relative;
+
+    /* Extend the pointer target without changing the visible height:
+     * https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
+     */
+    @media (forced-colors: none) {
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        height: var(--spacingVerticalXXS);
+        inset-inline-start: 0;
+        width: 100%;
+      }
+
+      &::before {
+        bottom: 100%;
+      }
+
+      &::after {
+        top: 100%;
+      }
+    }
+  }
+
+  .TagVisual__icon {
+    grid-area: media;
+    display: flex;
+    box-sizing: content-box;
+    padding-inline-start: var(--fui-tag-spacing);
+    padding-inline-end: var(--fui-tag-icon-spacing);
+    width: var(--fui-tag-icon-size);
+    font-size: var(--fui-tag-icon-size);
+  }
+
+  .TagVisual__media {
+    grid-area: media;
+    display: flex;
+    padding-inline-start: var(--strokeWidthThin);
+    padding-inline-end: var(--fui-tag-media-spacing);
+  }
+
+  .TagVisual__primaryText {
+    white-space: nowrap;
+    padding-inline: var(--spacingHorizontalXXS);
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase300);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase300);
+    grid-column-start: primary;
+    grid-row-start: primary;
+    grid-row-end: secondary;
+    padding-bottom: var(--spacingHorizontalXXS);
+
+    &:is([data-size='small'], [data-size='extra-small']) {
+      font-size: var(--fontSizeBase200);
+      line-height: var(--lineHeightBase200);
+    }
+
+    &[data-has-secondary-text] {
+      grid-area: primary;
+      font-size: var(--fontSizeBase200);
+      line-height: var(--lineHeightBase200);
+      margin-top: calc(var(--spacingVerticalXXS) * -1);
+      padding-bottom: 0;
+    }
+  }
+
+  .TagVisual__secondaryText {
+    grid-area: secondary;
+    padding-inline: var(--spacingHorizontalXXS);
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase100);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase100);
+    white-space: nowrap;
   }
 }

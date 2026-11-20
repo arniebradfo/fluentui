@@ -31,6 +31,22 @@ for (const story of stories) {
   });
 }
 
+test('default rating glyphs fill their item boxes', async ({ page }) => {
+  await page.goto('/iframe.html?id=css-modules-style-primitives--focus-ring&viewMode=story');
+  const rating = page.getByRole('radiogroup', { name: 'Interactive rating' });
+  const items = rating.locator('.fui-RatingItem');
+  await expect(items).toHaveCount(5);
+  const dimensions = await items.evaluateAll(nodes =>
+    nodes.map(item => ({
+      item: item.getBoundingClientRect().width,
+      icon: item.querySelector('svg').getBoundingClientRect().width,
+    })),
+  );
+  for (const { item, icon } of dimensions) {
+    expect(icon).toBe(item);
+  }
+});
+
 for (const variant of ['light', 'dark', 'right-to-left']) {
   test(`matches representative stock visuals: ${variant}`, async ({ page }) => {
     await page.goto(`/iframe.html?id=css-modules-visual-comparison--${variant}&viewMode=story`);

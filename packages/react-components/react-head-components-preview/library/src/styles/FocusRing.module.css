@@ -1,0 +1,37 @@
+/*
+ * Fluent style source: [createFocusOutlineStyle.ts](../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ * Headless story styles:
+ * - [checkbox.module.css](../../../../react-headless-components-preview/stories/src/Checkbox/checkbox.module.css)
+ * - [radio-group.module.css](../../../../react-headless-components-preview/stories/src/RadioGroup/radio-group.module.css)
+ * - [rating.module.css](../../../../react-headless-components-preview/stories/src/Rating/rating.module.css)
+ *
+ * Compose on a positioned root that owns the keyboard focus ring for itself and its children.
+ */
+
+@layer fluent-components {
+  .FocusRing {
+    &:focus {
+      outline-style: none;
+    }
+
+    &:is(:focus-visible, :has(:focus-visible)) {
+      border-color: transparent;
+
+      &::after {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        z-index: 1;
+        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+        border-radius: var(--borderRadiusMedium);
+        inset: calc(-1 * var(--strokeWidthThick));
+      }
+
+      @media (forced-colors: active) {
+        &::after {
+          border-color: Highlight;
+        }
+      }
+    }
+  }
+}

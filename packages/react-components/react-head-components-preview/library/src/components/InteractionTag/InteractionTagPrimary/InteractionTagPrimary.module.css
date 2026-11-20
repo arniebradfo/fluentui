@@ -9,14 +9,14 @@
  * Headless component: [InteractionTagPrimary.tsx](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagPrimary/InteractionTagPrimary.tsx).
  * Headless state: [useInteractionTagPrimary.ts](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagPrimary/useInteractionTagPrimary.ts).
  * Headless render: [renderInteractionTagPrimary.ts](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagPrimary/renderInteractionTagPrimary.ts).
- * Composed CSS: [TagVisual.module.css](../../Tag/TagVisual.module.css), [Tag.module.css](../../Tag/Tag.module.css).
+ * Composed CSS: [TagVisual.module.css](../../Tag/TagVisual.module.css).
  *
  * Native :focus-visible replaces legacy focus attributes. No motion is defined upstream.
  */
 
 @layer fluent-components {
   .InteractionTagPrimary {
-    composes: TagVisual from '../../Tag/TagVisual.module.css';
+    composes: TagVisual TagExtraSmallHitArea from '../../Tag/TagVisual.module.css';
 
     /* Reset default button style. */
     color: var(--colorNeutralForeground2);
@@ -46,32 +46,6 @@
 
     &:not([data-has-media]) {
       padding-inline-start: var(--fui-tag-spacing);
-    }
-
-    &[data-size='extra-small'] {
-      position: relative;
-
-      /* Increase clickable area to meet WCAG 2.2 AA.
-       * https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
-       */
-      @media (forced-colors: none) {
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          height: var(--spacingVerticalXXS);
-          inset-inline-start: 0;
-          width: 100%;
-        }
-
-        &::before {
-          bottom: 100%;
-        }
-
-        &::after {
-          top: 100%;
-        }
-      }
     }
 
     &[data-appearance='outline'] {
@@ -210,19 +184,19 @@
   }
 
   .InteractionTagPrimary__media {
-    composes: Tag__media from '../../Tag/Tag.module.css';
+    composes: TagVisual__media from '../../Tag/TagVisual.module.css';
   }
 
   .InteractionTagPrimary__icon {
-    composes: Tag__icon from '../../Tag/Tag.module.css';
+    composes: TagVisual__icon from '../../Tag/TagVisual.module.css';
   }
 
   .InteractionTagPrimary__primaryText {
-    composes: Tag__primaryText from '../../Tag/Tag.module.css';
+    composes: TagVisual__primaryText from '../../Tag/TagVisual.module.css';
   }
 
   .InteractionTagPrimary__secondaryText {
-    composes: Tag__secondaryText from '../../Tag/Tag.module.css';
+    composes: TagVisual__secondaryText from '../../Tag/TagVisual.module.css';
   }
 }
 

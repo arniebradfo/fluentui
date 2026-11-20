@@ -15,7 +15,7 @@
 
 @layer fluent-components {
   .Tag {
-    composes: TagVisual from './TagVisual.module.css';
+    composes: TagVisual TagExtraSmallHitArea from './TagVisual.module.css';
 
     /* Reset default button style. */
     font-family: inherit;
@@ -48,30 +48,7 @@
     }
 
     &[data-size='extra-small'] {
-      position: relative;
       height: 20px;
-
-      /* Increase clickable area to meet WCAG 2.2 AA.
-       * https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html
-       */
-      @media (forced-colors: none) {
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          height: var(--spacingVerticalXXS);
-          inset-inline-start: 0;
-          width: 100%;
-        }
-
-        &::before {
-          bottom: 100%;
-        }
-
-        &::after {
-          top: 100%;
-        }
-      }
     }
 
     /* Styles for Tag without leading media/icon or a dismiss slot. */
@@ -140,57 +117,19 @@
   }
 
   .Tag__icon {
-    grid-area: media;
-    display: flex;
-    box-sizing: content-box;
-    padding-inline-start: var(--fui-tag-spacing);
-    padding-inline-end: var(--fui-tag-icon-spacing);
-    width: var(--fui-tag-icon-size);
-    font-size: var(--fui-tag-icon-size);
+    composes: TagVisual__icon from './TagVisual.module.css';
   }
 
   .Tag__media {
-    grid-area: media;
-    display: flex;
-    padding-inline-start: var(--strokeWidthThin);
-    padding-inline-end: var(--fui-tag-media-spacing);
+    composes: TagVisual__media from './TagVisual.module.css';
   }
 
   .Tag__primaryText {
-    white-space: nowrap;
-    padding-inline: var(--spacingHorizontalXXS);
-    font-family: var(--fontFamilyBase);
-    font-size: var(--fontSizeBase300);
-    font-weight: var(--fontWeightRegular);
-    line-height: var(--lineHeightBase300);
-    grid-column-start: primary;
-    grid-row-start: primary;
-    grid-row-end: secondary;
-    padding-bottom: var(--spacingHorizontalXXS);
-
-    &[data-size='small'],
-    &[data-size='extra-small'] {
-      font-size: var(--fontSizeBase200);
-      line-height: var(--lineHeightBase200);
-    }
-
-    &[data-has-secondary-text] {
-      grid-area: primary;
-      font-size: var(--fontSizeBase200);
-      line-height: var(--lineHeightBase200);
-      margin-top: calc(var(--spacingVerticalXXS) * -1);
-      padding-bottom: 0;
-    }
+    composes: TagVisual__primaryText from './TagVisual.module.css';
   }
 
   .Tag__secondaryText {
-    grid-area: secondary;
-    padding-inline: var(--spacingHorizontalXXS);
-    font-family: var(--fontFamilyBase);
-    font-size: var(--fontSizeBase100);
-    font-weight: var(--fontWeightRegular);
-    line-height: var(--lineHeightBase100);
-    white-space: nowrap;
+    composes: TagVisual__secondaryText from './TagVisual.module.css';
   }
 
   .Tag__dismissIcon {

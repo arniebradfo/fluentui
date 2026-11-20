@@ -2,14 +2,15 @@
  * Fluent style sources:
  * - [useDropdownStyles.styles.ts](../../../../react-combobox/library/src/components/Dropdown/useDropdownStyles.styles.ts)
  * - [useComboboxStyles.styles.ts](../../../../react-combobox/library/src/components/Combobox/useComboboxStyles.styles.ts)
+ * - [useTagPickerControlStyles.styles.ts](../../../../react-tag-picker/library/src/components/TagPickerControl/useTagPickerControlStyles.styles.ts)
  * Headless story styles:
  * - [dropdown.module.css](../../../../react-headless-components-preview/stories/src/Dropdown/dropdown.module.css)
  * - [combobox.module.css](../../../../react-headless-components-preview/stories/src/Combobox/combobox.module.css)
+ * - [tag-picker.module.css](../../../../react-headless-components-preview/stories/src/TagPicker/tag-picker.module.css)
  * Headless state:
  * - [useDropdown.ts](../../../../react-headless-components-preview/library/src/components/Dropdown/useDropdown.ts)
  * - [useCombobox.ts](../../../../react-headless-components-preview/library/src/components/Combobox/useCombobox.ts)
- *
- * Dropdown and Combobox keep their layout, focus indicators, and popup styles local.
+ * - [useTagPickerControl.ts](../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/useTagPickerControl.ts)
  */
 
 @layer fluent-components {
@@ -55,7 +56,10 @@
       background-color: var(--colorNeutralBackground3);
       border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
     }
+  }
 
+  /* Dropdown and Combobox preserve non-boolean aria-invalid values. */
+  .PickerValidation {
     &[data-invalid]:not([data-invalid='false'], [data-invalid='grammar'], [data-invalid='spelling']) {
       /* Give the invalid border extra specificity on hover. */
       &:not(:focus-within),
@@ -71,15 +75,16 @@
         }
       }
     }
+  }
 
-    &[data-disabled][data-appearance] {
-      cursor: not-allowed;
-      background-color: var(--colorTransparentBackground);
-      border-color: var(--colorNeutralStrokeDisabled);
+  /* At equal specificity, the disabled border must beat the invalid border at rest. */
+  .PickerFrame[data-disabled][data-appearance] {
+    cursor: not-allowed;
+    background-color: var(--colorTransparentBackground);
+    border-color: var(--colorNeutralStrokeDisabled);
 
-      @media (forced-colors: active) {
-        border-color: GrayText;
-      }
+    @media (forced-colors: active) {
+      border-color: GrayText;
     }
   }
 }

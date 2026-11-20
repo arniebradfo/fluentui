@@ -1,0 +1,30 @@
+/*
+ * Fluent style sources:
+ * - [useColorAreaStyles.styles.ts](../../../../../react-color-picker/library/src/components/ColorArea/useColorAreaStyles.styles.ts)
+ * - [useColorSliderStyles.styles.ts](../../../../../react-color-picker/library/src/components/ColorSlider/useColorSliderStyles.styles.ts)
+ * Headless story styles:
+ * - [color-picker.module.css](../../../../../react-headless-components-preview/stories/src/ColorPicker/color-picker.module.css)
+ */
+
+@layer fluent-components {
+  .ColorThumb {
+    position: absolute;
+    width: var(--fui-Slider__thumb--size);
+    height: var(--fui-Slider__thumb--size);
+    pointer-events: none;
+    outline-style: none;
+    forced-color-adjust: none;
+    border-radius: var(--borderRadiusCircular);
+    border: var(--strokeWidthThin) solid var(--colorNeutralForeground4);
+    box-shadow: var(--shadow4);
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--borderRadiusCircular);
+      box-sizing: border-box;
+      content: '';
+      border: var(--strokeWidthThick) solid var(--colorNeutralBackground1);
+    }
+  }
+}

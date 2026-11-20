@@ -6,14 +6,17 @@
  * Headless component: [TagPickerControl.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/TagPickerControl.tsx).
  * Headless state: [useTagPickerControl.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/useTagPickerControl.ts).
  * Headless render: [renderTagPickerControl.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/renderTagPickerControl.tsx).
+ * Composed CSS: [PickerFrame.module.css](../../../styles/PickerFrame.module.css), [FieldFocus.module.css](../../../styles/FieldFocus.module.css).
  *
  * Public headless owns the measured --fui-TagPickerControl-aside-width variable.
  */
 
 @layer fluent-components {
   .TagPickerControl {
+    composes: PickerFrame from '../../../styles/PickerFrame.module.css';
+    composes: FieldFocus from '../../../styles/FieldFocus.module.css';
+
     align-items: center;
-    border-radius: var(--borderRadiusMedium);
     box-sizing: border-box;
     column-gap: var(--spacingHorizontalXXS);
     display: flex;
@@ -28,32 +31,9 @@
       outline: var(--strokeWidthThick) solid transparent;
     }
 
-    /* Bottom focus border, shared with Input, Select, and SpinButton. */
     &::after {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
       inset-inline: calc(-1 * var(--strokeWidthThin));
       bottom: calc(-1 * var(--strokeWidthThin));
-      height: max(var(--strokeWidthThick), var(--borderRadiusMedium));
-      border-bottom-left-radius: var(--borderRadiusMedium);
-      border-bottom-right-radius: var(--borderRadiusMedium);
-      border-bottom: var(--strokeWidthThick) solid var(--colorCompoundBrandStroke);
-      clip-path: inset(calc(100% - var(--strokeWidthThick)) 0 0 0);
-      transform: scaleX(0);
-      transition-property: transform;
-      transition-duration: var(--durationUltraFast);
-      transition-delay: var(--curveAccelerateMid);
-    }
-
-    &:focus-within::after {
-      transform: scaleX(1);
-      transition-duration: var(--durationNormal);
-      transition-delay: var(--curveDecelerateMid);
-    }
-
-    &:focus-within:active::after {
-      border-bottom-color: var(--colorCompoundBrandStrokePressed);
     }
 
     &[data-size='medium'] {
@@ -68,46 +48,6 @@
       min-height: 44px;
     }
 
-    &[data-appearance='outline'] {
-      background-color: var(--colorNeutralBackground1);
-      border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
-      border-bottom-color: var(--colorNeutralStrokeAccessible);
-
-      &:not([data-disabled]) {
-        /* Match upstream's focus-within < hover < active Griffel bucket priority. */
-        &:focus-within {
-          border-color: var(--colorNeutralStroke1Pressed);
-          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
-        }
-
-        &:hover {
-          border-color: var(--colorNeutralStroke1Hover);
-          border-bottom-color: var(--colorNeutralStrokeAccessibleHover);
-        }
-
-        &:active {
-          border-color: var(--colorNeutralStroke1Pressed);
-          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
-        }
-      }
-    }
-
-    &[data-appearance='underline'] {
-      background-color: var(--colorTransparentBackground);
-      border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStrokeAccessible);
-      border-radius: 0;
-    }
-
-    &[data-appearance='filled-lighter'] {
-      background-color: var(--colorNeutralBackground1);
-      border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
-    }
-
-    &[data-appearance='filled-darker'] {
-      background-color: var(--colorNeutralBackground3);
-      border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
-    }
-
     &[data-invalid]:not([data-appearance='underline']):not(:focus-within),
     &[data-invalid]:not([data-appearance='underline']):hover:not(:focus-within) {
       border-color: var(--colorPaletteRedBorder2);
@@ -116,24 +56,6 @@
     &[data-invalid][data-appearance='underline']:not(:focus-within),
     &[data-invalid][data-appearance='underline']:hover:not(:focus-within) {
       border-bottom-color: var(--colorPaletteRedBorder2);
-    }
-
-    &[data-disabled][data-appearance] {
-      cursor: not-allowed;
-      background-color: var(--colorTransparentBackground);
-      border-color: var(--colorNeutralStrokeDisabled);
-
-      @media (forced-colors: active) {
-        border-color: GrayText;
-      }
-    }
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      &::after,
-      &:focus-within::after {
-        transition-duration: 0.01ms;
-        transition-delay: 0.01ms;
-      }
     }
   }
 

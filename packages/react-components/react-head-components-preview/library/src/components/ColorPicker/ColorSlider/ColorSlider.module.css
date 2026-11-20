@@ -6,6 +6,7 @@
  * Headless component: [ColorSlider.tsx](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/ColorSlider.tsx).
  * Headless state: [useColorSlider.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/useColorSlider.ts).
  * Headless render: [renderColorSlider.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorSlider/renderColorSlider.ts).
+ * Composed CSS: [ColorThumb.module.css](../ColorThumb.module.css).
  *
  * The public hook owns the resolved --fui-Slider-* variables and data-channel/orientation.
  * Logical horizontal thumb placement replaces Griffel's RTL mirroring.
@@ -96,26 +97,10 @@
 
   /* Styles for the thumb slot */
   .ColorSlider__thumb {
-    grid-area: 2 / 2 / 2 / 2;
-    position: absolute;
-    width: var(--fui-Slider__thumb--size);
-    height: var(--fui-Slider__thumb--size);
-    pointer-events: none;
-    outline-style: none;
-    forced-color-adjust: none;
-    border-radius: var(--borderRadiusCircular);
-    border: var(--strokeWidthThin) solid var(--colorNeutralForeground4);
-    box-shadow: var(--shadow4);
-    background-color: var(--fui-Slider__thumb--color);
+    composes: ColorThumb from '../ColorThumb.module.css';
 
-    &::before {
-      position: absolute;
-      inset: 0;
-      border-radius: var(--borderRadiusCircular);
-      box-sizing: border-box;
-      content: '';
-      border: var(--strokeWidthThick) solid var(--colorNeutralBackground1);
-    }
+    grid-area: 2 / 2 / 2 / 2;
+    background-color: var(--fui-Slider__thumb--color);
 
     .ColorSlider[data-orientation='horizontal'] > & {
       transform: translateX(-50%);

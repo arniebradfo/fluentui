@@ -86,6 +86,80 @@ test('outlined pickers match stock focus, hover and active precedence', async ({
   }
 });
 
+for (const direction of ['ltr', 'rtl']) {
+  for (const [family, opener] of [
+    ['Combobox', 'Open'],
+    ['Dropdown', 'Dropdown'],
+    ['TagPicker', 'TagPicker'],
+  ]) {
+    test(`${family} opens a field-width listbox at below-start (${direction})`, async ({ page }) => {
+      await page.goto(
+        `/iframe.html?id=css-modules-style-primitives--picker-frame&viewMode=story&globals=direction:${direction}`,
+      );
+      const region = page.getByRole('region', { name: 'Outline', exact: true });
+      const field = region.locator(`.fui-${family === 'TagPicker' ? 'TagPickerControl' : family}`);
+      await expect(field).toHaveCSS('direction', direction);
+      const control = region.getByRole(family === 'Combobox' ? 'button' : 'combobox', { name: opener, exact: true });
+      if (family === 'TagPicker') {
+        await control.press('ArrowDown');
+      } else {
+        await control.click();
+      }
+
+      const listbox = region.getByRole('listbox');
+      await expect(listbox).toBeVisible();
+      const [anchor, popup] = await Promise.all([field.boundingBox(), listbox.boundingBox()]);
+      expect(popup.y).toBeGreaterThanOrEqual(anchor.y + anchor.height);
+      expect(popup.width).toBeCloseTo(anchor.width, 1);
+      expect(popup.x).toBeCloseTo(anchor.x, 1);
+
+      // Widen the list to distinguish start alignment from centering.
+      await listbox.evaluate((node, width) => node.style.setProperty('min-width', `${width * 1.25}px`), anchor.width);
+      const wider = await listbox.boundingBox();
+      expect(wider.width).toBeGreaterThan(anchor.width);
+      const inlineStart = box => (direction === 'rtl' ? box.x + box.width : box.x);
+      expect(inlineStart(wider)).toBeCloseTo(inlineStart(anchor), 1);
+    });
+  }
+}
+
+for (const forcedColors of ['none', 'active']) {
+  test(`native Select focus line follows the stroke width with square corners (forced colors: ${forcedColors})`, async ({
+    page,
+  }) => {
+    await page.emulateMedia({ forcedColors, reducedMotion: 'reduce', colorScheme: 'light' });
+    await page.goto('/iframe.html?id=css-modules-forms-and-pickers--native-select&viewMode=story');
+    const select = page.getByRole('combobox');
+    const root = page.locator('.fui-Select').filter({ has: select });
+
+    await select.focus();
+    await expect(select).toBeFocused();
+    await settle(page);
+    const outline = await readStyles(select, ['outlineStyle', 'outlineWidth']);
+    expect(outline.outlineStyle).toBe('solid');
+    expect(parseFloat(outline.outlineWidth)).toBeGreaterThan(0);
+
+    const focusLine = () =>
+      root.evaluate(node => {
+        const view = node.ownerDocument.defaultView;
+        const line = view.getComputedStyle(node, '::after');
+        return {
+          borderWidth: line.borderBottomWidth,
+          height: line.height,
+          scaleX: new view.DOMMatrixReadOnly(line.transform).a,
+        };
+      });
+
+    const normal = await focusLine();
+    await root.evaluate(node => node.style.setProperty('--borderRadiusMedium', '0px'));
+    const square = await focusLine();
+    expect(square.borderWidth).toBe(outline.outlineWidth);
+    expect(square.borderWidth).toBe(normal.borderWidth);
+    expect(square.height).toBe(square.borderWidth);
+    expect(square.scaleX).toBe(1);
+  });
+}
+
 test('DatePicker button gap matches stock size with medium and editable controls', async ({ page }) => {
   await openStory(page, 'css-modules-calendar-and-date-picker--date-picker-gap-comparison', 'candidate-date-gaps');
   const gaps = {};

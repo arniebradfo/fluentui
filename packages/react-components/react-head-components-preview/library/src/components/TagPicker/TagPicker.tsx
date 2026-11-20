@@ -8,6 +8,7 @@ import {
   type TagPickerProps as HeadlessTagPickerProps,
   type TagPickerSize,
 } from '@fluentui/react-headless-components-preview/tag-picker';
+import { resolvePickerPositioning } from '../Dropdown/Listbox/resolvePickerPositioning.js';
 
 export {
   useTagPickerContext_unstable,
@@ -36,9 +37,14 @@ export type TagPickerProps = HeadlessTagPickerProps & {
 export const TagPicker = ({
   appearance = 'outline',
   size = 'medium',
+  positioning,
   ...headlessProps
 }: TagPickerProps): React.ReactElement => {
-  const state = { ...useTagPicker(headlessProps), appearance, size };
+  const state = {
+    ...useTagPicker({ ...headlessProps, positioning: resolvePickerPositioning(positioning) }),
+    appearance,
+    size,
+  };
   return renderTagPicker(state, useTagPickerContextValues(state));
 };
 

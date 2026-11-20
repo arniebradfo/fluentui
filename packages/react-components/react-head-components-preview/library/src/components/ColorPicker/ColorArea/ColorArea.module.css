@@ -7,6 +7,7 @@
  * Headless state: [useColorArea.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorArea/useColorArea.ts).
  * Headless render: [renderColorArea.ts](../../../../../../react-headless-components-preview/library/src/components/ColorPicker/ColorArea/renderColorArea.ts).
  * Related Fluent sources: [createFocusOutlineStyle.ts](../../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ * Composed CSS: [ColorThumb.module.css](../ColorThumb.module.css).
  *
  * Native input :focus-visible replaces legacy focus-within attributes.
  * The current public hook measures physical pointer X and handles Left/Right physically
@@ -41,28 +42,12 @@
 
   /* Styles for the thumb slot */
   .ColorArea__thumb {
-    position: absolute;
-    width: var(--fui-Slider__thumb--size);
-    height: var(--fui-Slider__thumb--size);
-    pointer-events: none;
-    outline-style: none;
-    forced-color-adjust: none;
-    border-radius: var(--borderRadiusCircular);
-    border: var(--strokeWidthThin) solid var(--colorNeutralForeground4);
-    box-shadow: var(--shadow4);
+    composes: ColorThumb from '../ColorThumb.module.css';
+
     background-color: var(--fui-Area__thumb--color);
     transform: translate(-50%, 50%);
     left: var(--fui-AreaX--progress);
     bottom: var(--fui-AreaY--progress);
-
-    &::before {
-      position: absolute;
-      inset: 0;
-      border-radius: var(--borderRadiusCircular);
-      box-sizing: border-box;
-      content: '';
-      border: var(--strokeWidthThick) solid var(--colorNeutralBackground1);
-    }
 
     /* The actual native inputs own focus; the thumb supplies the visible outline. */
     &:has(> .ColorArea__inputX:focus-visible, > .ColorArea__inputY:focus-visible) {

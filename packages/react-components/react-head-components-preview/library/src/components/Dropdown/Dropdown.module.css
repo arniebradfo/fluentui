@@ -6,14 +6,15 @@
  * Headless component: [Dropdown.tsx](../../../../../react-headless-components-preview/library/src/components/Dropdown/Dropdown.tsx).
  * Headless state: [useDropdown.ts](../../../../../react-headless-components-preview/library/src/components/Dropdown/useDropdown.ts).
  * Headless render: [renderDropdown.tsx](../../../../../react-headless-components-preview/library/src/components/Dropdown/renderDropdown.tsx).
- * Composed CSS: [PickerFrame.module.css](../../styles/PickerFrame.module.css).
+ * Composed CSS: [PickerFrame.module.css](../../styles/PickerFrame.module.css), [FieldFocus.module.css](../../styles/FieldFocus.module.css).
  *
  * The styled Listbox supplies popup visuals; public headless owns native positioning.
  */
 
 @layer fluent-components {
   .Dropdown {
-    composes: PickerFrame from '../../styles/PickerFrame.module.css';
+    composes: PickerFrame PickerValidation from '../../styles/PickerFrame.module.css';
+    composes: FieldFocus from '../../styles/FieldFocus.module.css';
 
     --fui-dropdown-icon-size: var(--fontSizeBase500);
     --fui-dropdown-icon-margin: var(--spacingHorizontalXXS);
@@ -29,35 +30,13 @@
       outline: var(--strokeWidthThick) solid transparent;
     }
 
-    /* Bottom focus border, shared with Input, Select, and SpinButton. */
     &::after {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
       inset-inline: calc(-1 * var(--strokeWidthThin));
       bottom: calc(-1 * var(--strokeWidthThin));
-      height: max(var(--strokeWidthThick), var(--borderRadiusMedium));
-      border-bottom-left-radius: var(--borderRadiusMedium);
-      border-bottom-right-radius: var(--borderRadiusMedium);
-      border-bottom: var(--strokeWidthThick) solid var(--colorCompoundBrandStroke);
-      clip-path: inset(calc(100% - var(--strokeWidthThick)) 0 0 0);
-      transform: scaleX(0);
-      transition-property: transform;
-      transition-duration: var(--durationUltraFast);
-      transition-delay: var(--curveAccelerateMid);
     }
 
-    &:focus-within::after {
-      transform: scaleX(1);
-      transition-duration: var(--durationNormal);
-      transition-delay: var(--curveDecelerateMid);
-    }
-
-    &:focus-within:active::after {
-      border-bottom-color: var(--colorCompoundBrandStrokePressed);
-    }
-
-    &:has(.Dropdown__clearButton:focus)::after {
+    /* Clear-button focus hides the line even when pressed and FieldFocus loads later. */
+    &:focus-within:has(.Dropdown__clearButton:focus)::after {
       border-bottom-color: initial;
       transform: scaleX(0);
     }
@@ -69,14 +48,6 @@
     &[data-size='large'] {
       --fui-dropdown-icon-size: var(--fontSizeBase600);
       --fui-dropdown-icon-margin: var(--spacingHorizontalSNudge);
-    }
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      &::after,
-      &:focus-within::after {
-        transition-duration: 0.01ms;
-        transition-delay: 0.01ms;
-      }
     }
   }
 

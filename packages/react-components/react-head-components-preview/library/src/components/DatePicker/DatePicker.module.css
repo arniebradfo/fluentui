@@ -8,6 +8,7 @@
  * Headless component: [DatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/DatePicker.tsx).
  * Headless state: [useDatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/useDatePicker.tsx).
  * Headless render: [renderDatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/renderDatePicker.tsx).
+ * Composed CSS: [FieldFocus.module.css](../../styles/FieldFocus.module.css).
  *
  * Field chrome follows react-input; the surface follows react-datepicker-compat.
  * Headless differences: the non-editable field is a native button rather than a read-only input,
@@ -16,6 +17,8 @@
 
 @layer fluent-components {
   .DatePicker {
+    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+
     --fui-input-root-padding: var(--spacingHorizontalMNudge);
     --fui-input-slot-padding: var(--spacingHorizontalXXS);
     --fui-input-combined-padding: var(--spacingHorizontalM);
@@ -39,20 +42,10 @@
     border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
     border-bottom-color: var(--colorNeutralStrokeAccessible);
 
+    /* FieldFocus supplies the transition; DatePicker keeps its existing easing. */
     &::after {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
       inset-inline: calc(-1 * var(--strokeWidthThin));
       bottom: calc(-1 * var(--strokeWidthThin));
-      height: max(var(--strokeWidthThick), var(--borderRadiusMedium));
-      border-bottom-left-radius: var(--borderRadiusMedium);
-      border-bottom-right-radius: var(--borderRadiusMedium);
-      border-bottom: var(--strokeWidthThick) solid var(--colorCompoundBrandStroke);
-      clip-path: inset(calc(100% - var(--strokeWidthThick)) 0 0 0);
-      transform: scaleX(0);
-      transition-property: transform;
-      transition-duration: var(--durationUltraFast);
       transition-timing-function: var(--curveAccelerateMid);
       pointer-events: none;
     }
@@ -61,15 +54,8 @@
       outline: var(--strokeWidthThick) solid transparent;
 
       &::after {
-        transform: scaleX(1);
-        transition-property: transform;
-        transition-duration: var(--durationNormal);
         transition-timing-function: var(--curveDecelerateMid);
       }
-    }
-
-    &:focus-within:active::after {
-      border-bottom-color: var(--colorCompoundBrandStrokePressed);
     }
 
     &[data-size='small'] {
@@ -198,14 +184,6 @@
 
       @media (forced-colors: active) {
         border-color: GrayText;
-      }
-    }
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      &::after,
-      &:focus-within::after {
-        transition-duration: 0.01ms;
-        transition-delay: 0.01ms;
       }
     }
   }

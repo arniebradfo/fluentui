@@ -7,12 +7,15 @@
  * Headless component: [InteractionTagSecondary.tsx](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagSecondary/InteractionTagSecondary.tsx).
  * Headless state: [useInteractionTagSecondary.ts](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagSecondary/useInteractionTagSecondary.ts).
  * Headless render: [renderInteractionTagSecondary.ts](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagSecondary/renderInteractionTagSecondary.ts).
+ * Composed CSS: [TagVisual.module.css](../../Tag/TagVisual.module.css).
  *
  * Native :focus-visible replaces legacy focus attributes. No motion is defined upstream.
  */
 
 @layer fluent-components {
   .InteractionTagSecondary {
+    composes: TagExtraSmallHitArea from '../../Tag/TagVisual.module.css';
+
     /* Reset default button style. */
     font-family: inherit;
     padding: 0 calc(var(--spacingHorizontalSNudge) - var(--strokeWidthThin));
@@ -48,26 +51,6 @@
 
     &[data-size='extra-small'] {
       font-size: var(--fontSizeBase200);
-      position: relative;
-
-      @media (forced-colors: none) {
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          height: var(--spacingVerticalXXS);
-          inset-inline-start: 0;
-          width: 100%;
-        }
-
-        &::before {
-          bottom: 100%;
-        }
-
-        &::after {
-          top: 100%;
-        }
-      }
     }
 
     &:not([data-disabled]) {

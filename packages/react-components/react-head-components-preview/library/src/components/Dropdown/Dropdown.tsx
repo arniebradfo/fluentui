@@ -12,6 +12,7 @@ import { ChevronDownRegular } from '@fluentui/react-icons/headless/svg/chevron-d
 import { DismissRegular } from '@fluentui/react-icons/headless/svg/dismiss';
 import type { ForwardRefComponent } from '@fluentui/react-utilities';
 import { resolveListboxSlot } from './Listbox/Listbox.js';
+import { resolvePickerPositioning } from './Listbox/resolvePickerPositioning.js';
 import type { OptionPickerVisualProps } from '../Combobox/OptionPickerVisuals.js';
 import styles from './Dropdown.module.css';
 
@@ -33,7 +34,7 @@ export const Dropdown: ForwardRefComponent<DropdownProps> = React.forwardRef<HTM
   ({ appearance = 'outline', size: sizeProp, ...props }, ref) => {
     const field = useFieldContext();
     const size = sizeProp ?? field?.size ?? 'medium';
-    const state = useDropdown(props, ref);
+    const state = useDropdown({ ...props, positioning: resolvePickerPositioning(props.positioning) }, ref);
     state.listbox = resolveListboxSlot(props.listbox, state.listbox);
     if (state.expandIcon && (state.expandIcon.children === null || state.expandIcon.children === undefined)) {
       state.expandIcon.children = <ChevronDownRegular aria-hidden />;

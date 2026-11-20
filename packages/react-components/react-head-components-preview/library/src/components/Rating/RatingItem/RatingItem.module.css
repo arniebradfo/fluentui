@@ -8,6 +8,7 @@
  * Headless state: [useRatingItem.ts](../../../../../../react-headless-components-preview/library/src/components/Rating/RatingItem/useRatingItem.ts).
  * Headless render: [renderRatingItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Rating/RatingItem/renderRatingItem.tsx).
  * Related Fluent sources: [createFocusOutlineStyle.ts](../../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
+ * Composed CSS: [FocusRing.module.css](../../../styles/FocusRing.module.css).
  * Icon stylesheet import: [Icon.css](../../../Icon.css); the icon package is an external dependency.
  *
  * Inherited focus reference: @fluentui/react-tabster,
@@ -18,34 +19,9 @@
 @layer fluent-components {
   /* Styles for the root slot */
   .RatingItem {
+    composes: FocusRing from '../../../styles/FocusRing.module.css';
+
     position: relative;
-
-    &:focus {
-      outline-style: none;
-    }
-
-    /* The element with the focus outline needs position: relative so that the
-     * pseudo-element can be properly positioned.
-     */
-    &:is(:focus-visible, :has(:focus-visible)) {
-      border-color: transparent;
-
-      &::after {
-        content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-        border-radius: var(--borderRadiusMedium);
-        inset: calc(-1 * var(--strokeWidthThick));
-      }
-
-      @media (forced-colors: active) {
-        &::after {
-          border-color: Highlight;
-        }
-      }
-    }
 
     &[data-size='small'] {
       font-size: var(--fontSizeBase200);
@@ -66,7 +42,7 @@
     }
 
     &[data-size='extra-large'] {
-      font-size: var(--fontSizeBase700);
+      font-size: var(--fontSizeHero700);
       width: 28px;
       height: 28px;
     }

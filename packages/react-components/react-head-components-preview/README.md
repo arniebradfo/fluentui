@@ -136,27 +136,48 @@ their CSS Module identifiers.
 
 ### Shared style recipes
 
-- [PickerFrame](./library/src/styles/PickerFrame.module.css) gives Dropdown and
-  Combobox one source for appearance, validation, and disabled styles. Layout,
-  focus indicators, and popup rules stay local. TagPickerControl shares some
-  rules, but its validation states need a separate comparison. Select paints
-  its frame on the native `<select>`, not on the wrapper.
+- [PickerFrame](./library/src/styles/PickerFrame.module.css) gives Dropdown,
+  Combobox, and TagPickerControl one source for appearance and disabled styles.
+  Dropdown and Combobox also share a validation class in that file. TagPicker
+  keeps its own invalid borders, and Select paints its frame on a native
+  `<select>` instead of the wrapper.
 - [FieldFocus](./library/src/styles/FieldFocus.module.css) draws and animates
-  the same focus line for Input and SpinButton. SearchBox inherits it through
-  Input. Each control still positions the line and handles its own outline.
-  Keep the differing focus and motion rules in Select, Textarea, and the pickers
-  until the shared part can be extracted without adding flags.
-- [ModalBackdrop](./library/src/styles/ModalBackdrop.module.css) shares the
-  backdrop colors for Dialog and OverlayDrawer. It does not set `display`,
-  position a surface, or control modality. Tooltip and TeachingPopover already
-  compose PopoverSurface; a listbox or menu need not use those surface styles.
+  the focus line for Input, SpinButton, Dropdown, Combobox, TagPickerControl,
+  Textarea, DatePicker, and Select. SearchBox inherits it through Input. Each
+  control positions the line and keeps its own outline and exceptions, such
+  as Dropdown's clear-button focus and Textarea's resize clearance. Select
+  keeps its native control outline; the wrapper's line now follows the
+  stroke-width token even with square corners.
+- [FocusRing](./library/src/styles/FocusRing.module.css) draws the same
+  keyboard-visible ring on Checkbox, Radio, and RatingItem. Controls that
+  listen for focus on a specific slot keep their selectors local.
+- [TagVisual](./library/src/components/Tag/TagVisual.module.css) shares tag
+  spacing, text and media slots, and the extra-small pointer target. This lets
+  InteractionTag reuse those styles without importing Tag's root styles.
+  [ColorThumb](./library/src/components/ColorPicker/ColorThumb.module.css)
+  shares the thumb outline and geometry for ColorArea and ColorSlider; each
+  keeps its own position, fill, and focus policy.
+
+Backdrop, positioning, and visibility rules stay with their surfaces.
+Tooltip and TeachingPopover already compose PopoverSurface; menus and
+listboxes do not need that whole surface style to share its theme tokens.
+Dropdown, Combobox, and TagPicker default to a listbox below the field,
+aligned to its start edge and matching its width. Callers can override
+those defaults, and the browser can flip the listbox to fit when it is not
+pinned.
+
+For manual review, open **CSS Modules → Style primitives** in Storybook.
+The [review stories](./stories/src/StylePrimitives.stories.tsx) group the
+consumers of each shared stylesheet. Press Tab to review the focus states.
 
 Prefer local selector grouping when it preserves specificity. `:is()` takes the
 specificity of its strongest branch, and `:where()` adds none. Use `:has()` for
 relationships the rendered DOM actually guarantees, not as a substitute for
-headless state. For composed styles, test the affected states with both sheets
-loaded in either order. Equal-specificity rules in the same layer can still
-depend on bundler output order; keep consumer overrides unlayered.
+headless state. Keep internal variables that feed several slots or change with
+state. Don't add a shared alias just because two rules use the same token.
+For composed styles, test the affected states with both sheets loaded in
+either order. Equal-specificity rules in the same layer can still depend on
+bundler output order; keep consumer overrides unlayered.
 
 ## Browser and API contract
 

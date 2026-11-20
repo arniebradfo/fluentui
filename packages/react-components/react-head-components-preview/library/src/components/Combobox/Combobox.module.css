@@ -6,14 +6,15 @@
  * Headless component: [Combobox.tsx](../../../../../react-headless-components-preview/library/src/components/Combobox/Combobox.tsx).
  * Headless state: [useCombobox.ts](../../../../../react-headless-components-preview/library/src/components/Combobox/useCombobox.ts).
  * Headless render: [renderCombobox.tsx](../../../../../react-headless-components-preview/library/src/components/Combobox/renderCombobox.tsx).
- * Composed CSS: [PickerFrame.module.css](../../styles/PickerFrame.module.css).
+ * Composed CSS: [PickerFrame.module.css](../../styles/PickerFrame.module.css), [FieldFocus.module.css](../../styles/FieldFocus.module.css).
  *
  * The styled Listbox supplies popup visuals; public headless owns native positioning.
  */
 
 @layer fluent-components {
   .Combobox {
-    composes: PickerFrame from '../../styles/PickerFrame.module.css';
+    composes: PickerFrame PickerValidation from '../../styles/PickerFrame.module.css';
+    composes: FieldFocus from '../../styles/FieldFocus.module.css';
 
     --fui-combobox-end-padding: var(--spacingHorizontalMNudge);
     --fui-combobox-icon-margin: var(--spacingHorizontalXXS);
@@ -37,32 +38,9 @@
       outline: var(--strokeWidthThick) solid transparent;
     }
 
-    /* Bottom focus border, shared with Input, Select, and SpinButton. */
     &::after {
-      box-sizing: border-box;
-      content: '';
-      position: absolute;
       inset-inline: calc(-1 * var(--strokeWidthThin));
       bottom: calc(-1 * var(--strokeWidthThin));
-      height: max(var(--strokeWidthThick), var(--borderRadiusMedium));
-      border-bottom-left-radius: var(--borderRadiusMedium);
-      border-bottom-right-radius: var(--borderRadiusMedium);
-      border-bottom: var(--strokeWidthThick) solid var(--colorCompoundBrandStroke);
-      clip-path: inset(calc(100% - var(--strokeWidthThick)) 0 0 0);
-      transform: scaleX(0);
-      transition-property: transform;
-      transition-duration: var(--durationUltraFast);
-      transition-delay: var(--curveAccelerateMid);
-    }
-
-    &:focus-within::after {
-      transform: scaleX(1);
-      transition-duration: var(--durationNormal);
-      transition-delay: var(--curveDecelerateMid);
-    }
-
-    &:focus-within:active::after {
-      border-bottom-color: var(--colorCompoundBrandStrokePressed);
     }
 
     &[data-size='small'] {
@@ -79,14 +57,6 @@
 
       column-gap: var(--spacingHorizontalSNudge);
       height: 40px;
-    }
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      &::after,
-      &:focus-within::after {
-        transition-duration: 0.01ms;
-        transition-delay: 0.01ms;
-      }
     }
   }
 

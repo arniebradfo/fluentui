@@ -6,7 +6,7 @@
  * Headless component: [OverlayDrawer.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/OverlayDrawer.tsx).
  * Headless state: [useOverlayDrawer.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/useOverlayDrawer.ts).
  * Headless render: [renderOverlayDrawer.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/OverlayDrawer/renderOverlayDrawer.tsx).
- * Composed CSS: [Drawer.module.css](../Drawer.module.css), [ModalBackdrop.module.css](../../../styles/ModalBackdrop.module.css).
+ * Composed CSS: [Drawer.module.css](../Drawer.module.css).
  *
  * The public dialog surface owns the native top layer, focus and closed-state hiding.
  */
@@ -15,7 +15,6 @@
 
 .OverlayDrawer {
   composes: Drawer from '../Drawer.module.css';
-  composes: PositionedModalBackdrop from '../../../styles/ModalBackdrop.module.css';
 }
 
 @layer fluent-components {
@@ -51,6 +50,16 @@
     &[open],
     &:popover-open {
       display: flex;
+    }
+
+    /* Styles for the backdrop slot, now the browser-owned pseudo-element. */
+    &::backdrop {
+      background-color: var(--colorBackgroundOverlay);
+    }
+
+    &[data-modal-type='non-modal']::backdrop,
+    &[data-dialog-nested]::backdrop {
+      background-color: var(--colorTransparentBackground);
     }
 
     &:focus {
