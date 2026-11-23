@@ -136,11 +136,6 @@ their CSS Module identifiers.
 
 ### Shared style recipes
 
-The [component map](./docs/fluent-preview-component-map.svg) shows how the
-preview components share styles, rendered parts, and headless behavior. Its
-groups describe the catalog rather than prescribe a folder structure. The
-[Mermaid source](./docs/fluent-preview-component-map.mmd) is the editable version.
-
 - [PickerFrame](./library/src/styles/PickerFrame.module.css) gives Dropdown,
   Combobox, and TagPickerControl one source for appearance and disabled styles.
   Dropdown and Combobox also share a validation class in that file. TagPicker
