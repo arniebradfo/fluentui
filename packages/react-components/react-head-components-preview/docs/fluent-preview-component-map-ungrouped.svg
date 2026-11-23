@@ -1,0 +1,1871 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="2528" height="2548" viewBox="0 0 2528 2548" role="img" aria-labelledby="chart-title chart-description">
+  <title id="chart-title">Fluent UI preview: ungrouped component map</title>
+  <desc id="chart-description">Force-directed plot of 90 audited CSS and rendering links, with 78 behavior links in a separate index. No semantic family boxes. All 59 public component entrypoints are represented somewhere in the diagram. Caller composition and proposals are not shown.</desc>
+  <style>
+    text { font-family: Arial, sans-serif; }
+    .page-title { fill: #172739; font-size: 33px; font-weight: 700; }
+    .section-title { fill: #172739; font-size: 21px; font-weight: 700; }
+    .subtitle { fill: #35475e; font-size: 17px; }
+    .legend, .aside-text { fill: #35475e; font-size: 14px; }
+    .aside-heading { fill: #172739; font-size: 15px; font-weight: 700; }
+  </style>
+  <rect id="diagram-background" width="2528" height="2548" fill="white"/>
+  <text x="32" y="48" class="page-title">Fluent UI preview: ungrouped component map</text>
+  <text x="32" y="78" class="subtitle">Existing CSS and rendering links drive the layout. Disconnected sets are packed for space, not grouped by purpose.</text>
+  <path d="M33 108h31" stroke="#08705a" stroke-width="2.1"/><path d="M63 104l8 4l-8 4z" fill="#08705a"/> <text x="81" y="113" class="legend">Reuses CSS or a styling helper</text>
+  <path d="M327 108h31" stroke="#3d547a" stroke-width="1.2"/><path d="M357 104l8 4l-8 4z" fill="#3d547a"/> <text x="375" y="113" class="legend">Renders a component or slot</text>
+  <rect x="615" y="99" width="27" height="17" rx="4" fill="#e6f4ec" stroke="#528476"/>
+  <text x="652" y="113" class="legend">Shared visual recipe or helper</text>
+  <text x="1980" y="48" class="subtitle">Source audit  5cf5f49ab9</text>
+  <text x="1980" y="77" class="legend">59 entrypoints  /  90 direct links  /  78 behavior links</text>
+  <path d="M32 128H2496 M1965 145V2364" stroke="#d4dce6"/>
+  <g id="direct-reuse" transform="translate(32 154)">
+
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4.32 2187.3)">
+<title>FluentPreviewDirectReuse</title>
+<polygon fill="white" stroke="none" points="-4.32,4.32 -4.32,-2187.3 1911.29,-2187.3 1911.29,4.32 -4.32,4.32"/>
+<!-- AlphaSlider&#45;&gt;ColorSlider -->
+<g id="edge1" class="edge">
+<title>AlphaSlider&#45;&gt;ColorSlider</title>
+<g id="a_edge1"><a xlink:title="AlphaSlider reuses styling from ColorSlider (root, input, rail, thumb CSS)">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M186.91,-116.21C177.33,-128.82 163.6,-146.88 152.67,-161.26"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="150.89,-159.44 148.54,-166.7 154.9,-162.49 150.89,-159.44"/>
+</a>
+</g>
+</g>
+<!-- Avatar&#45;&gt;PresenceBadge -->
+<g id="edge2" class="edge">
+<title>Avatar&#45;&gt;PresenceBadge</title>
+<g id="a_edge2"><a xlink:title="Avatar renders PresenceBadge (optional badge slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M252.9,-1107.09C245.46,-1111.08 237.2,-1115.5 228.95,-1119.92"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="227.83,-1117.66 222.67,-1123.28 230.21,-1122.11 227.83,-1117.66"/>
+</a>
+</g>
+</g>
+<!-- AvatarGroupItem&#45;&gt;Avatar -->
+<g id="edge3" class="edge">
+<title>AvatarGroupItem&#45;&gt;Avatar</title>
+<g id="a_edge3"><a xlink:title="AvatarGroupItem renders Avatar (avatar slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M340.57,-1046.79C330.92,-1054.14 319.19,-1063.08 308.74,-1071.04"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="307.39,-1068.9 303.19,-1075.27 310.44,-1072.91 307.39,-1068.9"/>
+</a>
+</g>
+</g>
+<!-- AvatarGroupItem&#45;&gt;AvatarGroup -->
+<g id="edge4" class="edge">
+<title>AvatarGroupItem&#45;&gt;AvatarGroup</title>
+<g id="a_edge4"><a xlink:title="AvatarGroupItem reuses styling from AvatarGroup (group sizing and layout CSS)">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M375.98,-1016.57C387.4,-1005.48 403.12,-990.21 416,-977.71"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="417.5,-979.76 420.91,-972.94 413.99,-976.15 417.5,-979.76"/>
+</a>
+</g>
+</g>
+<!-- AvatarGroupPopover&#45;&gt;AvatarGroup -->
+<g id="edge5" class="edge">
+<title>AvatarGroupPopover&#45;&gt;AvatarGroup</title>
+<g id="a_edge5"><a xlink:title="AvatarGroupPopover reuses styling from AvatarGroup (group sizing and layout CSS)">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M503.09,-888.16C491.2,-900.63 474.15,-918.5 460.62,-932.7"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="458.85,-930.9 455.71,-937.85 462.5,-934.38 458.85,-930.9"/>
+</a>
+</g>
+</g>
+<!-- AvatarGroupPopover&#45;&gt;PopoverSurface -->
+<g id="edge6" class="edge">
+<title>AvatarGroupPopover&#45;&gt;PopoverSurface</title>
+<g id="a_edge6"><a xlink:title="AvatarGroupPopover renders PopoverSurface (styled surface slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M550.46,-857.79C559.77,-853.48 570.02,-848.73 579.75,-844.23"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="580.64,-846.6 586.12,-841.28 578.53,-842.02 580.64,-846.6"/>
+</a>
+</g>
+</g>
+<!-- AvatarGroupPopover&#45;&gt;TooltipVisual -->
+<g id="edge7" class="edge">
+<title>AvatarGroupPopover&#45;&gt;TooltipVisual</title>
+<g id="a_edge7"><a xlink:title="AvatarGroupPopover reuses styling from TooltipVisual">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M517.19,-857.71C516.91,-843.29 516.47,-821.21 516.11,-802.7"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="518.63,-802.91 515.97,-795.76 513.59,-803.01 518.63,-802.91"/>
+</a>
+</g>
+</g>
+<!-- BreadcrumbButton&#45;&gt;ButtonCSS -->
+<g id="edge8" class="edge">
+<title>BreadcrumbButton&#45;&gt;ButtonCSS</title>
+<g id="a_edge8"><a xlink:title="BreadcrumbButton reuses styling from ButtonCSS">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M811.63,-1405.82C804.98,-1424.7 793.43,-1457.48 785.44,-1480.18"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="783.11,-1479.2 783.1,-1486.82 787.87,-1480.87 783.11,-1479.2"/>
+</a>
+</g>
+</g>
+<!-- Button&#45;&gt;ButtonCSS -->
+<g id="edge9" class="edge">
+<title>Button&#45;&gt;ButtonCSS</title>
+<g id="a_edge9"><a xlink:title="Button reuses styling from ButtonCSS">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M853.32,-1555.14C840.01,-1546.46 823.17,-1535.47 808.66,-1526.01"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="810.05,-1523.91 802.65,-1522.08 807.3,-1528.13 810.05,-1523.91"/>
+</a>
+</g>
+</g>
+<!-- Calendar&#45;&gt;CalendarDay -->
+<g id="edge10" class="edge">
+<title>Calendar&#45;&gt;CalendarDay</title>
+<g id="a_edge10"><a xlink:title="Calendar renders CalendarDay">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1687.68,-1953.07C1693.95,-1954.43 1700.56,-1955.88 1707.19,-1957.32"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1706.22,-1959.69 1713.79,-1958.76 1707.3,-1954.76 1706.22,-1959.69"/>
+</a>
+</g>
+</g>
+<!-- Calendar&#45;&gt;CalendarMonth -->
+<g id="edge11" class="edge">
+<title>Calendar&#45;&gt;CalendarMonth</title>
+<g id="a_edge11"><a xlink:title="Calendar renders CalendarMonth">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1644.97,-1959.68C1639.19,-1978.89 1629.08,-2012.51 1622.25,-2035.25"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1619.9,-2034.31 1620.24,-2041.93 1624.73,-2035.76 1619.9,-2034.31"/>
+</a>
+</g>
+</g>
+<!-- CalendarMonth&#45;&gt;CalendarYear -->
+<g id="edge12" class="edge">
+<title>CalendarMonth&#45;&gt;CalendarYear</title>
+<g id="a_edge12"><a xlink:title="CalendarMonth renders CalendarYear">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1612.92,-2074.14C1610.28,-2092.3 1605.83,-2122.93 1602.74,-2144.26"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1600.26,-2143.77 1601.72,-2151.26 1605.25,-2144.49 1600.26,-2143.77"/>
+</a>
+</g>
+</g>
+<!-- Checkbox&#45;&gt;FocusRing -->
+<g id="edge13" class="edge">
+<title>Checkbox&#45;&gt;FocusRing</title>
+<g id="a_edge13"><a xlink:title="Checkbox reuses styling from FocusRing">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1086.95,-760.95C1095.81,-770.76 1107.64,-783.86 1118.42,-795.8"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1116.49,-797.42 1123.18,-801.07 1120.23,-794.04 1116.49,-797.42"/>
+</a>
+</g>
+</g>
+<!-- Checkbox&#45;&gt;Label -->
+<g id="edge14" class="edge">
+<title>Checkbox&#45;&gt;Label</title>
+<g id="a_edge14"><a xlink:title="Checkbox renders Label">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1032.48,-730.38C1020.84,-726.01 1008.26,-721.28 996.95,-717.03"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="997.93,-714.7 990.3,-714.53 996.15,-719.42 997.93,-714.7"/>
+</a>
+</g>
+</g>
+<!-- ColorArea&#45;&gt;ColorThumb -->
+<g id="edge15" class="edge">
+<title>ColorArea&#45;&gt;ColorThumb</title>
+<g id="a_edge15"><a xlink:title="ColorArea reuses styling from ColorThumb">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M81.85,-370.03C83.92,-355.62 87.09,-333.55 89.74,-315.04"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="92.21,-315.56 90.74,-308.07 87.23,-314.84 92.21,-315.56"/>
+</a>
+</g>
+</g>
+<!-- ColorSlider&#45;&gt;ColorThumb -->
+<g id="edge16" class="edge">
+<title>ColorSlider&#45;&gt;ColorThumb</title>
+<g id="a_edge16"><a xlink:title="ColorSlider reuses styling from ColorThumb">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M128.72,-199.61C123.29,-212.62 115.28,-231.82 108.37,-248.35"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="106.14,-247.17 105.69,-254.78 110.79,-249.11 106.14,-247.17"/>
+</a>
+</g>
+</g>
+<!-- Combobox&#45;&gt;FieldFocus -->
+<g id="edge17" class="edge">
+<title>Combobox&#45;&gt;FieldFocus</title>
+<g id="a_edge17"><a xlink:title="Combobox reuses styling from FieldFocus">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1483.25,-1616.13C1486.39,-1620.48 1489.64,-1625.3 1492.31,-1629.96 1500.06,-1643.49 1507.26,-1659.16 1512.97,-1672.72"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1510.58,-1673.52 1515.65,-1679.22 1515.24,-1671.6 1510.58,-1673.52"/>
+</a>
+</g>
+</g>
+<!-- Combobox&#45;&gt;Listbox -->
+<g id="edge18" class="edge">
+<title>Combobox&#45;&gt;Listbox</title>
+<g id="a_edge18"><a xlink:title="Combobox renders Listbox">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1471.89,-1585.44C1472.5,-1570.69 1473.42,-1547.93 1474.19,-1529.17"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1476.7,-1529.45 1474.48,-1522.16 1471.66,-1529.25 1476.7,-1529.45"/>
+</a>
+</g>
+</g>
+<!-- Combobox&#45;&gt;PickerFrame -->
+<g id="edge19" class="edge">
+<title>Combobox&#45;&gt;PickerFrame</title>
+<g id="a_edge19"><a xlink:title="Combobox reuses styling from PickerFrame">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1434.74,-1616.08C1424.27,-1620.51 1412.85,-1625.39 1402.37,-1629.96 1395.76,-1632.84 1388.79,-1635.93 1381.97,-1638.97"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1381.27,-1636.53 1375.73,-1641.77 1383.33,-1641.13 1381.27,-1636.53"/>
+</a>
+</g>
+</g>
+<!-- Combobox&#45;&gt;PickerValidation -->
+<g id="edge20" class="edge">
+<title>Combobox&#45;&gt;PickerValidation</title>
+<g id="a_edge20"><a xlink:title="Combobox reuses styling from PickerValidation">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1436.04,-1585.4C1426.58,-1581.27 1416.21,-1576.75 1406.31,-1572.42"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1407.52,-1570.21 1399.92,-1569.63 1405.51,-1574.82 1407.52,-1570.21"/>
+</a>
+</g>
+</g>
+<!-- CompoundButton&#45;&gt;ButtonCSS -->
+<g id="edge21" class="edge">
+<title>CompoundButton&#45;&gt;ButtonCSS</title>
+<g id="a_edge21"><a xlink:title="CompoundButton reuses styling from ButtonCSS">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M771.92,-1602.3C773.54,-1597.87 775.04,-1592.96 775.88,-1588.3 779.34,-1569.06 779.36,-1546.92 778.6,-1530.32"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="781.14,-1530.51 778.21,-1523.47 776.11,-1530.8 781.14,-1530.51"/>
+</a>
+</g>
+</g>
+<!-- CompoundButton&#45;&gt;ButtonVariants -->
+<g id="edge22" class="edge">
+<title>CompoundButton&#45;&gt;ButtonVariants</title>
+<g id="a_edge22"><a xlink:title="CompoundButton reuses styling from ButtonVariants">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M701.37,-1620.92C698.91,-1621.05 696.44,-1621.18 693.96,-1621.32"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="693.97,-1618.79 686.91,-1621.7 694.24,-1623.83 693.97,-1618.79"/>
+</a>
+</g>
+</g>
+<!-- CounterBadge&#45;&gt;Badge -->
+<g id="edge23" class="edge">
+<title>CounterBadge&#45;&gt;Badge</title>
+<g id="a_edge23"><a xlink:title="CounterBadge reuses styling from Badge">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1829.25,-238.24C1831.98,-237.77 1834.69,-237.29 1837.36,-236.83"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1837.6,-239.35 1844.26,-235.63 1836.74,-234.38 1837.6,-239.35"/>
+</a>
+</g>
+</g>
+<!-- DatePicker&#45;&gt;Calendar -->
+<g id="edge24" class="edge">
+<title>DatePicker&#45;&gt;Calendar</title>
+<g id="a_edge24"><a xlink:title="DatePicker renders Calendar (calendar slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1620.39,-1844.83C1626.05,-1864.28 1635.97,-1898.37 1642.63,-1921.25"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1640.15,-1921.76 1644.58,-1927.97 1644.99,-1920.35 1640.15,-1921.76"/>
+</a>
+</g>
+</g>
+<!-- DatePicker&#45;&gt;FieldFocus -->
+<g id="edge25" class="edge">
+<title>DatePicker&#45;&gt;FieldFocus</title>
+<g id="a_edge25"><a xlink:title="DatePicker reuses styling from FieldFocus">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1604.95,-1814.58C1591.06,-1795.46 1566.86,-1762.16 1548.85,-1737.4"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1550.91,-1735.94 1544.64,-1731.6 1546.83,-1738.91 1550.91,-1735.94"/>
+</a>
+</g>
+</g>
+<!-- Drawer&#45;&gt;InlineDrawer -->
+<g id="edge26" class="edge">
+<title>Drawer&#45;&gt;InlineDrawer</title>
+<g id="a_edge26"><a xlink:title="Drawer renders InlineDrawer (inline variant)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1504.6,-306.84C1494.09,-292.03 1477.99,-269.35 1465.98,-252.44"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1468.07,-251.02 1461.85,-246.61 1463.96,-253.94 1468.07,-251.02"/>
+</a>
+</g>
+</g>
+<!-- Drawer&#45;&gt;OverlayDrawer -->
+<g id="edge27" class="edge">
+<title>Drawer&#45;&gt;OverlayDrawer</title>
+<g id="a_edge27"><a xlink:title="Drawer renders OverlayDrawer (overlay variant)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1494.1,-337.34C1481.57,-346.32 1465.58,-357.79 1451.99,-367.53"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1450.58,-365.44 1446.2,-371.68 1453.52,-369.53 1450.58,-365.44"/>
+</a>
+</g>
+</g>
+<!-- DrawerHeaderFooter&#45;&gt;DrawerSeparators -->
+<g id="edge28" class="edge">
+<title>DrawerHeaderFooter&#45;&gt;DrawerSeparators</title>
+<g id="a_edge28"><a xlink:title="DrawerHeaderFooter reuses styling from DrawerSeparators">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M541.96,-331.25C533.25,-335.3 523.72,-339.73 514.59,-343.97"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="513.62,-341.64 508.15,-346.96 515.74,-346.21 513.62,-341.64"/>
+</a>
+</g>
+</g>
+<!-- DrawerHeaderTitle&#45;&gt;DialogTitle -->
+<g id="edge29" class="edge">
+<title>DrawerHeaderTitle&#45;&gt;DialogTitle</title>
+<g id="a_edge29"><a xlink:title="DrawerHeaderTitle reuses styling from DialogTitle (heading CSS)">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1770.51,-969.24C1772.9,-968.91 1775.28,-968.58 1777.64,-968.25"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1777.87,-970.76 1784.65,-967.27 1777.18,-965.77 1777.87,-970.76"/>
+</a>
+</g>
+</g>
+<!-- Dropdown&#45;&gt;FieldFocus -->
+<g id="edge30" class="edge">
+<title>Dropdown&#45;&gt;FieldFocus</title>
+<g id="a_edge30"><a xlink:title="Dropdown reuses styling from FieldFocus">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1468.35,-1663.83C1473.47,-1667.56 1479.13,-1671.68 1484.83,-1675.83"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1483.28,-1677.82 1490.59,-1680.02 1486.25,-1673.74 1483.28,-1677.82"/>
+</a>
+</g>
+</g>
+<!-- Dropdown&#45;&gt;Listbox -->
+<g id="edge31" class="edge">
+<title>Dropdown&#45;&gt;Listbox</title>
+<g id="a_edge31"><a xlink:title="Dropdown renders Listbox">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1432.32,-1633.35C1429.07,-1629.14 1426.09,-1624.35 1424.36,-1619.36 1418.95,-1603.75 1419.95,-1598.11 1424.36,-1582.2 1429.74,-1562.74 1440.87,-1543.26 1451.38,-1527.84"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1453.34,-1529.43 1455.41,-1522.09 1449.21,-1526.54 1453.34,-1529.43"/>
+</a>
+</g>
+</g>
+<!-- Dropdown&#45;&gt;PickerFrame -->
+<g id="edge32" class="edge">
+<title>Dropdown&#45;&gt;PickerFrame</title>
+<g id="a_edge32"><a xlink:title="Dropdown reuses styling from PickerFrame">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1405.78,-1652.33C1403.36,-1652.55 1400.91,-1652.77 1398.44,-1653"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1398.38,-1650.47 1391.44,-1653.64 1398.84,-1655.49 1398.38,-1650.47"/>
+</a>
+</g>
+</g>
+<!-- Dropdown&#45;&gt;PickerValidation -->
+<g id="edge33" class="edge">
+<title>Dropdown&#45;&gt;PickerValidation</title>
+<g id="a_edge33"><a xlink:title="Dropdown reuses styling from PickerValidation">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1433.6,-1633.19C1419.77,-1617.73 1398.26,-1593.7 1382.39,-1575.97"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1384.35,-1574.38 1377.67,-1570.69 1380.59,-1577.74 1384.35,-1574.38"/>
+</a>
+</g>
+</g>
+<!-- Field&#45;&gt;Label -->
+<g id="edge34" class="edge">
+<title>Field&#45;&gt;Label</title>
+<g id="a_edge34"><a xlink:title="Field renders Label">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M984.09,-589.02C979.67,-611.4 971.34,-653.48 966.1,-679.97"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="963.66,-679.3 964.74,-686.85 968.61,-680.27 963.66,-679.3"/>
+</a>
+</g>
+</g>
+<!-- FluentProvider&#45;&gt;HeadlessProvider -->
+<g id="edge35" class="edge">
+<title>FluentProvider&#45;&gt;HeadlessProvider</title>
+<g id="a_edge35"><a xlink:title="FluentProvider renders HeadlessProvider">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1714.85,-690.35C1713.3,-707.39 1710.75,-735.47 1708.92,-755.63"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1706.42,-755.33 1708.28,-762.73 1711.44,-755.79 1706.42,-755.33"/>
+</a>
+</g>
+</g>
+<!-- FluentProvider&#45;&gt;IconCSS -->
+<g id="edge36" class="edge">
+<title>FluentProvider&#45;&gt;IconCSS</title>
+<g id="a_edge36"><a xlink:title="FluentProvider reuses styling from IconCSS">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1712.35,-660.41C1708.2,-644.31 1701.53,-618.44 1696.57,-599.17"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1699.04,-598.67 1694.81,-592.33 1694.16,-599.93 1699.04,-598.67"/>
+</a>
+</g>
+</g>
+<!-- InfoButton&#45;&gt;InfoButtonBase -->
+<g id="edge37" class="edge">
+<title>InfoButton&#45;&gt;InfoButtonBase</title>
+<g id="a_edge37"><a xlink:title="InfoButton renders InfoButtonBase">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M683.12,-649.53C688.28,-669.27 697.33,-703.87 703.4,-727.1"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="700.92,-727.6 705.18,-733.93 705.8,-726.32 700.92,-727.6"/>
+</a>
+</g>
+</g>
+<!-- InfoButtonBase&#45;&gt;PopoverSurface -->
+<g id="edge38" class="edge">
+<title>InfoButtonBase&#45;&gt;PopoverSurface</title>
+<g id="a_edge38"><a xlink:title="InfoButtonBase renders PopoverSurface (styled surface slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M691.65,-765.98C678.49,-776.98 660.45,-792.06 645.87,-804.25"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="644.33,-802.26 640.42,-808.81 647.56,-806.13 644.33,-802.26"/>
+</a>
+</g>
+</g>
+<!-- InfoLabel&#45;&gt;InfoButtonBase -->
+<g id="edge39" class="edge">
+<title>InfoLabel&#45;&gt;InfoButtonBase</title>
+<g id="a_edge39"><a xlink:title="InfoLabel renders InfoButtonBase">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M814.29,-747.78C811.52,-747.86 808.66,-747.95 805.74,-748.03"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="805.76,-745.51 798.64,-748.25 805.91,-750.55 805.76,-745.51"/>
+</a>
+</g>
+</g>
+<!-- InfoLabel&#45;&gt;Label -->
+<g id="edge40" class="edge">
+<title>InfoLabel&#45;&gt;Label</title>
+<g id="a_edge40"><a xlink:title="InfoLabel renders Label">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M890.96,-731.48C902.27,-727.01 914.6,-722.15 925.73,-717.75"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="926.52,-720.15 932.29,-715.17 924.67,-715.47 926.52,-720.15"/>
+</a>
+</g>
+</g>
+<!-- InlineDrawer&#45;&gt;DrawerFrame -->
+<g id="edge41" class="edge">
+<title>InlineDrawer&#45;&gt;DrawerFrame</title>
+<g id="a_edge41"><a xlink:title="InlineDrawer reuses styling from DrawerFrame">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1428.66,-245.16C1416.49,-253.89 1401.03,-264.96 1387.69,-274.53"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1386.26,-272.46 1381.87,-278.7 1389.19,-276.55 1386.26,-272.46"/>
+</a>
+</g>
+</g>
+<!-- Input&#45;&gt;FieldFocus -->
+<g id="edge42" class="edge">
+<title>Input&#45;&gt;FieldFocus</title>
+<g id="a_edge42"><a xlink:title="Input reuses styling from FieldFocus">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1635.55,-1693.4C1633.31,-1693.65 1630.97,-1693.91 1628.56,-1694.18"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1628.29,-1691.67 1621.41,-1694.97 1628.85,-1696.68 1628.29,-1691.67"/>
+</a>
+</g>
+</g>
+<!-- InteractionTagPrimary&#45;&gt;TagHitArea -->
+<g id="edge43" class="edge">
+<title>InteractionTagPrimary&#45;&gt;TagHitArea</title>
+<g id="a_edge43"><a xlink:title="InteractionTagPrimary reuses styling from TagHitArea">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M229.02,-1816.75C217.05,-1824.21 202.47,-1833.31 189.53,-1841.38"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="188.35,-1839.15 183.57,-1845.09 191.02,-1843.42 188.35,-1839.15"/>
+</a>
+</g>
+</g>
+<!-- InteractionTagPrimary&#45;&gt;TagVisual -->
+<g id="edge44" class="edge">
+<title>InteractionTagPrimary&#45;&gt;TagVisual</title>
+<g id="a_edge44"><a xlink:title="InteractionTagPrimary reuses styling from TagVisual">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M245.52,-1786.09C238.16,-1771.97 227,-1750.57 217.66,-1732.68"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="220.01,-1731.74 214.45,-1726.52 215.55,-1734.07 220.01,-1731.74"/>
+</a>
+</g>
+</g>
+<!-- InteractionTagSecondary&#45;&gt;TagHitArea -->
+<g id="edge45" class="edge">
+<title>InteractionTagSecondary&#45;&gt;TagHitArea</title>
+<g id="a_edge45"><a xlink:title="InteractionTagSecondary reuses styling from TagHitArea">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M134.27,-1952.68C138.44,-1935.55 145.3,-1907.42 150.27,-1887.04"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="152.66,-1887.87 151.92,-1880.28 147.77,-1886.68 152.66,-1887.87"/>
+</a>
+</g>
+</g>
+<!-- MenuButton&#45;&gt;ButtonCSS -->
+<g id="edge46" class="edge">
+<title>MenuButton&#45;&gt;ButtonCSS</title>
+<g id="a_edge46"><a xlink:title="MenuButton reuses styling from ButtonCSS">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M737.3,-1554.41C743.53,-1546.61 751.23,-1536.96 758.17,-1528.27"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="760.01,-1530.01 762.53,-1522.81 756.07,-1526.86 760.01,-1530.01"/>
+</a>
+</g>
+</g>
+<!-- MenuButton&#45;&gt;ButtonVariants -->
+<g id="edge47" class="edge">
+<title>MenuButton&#45;&gt;ButtonVariants</title>
+<g id="a_edge47"><a xlink:title="MenuButton reuses styling from ButtonVariants">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M693.4,-1585.06C685.34,-1588.97 676.42,-1593.29 667.48,-1597.62"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="666.45,-1595.32 661.07,-1600.73 668.65,-1599.85 666.45,-1595.32"/>
+</a>
+</g>
+</g>
+<!-- MenuItem&#45;&gt;MenuItemVisual -->
+<g id="edge48" class="edge">
+<title>MenuItem&#45;&gt;MenuItemVisual</title>
+<g id="a_edge48"><a xlink:title="MenuItem reuses styling from MenuItemVisual">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1054.73,-239.72C1047.77,-243.5 1040.08,-247.67 1032.36,-251.86"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1031.24,-249.6 1026.12,-255.25 1033.65,-254.03 1031.24,-249.6"/>
+</a>
+</g>
+</g>
+<!-- MenuItemSwitch&#45;&gt;MenuItemVisual -->
+<g id="edge49" class="edge">
+<title>MenuItemSwitch&#45;&gt;MenuItemVisual</title>
+<g id="a_edge49"><a xlink:title="MenuItemSwitch reuses styling from MenuItemVisual">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M966.39,-368.12C968.51,-354.03 971.73,-332.54 974.46,-314.37"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="976.95,-314.78 975.53,-307.29 971.96,-314.03 976.95,-314.78"/>
+</a>
+</g>
+</g>
+<!-- MenuItemVariants&#45;&gt;MenuItemVisual -->
+<g id="edge50" class="edge">
+<title>MenuItemVariants&#45;&gt;MenuItemVisual</title>
+<g id="a_edge50"><a xlink:title="MenuItemVariants reuses styling from MenuItemVisual">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M928.91,-235.83C934.29,-240.58 939.83,-245.47 945.17,-250.18"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="943.37,-251.95 950.43,-254.83 946.7,-248.18 943.37,-251.95"/>
+</a>
+</g>
+</g>
+<!-- OverlayDrawer&#45;&gt;DrawerFrame -->
+<g id="edge51" class="edge">
+<title>OverlayDrawer&#45;&gt;DrawerFrame</title>
+<g id="a_edge51"><a xlink:title="OverlayDrawer reuses styling from DrawerFrame">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1412.72,-372.71C1402.4,-358.17 1386.69,-336.03 1374.76,-319.23"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1376.98,-318 1370.76,-313.58 1372.87,-320.91 1376.98,-318"/>
+</a>
+</g>
+</g>
+<!-- Persona&#45;&gt;Avatar -->
+<g id="edge52" class="edge">
+<title>Persona&#45;&gt;Avatar</title>
+<g id="a_edge52"><a xlink:title="Persona renders Avatar (avatar slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M259.55,-1193.28C263.96,-1187.87 268.35,-1181.47 271.08,-1174.89 278.9,-1156.07 281.3,-1132.96 281.87,-1115.88"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="284.39,-1116.14 281.99,-1108.9 279.35,-1116.05 284.39,-1116.14"/>
+</a>
+</g>
+</g>
+<!-- Persona&#45;&gt;PresenceBadge -->
+<g id="edge53" class="edge">
+<title>Persona&#45;&gt;PresenceBadge</title>
+<g id="a_edge53"><a xlink:title="Persona renders PresenceBadge (presence slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M227.6,-1193.31C222.16,-1188.46 215.95,-1182.92 209.79,-1177.43"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="211.56,-1175.63 204.51,-1172.72 208.2,-1179.39 211.56,-1175.63"/>
+</a>
+</g>
+</g>
+<!-- Radio&#45;&gt;FocusRing -->
+<g id="edge54" class="edge">
+<title>Radio&#45;&gt;FocusRing</title>
+<g id="a_edge54"><a xlink:title="Radio reuses styling from FocusRing">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1050.19,-815.68C1052.57,-815.96 1055.05,-816.25 1057.6,-816.55"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1057.16,-819.04 1064.61,-817.37 1057.75,-814.03 1057.16,-819.04"/>
+</a>
+</g>
+</g>
+<!-- Radio&#45;&gt;Label -->
+<g id="edge55" class="edge">
+<title>Radio&#45;&gt;Label</title>
+<g id="a_edge55"><a xlink:title="Radio renders Label">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1013.83,-797.29C1003.57,-778.98 986.19,-747.93 974.27,-726.65"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="976.6,-725.65 970.88,-720.6 972.2,-728.12 976.6,-725.65"/>
+</a>
+</g>
+</g>
+<!-- Rating&#45;&gt;RatingItem -->
+<g id="edge56" class="edge">
+<title>Rating&#45;&gt;RatingItem</title>
+<g id="a_edge56"><a xlink:title="Rating renders RatingItem (default items)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1299.03,-945.08C1285.42,-933.35 1266.47,-917 1251.46,-904.04"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1253.34,-902.34 1246.24,-899.55 1250.05,-906.16 1253.34,-902.34"/>
+</a>
+</g>
+</g>
+<!-- RatingDisplay&#45;&gt;Rating -->
+<g id="edge57" class="edge">
+<title>RatingDisplay&#45;&gt;Rating</title>
+<g id="a_edge57"><a xlink:title="RatingDisplay reuses styling from Rating (layout CSS)">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1366.86,-883.9C1357.47,-898.21 1343.22,-919.92 1332.31,-936.55"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1330.23,-935.13 1328.38,-942.53 1334.44,-937.9 1330.23,-935.13"/>
+</a>
+</g>
+</g>
+<!-- RatingDisplay&#45;&gt;RatingItem -->
+<g id="edge58" class="edge">
+<title>RatingDisplay&#45;&gt;RatingItem</title>
+<g id="a_edge58"><a xlink:title="RatingDisplay renders RatingItem (default items)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1288.06,-877.3C1285.2,-877.57 1282.36,-877.85 1279.57,-878.11"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1279.57,-875.58 1272.65,-878.78 1280.05,-880.6 1279.57,-875.58"/>
+</a>
+</g>
+</g>
+<!-- RatingItem&#45;&gt;FocusRing -->
+<g id="edge59" class="edge">
+<title>RatingItem&#45;&gt;FocusRing</title>
+<g id="a_edge59"><a xlink:title="RatingItem reuses styling from FocusRing">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1205.19,-867.79C1200.12,-864.26 1194.55,-860.38 1188.93,-856.47"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1190.67,-854.61 1183.32,-852.56 1187.79,-858.75 1190.67,-854.61"/>
+</a>
+</g>
+</g>
+<!-- SearchBox&#45;&gt;Input -->
+<g id="edge60" class="edge">
+<title>SearchBox&#45;&gt;Input</title>
+<g id="a_edge60"><a xlink:title="SearchBox reuses styling from Input (root and slot CSS)">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1737.82,-1647.87C1725.75,-1654.72 1711.37,-1662.88 1698.45,-1670.22"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1697.57,-1667.82 1692.56,-1673.56 1700.06,-1672.2 1697.57,-1667.82"/>
+</a>
+</g>
+</g>
+<!-- Select&#45;&gt;FieldFocus -->
+<g id="edge61" class="edge">
+<title>Select&#45;&gt;FieldFocus</title>
+<g id="a_edge61"><a xlink:title="Select reuses styling from FieldFocus">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1451.34,-1800.46C1457.98,-1794.48 1465.41,-1787.35 1471.61,-1780.36 1483.49,-1766.95 1495.32,-1751 1504.88,-1737.28"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1506.72,-1739.06 1508.72,-1731.69 1502.56,-1736.2 1506.72,-1739.06"/>
+</a>
+</g>
+</g>
+<!-- SpinButton&#45;&gt;FieldFocus -->
+<g id="edge62" class="edge">
+<title>SpinButton&#45;&gt;FieldFocus</title>
+<g id="a_edge62"><a xlink:title="SpinButton reuses styling from FieldFocus">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1586.16,-1656.73C1579.17,-1662.39 1570.96,-1669.03 1562.88,-1675.57"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1561.39,-1673.53 1557.38,-1680.02 1564.56,-1677.45 1561.39,-1673.53"/>
+</a>
+</g>
+</g>
+<!-- Spinner&#45;&gt;Label -->
+<g id="edge63" class="edge">
+<title>Spinner&#45;&gt;Label</title>
+<g id="a_edge63"><a xlink:title="Spinner renders Label">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M916.39,-616.61C925.13,-633.51 939.39,-661.1 949.52,-680.69"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="947.2,-681.69 952.75,-686.93 951.68,-679.38 947.2,-681.69"/>
+</a>
+</g>
+</g>
+<!-- SplitButton&#45;&gt;Button -->
+<g id="edge64" class="edge">
+<title>SplitButton&#45;&gt;Button</title>
+<g id="a_edge64"><a xlink:title="SplitButton renders Button (primary slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M798.89,-1662.37C811.29,-1655.9 824.03,-1647.23 832.89,-1636.06 843.37,-1622.85 834.45,-1613.86 843.51,-1599.64 845.22,-1596.96 847.25,-1594.38 849.45,-1591.94"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="850.97,-1593.98 854.28,-1587.12 847.41,-1590.42 850.97,-1593.98"/>
+</a>
+</g>
+</g>
+<!-- SplitButton&#45;&gt;ButtonVariants -->
+<g id="edge65" class="edge">
+<title>SplitButton&#45;&gt;ButtonVariants</title>
+<g id="a_edge65"><a xlink:title="SplitButton reuses styling from ButtonVariants">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M715.75,-1662.67C706.86,-1659.6 697.25,-1656.28 687.56,-1652.94"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="688.5,-1650.6 680.87,-1650.63 686.86,-1655.36 688.5,-1650.6"/>
+</a>
+</g>
+</g>
+<!-- SplitButton&#45;&gt;MenuButton -->
+<g id="edge66" class="edge">
+<title>SplitButton&#45;&gt;MenuButton</title>
+<g id="a_edge66"><a xlink:title="SplitButton renders MenuButton (menu slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M724.64,-1662.4C714.08,-1655.9 703.71,-1647.2 697.81,-1636.06 690.07,-1621.47 691.74,-1614.26 697.81,-1598.9 698.76,-1596.48 700.02,-1594.14 701.47,-1591.92"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="703.46,-1593.47 705.9,-1586.25 699.48,-1590.37 703.46,-1593.47"/>
+</a>
+</g>
+</g>
+<!-- Switch&#45;&gt;Label -->
+<g id="edge67" class="edge">
+<title>Switch&#45;&gt;Label</title>
+<g id="a_edge67"><a xlink:title="Switch renders Label">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1030.39,-636.69C1017.26,-649.44 998.26,-667.89 983.52,-682.2"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="981.8,-680.36 978.39,-687.18 985.31,-683.97 981.8,-680.36"/>
+</a>
+</g>
+</g>
+<!-- Tag&#45;&gt;TagHitArea -->
+<g id="edge68" class="edge">
+<title>Tag&#45;&gt;TagHitArea</title>
+<g id="a_edge68"><a xlink:title="Tag reuses styling from TagHitArea">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M111.5,-1775.55C119.97,-1791.87 133.64,-1818.24 143.67,-1837.58"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="141.38,-1838.64 146.93,-1843.88 145.85,-1836.32 141.38,-1838.64"/>
+</a>
+</g>
+</g>
+<!-- Tag&#45;&gt;TagVisual -->
+<g id="edge69" class="edge">
+<title>Tag&#45;&gt;TagVisual</title>
+<g id="a_edge69"><a xlink:title="Tag reuses styling from TagVisual">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M128.47,-1745.21C136.31,-1740.34 145.24,-1734.79 154.09,-1729.29"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="155.38,-1731.45 160.16,-1725.51 152.72,-1727.17 155.38,-1731.45"/>
+</a>
+</g>
+</g>
+<!-- TagPickerControl&#45;&gt;FieldFocus -->
+<g id="edge70" class="edge">
+<title>TagPickerControl&#45;&gt;FieldFocus</title>
+<g id="a_edge70"><a xlink:title="TagPickerControl reuses styling from FieldFocus">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1437.62,-1746.43C1446.14,-1742.48 1455.58,-1738.11 1465.02,-1733.74"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1466.07,-1736.03 1471.55,-1730.72 1463.95,-1731.46 1466.07,-1736.03"/>
+</a>
+</g>
+</g>
+<!-- TagPickerControl&#45;&gt;PickerFrame -->
+<g id="edge71" class="edge">
+<title>TagPickerControl&#45;&gt;PickerFrame</title>
+<g id="a_edge71"><a xlink:title="TagPickerControl reuses styling from PickerFrame">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1394.82,-1746.52C1384.14,-1729.66 1366.79,-1702.25 1354.27,-1682.48"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1356.41,-1681.15 1350.43,-1676.42 1352.15,-1683.85 1356.41,-1681.15"/>
+</a>
+</g>
+</g>
+<!-- TagPickerGroup&#45;&gt;TagGroup -->
+<g id="edge72" class="edge">
+<title>TagPickerGroup&#45;&gt;TagGroup</title>
+<g id="a_edge72"><a xlink:title="TagPickerGroup reuses styling from TagGroup">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1754.98,-1184.66C1757.36,-1184.3 1759.74,-1183.94 1762.11,-1183.59"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1762.42,-1186.09 1769.17,-1182.53 1761.67,-1181.11 1762.42,-1186.09"/>
+</a>
+</g>
+</g>
+<!-- TagPickerList&#45;&gt;Listbox -->
+<g id="edge73" class="edge">
+<title>TagPickerList&#45;&gt;Listbox</title>
+<g id="a_edge73"><a xlink:title="TagPickerList renders Listbox">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M1471.73,-1406.06C1472.36,-1421.18 1473.34,-1444.87 1474.15,-1464.26"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="1471.63,-1464.19 1474.44,-1471.28 1476.66,-1463.98 1471.63,-1464.19"/>
+</a>
+</g>
+</g>
+<!-- TagPickerOption&#45;&gt;Option -->
+<g id="edge74" class="edge">
+<title>TagPickerOption&#45;&gt;Option</title>
+<g id="a_edge74"><a xlink:title="TagPickerOption reuses styling from Option">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1413.28,-22.67C1415.72,-22.27 1418.15,-21.87 1420.53,-21.48"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1420.84,-23.98 1427.54,-20.34 1420.03,-19.01 1420.84,-23.98"/>
+</a>
+</g>
+</g>
+<!-- TagPickerOptionGroup&#45;&gt;OptionGroup -->
+<g id="edge75" class="edge">
+<title>TagPickerOptionGroup&#45;&gt;OptionGroup</title>
+<g id="a_edge75"><a xlink:title="TagPickerOptionGroup reuses styling from OptionGroup">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M200.06,-1466.27C208.78,-1462.22 218.3,-1457.79 227.44,-1453.55"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="228.41,-1455.88 233.88,-1450.56 226.28,-1451.31 228.41,-1455.88"/>
+</a>
+</g>
+</g>
+<!-- TeachingFooterButton&#45;&gt;Button -->
+<g id="edge76" class="edge">
+<title>TeachingFooterButton&#45;&gt;Button</title>
+<g id="a_edge76"><a xlink:title="TeachingFooterButton renders Button (default button slot)">
+<path fill="none" stroke="#3d547a" stroke-width="1.2" d="M946.72,-1602.85C936.6,-1598.16 925.38,-1592.96 914.95,-1588.13"/>
+<polygon fill="#3d547a" stroke="#3d547a" stroke-width="1.2" points="916.03,-1585.86 908.44,-1585.12 913.91,-1590.43 916.03,-1585.86"/>
+</a>
+</g>
+</g>
+<!-- TeachingPopoverSurface&#45;&gt;PopoverSurface -->
+<g id="edge77" class="edge">
+<title>TeachingPopoverSurface&#45;&gt;PopoverSurface</title>
+<g id="a_edge77"><a xlink:title="TeachingPopoverSurface reuses styling from PopoverSurface">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M654.36,-919.82C647.95,-901.78 637.21,-871.53 629.6,-850.11"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="631.99,-849.33 627.21,-843.38 627.24,-851.01 631.99,-849.33"/>
+</a>
+</g>
+</g>
+<!-- Textarea&#45;&gt;FieldFocus -->
+<g id="edge78" class="edge">
+<title>Textarea&#45;&gt;FieldFocus</title>
+<g id="a_edge78"><a xlink:title="Textarea reuses styling from FieldFocus">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1518.59,-1799.44C1519.77,-1783.98 1521.64,-1759.45 1523.18,-1739.36"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1525.69,-1739.57 1523.72,-1732.2 1520.66,-1739.19 1525.69,-1739.57"/>
+</a>
+</g>
+</g>
+<!-- Toaster&#45;&gt;ToastContainer -->
+<g id="edge79" class="edge">
+<title>Toaster&#45;&gt;ToastContainer</title>
+<g id="a_edge79"><a xlink:title="Toaster reuses styling from ToastContainer (container layout CSS)">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M453.47,-113.24C455.92,-112.84 458.44,-112.42 460.99,-112"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="461.18,-114.53 467.87,-110.87 460.36,-109.55 461.18,-114.53"/>
+</a>
+</g>
+</g>
+<!-- ToggleButton&#45;&gt;ButtonCSS -->
+<g id="edge80" class="edge">
+<title>ToggleButton&#45;&gt;ButtonCSS</title>
+<g id="a_edge80"><a xlink:title="ToggleButton reuses styling from ButtonCSS">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M670.38,-1507.65C672.76,-1507.59 675.19,-1507.53 677.64,-1507.47"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="677.54,-1510 684.68,-1507.31 677.42,-1504.96 677.54,-1510"/>
+</a>
+</g>
+</g>
+<!-- ToggleButton&#45;&gt;ButtonVariants -->
+<g id="edge81" class="edge">
+<title>ToggleButton&#45;&gt;ButtonVariants</title>
+<g id="a_edge81"><a xlink:title="ToggleButton reuses styling from ButtonVariants">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M623.24,-1523.96C626.84,-1540.07 630.93,-1566.24 626.17,-1588.3 625.86,-1589.74 625.49,-1591.2 625.07,-1592.65"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="622.8,-1591.51 622.77,-1599.14 627.55,-1593.19 622.8,-1591.51"/>
+</a>
+</g>
+</g>
+<!-- ToolbarButton&#45;&gt;ButtonCSS -->
+<g id="edge82" class="edge">
+<title>ToolbarButton&#45;&gt;ButtonCSS</title>
+<g id="a_edge82"><a xlink:title="ToolbarButton reuses styling from ButtonCSS">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M706.49,-1472.74C715.26,-1476.79 724.84,-1481.21 734.03,-1485.45"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="732.93,-1487.72 740.52,-1488.45 735.04,-1483.14 732.93,-1487.72"/>
+</a>
+</g>
+</g>
+<!-- ToolbarButton&#45;&gt;ButtonVariants -->
+<g id="edge83" class="edge">
+<title>ToolbarButton&#45;&gt;ButtonVariants</title>
+<g id="a_edge83"><a xlink:title="ToolbarButton reuses styling from ButtonVariants">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M675.91,-1472.49C677.92,-1486.93 679.47,-1509.14 673.99,-1527.44 666.6,-1552.09 650.83,-1576.27 636.69,-1594.5"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="634.86,-1592.76 632.33,-1599.95 638.79,-1595.9 634.86,-1592.76"/>
+</a>
+</g>
+</g>
+<!-- ToolbarDivider&#45;&gt;Divider -->
+<g id="edge84" class="edge">
+<title>ToolbarDivider&#45;&gt;Divider</title>
+<g id="a_edge84"><a xlink:title="ToolbarDivider reuses styling from Divider">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M1744.24,-23.24C1746.65,-22.83 1749.04,-22.41 1751.41,-22.01"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="1751.72,-24.51 1758.39,-20.81 1750.86,-19.55 1751.72,-24.51"/>
+</a>
+</g>
+</g>
+<!-- ToolbarRadioButton&#45;&gt;ButtonVariants -->
+<g id="edge85" class="edge">
+<title>ToolbarRadioButton&#45;&gt;ButtonVariants</title>
+<g id="a_edge85"><a xlink:title="ToolbarRadioButton reuses styling from ButtonVariants">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M573.33,-1667.38C576.08,-1664.19 579.08,-1660.72 582.13,-1657.19"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="583.94,-1658.95 586.74,-1651.85 580.12,-1655.65 583.94,-1658.95"/>
+</a>
+</g>
+</g>
+<!-- ToolbarRadioButton&#45;&gt;ToolbarToggleButton -->
+<g id="edge86" class="edge">
+<title>ToolbarRadioButton&#45;&gt;ToolbarToggleButton</title>
+<g id="a_edge86"><a xlink:title="ToolbarRadioButton reuses styling from ToolbarToggleButton">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M540.96,-1667.33C536.96,-1663.11 533.3,-1658.21 531.11,-1652.86 522.05,-1630.65 524.97,-1622.08 531.11,-1598.9 531.55,-1597.23 532.12,-1595.56 532.76,-1593.91"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="534.91,-1595.26 535.79,-1587.68 530.38,-1593.05 534.91,-1595.26"/>
+</a>
+</g>
+</g>
+<!-- ToolbarToggleButton&#45;&gt;ButtonVariants -->
+<g id="edge87" class="edge">
+<title>ToolbarToggleButton&#45;&gt;ButtonVariants</title>
+<g id="a_edge87"><a xlink:title="ToolbarToggleButton reuses styling from ButtonVariants">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M564.52,-1585.06C568.07,-1588.31 571.93,-1591.84 575.85,-1595.43"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="574.04,-1597.18 581.05,-1600.18 577.44,-1593.46 574.04,-1597.18"/>
+</a>
+</g>
+</g>
+<!-- ToolbarToggleButton&#45;&gt;ToggleButton -->
+<g id="edge88" class="edge">
+<title>ToolbarToggleButton&#45;&gt;ToggleButton</title>
+<g id="a_edge88"><a xlink:title="ToolbarToggleButton reuses styling from ToggleButton">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M565.79,-1554.36C574.24,-1547.17 584.46,-1538.48 593.69,-1530.63"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="595.21,-1532.64 599.06,-1526.06 591.95,-1528.8 595.21,-1532.64"/>
+</a>
+</g>
+</g>
+<!-- Tooltip&#45;&gt;TooltipVisual -->
+<g id="edge89" class="edge">
+<title>Tooltip&#45;&gt;TooltipVisual</title>
+<g id="a_edge89"><a xlink:title="Tooltip reuses styling from TooltipVisual">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M448.79,-701.58C458.95,-711.87 472.73,-725.83 485.13,-738.38"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="483.14,-739.96 489.99,-743.31 486.73,-736.42 483.14,-739.96"/>
+</a>
+</g>
+</g>
+<!-- TooltipVisual&#45;&gt;PopoverSurface -->
+<g id="edge90" class="edge">
+<title>TooltipVisual&#45;&gt;PopoverSurface</title>
+<g id="a_edge90"><a xlink:title="TooltipVisual reuses styling from PopoverSurface (content surface CSS)">
+<path fill="none" stroke="#08705a" stroke-width="2.1" d="M559.8,-792.74C567.64,-796.92 575.73,-801.23 583.36,-805.3"/>
+<polygon fill="#08705a" stroke="#08705a" stroke-width="2.1" points="581.71,-807.28 589.24,-808.44 584.08,-802.83 581.71,-807.28"/>
+</a>
+</g>
+</g>
+<!-- AlphaSlider -->
+<g id="node1" class="node">
+<title>AlphaSlider</title>
+<g id="a_node1"><a xlink:title="AlphaSlider">
+<path fill="#ffffff" stroke="#8796a8" d="M233.8,-115.76C233.8,-115.76 163.32,-115.76 163.32,-115.76 158.36,-115.76 153.4,-110.8 153.4,-105.84 153.4,-105.84 153.4,-95.92 153.4,-95.92 153.4,-90.96 158.36,-86 163.32,-86 163.32,-86 233.8,-86 233.8,-86 238.76,-86 243.72,-90.96 243.72,-95.92 243.72,-95.92 243.72,-105.84 243.72,-105.84 243.72,-110.8 238.76,-115.76 233.8,-115.76"/>
+<text xml:space="preserve" text-anchor="middle" x="198.56" y="-96.68" font-family="Arial" font-size="14.00" fill="#172739">AlphaSlider</text>
+</a>
+</g>
+</g>
+<!-- Avatar -->
+<g id="node2" class="node">
+<title>Avatar</title>
+<g id="a_node2"><a xlink:title="Avatar">
+<path fill="#ffffff" stroke="#8796a8" d="M301.23,-1106.63C301.23,-1106.63 261.89,-1106.63 261.89,-1106.63 256.93,-1106.63 251.97,-1101.67 251.97,-1096.71 251.97,-1096.71 251.97,-1086.79 251.97,-1086.79 251.97,-1081.83 256.93,-1076.87 261.89,-1076.87 261.89,-1076.87 301.23,-1076.87 301.23,-1076.87 306.19,-1076.87 311.15,-1081.83 311.15,-1086.79 311.15,-1086.79 311.15,-1096.71 311.15,-1096.71 311.15,-1101.67 306.19,-1106.63 301.23,-1106.63"/>
+<text xml:space="preserve" text-anchor="middle" x="281.56" y="-1087.55" font-family="Arial" font-size="14.00" fill="#172739">Avatar</text>
+</a>
+</g>
+</g>
+<!-- AvatarGroup -->
+<g id="node3" class="node">
+<title>AvatarGroup</title>
+<g id="a_node3"><a xlink:title="AvatarGroup">
+<path fill="#ffffff" stroke="#8796a8" d="M478.05,-970.32C478.05,-970.32 399.8,-970.32 399.8,-970.32 394.84,-970.32 389.88,-965.36 389.88,-960.4 389.88,-960.4 389.88,-950.48 389.88,-950.48 389.88,-945.52 394.84,-940.56 399.8,-940.56 399.8,-940.56 478.05,-940.56 478.05,-940.56 483.01,-940.56 487.97,-945.52 487.97,-950.48 487.97,-950.48 487.97,-960.4 487.97,-960.4 487.97,-965.36 483.01,-970.32 478.05,-970.32"/>
+<text xml:space="preserve" text-anchor="middle" x="438.93" y="-951.24" font-family="Arial" font-size="14.00" fill="#172739">AvatarGroup</text>
+</a>
+</g>
+</g>
+<!-- AvatarGroupItem -->
+<g id="node4" class="node">
+<title>AvatarGroupItem</title>
+<g id="a_node4"><a xlink:title="AvatarGroupItem">
+<path fill="#ffffff" stroke="#8796a8" d="M413.22,-1046.5C413.22,-1046.5 307.74,-1046.5 307.74,-1046.5 302.78,-1046.5 297.82,-1041.54 297.82,-1036.58 297.82,-1036.58 297.82,-1026.66 297.82,-1026.66 297.82,-1021.7 302.78,-1016.74 307.74,-1016.74 307.74,-1016.74 413.22,-1016.74 413.22,-1016.74 418.18,-1016.74 423.14,-1021.7 423.14,-1026.66 423.14,-1026.66 423.14,-1036.58 423.14,-1036.58 423.14,-1041.54 418.18,-1046.5 413.22,-1046.5"/>
+<text xml:space="preserve" text-anchor="middle" x="360.48" y="-1027.42" font-family="Arial" font-size="14.00" fill="#172739">AvatarGroupItem</text>
+</a>
+</g>
+</g>
+<!-- AvatarGroupPopover -->
+<g id="node5" class="node">
+<title>AvatarGroupPopover</title>
+<g id="a_node5"><a xlink:title="AvatarGroupPopover">
+<path fill="#ffffff" stroke="#8796a8" d="M582.7,-887.93C582.7,-887.93 452.3,-887.93 452.3,-887.93 447.34,-887.93 442.38,-882.97 442.38,-878.01 442.38,-878.01 442.38,-868.09 442.38,-868.09 442.38,-863.13 447.34,-858.17 452.3,-858.17 452.3,-858.17 582.7,-858.17 582.7,-858.17 587.66,-858.17 592.62,-863.13 592.62,-868.09 592.62,-868.09 592.62,-878.01 592.62,-878.01 592.62,-882.97 587.66,-887.93 582.7,-887.93"/>
+<text xml:space="preserve" text-anchor="middle" x="517.5" y="-868.85" font-family="Arial" font-size="14.00" fill="#172739">AvatarGroupPopover</text>
+</a>
+</g>
+</g>
+<!-- Badge -->
+<g id="node6" class="node">
+<title>Badge</title>
+<g id="a_node6"><a xlink:title="Badge">
+<path fill="#ffffff" stroke="#8796a8" d="M1897.05,-244.76C1897.05,-244.76 1857.68,-244.76 1857.68,-244.76 1852.72,-244.76 1847.76,-239.8 1847.76,-234.84 1847.76,-234.84 1847.76,-224.92 1847.76,-224.92 1847.76,-219.96 1852.72,-215 1857.68,-215 1857.68,-215 1897.05,-215 1897.05,-215 1902.01,-215 1906.97,-219.96 1906.97,-224.92 1906.97,-224.92 1906.97,-234.84 1906.97,-234.84 1906.97,-239.8 1902.01,-244.76 1897.05,-244.76"/>
+<text xml:space="preserve" text-anchor="middle" x="1877.36" y="-225.68" font-family="Arial" font-size="14.00" fill="#172739">Badge</text>
+</a>
+</g>
+</g>
+<!-- BreadcrumbButton -->
+<g id="node7" class="node">
+<title>BreadcrumbButton</title>
+<g id="a_node7"><a xlink:title="BreadcrumbButton">
+<path fill="#ffffff" stroke="#8796a8" d="M874.69,-1405.76C874.69,-1405.76 759.08,-1405.76 759.08,-1405.76 754.12,-1405.76 749.16,-1400.8 749.16,-1395.84 749.16,-1395.84 749.16,-1385.92 749.16,-1385.92 749.16,-1380.96 754.12,-1376 759.08,-1376 759.08,-1376 874.69,-1376 874.69,-1376 879.65,-1376 884.61,-1380.96 884.61,-1385.92 884.61,-1385.92 884.61,-1395.84 884.61,-1395.84 884.61,-1400.8 879.65,-1405.76 874.69,-1405.76"/>
+<text xml:space="preserve" text-anchor="middle" x="816.88" y="-1386.68" font-family="Arial" font-size="14.00" fill="#172739">BreadcrumbButton</text>
+</a>
+</g>
+</g>
+<!-- Button -->
+<g id="node8" class="node">
+<title>Button</title>
+<g id="a_node8"><a xlink:title="Button">
+<path fill="#ffffff" stroke="#8796a8" d="M896.48,-1585.34C896.48,-1585.34 857.12,-1585.34 857.12,-1585.34 852.16,-1585.34 847.2,-1580.38 847.2,-1575.42 847.2,-1575.42 847.2,-1565.5 847.2,-1565.5 847.2,-1560.54 852.16,-1555.58 857.12,-1555.58 857.12,-1555.58 896.48,-1555.58 896.48,-1555.58 901.44,-1555.58 906.4,-1560.54 906.4,-1565.5 906.4,-1565.5 906.4,-1575.42 906.4,-1575.42 906.4,-1580.38 901.44,-1585.34 896.48,-1585.34"/>
+<text xml:space="preserve" text-anchor="middle" x="876.8" y="-1566.26" font-family="Arial" font-size="14.00" fill="#172739">Button</text>
+</a>
+</g>
+</g>
+<!-- ButtonCSS -->
+<g id="node9" class="node">
+<title>ButtonCSS</title>
+<g id="a_node9"><a xlink:title="Button root and icon CSS">
+<path fill="#e6f4ec" stroke="#528476" d="M855.09,-1520.01C855.09,-1520.01 698.22,-1520.01 698.22,-1520.01 693.26,-1520.01 688.3,-1515.05 688.3,-1510.09 688.3,-1510.09 688.3,-1500.17 688.3,-1500.17 688.3,-1495.21 693.26,-1490.25 698.22,-1490.25 698.22,-1490.25 855.09,-1490.25 855.09,-1490.25 860.05,-1490.25 865.01,-1495.21 865.01,-1500.17 865.01,-1500.17 865.01,-1510.09 865.01,-1510.09 865.01,-1515.05 860.05,-1520.01 855.09,-1520.01"/>
+<text xml:space="preserve" text-anchor="middle" x="776.65" y="-1500.93" font-family="Arial" font-size="14.00" fill="#172739">Button root and icon CSS</text>
+</a>
+</g>
+</g>
+<!-- ButtonVariants -->
+<g id="node10" class="node">
+<title>ButtonVariants</title>
+<g id="a_node10"><a xlink:title="Button variant styling helper">
+<path fill="#e6f4ec" stroke="#528476" d="M671.49,-1649.16C671.49,-1649.16 546.81,-1649.16 546.81,-1649.16 540.81,-1649.16 534.81,-1643.16 534.81,-1637.16 534.81,-1637.16 534.81,-1614.6 534.81,-1614.6 534.81,-1608.6 540.81,-1602.6 546.81,-1602.6 546.81,-1602.6 671.49,-1602.6 671.49,-1602.6 677.49,-1602.6 683.49,-1608.6 683.49,-1614.6 683.49,-1614.6 683.49,-1637.16 683.49,-1637.16 683.49,-1643.16 677.49,-1649.16 671.49,-1649.16"/>
+<text xml:space="preserve" text-anchor="middle" x="609.15" y="-1630.08" font-family="Arial" font-size="14.00" fill="#172739">Button variant styling</text>
+<text xml:space="preserve" text-anchor="middle" x="609.15" y="-1613.28" font-family="Arial" font-size="14.00" fill="#172739">helper</text>
+</a>
+</g>
+</g>
+<!-- Calendar -->
+<g id="node11" class="node">
+<title>Calendar</title>
+<g id="a_node11"><a xlink:title="Calendar">
+<path fill="#ffffff" stroke="#8796a8" d="M1677.3,-1959.62C1677.3,-1959.62 1621.61,-1959.62 1621.61,-1959.62 1616.65,-1959.62 1611.69,-1954.66 1611.69,-1949.7 1611.69,-1949.7 1611.69,-1939.78 1611.69,-1939.78 1611.69,-1934.82 1616.65,-1929.86 1621.61,-1929.86 1621.61,-1929.86 1677.3,-1929.86 1677.3,-1929.86 1682.26,-1929.86 1687.22,-1934.82 1687.22,-1939.78 1687.22,-1939.78 1687.22,-1949.7 1687.22,-1949.7 1687.22,-1954.66 1682.26,-1959.62 1677.3,-1959.62"/>
+<text xml:space="preserve" text-anchor="middle" x="1649.46" y="-1940.54" font-family="Arial" font-size="14.00" fill="#172739">Calendar</text>
+</a>
+</g>
+</g>
+<!-- CalendarDay -->
+<g id="node12" class="node">
+<title>CalendarDay</title>
+<g id="a_node12"><a xlink:title="CalendarDay">
+<path fill="#ffffff" stroke="#8796a8" d="M1806.49,-1985.06C1806.49,-1985.06 1725.9,-1985.06 1725.9,-1985.06 1720.94,-1985.06 1715.98,-1980.1 1715.98,-1975.14 1715.98,-1975.14 1715.98,-1965.22 1715.98,-1965.22 1715.98,-1960.26 1720.94,-1955.3 1725.9,-1955.3 1725.9,-1955.3 1806.49,-1955.3 1806.49,-1955.3 1811.45,-1955.3 1816.41,-1960.26 1816.41,-1965.22 1816.41,-1965.22 1816.41,-1975.14 1816.41,-1975.14 1816.41,-1980.1 1811.45,-1985.06 1806.49,-1985.06"/>
+<text xml:space="preserve" text-anchor="middle" x="1766.19" y="-1965.98" font-family="Arial" font-size="14.00" fill="#172739">CalendarDay</text>
+</a>
+</g>
+</g>
+<!-- CalendarMonth -->
+<g id="node13" class="node">
+<title>CalendarMonth</title>
+<g id="a_node13"><a xlink:title="CalendarMonth">
+<path fill="#ffffff" stroke="#8796a8" d="M1662.42,-2073.85C1662.42,-2073.85 1567.82,-2073.85 1567.82,-2073.85 1562.86,-2073.85 1557.9,-2068.89 1557.9,-2063.93 1557.9,-2063.93 1557.9,-2054.01 1557.9,-2054.01 1557.9,-2049.05 1562.86,-2044.09 1567.82,-2044.09 1567.82,-2044.09 1662.42,-2044.09 1662.42,-2044.09 1667.38,-2044.09 1672.34,-2049.05 1672.34,-2054.01 1672.34,-2054.01 1672.34,-2063.93 1672.34,-2063.93 1672.34,-2068.89 1667.38,-2073.85 1662.42,-2073.85"/>
+<text xml:space="preserve" text-anchor="middle" x="1615.12" y="-2054.77" font-family="Arial" font-size="14.00" fill="#172739">CalendarMonth</text>
+</a>
+</g>
+</g>
+<!-- CalendarYear -->
+<g id="node14" class="node">
+<title>CalendarYear</title>
+<g id="a_node14"><a xlink:title="CalendarYear">
+<path fill="#ffffff" stroke="#8796a8" d="M1641.91,-2182.98C1641.91,-2182.98 1556.65,-2182.98 1556.65,-2182.98 1551.69,-2182.98 1546.73,-2178.02 1546.73,-2173.06 1546.73,-2173.06 1546.73,-2163.14 1546.73,-2163.14 1546.73,-2158.18 1551.69,-2153.22 1556.65,-2153.22 1556.65,-2153.22 1641.91,-2153.22 1641.91,-2153.22 1646.87,-2153.22 1651.83,-2158.18 1651.83,-2163.14 1651.83,-2163.14 1651.83,-2173.06 1651.83,-2173.06 1651.83,-2178.02 1646.87,-2182.98 1641.91,-2182.98"/>
+<text xml:space="preserve" text-anchor="middle" x="1599.28" y="-2163.9" font-family="Arial" font-size="14.00" fill="#172739">CalendarYear</text>
+</a>
+</g>
+</g>
+<!-- Checkbox -->
+<g id="node15" class="node">
+<title>Checkbox</title>
+<g id="a_node15"><a xlink:title="Checkbox">
+<path fill="#ffffff" stroke="#8796a8" d="M1103.7,-760.53C1103.7,-760.53 1042.56,-760.53 1042.56,-760.53 1037.6,-760.53 1032.64,-755.57 1032.64,-750.61 1032.64,-750.61 1032.64,-740.69 1032.64,-740.69 1032.64,-735.73 1037.6,-730.77 1042.56,-730.77 1042.56,-730.77 1103.7,-730.77 1103.7,-730.77 1108.66,-730.77 1113.62,-735.73 1113.62,-740.69 1113.62,-740.69 1113.62,-750.61 1113.62,-750.61 1113.62,-755.57 1108.66,-760.53 1103.7,-760.53"/>
+<text xml:space="preserve" text-anchor="middle" x="1073.13" y="-741.45" font-family="Arial" font-size="14.00" fill="#172739">Checkbox</text>
+</a>
+</g>
+</g>
+<!-- ColorArea -->
+<g id="node16" class="node">
+<title>ColorArea</title>
+<g id="a_node16"><a xlink:title="ColorArea">
+<path fill="#ffffff" stroke="#8796a8" d="M110.6,-400.25C110.6,-400.25 48.69,-400.25 48.69,-400.25 43.73,-400.25 38.77,-395.29 38.77,-390.33 38.77,-390.33 38.77,-380.41 38.77,-380.41 38.77,-375.45 43.73,-370.49 48.69,-370.49 48.69,-370.49 110.6,-370.49 110.6,-370.49 115.56,-370.49 120.52,-375.45 120.52,-380.41 120.52,-380.41 120.52,-390.33 120.52,-390.33 120.52,-395.29 115.56,-400.25 110.6,-400.25"/>
+<text xml:space="preserve" text-anchor="middle" x="79.65" y="-381.17" font-family="Arial" font-size="14.00" fill="#172739">ColorArea</text>
+</a>
+</g>
+</g>
+<!-- ColorSlider -->
+<g id="node17" class="node">
+<title>ColorSlider</title>
+<g id="a_node17"><a xlink:title="ColorSlider">
+<path fill="#ffffff" stroke="#8796a8" d="M169.1,-199.34C169.1,-199.34 100.98,-199.34 100.98,-199.34 96.02,-199.34 91.06,-194.38 91.06,-189.42 91.06,-189.42 91.06,-179.5 91.06,-179.5 91.06,-174.54 96.02,-169.58 100.98,-169.58 100.98,-169.58 169.1,-169.58 169.1,-169.58 174.06,-169.58 179.02,-174.54 179.02,-179.5 179.02,-179.5 179.02,-189.42 179.02,-189.42 179.02,-194.38 174.06,-199.34 169.1,-199.34"/>
+<text xml:space="preserve" text-anchor="middle" x="135.04" y="-180.26" font-family="Arial" font-size="14.00" fill="#172739">ColorSlider</text>
+</a>
+</g>
+</g>
+<!-- ColorThumb -->
+<g id="node18" class="node">
+<title>ColorThumb</title>
+<g id="a_node18"><a xlink:title="ColorThumb: geometry and border">
+<path fill="#e6f4ec" stroke="#528476" d="M177.13,-304.72C177.13,-304.72 12,-304.72 12,-304.72 6,-304.72 0,-298.72 0,-292.72 0,-292.72 0,-270.16 0,-270.16 0,-264.16 6,-258.16 12,-258.16 12,-258.16 177.13,-258.16 177.13,-258.16 183.13,-258.16 189.13,-264.16 189.13,-270.16 189.13,-270.16 189.13,-292.72 189.13,-292.72 189.13,-298.72 183.13,-304.72 177.13,-304.72"/>
+<text xml:space="preserve" text-anchor="middle" x="94.57" y="-285.64" font-family="Arial" font-size="14.00" fill="#172739">ColorThumb: geometry and</text>
+<text xml:space="preserve" text-anchor="middle" x="94.57" y="-268.84" font-family="Arial" font-size="14.00" fill="#172739">border</text>
+</a>
+</g>
+</g>
+<!-- Combobox -->
+<g id="node19" class="node">
+<title>Combobox</title>
+<g id="a_node19"><a xlink:title="Combobox">
+<path fill="#ffffff" stroke="#8796a8" d="M1504.56,-1615.66C1504.56,-1615.66 1437.98,-1615.66 1437.98,-1615.66 1433.02,-1615.66 1428.06,-1610.7 1428.06,-1605.74 1428.06,-1605.74 1428.06,-1595.82 1428.06,-1595.82 1428.06,-1590.86 1433.02,-1585.9 1437.98,-1585.9 1437.98,-1585.9 1504.56,-1585.9 1504.56,-1585.9 1509.52,-1585.9 1514.48,-1590.86 1514.48,-1595.82 1514.48,-1595.82 1514.48,-1605.74 1514.48,-1605.74 1514.48,-1610.7 1509.52,-1615.66 1504.56,-1615.66"/>
+<text xml:space="preserve" text-anchor="middle" x="1471.27" y="-1596.58" font-family="Arial" font-size="14.00" fill="#172739">Combobox</text>
+</a>
+</g>
+</g>
+<!-- CompoundButton -->
+<g id="node20" class="node">
+<title>CompoundButton</title>
+<g id="a_node20"><a xlink:title="CompoundButton">
+<path fill="#ffffff" stroke="#8796a8" d="M819.27,-1632.36C819.27,-1632.36 711.43,-1632.36 711.43,-1632.36 706.47,-1632.36 701.51,-1627.4 701.51,-1622.44 701.51,-1622.44 701.51,-1612.52 701.51,-1612.52 701.51,-1607.56 706.47,-1602.6 711.43,-1602.6 711.43,-1602.6 819.27,-1602.6 819.27,-1602.6 824.23,-1602.6 829.19,-1607.56 829.19,-1612.52 829.19,-1612.52 829.19,-1622.44 829.19,-1622.44 829.19,-1627.4 824.23,-1632.36 819.27,-1632.36"/>
+<text xml:space="preserve" text-anchor="middle" x="765.35" y="-1613.28" font-family="Arial" font-size="14.00" fill="#172739">CompoundButton</text>
+</a>
+</g>
+</g>
+<!-- CounterBadge -->
+<g id="node21" class="node">
+<title>CounterBadge</title>
+<g id="a_node21"><a xlink:title="CounterBadge">
+<path fill="#ffffff" stroke="#8796a8" d="M1819.09,-262.63C1819.09,-262.63 1729.92,-262.63 1729.92,-262.63 1724.96,-262.63 1720,-257.67 1720,-252.71 1720,-252.71 1720,-242.79 1720,-242.79 1720,-237.83 1724.96,-232.87 1729.92,-232.87 1729.92,-232.87 1819.09,-232.87 1819.09,-232.87 1824.05,-232.87 1829.01,-237.83 1829.01,-242.79 1829.01,-242.79 1829.01,-252.71 1829.01,-252.71 1829.01,-257.67 1824.05,-262.63 1819.09,-262.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1774.5" y="-243.55" font-family="Arial" font-size="14.00" fill="#172739">CounterBadge</text>
+</a>
+</g>
+</g>
+<!-- DatePicker -->
+<g id="node22" class="node">
+<title>DatePicker</title>
+<g id="a_node22"><a xlink:title="DatePicker">
+<path fill="#ffffff" stroke="#8796a8" d="M1649.7,-1844.68C1649.7,-1844.68 1582.35,-1844.68 1582.35,-1844.68 1577.39,-1844.68 1572.43,-1839.72 1572.43,-1834.76 1572.43,-1834.76 1572.43,-1824.84 1572.43,-1824.84 1572.43,-1819.88 1577.39,-1814.92 1582.35,-1814.92 1582.35,-1814.92 1649.7,-1814.92 1649.7,-1814.92 1654.66,-1814.92 1659.62,-1819.88 1659.62,-1824.84 1659.62,-1824.84 1659.62,-1834.76 1659.62,-1834.76 1659.62,-1839.72 1654.66,-1844.68 1649.7,-1844.68"/>
+<text xml:space="preserve" text-anchor="middle" x="1616.02" y="-1825.6" font-family="Arial" font-size="14.00" fill="#172739">DatePicker</text>
+</a>
+</g>
+</g>
+<!-- DialogTitle -->
+<g id="node23" class="node">
+<title>DialogTitle</title>
+<g id="a_node23"><a xlink:title="DialogTitle">
+<path fill="#ffffff" stroke="#8796a8" d="M1863.15,-975.76C1863.15,-975.76 1798.13,-975.76 1798.13,-975.76 1793.17,-975.76 1788.21,-970.8 1788.21,-965.84 1788.21,-965.84 1788.21,-955.92 1788.21,-955.92 1788.21,-950.96 1793.17,-946 1798.13,-946 1798.13,-946 1863.15,-946 1863.15,-946 1868.11,-946 1873.07,-950.96 1873.07,-955.92 1873.07,-955.92 1873.07,-965.84 1873.07,-965.84 1873.07,-970.8 1868.11,-975.76 1863.15,-975.76"/>
+<text xml:space="preserve" text-anchor="middle" x="1830.64" y="-956.68" font-family="Arial" font-size="14.00" fill="#172739">DialogTitle</text>
+</a>
+</g>
+</g>
+<!-- Divider -->
+<g id="node24" class="node">
+<title>Divider</title>
+<g id="a_node24"><a xlink:title="Divider">
+<path fill="#ffffff" stroke="#8796a8" d="M1814.13,-29.76C1814.13,-29.76 1771.68,-29.76 1771.68,-29.76 1766.72,-29.76 1761.76,-24.8 1761.76,-19.84 1761.76,-19.84 1761.76,-9.92 1761.76,-9.92 1761.76,-4.96 1766.72,0 1771.68,0 1771.68,0 1814.13,0 1814.13,0 1819.09,0 1824.05,-4.96 1824.05,-9.92 1824.05,-9.92 1824.05,-19.84 1824.05,-19.84 1824.05,-24.8 1819.09,-29.76 1814.13,-29.76"/>
+<text xml:space="preserve" text-anchor="middle" x="1792.91" y="-10.68" font-family="Arial" font-size="14.00" fill="#172739">Divider</text>
+</a>
+</g>
+</g>
+<!-- Drawer -->
+<g id="node25" class="node">
+<title>Drawer</title>
+<g id="a_node25"><a xlink:title="Drawer">
+<path fill="#ffffff" stroke="#8796a8" d="M1537.41,-336.95C1537.41,-336.95 1493.41,-336.95 1493.41,-336.95 1488.45,-336.95 1483.49,-331.99 1483.49,-327.03 1483.49,-327.03 1483.49,-317.11 1483.49,-317.11 1483.49,-312.15 1488.45,-307.19 1493.41,-307.19 1493.41,-307.19 1537.41,-307.19 1537.41,-307.19 1542.37,-307.19 1547.33,-312.15 1547.33,-317.11 1547.33,-317.11 1547.33,-327.03 1547.33,-327.03 1547.33,-331.99 1542.37,-336.95 1537.41,-336.95"/>
+<text xml:space="preserve" text-anchor="middle" x="1515.41" y="-317.87" font-family="Arial" font-size="14.00" fill="#172739">Drawer</text>
+</a>
+</g>
+</g>
+<!-- DrawerFrame -->
+<g id="node26" class="node">
+<title>DrawerFrame</title>
+<g id="a_node26"><a xlink:title="Drawer frame CSS">
+<path fill="#e6f4ec" stroke="#528476" d="M1416.27,-310.63C1416.27,-310.63 1299.92,-310.63 1299.92,-310.63 1294.96,-310.63 1290,-305.67 1290,-300.71 1290,-300.71 1290,-290.79 1290,-290.79 1290,-285.83 1294.96,-280.87 1299.92,-280.87 1299.92,-280.87 1416.27,-280.87 1416.27,-280.87 1421.23,-280.87 1426.19,-285.83 1426.19,-290.79 1426.19,-290.79 1426.19,-300.71 1426.19,-300.71 1426.19,-305.67 1421.23,-310.63 1416.27,-310.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1358.09" y="-291.55" font-family="Arial" font-size="14.00" fill="#172739">Drawer frame CSS</text>
+</a>
+</g>
+</g>
+<!-- DrawerHeaderFooter -->
+<g id="node27" class="node">
+<title>DrawerHeaderFooter</title>
+<g id="a_node27"><a xlink:title="DrawerHeader / DrawerFooter">
+<path fill="#ffffff" stroke="#8796a8" d="M668.66,-330.76C668.66,-330.76 481.49,-330.76 481.49,-330.76 476.53,-330.76 471.57,-325.8 471.57,-320.84 471.57,-320.84 471.57,-310.92 471.57,-310.92 471.57,-305.96 476.53,-301 481.49,-301 481.49,-301 668.66,-301 668.66,-301 673.62,-301 678.58,-305.96 678.58,-310.92 678.58,-310.92 678.58,-320.84 678.58,-320.84 678.58,-325.8 673.62,-330.76 668.66,-330.76"/>
+<text xml:space="preserve" text-anchor="middle" x="575.07" y="-311.68" font-family="Arial" font-size="14.00" fill="#172739">DrawerHeader / DrawerFooter</text>
+</a>
+</g>
+</g>
+<!-- DrawerHeaderTitle -->
+<g id="node28" class="node">
+<title>DrawerHeaderTitle</title>
+<g id="a_node28"><a xlink:title="DrawerHeaderTitle">
+<path fill="#ffffff" stroke="#8796a8" d="M1760.28,-993.63C1760.28,-993.63 1643.92,-993.63 1643.92,-993.63 1638.96,-993.63 1634,-988.67 1634,-983.71 1634,-983.71 1634,-973.79 1634,-973.79 1634,-968.83 1638.96,-963.87 1643.92,-963.87 1643.92,-963.87 1760.28,-963.87 1760.28,-963.87 1765.24,-963.87 1770.2,-968.83 1770.2,-973.79 1770.2,-973.79 1770.2,-983.71 1770.2,-983.71 1770.2,-988.67 1765.24,-993.63 1760.28,-993.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1702.1" y="-974.55" font-family="Arial" font-size="14.00" fill="#172739">DrawerHeaderTitle</text>
+</a>
+</g>
+</g>
+<!-- DrawerSeparators -->
+<g id="node29" class="node">
+<title>DrawerSeparators</title>
+<g id="a_node29"><a xlink:title="Drawer scroll separators">
+<path fill="#e6f4ec" stroke="#528476" d="M547.51,-378.52C547.51,-378.52 396.92,-378.52 396.92,-378.52 391.96,-378.52 387,-373.56 387,-368.6 387,-368.6 387,-358.68 387,-358.68 387,-353.72 391.96,-348.76 396.92,-348.76 396.92,-348.76 547.51,-348.76 547.51,-348.76 552.47,-348.76 557.43,-353.72 557.43,-358.68 557.43,-358.68 557.43,-368.6 557.43,-368.6 557.43,-373.56 552.47,-378.52 547.51,-378.52"/>
+<text xml:space="preserve" text-anchor="middle" x="472.21" y="-359.44" font-family="Arial" font-size="14.00" fill="#172739">Drawer scroll separators</text>
+</a>
+</g>
+</g>
+<!-- Dropdown -->
+<g id="node30" class="node">
+<title>Dropdown</title>
+<g id="a_node30"><a xlink:title="Dropdown">
+<path fill="#ffffff" stroke="#8796a8" d="M1478.69,-1663.42C1478.69,-1663.42 1415.99,-1663.42 1415.99,-1663.42 1411.03,-1663.42 1406.07,-1658.46 1406.07,-1653.5 1406.07,-1653.5 1406.07,-1643.58 1406.07,-1643.58 1406.07,-1638.62 1411.03,-1633.66 1415.99,-1633.66 1415.99,-1633.66 1478.69,-1633.66 1478.69,-1633.66 1483.65,-1633.66 1488.61,-1638.62 1488.61,-1643.58 1488.61,-1643.58 1488.61,-1653.5 1488.61,-1653.5 1488.61,-1658.46 1483.65,-1663.42 1478.69,-1663.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1447.34" y="-1644.34" font-family="Arial" font-size="14.00" fill="#172739">Dropdown</text>
+</a>
+</g>
+</g>
+<!-- Field -->
+<g id="node31" class="node">
+<title>Field</title>
+<g id="a_node31"><a xlink:title="Field">
+<path fill="#ffffff" stroke="#8796a8" d="M1004.17,-588.76C1004.17,-588.76 970.01,-588.76 970.01,-588.76 965.05,-588.76 960.09,-583.8 960.09,-578.84 960.09,-578.84 960.09,-568.92 960.09,-568.92 960.09,-563.96 965.05,-559 970.01,-559 970.01,-559 1004.17,-559 1004.17,-559 1009.13,-559 1014.09,-563.96 1014.09,-568.92 1014.09,-568.92 1014.09,-578.84 1014.09,-578.84 1014.09,-583.8 1009.13,-588.76 1004.17,-588.76"/>
+<text xml:space="preserve" text-anchor="middle" x="987.09" y="-569.68" font-family="Arial" font-size="14.00" fill="#172739">Field</text>
+</a>
+</g>
+</g>
+<!-- FieldFocus -->
+<g id="node32" class="node">
+<title>FieldFocus</title>
+<g id="a_node32"><a xlink:title="FieldFocus: shared bottom line">
+<path fill="#e6f4ec" stroke="#528476" d="M1605.98,-1728.9C1605.98,-1728.9 1445.52,-1728.9 1445.52,-1728.9 1439.52,-1728.9 1433.52,-1722.9 1433.52,-1716.9 1433.52,-1716.9 1433.52,-1694.34 1433.52,-1694.34 1433.52,-1688.34 1439.52,-1682.34 1445.52,-1682.34 1445.52,-1682.34 1605.98,-1682.34 1605.98,-1682.34 1611.98,-1682.34 1617.98,-1688.34 1617.98,-1694.34 1617.98,-1694.34 1617.98,-1716.9 1617.98,-1716.9 1617.98,-1722.9 1611.98,-1728.9 1605.98,-1728.9"/>
+<text xml:space="preserve" text-anchor="middle" x="1525.75" y="-1709.82" font-family="Arial" font-size="14.00" fill="#172739">FieldFocus: shared bottom</text>
+<text xml:space="preserve" text-anchor="middle" x="1525.75" y="-1693.02" font-family="Arial" font-size="14.00" fill="#172739">line</text>
+</a>
+</g>
+</g>
+<!-- FluentProvider -->
+<g id="node33" class="node">
+<title>FluentProvider</title>
+<g id="a_node33"><a xlink:title="FluentProvider">
+<path fill="#ffffff" stroke="#8796a8" d="M1761.17,-690.27C1761.17,-690.27 1671.24,-690.27 1671.24,-690.27 1666.28,-690.27 1661.32,-685.31 1661.32,-680.35 1661.32,-680.35 1661.32,-670.43 1661.32,-670.43 1661.32,-665.47 1666.28,-660.51 1671.24,-660.51 1671.24,-660.51 1761.17,-660.51 1761.17,-660.51 1766.13,-660.51 1771.09,-665.47 1771.09,-670.43 1771.09,-670.43 1771.09,-680.35 1771.09,-680.35 1771.09,-685.31 1766.13,-690.27 1761.17,-690.27"/>
+<text xml:space="preserve" text-anchor="middle" x="1716.21" y="-671.19" font-family="Arial" font-size="14.00" fill="#172739">FluentProvider</text>
+</a>
+</g>
+</g>
+<!-- FocusRing -->
+<g id="node34" class="node">
+<title>FocusRing</title>
+<g id="a_node34"><a xlink:title="FocusRing: positioned keyboard ring">
+<path fill="#e6f4ec" stroke="#528476" d="M1213.2,-850.26C1213.2,-850.26 1079.96,-850.26 1079.96,-850.26 1073.96,-850.26 1067.96,-844.26 1067.96,-838.26 1067.96,-838.26 1067.96,-815.7 1067.96,-815.7 1067.96,-809.7 1073.96,-803.7 1079.96,-803.7 1079.96,-803.7 1213.2,-803.7 1213.2,-803.7 1219.2,-803.7 1225.2,-809.7 1225.2,-815.7 1225.2,-815.7 1225.2,-838.26 1225.2,-838.26 1225.2,-844.26 1219.2,-850.26 1213.2,-850.26"/>
+<text xml:space="preserve" text-anchor="middle" x="1146.58" y="-831.18" font-family="Arial" font-size="14.00" fill="#172739">FocusRing: positioned</text>
+<text xml:space="preserve" text-anchor="middle" x="1146.58" y="-814.38" font-family="Arial" font-size="14.00" fill="#172739">keyboard ring</text>
+</a>
+</g>
+</g>
+<!-- HeadlessProvider -->
+<g id="node35" class="node">
+<title>HeadlessProvider</title>
+<g id="a_node35"><a xlink:title="Headless Provider">
+<path fill="#ffffff" stroke="#8796a8" d="M1763.36,-794.69C1763.36,-794.69 1650.09,-794.69 1650.09,-794.69 1645.13,-794.69 1640.17,-789.73 1640.17,-784.77 1640.17,-784.77 1640.17,-774.85 1640.17,-774.85 1640.17,-769.89 1645.13,-764.93 1650.09,-764.93 1650.09,-764.93 1763.36,-764.93 1763.36,-764.93 1768.32,-764.93 1773.28,-769.89 1773.28,-774.85 1773.28,-774.85 1773.28,-784.77 1773.28,-784.77 1773.28,-789.73 1768.32,-794.69 1763.36,-794.69"/>
+<text xml:space="preserve" text-anchor="middle" x="1706.73" y="-775.61" font-family="Arial" font-size="14.00" fill="#172739">Headless Provider</text>
+</a>
+</g>
+</g>
+<!-- IconCSS -->
+<g id="node36" class="node">
+<title>IconCSS</title>
+<g id="a_node36"><a xlink:title="Icon stylesheet">
+<path fill="#e6f4ec" stroke="#528476" d="M1736.19,-588.76C1736.19,-588.76 1643.92,-588.76 1643.92,-588.76 1638.96,-588.76 1634,-583.8 1634,-578.84 1634,-578.84 1634,-568.92 1634,-568.92 1634,-563.96 1638.96,-559 1643.92,-559 1643.92,-559 1736.19,-559 1736.19,-559 1741.15,-559 1746.11,-563.96 1746.11,-568.92 1746.11,-568.92 1746.11,-578.84 1746.11,-578.84 1746.11,-583.8 1741.15,-588.76 1736.19,-588.76"/>
+<text xml:space="preserve" text-anchor="middle" x="1690.05" y="-569.68" font-family="Arial" font-size="14.00" fill="#172739">Icon stylesheet</text>
+</a>
+</g>
+</g>
+<!-- InfoButton -->
+<g id="node37" class="node">
+<title>InfoButton</title>
+<g id="a_node37"><a xlink:title="InfoButton">
+<path fill="#ffffff" stroke="#8796a8" d="M710.48,-649.15C710.48,-649.15 647.78,-649.15 647.78,-649.15 642.82,-649.15 637.86,-644.19 637.86,-639.23 637.86,-639.23 637.86,-629.31 637.86,-629.31 637.86,-624.35 642.82,-619.39 647.78,-619.39 647.78,-619.39 710.48,-619.39 710.48,-619.39 715.44,-619.39 720.4,-624.35 720.4,-629.31 720.4,-629.31 720.4,-639.23 720.4,-639.23 720.4,-644.19 715.44,-649.15 710.48,-649.15"/>
+<text xml:space="preserve" text-anchor="middle" x="679.13" y="-630.07" font-family="Arial" font-size="14.00" fill="#172739">InfoButton</text>
+</a>
+</g>
+</g>
+<!-- InfoButtonBase -->
+<g id="node38" class="node">
+<title>InfoButtonBase</title>
+<g id="a_node38"><a xlink:title="InfoButtonBase (internal)">
+<path fill="#ffffff" stroke="#8796a8" d="M786.51,-765.82C786.51,-765.82 632.76,-765.82 632.76,-765.82 627.8,-765.82 622.84,-760.86 622.84,-755.9 622.84,-755.9 622.84,-745.98 622.84,-745.98 622.84,-741.02 627.8,-736.06 632.76,-736.06 632.76,-736.06 786.51,-736.06 786.51,-736.06 791.47,-736.06 796.43,-741.02 796.43,-745.98 796.43,-745.98 796.43,-755.9 796.43,-755.9 796.43,-760.86 791.47,-765.82 786.51,-765.82"/>
+<text xml:space="preserve" text-anchor="middle" x="709.63" y="-746.74" font-family="Arial" font-size="14.00" fill="#172739">InfoButtonBase (internal)</text>
+</a>
+</g>
+</g>
+<!-- InfoLabel -->
+<g id="node39" class="node">
+<title>InfoLabel</title>
+<g id="a_node39"><a xlink:title="InfoLabel">
+<path fill="#ffffff" stroke="#8796a8" d="M880.84,-761.5C880.84,-761.5 824.36,-761.5 824.36,-761.5 819.4,-761.5 814.44,-756.54 814.44,-751.58 814.44,-751.58 814.44,-741.66 814.44,-741.66 814.44,-736.7 819.4,-731.74 824.36,-731.74 824.36,-731.74 880.84,-731.74 880.84,-731.74 885.8,-731.74 890.76,-736.7 890.76,-741.66 890.76,-741.66 890.76,-751.58 890.76,-751.58 890.76,-756.54 885.8,-761.5 880.84,-761.5"/>
+<text xml:space="preserve" text-anchor="middle" x="852.6" y="-742.42" font-family="Arial" font-size="14.00" fill="#172739">InfoLabel</text>
+</a>
+</g>
+</g>
+<!-- InlineDrawer -->
+<g id="node40" class="node">
+<title>InlineDrawer</title>
+<g id="a_node40"><a xlink:title="InlineDrawer">
+<path fill="#ffffff" stroke="#8796a8" d="M1488.71,-244.76C1488.71,-244.76 1411.24,-244.76 1411.24,-244.76 1406.28,-244.76 1401.32,-239.8 1401.32,-234.84 1401.32,-234.84 1401.32,-224.92 1401.32,-224.92 1401.32,-219.96 1406.28,-215 1411.24,-215 1411.24,-215 1488.71,-215 1488.71,-215 1493.67,-215 1498.63,-219.96 1498.63,-224.92 1498.63,-224.92 1498.63,-234.84 1498.63,-234.84 1498.63,-239.8 1493.67,-244.76 1488.71,-244.76"/>
+<text xml:space="preserve" text-anchor="middle" x="1449.97" y="-225.68" font-family="Arial" font-size="14.00" fill="#172739">InlineDrawer</text>
+</a>
+</g>
+</g>
+<!-- Input -->
+<g id="node41" class="node">
+<title>Input</title>
+<g id="a_node41"><a xlink:title="Input">
+<path fill="#ffffff" stroke="#8796a8" d="M1680.07,-1705.23C1680.07,-1705.23 1645.91,-1705.23 1645.91,-1705.23 1640.95,-1705.23 1635.99,-1700.27 1635.99,-1695.31 1635.99,-1695.31 1635.99,-1685.39 1635.99,-1685.39 1635.99,-1680.43 1640.95,-1675.47 1645.91,-1675.47 1645.91,-1675.47 1680.07,-1675.47 1680.07,-1675.47 1685.03,-1675.47 1689.99,-1680.43 1689.99,-1685.39 1689.99,-1685.39 1689.99,-1695.31 1689.99,-1695.31 1689.99,-1700.27 1685.03,-1705.23 1680.07,-1705.23"/>
+<text xml:space="preserve" text-anchor="middle" x="1662.99" y="-1686.15" font-family="Arial" font-size="14.00" fill="#172739">Input</text>
+</a>
+</g>
+</g>
+<!-- InteractionTagPrimary -->
+<g id="node42" class="node">
+<title>InteractionTagPrimary</title>
+<g id="a_node42"><a xlink:title="InteractionTagPrimary">
+<path fill="#ffffff" stroke="#8796a8" d="M321.84,-1816.33C321.84,-1816.33 185.24,-1816.33 185.24,-1816.33 180.28,-1816.33 175.32,-1811.37 175.32,-1806.41 175.32,-1806.41 175.32,-1796.49 175.32,-1796.49 175.32,-1791.53 180.28,-1786.57 185.24,-1786.57 185.24,-1786.57 321.84,-1786.57 321.84,-1786.57 326.8,-1786.57 331.76,-1791.53 331.76,-1796.49 331.76,-1796.49 331.76,-1806.41 331.76,-1806.41 331.76,-1811.37 326.8,-1816.33 321.84,-1816.33"/>
+<text xml:space="preserve" text-anchor="middle" x="253.54" y="-1797.25" font-family="Arial" font-size="14.00" fill="#172739">InteractionTagPrimary</text>
+</a>
+</g>
+</g>
+<!-- InteractionTagSecondary -->
+<g id="node43" class="node">
+<title>InteractionTagSecondary</title>
+<g id="a_node43"><a xlink:title="InteractionTagSecondary">
+<path fill="#ffffff" stroke="#8796a8" d="M208.23,-1982.71C208.23,-1982.71 52.92,-1982.71 52.92,-1982.71 47.96,-1982.71 43,-1977.75 43,-1972.79 43,-1972.79 43,-1962.87 43,-1962.87 43,-1957.91 47.96,-1952.95 52.92,-1952.95 52.92,-1952.95 208.23,-1952.95 208.23,-1952.95 213.19,-1952.95 218.15,-1957.91 218.15,-1962.87 218.15,-1962.87 218.15,-1972.79 218.15,-1972.79 218.15,-1977.75 213.19,-1982.71 208.23,-1982.71"/>
+<text xml:space="preserve" text-anchor="middle" x="130.57" y="-1963.63" font-family="Arial" font-size="14.00" fill="#172739">InteractionTagSecondary</text>
+</a>
+</g>
+</g>
+<!-- Label -->
+<g id="node44" class="node">
+<title>Label</title>
+<g id="a_node44"><a xlink:title="Label">
+<path fill="#ffffff" stroke="#8796a8" d="M978.49,-718.56C978.49,-718.56 944.33,-718.56 944.33,-718.56 939.37,-718.56 934.41,-713.6 934.41,-708.64 934.41,-708.64 934.41,-698.72 934.41,-698.72 934.41,-693.76 939.37,-688.8 944.33,-688.8 944.33,-688.8 978.49,-688.8 978.49,-688.8 983.45,-688.8 988.41,-693.76 988.41,-698.72 988.41,-698.72 988.41,-708.64 988.41,-708.64 988.41,-713.6 983.45,-718.56 978.49,-718.56"/>
+<text xml:space="preserve" text-anchor="middle" x="961.41" y="-699.48" font-family="Arial" font-size="14.00" fill="#172739">Label</text>
+</a>
+</g>
+</g>
+<!-- Listbox -->
+<g id="node45" class="node">
+<title>Listbox</title>
+<g id="a_node45"><a xlink:title="Listbox (shared styled slot)">
+<path fill="#ffffff" stroke="#8796a8" d="M1540.96,-1520.14C1540.96,-1520.14 1410.06,-1520.14 1410.06,-1520.14 1404.06,-1520.14 1398.06,-1514.14 1398.06,-1508.14 1398.06,-1508.14 1398.06,-1485.58 1398.06,-1485.58 1398.06,-1479.58 1404.06,-1473.58 1410.06,-1473.58 1410.06,-1473.58 1540.96,-1473.58 1540.96,-1473.58 1546.96,-1473.58 1552.96,-1479.58 1552.96,-1485.58 1552.96,-1485.58 1552.96,-1508.14 1552.96,-1508.14 1552.96,-1514.14 1546.96,-1520.14 1540.96,-1520.14"/>
+<text xml:space="preserve" text-anchor="middle" x="1475.51" y="-1501.06" font-family="Arial" font-size="14.00" fill="#172739">Listbox (shared styled</text>
+<text xml:space="preserve" text-anchor="middle" x="1475.51" y="-1484.26" font-family="Arial" font-size="14.00" fill="#172739">slot)</text>
+</a>
+</g>
+</g>
+<!-- MenuButton -->
+<g id="node46" class="node">
+<title>MenuButton</title>
+<g id="a_node46"><a xlink:title="MenuButton">
+<path fill="#ffffff" stroke="#8796a8" d="M762.26,-1584.6C762.26,-1584.6 687.88,-1584.6 687.88,-1584.6 682.92,-1584.6 677.96,-1579.64 677.96,-1574.68 677.96,-1574.68 677.96,-1564.76 677.96,-1564.76 677.96,-1559.8 682.92,-1554.84 687.88,-1554.84 687.88,-1554.84 762.26,-1554.84 762.26,-1554.84 767.22,-1554.84 772.18,-1559.8 772.18,-1564.76 772.18,-1564.76 772.18,-1574.68 772.18,-1574.68 772.18,-1579.64 767.22,-1584.6 762.26,-1584.6"/>
+<text xml:space="preserve" text-anchor="middle" x="725.07" y="-1565.52" font-family="Arial" font-size="14.00" fill="#172739">MenuButton</text>
+</a>
+</g>
+</g>
+<!-- MenuItem -->
+<g id="node47" class="node">
+<title>MenuItem</title>
+<g id="a_node47"><a xlink:title="MenuItem">
+<path fill="#ffffff" stroke="#8796a8" d="M1113.57,-239.25C1113.57,-239.25 1052.44,-239.25 1052.44,-239.25 1047.48,-239.25 1042.52,-234.29 1042.52,-229.33 1042.52,-229.33 1042.52,-219.41 1042.52,-219.41 1042.52,-214.45 1047.48,-209.49 1052.44,-209.49 1052.44,-209.49 1113.57,-209.49 1113.57,-209.49 1118.53,-209.49 1123.49,-214.45 1123.49,-219.41 1123.49,-219.41 1123.49,-229.33 1123.49,-229.33 1123.49,-234.29 1118.53,-239.25 1113.57,-239.25"/>
+<text xml:space="preserve" text-anchor="middle" x="1083" y="-220.17" font-family="Arial" font-size="14.00" fill="#172739">MenuItem</text>
+</a>
+</g>
+</g>
+<!-- MenuItemSwitch -->
+<g id="node48" class="node">
+<title>MenuItemSwitch</title>
+<g id="a_node48"><a xlink:title="MenuItemSwitch">
+<path fill="#ffffff" stroke="#8796a8" d="M1015.29,-398.16C1015.29,-398.16 912.93,-398.16 912.93,-398.16 907.97,-398.16 903.01,-393.2 903.01,-388.24 903.01,-388.24 903.01,-378.32 903.01,-378.32 903.01,-373.36 907.97,-368.4 912.93,-368.4 912.93,-368.4 1015.29,-368.4 1015.29,-368.4 1020.25,-368.4 1025.21,-373.36 1025.21,-378.32 1025.21,-378.32 1025.21,-388.24 1025.21,-388.24 1025.21,-393.2 1020.25,-398.16 1015.29,-398.16"/>
+<text xml:space="preserve" text-anchor="middle" x="964.11" y="-379.08" font-family="Arial" font-size="14.00" fill="#172739">MenuItemSwitch</text>
+</a>
+</g>
+</g>
+<!-- MenuItemVariants -->
+<g id="node49" class="node">
+<title>MenuItemVariants</title>
+<g id="a_node49"><a xlink:title="MenuItemCheckbox / MenuItemRadio / MenuItemLink">
+<path fill="#ffffff" stroke="#8796a8" d="M956,-235.36C956,-235.36 829,-235.36 829,-235.36 823,-235.36 817,-229.36 817,-223.36 817,-223.36 817,-184 817,-184 817,-178 823,-172 829,-172 829,-172 956,-172 956,-172 962,-172 968,-178 968,-184 968,-184 968,-223.36 968,-223.36 968,-229.36 962,-235.36 956,-235.36"/>
+<text xml:space="preserve" text-anchor="middle" x="892.5" y="-216.28" font-family="Arial" font-size="14.00" fill="#172739">MenuItemCheckbox /</text>
+<text xml:space="preserve" text-anchor="middle" x="892.5" y="-199.48" font-family="Arial" font-size="14.00" fill="#172739">MenuItemRadio /</text>
+<text xml:space="preserve" text-anchor="middle" x="892.5" y="-182.68" font-family="Arial" font-size="14.00" fill="#172739">MenuItemLink</text>
+</a>
+</g>
+</g>
+<!-- MenuItemVisual -->
+<g id="node50" class="node">
+<title>MenuItemVisual</title>
+<g id="a_node50"><a xlink:title="Shared MenuItem row and slot styling">
+<path fill="#e6f4ec" stroke="#528476" d="M1059.39,-303.81C1059.39,-303.81 899.69,-303.81 899.69,-303.81 893.69,-303.81 887.69,-297.81 887.69,-291.81 887.69,-291.81 887.69,-269.25 887.69,-269.25 887.69,-263.25 893.69,-257.25 899.69,-257.25 899.69,-257.25 1059.39,-257.25 1059.39,-257.25 1065.39,-257.25 1071.39,-263.25 1071.39,-269.25 1071.39,-269.25 1071.39,-291.81 1071.39,-291.81 1071.39,-297.81 1065.39,-303.81 1059.39,-303.81"/>
+<text xml:space="preserve" text-anchor="middle" x="979.54" y="-284.73" font-family="Arial" font-size="14.00" fill="#172739">Shared MenuItem row and</text>
+<text xml:space="preserve" text-anchor="middle" x="979.54" y="-267.93" font-family="Arial" font-size="14.00" fill="#172739">slot styling</text>
+</a>
+</g>
+</g>
+<!-- Option -->
+<g id="node51" class="node">
+<title>Option</title>
+<g id="a_node51"><a xlink:title="Option">
+<path fill="#ffffff" stroke="#8796a8" d="M1481.05,-29.76C1481.05,-29.76 1440.92,-29.76 1440.92,-29.76 1435.96,-29.76 1431,-24.8 1431,-19.84 1431,-19.84 1431,-9.92 1431,-9.92 1431,-4.96 1435.96,0 1440.92,0 1440.92,0 1481.05,0 1481.05,0 1486.01,0 1490.97,-4.96 1490.97,-9.92 1490.97,-9.92 1490.97,-19.84 1490.97,-19.84 1490.97,-24.8 1486.01,-29.76 1481.05,-29.76"/>
+<text xml:space="preserve" text-anchor="middle" x="1460.98" y="-10.68" font-family="Arial" font-size="14.00" fill="#172739">Option</text>
+</a>
+</g>
+</g>
+<!-- OptionGroup -->
+<g id="node52" class="node">
+<title>OptionGroup</title>
+<g id="a_node52"><a xlink:title="OptionGroup">
+<path fill="#ffffff" stroke="#8796a8" d="M309.33,-1448.76C309.33,-1448.76 230.29,-1448.76 230.29,-1448.76 225.33,-1448.76 220.37,-1443.8 220.37,-1438.84 220.37,-1438.84 220.37,-1428.92 220.37,-1428.92 220.37,-1423.96 225.33,-1419 230.29,-1419 230.29,-1419 309.33,-1419 309.33,-1419 314.29,-1419 319.25,-1423.96 319.25,-1428.92 319.25,-1428.92 319.25,-1438.84 319.25,-1438.84 319.25,-1443.8 314.29,-1448.76 309.33,-1448.76"/>
+<text xml:space="preserve" text-anchor="middle" x="269.81" y="-1429.68" font-family="Arial" font-size="14.00" fill="#172739">OptionGroup</text>
+</a>
+</g>
+</g>
+<!-- OverlayDrawer -->
+<g id="node53" class="node">
+<title>OverlayDrawer</title>
+<g id="a_node53"><a xlink:title="OverlayDrawer">
+<path fill="#ffffff" stroke="#8796a8" d="M1469.64,-402.81C1469.64,-402.81 1377.41,-402.81 1377.41,-402.81 1372.45,-402.81 1367.49,-397.85 1367.49,-392.89 1367.49,-392.89 1367.49,-382.97 1367.49,-382.97 1367.49,-378.01 1372.45,-373.05 1377.41,-373.05 1377.41,-373.05 1469.64,-373.05 1469.64,-373.05 1474.6,-373.05 1479.56,-378.01 1479.56,-382.97 1479.56,-382.97 1479.56,-392.89 1479.56,-392.89 1479.56,-397.85 1474.6,-402.81 1469.64,-402.81"/>
+<text xml:space="preserve" text-anchor="middle" x="1423.53" y="-383.73" font-family="Arial" font-size="14.00" fill="#172739">OverlayDrawer</text>
+</a>
+</g>
+</g>
+<!-- Persona -->
+<g id="node54" class="node">
+<title>Persona</title>
+<g id="a_node54"><a xlink:title="Persona">
+<path fill="#ffffff" stroke="#8796a8" d="M270.29,-1223.52C270.29,-1223.52 219.27,-1223.52 219.27,-1223.52 214.31,-1223.52 209.35,-1218.56 209.35,-1213.6 209.35,-1213.6 209.35,-1203.68 209.35,-1203.68 209.35,-1198.72 214.31,-1193.76 219.27,-1193.76 219.27,-1193.76 270.29,-1193.76 270.29,-1193.76 275.25,-1193.76 280.21,-1198.72 280.21,-1203.68 280.21,-1203.68 280.21,-1213.6 280.21,-1213.6 280.21,-1218.56 275.25,-1223.52 270.29,-1223.52"/>
+<text xml:space="preserve" text-anchor="middle" x="244.78" y="-1204.44" font-family="Arial" font-size="14.00" fill="#172739">Persona</text>
+</a>
+</g>
+</g>
+<!-- PickerFrame -->
+<g id="node55" class="node">
+<title>PickerFrame</title>
+<g id="a_node55"><a xlink:title="PickerFrame">
+<path fill="#e6f4ec" stroke="#528476" d="M1378.14,-1673.3C1378.14,-1673.3 1299.92,-1673.3 1299.92,-1673.3 1294.96,-1673.3 1290,-1668.34 1290,-1663.38 1290,-1663.38 1290,-1653.46 1290,-1653.46 1290,-1648.5 1294.96,-1643.54 1299.92,-1643.54 1299.92,-1643.54 1378.14,-1643.54 1378.14,-1643.54 1383.1,-1643.54 1388.06,-1648.5 1388.06,-1653.46 1388.06,-1653.46 1388.06,-1663.38 1388.06,-1663.38 1388.06,-1668.34 1383.1,-1673.3 1378.14,-1673.3"/>
+<text xml:space="preserve" text-anchor="middle" x="1339.03" y="-1654.22" font-family="Arial" font-size="14.00" fill="#172739">PickerFrame</text>
+</a>
+</g>
+</g>
+<!-- PickerValidation -->
+<g id="node56" class="node">
+<title>PickerValidation</title>
+<g id="a_node56"><a xlink:title="PickerValidation">
+<path fill="#e6f4ec" stroke="#528476" d="M1411.48,-1567.9C1411.48,-1567.9 1312.21,-1567.9 1312.21,-1567.9 1307.25,-1567.9 1302.29,-1562.94 1302.29,-1557.98 1302.29,-1557.98 1302.29,-1548.06 1302.29,-1548.06 1302.29,-1543.1 1307.25,-1538.14 1312.21,-1538.14 1312.21,-1538.14 1411.48,-1538.14 1411.48,-1538.14 1416.44,-1538.14 1421.4,-1543.1 1421.4,-1548.06 1421.4,-1548.06 1421.4,-1557.98 1421.4,-1557.98 1421.4,-1562.94 1416.44,-1567.9 1411.48,-1567.9"/>
+<text xml:space="preserve" text-anchor="middle" x="1361.84" y="-1548.82" font-family="Arial" font-size="14.00" fill="#172739">PickerValidation</text>
+</a>
+</g>
+</g>
+<!-- PopoverSurface -->
+<g id="node57" class="node">
+<title>PopoverSurface</title>
+<g id="a_node57"><a xlink:title="PopoverSurface">
+<path fill="#ffffff" stroke="#8796a8" d="M670.4,-840.13C670.4,-840.13 571.13,-840.13 571.13,-840.13 566.17,-840.13 561.21,-835.17 561.21,-830.21 561.21,-830.21 561.21,-820.29 561.21,-820.29 561.21,-815.33 566.17,-810.37 571.13,-810.37 571.13,-810.37 670.4,-810.37 670.4,-810.37 675.36,-810.37 680.32,-815.33 680.32,-820.29 680.32,-820.29 680.32,-830.21 680.32,-830.21 680.32,-835.17 675.36,-840.13 670.4,-840.13"/>
+<text xml:space="preserve" text-anchor="middle" x="620.77" y="-821.05" font-family="Arial" font-size="14.00" fill="#172739">PopoverSurface</text>
+</a>
+</g>
+</g>
+<!-- PresenceBadge -->
+<g id="node58" class="node">
+<title>PresenceBadge</title>
+<g id="a_node58"><a xlink:title="PresenceBadge (separate visuals)">
+<path fill="#ffffff" stroke="#8796a8" d="M255.38,-1171.19C255.38,-1171.19 98,-1171.19 98,-1171.19 92,-1171.19 86,-1165.19 86,-1159.19 86,-1159.19 86,-1136.63 86,-1136.63 86,-1130.63 92,-1124.63 98,-1124.63 98,-1124.63 255.38,-1124.63 255.38,-1124.63 261.38,-1124.63 267.38,-1130.63 267.38,-1136.63 267.38,-1136.63 267.38,-1159.19 267.38,-1159.19 267.38,-1165.19 261.38,-1171.19 255.38,-1171.19"/>
+<text xml:space="preserve" text-anchor="middle" x="176.69" y="-1152.11" font-family="Arial" font-size="14.00" fill="#172739">PresenceBadge (separate</text>
+<text xml:space="preserve" text-anchor="middle" x="176.69" y="-1135.31" font-family="Arial" font-size="14.00" fill="#172739">visuals)</text>
+</a>
+</g>
+</g>
+<!-- Radio -->
+<g id="node59" class="node">
+<title>Radio</title>
+<g id="a_node59"><a xlink:title="Radio">
+<path fill="#ffffff" stroke="#8796a8" d="M1040.03,-827.29C1040.03,-827.29 1004.57,-827.29 1004.57,-827.29 999.61,-827.29 994.65,-822.33 994.65,-817.37 994.65,-817.37 994.65,-807.45 994.65,-807.45 994.65,-802.49 999.61,-797.53 1004.57,-797.53 1004.57,-797.53 1040.03,-797.53 1040.03,-797.53 1044.99,-797.53 1049.95,-802.49 1049.95,-807.45 1049.95,-807.45 1049.95,-817.37 1049.95,-817.37 1049.95,-822.33 1044.99,-827.29 1040.03,-827.29"/>
+<text xml:space="preserve" text-anchor="middle" x="1022.3" y="-808.21" font-family="Arial" font-size="14.00" fill="#172739">Radio</text>
+</a>
+</g>
+</g>
+<!-- Rating -->
+<g id="node60" class="node">
+<title>Rating</title>
+<g id="a_node60"><a xlink:title="Rating">
+<path fill="#ffffff" stroke="#8796a8" d="M1336.38,-975.21C1336.38,-975.21 1297.03,-975.21 1297.03,-975.21 1292.07,-975.21 1287.11,-970.25 1287.11,-965.29 1287.11,-965.29 1287.11,-955.37 1287.11,-955.37 1287.11,-950.41 1292.07,-945.45 1297.03,-945.45 1297.03,-945.45 1336.38,-945.45 1336.38,-945.45 1341.34,-945.45 1346.3,-950.41 1346.3,-955.37 1346.3,-955.37 1346.3,-965.29 1346.3,-965.29 1346.3,-970.25 1341.34,-975.21 1336.38,-975.21"/>
+<text xml:space="preserve" text-anchor="middle" x="1316.7" y="-956.13" font-family="Arial" font-size="14.00" fill="#172739">Rating</text>
+</a>
+</g>
+</g>
+<!-- RatingDisplay -->
+<g id="node61" class="node">
+<title>RatingDisplay</title>
+<g id="a_node61"><a xlink:title="RatingDisplay (read&#45;only)">
+<path fill="#ffffff" stroke="#8796a8" d="M1455.2,-883.66C1455.2,-883.66 1298.37,-883.66 1298.37,-883.66 1293.41,-883.66 1288.45,-878.7 1288.45,-873.74 1288.45,-873.74 1288.45,-863.82 1288.45,-863.82 1288.45,-858.86 1293.41,-853.9 1298.37,-853.9 1298.37,-853.9 1455.2,-853.9 1455.2,-853.9 1460.16,-853.9 1465.12,-858.86 1465.12,-863.82 1465.12,-863.82 1465.12,-873.74 1465.12,-873.74 1465.12,-878.7 1460.16,-883.66 1455.2,-883.66"/>
+<text xml:space="preserve" text-anchor="middle" x="1376.79" y="-864.58" font-family="Arial" font-size="14.00" fill="#172739">RatingDisplay (read&#45;only)</text>
+</a>
+</g>
+</g>
+<!-- RatingItem -->
+<g id="node62" class="node">
+<title>RatingItem</title>
+<g id="a_node62"><a xlink:title="RatingItem">
+<path fill="#ffffff" stroke="#8796a8" d="M1260.52,-898.02C1260.52,-898.02 1193.94,-898.02 1193.94,-898.02 1188.98,-898.02 1184.02,-893.06 1184.02,-888.1 1184.02,-888.1 1184.02,-878.18 1184.02,-878.18 1184.02,-873.22 1188.98,-868.26 1193.94,-868.26 1193.94,-868.26 1260.52,-868.26 1260.52,-868.26 1265.48,-868.26 1270.44,-873.22 1270.44,-878.18 1270.44,-878.18 1270.44,-888.1 1270.44,-888.1 1270.44,-893.06 1265.48,-898.02 1260.52,-898.02"/>
+<text xml:space="preserve" text-anchor="middle" x="1227.23" y="-878.94" font-family="Arial" font-size="14.00" fill="#172739">RatingItem</text>
+</a>
+</g>
+</g>
+<!-- SearchBox -->
+<g id="node63" class="node">
+<title>SearchBox</title>
+<g id="a_node63"><a xlink:title="SearchBox">
+<path fill="#ffffff" stroke="#8796a8" d="M1798.52,-1647.4C1798.52,-1647.4 1731.16,-1647.4 1731.16,-1647.4 1726.2,-1647.4 1721.24,-1642.44 1721.24,-1637.48 1721.24,-1637.48 1721.24,-1627.56 1721.24,-1627.56 1721.24,-1622.6 1726.2,-1617.64 1731.16,-1617.64 1731.16,-1617.64 1798.52,-1617.64 1798.52,-1617.64 1803.48,-1617.64 1808.44,-1622.6 1808.44,-1627.56 1808.44,-1627.56 1808.44,-1637.48 1808.44,-1637.48 1808.44,-1642.44 1803.48,-1647.4 1798.52,-1647.4"/>
+<text xml:space="preserve" text-anchor="middle" x="1764.84" y="-1628.32" font-family="Arial" font-size="14.00" fill="#172739">SearchBox</text>
+</a>
+</g>
+</g>
+<!-- Select -->
+<g id="node64" class="node">
+<title>Select</title>
+<g id="a_node64"><a xlink:title="Select">
+<path fill="#ffffff" stroke="#8796a8" d="M1452.53,-1830.44C1452.53,-1830.44 1414.74,-1830.44 1414.74,-1830.44 1409.78,-1830.44 1404.82,-1825.48 1404.82,-1820.52 1404.82,-1820.52 1404.82,-1810.6 1404.82,-1810.6 1404.82,-1805.64 1409.78,-1800.68 1414.74,-1800.68 1414.74,-1800.68 1452.53,-1800.68 1452.53,-1800.68 1457.49,-1800.68 1462.45,-1805.64 1462.45,-1810.6 1462.45,-1810.6 1462.45,-1820.52 1462.45,-1820.52 1462.45,-1825.48 1457.49,-1830.44 1452.53,-1830.44"/>
+<text xml:space="preserve" text-anchor="middle" x="1433.63" y="-1811.36" font-family="Arial" font-size="14.00" fill="#172739">Select</text>
+</a>
+</g>
+</g>
+<!-- SpinButton -->
+<g id="node65" class="node">
+<title>SpinButton</title>
+<g id="a_node65"><a xlink:title="SpinButton">
+<path fill="#ffffff" stroke="#8796a8" d="M1638.62,-1656.42C1638.62,-1656.42 1571.24,-1656.42 1571.24,-1656.42 1566.28,-1656.42 1561.32,-1651.46 1561.32,-1646.5 1561.32,-1646.5 1561.32,-1636.58 1561.32,-1636.58 1561.32,-1631.62 1566.28,-1626.66 1571.24,-1626.66 1571.24,-1626.66 1638.62,-1626.66 1638.62,-1626.66 1643.58,-1626.66 1648.54,-1631.62 1648.54,-1636.58 1648.54,-1636.58 1648.54,-1646.5 1648.54,-1646.5 1648.54,-1651.46 1643.58,-1656.42 1638.62,-1656.42"/>
+<text xml:space="preserve" text-anchor="middle" x="1604.93" y="-1637.34" font-family="Arial" font-size="14.00" fill="#172739">SpinButton</text>
+</a>
+</g>
+</g>
+<!-- Spinner -->
+<g id="node66" class="node">
+<title>Spinner</title>
+<g id="a_node66"><a xlink:title="Spinner">
+<path fill="#ffffff" stroke="#8796a8" d="M932.17,-616.42C932.17,-616.42 885.03,-616.42 885.03,-616.42 880.07,-616.42 875.11,-611.46 875.11,-606.5 875.11,-606.5 875.11,-596.58 875.11,-596.58 875.11,-591.62 880.07,-586.66 885.03,-586.66 885.03,-586.66 932.17,-586.66 932.17,-586.66 937.13,-586.66 942.09,-591.62 942.09,-596.58 942.09,-596.58 942.09,-606.5 942.09,-606.5 942.09,-611.46 937.13,-616.42 932.17,-616.42"/>
+<text xml:space="preserve" text-anchor="middle" x="908.6" y="-597.34" font-family="Arial" font-size="14.00" fill="#172739">Spinner</text>
+</a>
+</g>
+</g>
+<!-- SplitButton -->
+<g id="node67" class="node">
+<title>SplitButton</title>
+<g id="a_node67"><a xlink:title="SplitButton">
+<path fill="#ffffff" stroke="#8796a8" d="M792.43,-1692.52C792.43,-1692.52 725.84,-1692.52 725.84,-1692.52 720.88,-1692.52 715.92,-1687.56 715.92,-1682.6 715.92,-1682.6 715.92,-1672.68 715.92,-1672.68 715.92,-1667.72 720.88,-1662.76 725.84,-1662.76 725.84,-1662.76 792.43,-1662.76 792.43,-1662.76 797.39,-1662.76 802.35,-1667.72 802.35,-1672.68 802.35,-1672.68 802.35,-1682.6 802.35,-1682.6 802.35,-1687.56 797.39,-1692.52 792.43,-1692.52"/>
+<text xml:space="preserve" text-anchor="middle" x="759.14" y="-1673.44" font-family="Arial" font-size="14.00" fill="#172739">SplitButton</text>
+</a>
+</g>
+</g>
+<!-- Switch -->
+<g id="node68" class="node">
+<title>Switch</title>
+<g id="a_node68"><a xlink:title="Switch">
+<path fill="#ffffff" stroke="#8796a8" d="M1065.94,-636.52C1065.94,-636.52 1025.83,-636.52 1025.83,-636.52 1020.87,-636.52 1015.91,-631.56 1015.91,-626.6 1015.91,-626.6 1015.91,-616.68 1015.91,-616.68 1015.91,-611.72 1020.87,-606.76 1025.83,-606.76 1025.83,-606.76 1065.94,-606.76 1065.94,-606.76 1070.9,-606.76 1075.86,-611.72 1075.86,-616.68 1075.86,-616.68 1075.86,-626.6 1075.86,-626.6 1075.86,-631.56 1070.9,-636.52 1065.94,-636.52"/>
+<text xml:space="preserve" text-anchor="middle" x="1045.89" y="-617.44" font-family="Arial" font-size="14.00" fill="#172739">Switch</text>
+</a>
+</g>
+</g>
+<!-- Tag -->
+<g id="node69" class="node">
+<title>Tag</title>
+<g id="a_node69"><a xlink:title="Tag">
+<path fill="#ffffff" stroke="#8796a8" d="M120.82,-1775.46C120.82,-1775.46 86.66,-1775.46 86.66,-1775.46 81.7,-1775.46 76.74,-1770.5 76.74,-1765.54 76.74,-1765.54 76.74,-1755.62 76.74,-1755.62 76.74,-1750.66 81.7,-1745.7 86.66,-1745.7 86.66,-1745.7 120.82,-1745.7 120.82,-1745.7 125.78,-1745.7 130.74,-1750.66 130.74,-1755.62 130.74,-1755.62 130.74,-1765.54 130.74,-1765.54 130.74,-1770.5 125.78,-1775.46 120.82,-1775.46"/>
+<text xml:space="preserve" text-anchor="middle" x="103.74" y="-1756.38" font-family="Arial" font-size="14.00" fill="#172739">Tag</text>
+</a>
+</g>
+</g>
+<!-- TagGroup -->
+<g id="node70" class="node">
+<title>TagGroup</title>
+<g id="a_node70"><a xlink:title="TagGroup">
+<path fill="#ffffff" stroke="#8796a8" d="M1844.49,-1190.76C1844.49,-1190.76 1782.58,-1190.76 1782.58,-1190.76 1777.62,-1190.76 1772.66,-1185.8 1772.66,-1180.84 1772.66,-1180.84 1772.66,-1170.92 1772.66,-1170.92 1772.66,-1165.96 1777.62,-1161 1782.58,-1161 1782.58,-1161 1844.49,-1161 1844.49,-1161 1849.45,-1161 1854.41,-1165.96 1854.41,-1170.92 1854.41,-1170.92 1854.41,-1180.84 1854.41,-1180.84 1854.41,-1185.8 1849.45,-1190.76 1844.49,-1190.76"/>
+<text xml:space="preserve" text-anchor="middle" x="1813.54" y="-1171.68" font-family="Arial" font-size="14.00" fill="#172739">TagGroup</text>
+</a>
+</g>
+</g>
+<!-- TagHitArea -->
+<g id="node71" class="node">
+<title>TagHitArea</title>
+<g id="a_node71"><a xlink:title="TagExtraSmallHitArea">
+<path fill="#e6f4ec" stroke="#528476" d="M225.05,-1876.95C225.05,-1876.95 87.68,-1876.95 87.68,-1876.95 82.72,-1876.95 77.76,-1871.99 77.76,-1867.03 77.76,-1867.03 77.76,-1857.11 77.76,-1857.11 77.76,-1852.15 82.72,-1847.19 87.68,-1847.19 87.68,-1847.19 225.05,-1847.19 225.05,-1847.19 230.01,-1847.19 234.97,-1852.15 234.97,-1857.11 234.97,-1857.11 234.97,-1867.03 234.97,-1867.03 234.97,-1871.99 230.01,-1876.95 225.05,-1876.95"/>
+<text xml:space="preserve" text-anchor="middle" x="156.36" y="-1857.87" font-family="Arial" font-size="14.00" fill="#172739">TagExtraSmallHitArea</text>
+</a>
+</g>
+</g>
+<!-- TagPickerControl -->
+<g id="node72" class="node">
+<title>TagPickerControl</title>
+<g id="a_node72"><a xlink:title="TagPickerControl">
+<path fill="#ffffff" stroke="#8796a8" d="M1457.99,-1776.66C1457.99,-1776.66 1350.96,-1776.66 1350.96,-1776.66 1346,-1776.66 1341.04,-1771.7 1341.04,-1766.74 1341.04,-1766.74 1341.04,-1756.82 1341.04,-1756.82 1341.04,-1751.86 1346,-1746.9 1350.96,-1746.9 1350.96,-1746.9 1457.99,-1746.9 1457.99,-1746.9 1462.95,-1746.9 1467.91,-1751.86 1467.91,-1756.82 1467.91,-1756.82 1467.91,-1766.74 1467.91,-1766.74 1467.91,-1771.7 1462.95,-1776.66 1457.99,-1776.66"/>
+<text xml:space="preserve" text-anchor="middle" x="1404.48" y="-1757.58" font-family="Arial" font-size="14.00" fill="#172739">TagPickerControl</text>
+</a>
+</g>
+</g>
+<!-- TagPickerGroup -->
+<g id="node73" class="node">
+<title>TagPickerGroup</title>
+<g id="a_node73"><a xlink:title="TagPickerGroup">
+<path fill="#ffffff" stroke="#8796a8" d="M1744.73,-1208.63C1744.73,-1208.63 1643.92,-1208.63 1643.92,-1208.63 1638.96,-1208.63 1634,-1203.67 1634,-1198.71 1634,-1198.71 1634,-1188.79 1634,-1188.79 1634,-1183.83 1638.96,-1178.87 1643.92,-1178.87 1643.92,-1178.87 1744.73,-1178.87 1744.73,-1178.87 1749.69,-1178.87 1754.65,-1183.83 1754.65,-1188.79 1754.65,-1188.79 1754.65,-1198.71 1754.65,-1198.71 1754.65,-1203.67 1749.69,-1208.63 1744.73,-1208.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1694.33" y="-1189.55" font-family="Arial" font-size="14.00" fill="#172739">TagPickerGroup</text>
+</a>
+</g>
+</g>
+<!-- TagPickerList -->
+<g id="node74" class="node">
+<title>TagPickerList</title>
+<g id="a_node74"><a xlink:title="TagPickerList">
+<path fill="#ffffff" stroke="#8796a8" d="M1512.94,-1405.76C1512.94,-1405.76 1429.25,-1405.76 1429.25,-1405.76 1424.29,-1405.76 1419.33,-1400.8 1419.33,-1395.84 1419.33,-1395.84 1419.33,-1385.92 1419.33,-1385.92 1419.33,-1380.96 1424.29,-1376 1429.25,-1376 1429.25,-1376 1512.94,-1376 1512.94,-1376 1517.9,-1376 1522.86,-1380.96 1522.86,-1385.92 1522.86,-1385.92 1522.86,-1395.84 1522.86,-1395.84 1522.86,-1400.8 1517.9,-1405.76 1512.94,-1405.76"/>
+<text xml:space="preserve" text-anchor="middle" x="1471.1" y="-1386.68" font-family="Arial" font-size="14.00" fill="#172739">TagPickerList</text>
+</a>
+</g>
+</g>
+<!-- TagPickerOption -->
+<g id="node75" class="node">
+<title>TagPickerOption</title>
+<g id="a_node75"><a xlink:title="TagPickerOption">
+<path fill="#ffffff" stroke="#8796a8" d="M1403.07,-47.63C1403.07,-47.63 1299.92,-47.63 1299.92,-47.63 1294.96,-47.63 1290,-42.67 1290,-37.71 1290,-37.71 1290,-27.79 1290,-27.79 1290,-22.83 1294.96,-17.87 1299.92,-17.87 1299.92,-17.87 1403.07,-17.87 1403.07,-17.87 1408.03,-17.87 1412.99,-22.83 1412.99,-27.79 1412.99,-27.79 1412.99,-37.71 1412.99,-37.71 1412.99,-42.67 1408.03,-47.63 1403.07,-47.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1351.49" y="-28.55" font-family="Arial" font-size="14.00" fill="#172739">TagPickerOption</text>
+</a>
+</g>
+</g>
+<!-- TagPickerOptionGroup -->
+<g id="node76" class="node">
+<title>TagPickerOptionGroup</title>
+<g id="a_node76"><a xlink:title="TagPickerOptionGroup">
+<path fill="#ffffff" stroke="#8796a8" d="M237.98,-1496.52C237.98,-1496.52 95.92,-1496.52 95.92,-1496.52 90.96,-1496.52 86,-1491.56 86,-1486.6 86,-1486.6 86,-1476.68 86,-1476.68 86,-1471.72 90.96,-1466.76 95.92,-1466.76 95.92,-1466.76 237.98,-1466.76 237.98,-1466.76 242.94,-1466.76 247.9,-1471.72 247.9,-1476.68 247.9,-1476.68 247.9,-1486.6 247.9,-1486.6 247.9,-1491.56 242.94,-1496.52 237.98,-1496.52"/>
+<text xml:space="preserve" text-anchor="middle" x="166.95" y="-1477.44" font-family="Arial" font-size="14.00" fill="#172739">TagPickerOptionGroup</text>
+</a>
+</g>
+</g>
+<!-- TagVisual -->
+<g id="node77" class="node">
+<title>TagVisual</title>
+<g id="a_node77"><a xlink:title="TagVisual: spacing, media, icon, text">
+<path fill="#e6f4ec" stroke="#528476" d="M282.17,-1723.56C282.17,-1723.56 119.36,-1723.56 119.36,-1723.56 113.36,-1723.56 107.36,-1717.56 107.36,-1711.56 107.36,-1711.56 107.36,-1689 107.36,-1689 107.36,-1683 113.36,-1677 119.36,-1677 119.36,-1677 282.17,-1677 282.17,-1677 288.17,-1677 294.17,-1683 294.17,-1689 294.17,-1689 294.17,-1711.56 294.17,-1711.56 294.17,-1717.56 288.17,-1723.56 282.17,-1723.56"/>
+<text xml:space="preserve" text-anchor="middle" x="200.76" y="-1704.48" font-family="Arial" font-size="14.00" fill="#172739">TagVisual: spacing, media,</text>
+<text xml:space="preserve" text-anchor="middle" x="200.76" y="-1687.68" font-family="Arial" font-size="14.00" fill="#172739">icon, text</text>
+</a>
+</g>
+</g>
+<!-- TeachingFooterButton -->
+<g id="node78" class="node">
+<title>TeachingFooterButton</title>
+<g id="a_node78"><a xlink:title="TeachingPopoverCarouselFooterButton">
+<path fill="#ffffff" stroke="#8796a8" d="M1102.71,-1633.1C1102.71,-1633.1 857.13,-1633.1 857.13,-1633.1 852.17,-1633.1 847.21,-1628.14 847.21,-1623.18 847.21,-1623.18 847.21,-1613.26 847.21,-1613.26 847.21,-1608.3 852.17,-1603.34 857.13,-1603.34 857.13,-1603.34 1102.71,-1603.34 1102.71,-1603.34 1107.67,-1603.34 1112.63,-1608.3 1112.63,-1613.26 1112.63,-1613.26 1112.63,-1623.18 1112.63,-1623.18 1112.63,-1628.14 1107.67,-1633.1 1102.71,-1633.1"/>
+<text xml:space="preserve" text-anchor="middle" x="979.92" y="-1614.02" font-family="Arial" font-size="14.00" fill="#172739">TeachingPopoverCarouselFooterButton</text>
+</a>
+</g>
+</g>
+<!-- TeachingPopoverSurface -->
+<g id="node79" class="node">
+<title>TeachingPopoverSurface</title>
+<g id="a_node79"><a xlink:title="TeachingPopoverSurface">
+<path fill="#ffffff" stroke="#8796a8" d="M738.22,-949.97C738.22,-949.97 581.35,-949.97 581.35,-949.97 576.39,-949.97 571.43,-945.01 571.43,-940.05 571.43,-940.05 571.43,-930.13 571.43,-930.13 571.43,-925.17 576.39,-920.21 581.35,-920.21 581.35,-920.21 738.22,-920.21 738.22,-920.21 743.18,-920.21 748.14,-925.17 748.14,-930.13 748.14,-930.13 748.14,-940.05 748.14,-940.05 748.14,-945.01 743.18,-949.97 738.22,-949.97"/>
+<text xml:space="preserve" text-anchor="middle" x="659.78" y="-930.89" font-family="Arial" font-size="14.00" fill="#172739">TeachingPopoverSurface</text>
+</a>
+</g>
+</g>
+<!-- Textarea -->
+<g id="node80" class="node">
+<title>Textarea</title>
+<g id="a_node80"><a xlink:title="Textarea">
+<path fill="#ffffff" stroke="#8796a8" d="M1544.5,-1829.48C1544.5,-1829.48 1490.37,-1829.48 1490.37,-1829.48 1485.41,-1829.48 1480.45,-1824.52 1480.45,-1819.56 1480.45,-1819.56 1480.45,-1809.64 1480.45,-1809.64 1480.45,-1804.68 1485.41,-1799.72 1490.37,-1799.72 1490.37,-1799.72 1544.5,-1799.72 1544.5,-1799.72 1549.46,-1799.72 1554.42,-1804.68 1554.42,-1809.64 1554.42,-1809.64 1554.42,-1819.56 1554.42,-1819.56 1554.42,-1824.52 1549.46,-1829.48 1544.5,-1829.48"/>
+<text xml:space="preserve" text-anchor="middle" x="1517.44" y="-1810.4" font-family="Arial" font-size="14.00" fill="#172739">Textarea</text>
+</a>
+</g>
+</g>
+<!-- ToastContainer -->
+<g id="node81" class="node">
+<title>ToastContainer</title>
+<g id="a_node81"><a xlink:title="ToastContainer">
+<path fill="#ffffff" stroke="#8796a8" d="M575.71,-115.76C575.71,-115.76 481.11,-115.76 481.11,-115.76 476.15,-115.76 471.19,-110.8 471.19,-105.84 471.19,-105.84 471.19,-95.92 471.19,-95.92 471.19,-90.96 476.15,-86 481.11,-86 481.11,-86 575.71,-86 575.71,-86 580.67,-86 585.63,-90.96 585.63,-95.92 585.63,-95.92 585.63,-105.84 585.63,-105.84 585.63,-110.8 580.67,-115.76 575.71,-115.76"/>
+<text xml:space="preserve" text-anchor="middle" x="528.41" y="-96.68" font-family="Arial" font-size="14.00" fill="#172739">ToastContainer</text>
+</a>
+</g>
+</g>
+<!-- Toaster -->
+<g id="node82" class="node">
+<title>Toaster</title>
+<g id="a_node82"><a xlink:title="Toaster">
+<path fill="#ffffff" stroke="#8796a8" d="M443.26,-133.63C443.26,-133.63 396.92,-133.63 396.92,-133.63 391.96,-133.63 387,-128.67 387,-123.71 387,-123.71 387,-113.79 387,-113.79 387,-108.83 391.96,-103.87 396.92,-103.87 396.92,-103.87 443.26,-103.87 443.26,-103.87 448.22,-103.87 453.18,-108.83 453.18,-113.79 453.18,-113.79 453.18,-123.71 453.18,-123.71 453.18,-128.67 448.22,-133.63 443.26,-133.63"/>
+<text xml:space="preserve" text-anchor="middle" x="420.09" y="-114.55" font-family="Arial" font-size="14.00" fill="#172739">Toaster</text>
+</a>
+</g>
+</g>
+<!-- ToggleButton -->
+<g id="node83" class="node">
+<title>ToggleButton</title>
+<g id="a_node83"><a xlink:title="ToggleButton">
+<path fill="#ffffff" stroke="#8796a8" d="M660.37,-1523.74C660.37,-1523.74 578.2,-1523.74 578.2,-1523.74 573.24,-1523.74 568.28,-1518.78 568.28,-1513.82 568.28,-1513.82 568.28,-1503.9 568.28,-1503.9 568.28,-1498.94 573.24,-1493.98 578.2,-1493.98 578.2,-1493.98 660.37,-1493.98 660.37,-1493.98 665.33,-1493.98 670.29,-1498.94 670.29,-1503.9 670.29,-1503.9 670.29,-1513.82 670.29,-1513.82 670.29,-1518.78 665.33,-1523.74 660.37,-1523.74"/>
+<text xml:space="preserve" text-anchor="middle" x="619.28" y="-1504.66" font-family="Arial" font-size="14.00" fill="#172739">ToggleButton</text>
+</a>
+</g>
+</g>
+<!-- ToolbarButton -->
+<g id="node84" class="node">
+<title>ToolbarButton</title>
+<g id="a_node84"><a xlink:title="ToolbarButton">
+<path fill="#ffffff" stroke="#8796a8" d="M716.59,-1472.25C716.59,-1472.25 629.77,-1472.25 629.77,-1472.25 624.81,-1472.25 619.85,-1467.29 619.85,-1462.33 619.85,-1462.33 619.85,-1452.41 619.85,-1452.41 619.85,-1447.45 624.81,-1442.49 629.77,-1442.49 629.77,-1442.49 716.59,-1442.49 716.59,-1442.49 721.55,-1442.49 726.51,-1447.45 726.51,-1452.41 726.51,-1452.41 726.51,-1462.33 726.51,-1462.33 726.51,-1467.29 721.55,-1472.25 716.59,-1472.25"/>
+<text xml:space="preserve" text-anchor="middle" x="673.18" y="-1453.17" font-family="Arial" font-size="14.00" fill="#172739">ToolbarButton</text>
+</a>
+</g>
+</g>
+<!-- ToolbarDivider -->
+<g id="node85" class="node">
+<title>ToolbarDivider</title>
+<g id="a_node85"><a xlink:title="ToolbarDivider">
+<path fill="#ffffff" stroke="#8796a8" d="M1733.83,-47.63C1733.83,-47.63 1643.92,-47.63 1643.92,-47.63 1638.96,-47.63 1634,-42.67 1634,-37.71 1634,-37.71 1634,-27.79 1634,-27.79 1634,-22.83 1638.96,-17.87 1643.92,-17.87 1643.92,-17.87 1733.83,-17.87 1733.83,-17.87 1738.79,-17.87 1743.75,-22.83 1743.75,-27.79 1743.75,-27.79 1743.75,-37.71 1743.75,-37.71 1743.75,-42.67 1738.79,-47.63 1733.83,-47.63"/>
+<text xml:space="preserve" text-anchor="middle" x="1688.88" y="-28.55" font-family="Arial" font-size="14.00" fill="#172739">ToolbarDivider</text>
+</a>
+</g>
+</g>
+<!-- ToolbarRadioButton -->
+<g id="node86" class="node">
+<title>ToolbarRadioButton</title>
+<g id="a_node86"><a xlink:title="ToolbarRadioButton">
+<path fill="#ffffff" stroke="#8796a8" d="M621.92,-1697.45C621.92,-1697.45 498.52,-1697.45 498.52,-1697.45 493.56,-1697.45 488.6,-1692.49 488.6,-1687.53 488.6,-1687.53 488.6,-1677.61 488.6,-1677.61 488.6,-1672.65 493.56,-1667.69 498.52,-1667.69 498.52,-1667.69 621.92,-1667.69 621.92,-1667.69 626.88,-1667.69 631.84,-1672.65 631.84,-1677.61 631.84,-1677.61 631.84,-1687.53 631.84,-1687.53 631.84,-1692.49 626.88,-1697.45 621.92,-1697.45"/>
+<text xml:space="preserve" text-anchor="middle" x="560.22" y="-1678.37" font-family="Arial" font-size="14.00" fill="#172739">ToolbarRadioButton</text>
+</a>
+</g>
+</g>
+<!-- ToolbarToggleButton -->
+<g id="node87" class="node">
+<title>ToolbarToggleButton</title>
+<g id="a_node87"><a xlink:title="ToolbarToggleButton">
+<path fill="#ffffff" stroke="#8796a8" d="M612.55,-1584.6C612.55,-1584.6 482.92,-1584.6 482.92,-1584.6 477.96,-1584.6 473,-1579.64 473,-1574.68 473,-1574.68 473,-1564.76 473,-1564.76 473,-1559.8 477.96,-1554.84 482.92,-1554.84 482.92,-1554.84 612.55,-1554.84 612.55,-1554.84 617.51,-1554.84 622.47,-1559.8 622.47,-1564.76 622.47,-1564.76 622.47,-1574.68 622.47,-1574.68 622.47,-1579.64 617.51,-1584.6 612.55,-1584.6"/>
+<text xml:space="preserve" text-anchor="middle" x="547.74" y="-1565.52" font-family="Arial" font-size="14.00" fill="#172739">ToolbarToggleButton</text>
+</a>
+</g>
+</g>
+<!-- Tooltip -->
+<g id="node88" class="node">
+<title>Tooltip</title>
+<g id="a_node88"><a xlink:title="Tooltip">
+<path fill="#ffffff" stroke="#8796a8" d="M454.27,-701.3C454.27,-701.3 413.37,-701.3 413.37,-701.3 408.41,-701.3 403.45,-696.34 403.45,-691.38 403.45,-691.38 403.45,-681.46 403.45,-681.46 403.45,-676.5 408.41,-671.54 413.37,-671.54 413.37,-671.54 454.27,-671.54 454.27,-671.54 459.23,-671.54 464.19,-676.5 464.19,-681.46 464.19,-681.46 464.19,-691.38 464.19,-691.38 464.19,-696.34 459.23,-701.3 454.27,-701.3"/>
+<text xml:space="preserve" text-anchor="middle" x="433.82" y="-682.22" font-family="Arial" font-size="14.00" fill="#172739">Tooltip</text>
+</a>
+</g>
+</g>
+<!-- TooltipVisual -->
+<g id="node89" class="node">
+<title>TooltipVisual</title>
+<g id="a_node89"><a xlink:title="Tooltip content styling helper">
+<path fill="#e6f4ec" stroke="#528476" d="M580.5,-792.37C580.5,-792.37 450.38,-792.37 450.38,-792.37 444.38,-792.37 438.38,-786.37 438.38,-780.37 438.38,-780.37 438.38,-757.81 438.38,-757.81 438.38,-751.81 444.38,-745.81 450.38,-745.81 450.38,-745.81 580.5,-745.81 580.5,-745.81 586.5,-745.81 592.5,-751.81 592.5,-757.81 592.5,-757.81 592.5,-780.37 592.5,-780.37 592.5,-786.37 586.5,-792.37 580.5,-792.37"/>
+<text xml:space="preserve" text-anchor="middle" x="515.44" y="-773.29" font-family="Arial" font-size="14.00" fill="#172739">Tooltip content styling</text>
+<text xml:space="preserve" text-anchor="middle" x="515.44" y="-756.49" font-family="Arial" font-size="14.00" fill="#172739">helper</text>
+</a>
+</g>
+</g>
+</g>
+
+  </g>
+  <g id="behavior-index">
+  <text x="1980" y="154" class="section-title">Behavior references</text>
+  <text x="1980" y="180" class="aside-text">Sources are listed under the behavior they use or supply.</text>
+  <text x="1980" y="200" class="aside-text">78 links, not used to position the nodes.</text>
+  <g class="behavior-reference" data-target="FieldContext" data-sources="Combobox DatePicker Dropdown Field Input InputState ProgressBar Select SpinButton Textarea">
+  <title>Field context: label, help, validation, size
+Combobox
+DatePicker
+Dropdown
+Field (provides)
+Input
+Input base state
+ProgressBar (reads)
+Select
+SpinButton
+Textarea</title>
+  <text x="1980" y="234" class="aside-heading">Field context: label, help, validation, size</text>
+  <text x="1980" y="254" class="aside-text">Combobox, DatePicker, Dropdown, Field (provides), Input, Input</text>
+<text x="1980" y="273" class="aside-text">base state, ProgressBar, Select, SpinButton, Textarea</text>
+  </g>
+  <g class="behavior-reference" data-target="PopoverVisual" data-sources="AvatarGroupPopover InfoButtonBase Popover PopoverSurface TeachingPopover TeachingParts TeachingFooterButton TeachingPopoverSurface">
+  <title>Popover visual context: size and appearance
+AvatarGroupPopover (provide)
+InfoButtonBase (internal) (provide)
+Popover (provides)
+PopoverSurface (reads)
+TeachingPopover (provides)
+TeachingPopover header, title, body, footer, and carousel (read appearance or size)
+TeachingPopoverCarouselFooterButton (read appearance or size)
+TeachingPopoverSurface (reads)</title>
+  <text x="1980" y="304" class="aside-heading">Popover visual context: size and appearance</text>
+  <text x="1980" y="324" class="aside-text">AvatarGroupPopover (provides), InfoButtonBase (internal)</text>
+<text x="1980" y="343" class="aside-text">(provides), Popover (provides), PopoverSurface, TeachingPopover</text>
+<text x="1980" y="362" class="aside-text">(provides), TeachingPopover header, title, body, footer, and</text>
+<text x="1980" y="381" class="aside-text">carousel, TeachingPopoverCarouselFooterButton,</text>
+<text x="1980" y="400" class="aside-text">TeachingPopoverSurface</text>
+  </g>
+  <g class="behavior-reference" data-target="Focusgroup" data-sources="List MenuList TabList Toaster Toolbar TreeItemLayout">
+  <title>Focusgroup navigation (native or polyfill)
+List
+MenuList
+TabList
+Toaster
+Toolbar
+TreeItemLayout</title>
+  <text x="1980" y="431" class="aside-heading">Focusgroup navigation (native or polyfill)</text>
+  <text x="1980" y="451" class="aside-text">List, MenuList, TabList, Toaster, Toolbar, TreeItemLayout</text>
+  </g>
+  <g class="behavior-reference" data-target="AnchorPositioning" data-sources="DatePicker ListboxState PopoverState Menu TagPicker Tooltip">
+  <title>Headless usePositioning: CSS anchor placement and fitting
+DatePicker
+Dropdown / Combobox popup and active-descendant state
+Headless Popover state and surface hooks
+Menu
+TagPicker
+Tooltip</title>
+  <text x="1980" y="482" class="aside-heading">Headless usePositioning: CSS anchor placement and</text>
+<text x="1980" y="502" class="aside-heading">fitting</text>
+  <text x="1980" y="522" class="aside-text">DatePicker, Dropdown / Combobox popup and active-descendant</text>
+<text x="1980" y="541" class="aside-text">state, Headless Popover state and surface hooks, Menu, TagPicker,</text>
+<text x="1980" y="560" class="aside-text">Tooltip</text>
+  </g>
+  <g class="behavior-reference" data-target="NativeLayer" data-sources="DatePicker NativeDialog PopoverState MenuPopover ListboxLayer Tooltip">
+  <title>Native top layer: opening, presence, Escape and focus return as applicable
+DatePicker
+Headless Dialog + DialogSurface
+Headless Popover state and surface hooks
+MenuPopover (content-sized)
+Shared native listbox slot: focus stays on trigger
+Tooltip</title>
+  <text x="1980" y="591" class="aside-heading">Native top layer: opening, presence, Escape and focus</text>
+<text x="1980" y="611" class="aside-heading">return as applicable</text>
+  <text x="1980" y="631" class="aside-text">DatePicker, Headless Dialog + DialogSurface, Headless Popover</text>
+<text x="1980" y="650" class="aside-text">state and surface hooks, MenuPopover (content-sized), Shared</text>
+<text x="1980" y="669" class="aside-text">native listbox slot: focus stays on trigger, Tooltip</text>
+  </g>
+  <g class="behavior-reference" data-target="PopoverState" data-sources="AvatarGroupPopover InfoButtonBase Popover TeachingPopover TeachingPopoverSurface">
+  <title>Headless Popover state and surface hooks
+AvatarGroupPopover (use headless Popover)
+InfoButtonBase (internal) (use headless Popover)
+Popover
+TeachingPopover
+TeachingPopoverSurface</title>
+  <text x="1980" y="700" class="aside-heading">Headless Popover state and surface hooks</text>
+  <text x="1980" y="720" class="aside-text">AvatarGroupPopover, InfoButtonBase (internal), Popover,</text>
+<text x="1980" y="739" class="aside-text">TeachingPopover, TeachingPopoverSurface</text>
+  </g>
+  <g class="behavior-reference" data-target="NativeRange" data-sources="AlphaSlider ColorSlider RangeSlider Slider">
+  <title>Native range input controls
+AlphaSlider
+ColorSlider
+RangeSlider
+Slider</title>
+  <text x="1980" y="770" class="aside-heading">Native range input controls</text>
+  <text x="1980" y="790" class="aside-text">AlphaSlider, ColorSlider, RangeSlider, Slider</text>
+  </g>
+  <g class="behavior-reference" data-target="TagGroupVisual" data-sources="InteractionTag Tag TagGroup TagPickerGroup">
+  <title>Tag group visual context
+InteractionTag (inherit)
+Tag (inherit)
+TagGroup (provides)
+TagPickerGroup (provides)</title>
+  <text x="1980" y="821" class="aside-heading">Tag group visual context</text>
+  <text x="1980" y="841" class="aside-text">InteractionTag, Tag, TagGroup (provides), TagPickerGroup</text>
+<text x="1980" y="860" class="aside-text">(provides)</text>
+  </g>
+  <g class="behavior-reference" data-target="ButtonSizeContext" data-sources="Button ButtonVariants TreeItemLayout">
+  <title>Button size context
+Button (read)
+Button variant styling helper (read)
+TreeItemLayout (supplies small size for action slots)</title>
+  <text x="1980" y="891" class="aside-heading">Button size context</text>
+  <text x="1980" y="911" class="aside-text">Button, Button variant styling helper, TreeItemLayout (provides)</text>
+  </g>
+  <g class="behavior-reference" data-target="ColorPicker" data-sources="AlphaSlider ColorArea ColorSlider">
+  <title>ColorPicker
+AlphaSlider (inherit color and shape)
+ColorArea (inherit color and shape)
+ColorSlider (inherit color and shape)</title>
+  <text x="1980" y="942" class="aside-heading">ColorPicker</text>
+  <text x="1980" y="962" class="aside-text">AlphaSlider, ColorArea, ColorSlider</text>
+  </g>
+  <g class="behavior-reference" data-target="NativeDialog" data-sources="Dialog DialogSurface OverlayDrawer">
+  <title>Headless Dialog + DialogSurface
+Dialog
+DialogSurface
+OverlayDrawer (renders headless primitives)</title>
+  <text x="1980" y="993" class="aside-heading">Headless Dialog + DialogSurface</text>
+  <text x="1980" y="1013" class="aside-text">Dialog, DialogSurface, OverlayDrawer</text>
+  </g>
+  <g class="behavior-reference" data-target="DrawerScroll" data-sources="DrawerBody DrawerHeaderFooter NavDrawerParts">
+  <title>Headless Drawer body scroll state
+DrawerBody (reports)
+DrawerHeader / DrawerFooter (reads)
+NavDrawerHeader / NavDrawerBody / NavDrawerFooter (uses headless body and separators state)</title>
+  <text x="1980" y="1044" class="aside-heading">Headless Drawer body scroll state</text>
+  <text x="1980" y="1064" class="aside-text">DrawerBody (reports), DrawerHeader / DrawerFooter,</text>
+<text x="1980" y="1083" class="aside-text">NavDrawerHeader / NavDrawerBody / NavDrawerFooter</text>
+  </g>
+  <g class="behavior-reference" data-target="InteractionTagVisual" data-sources="InteractionTag InteractionTagPrimary InteractionTagSecondary">
+  <title>Interaction tag visual context
+InteractionTag (provides)
+InteractionTagPrimary (inherit)
+InteractionTagSecondary (inherit)</title>
+  <text x="1980" y="1114" class="aside-heading">Interaction tag visual context</text>
+  <text x="1980" y="1134" class="aside-text">InteractionTag (provides), InteractionTagPrimary,</text>
+<text x="1980" y="1153" class="aside-text">InteractionTagSecondary</text>
+  </g>
+  <g class="behavior-reference" data-target="PickerDefaults" data-sources="Combobox Dropdown TagPicker">
+  <title>Picker defaults: below, logical start, target width
+Combobox
+Dropdown
+TagPicker</title>
+  <text x="1980" y="1184" class="aside-heading">Picker defaults: below, logical start, target width</text>
+  <text x="1980" y="1204" class="aside-text">Combobox, Dropdown, TagPicker</text>
+  </g>
+  <g class="behavior-reference" data-target="ListboxState" data-sources="Combobox Dropdown">
+  <title>Dropdown / Combobox popup and active-descendant state
+Combobox
+Dropdown</title>
+  <text x="1980" y="1235" class="aside-heading">Dropdown / Combobox popup and active-descendant state</text>
+  <text x="1980" y="1255" class="aside-text">Combobox, Dropdown</text>
+  </g>
+  <g class="behavior-reference" data-target="InputState" data-sources="Input SearchBox">
+  <title>Input base state
+Input
+SearchBox (uses Input state via SearchBox base)</title>
+  <text x="1980" y="1286" class="aside-heading">Input base state</text>
+  <text x="1980" y="1306" class="aside-text">Input, SearchBox</text>
+  </g>
+  <g class="behavior-reference" data-target="ListboxLayer" data-sources="ListboxState TagPickerList">
+  <title>Shared native listbox slot: focus stays on trigger
+Dropdown / Combobox popup and active-descendant state
+TagPickerList</title>
+  <text x="1980" y="1337" class="aside-heading">Shared native listbox slot: focus stays on trigger</text>
+  <text x="1980" y="1357" class="aside-text">Dropdown / Combobox popup and active-descendant state,</text>
+<text x="1980" y="1376" class="aside-text">TagPickerList</text>
+  </g>
+  <g class="behavior-reference" data-target="Drawer" data-sources="NavDrawer">
+  <title>Drawer
+NavDrawer (uses headless Drawer)</title>
+  <text x="1980" y="1407" class="aside-heading">Drawer</text>
+  <text x="1980" y="1427" class="aside-text">NavDrawer</text>
+  </g>
+  <g class="behavior-reference" data-target="NativeSelect" data-sources="Select">
+  <title>Native select and option popup
+Select</title>
+  <text x="1980" y="1458" class="aside-heading">Native select and option popup</text>
+  <text x="1980" y="1478" class="aside-text">Select</text>
+  </g>
+  <g class="behavior-reference" data-target="Option" data-sources="TagPickerOption">
+  <title>Option
+TagPickerOption (uses Option state, keeps role option)</title>
+  <text x="1980" y="1509" class="aside-heading">Option</text>
+  <text x="1980" y="1529" class="aside-text">TagPickerOption</text>
+  </g>
+  <g class="behavior-reference" data-target="RadioGroup" data-sources="Radio">
+  <title>RadioGroup
+Radio (reads group state)</title>
+  <text x="1980" y="1560" class="aside-heading">RadioGroup</text>
+  <text x="1980" y="1580" class="aside-text">Radio</text>
+  </g>
+  <g class="behavior-reference" data-target="ThemeTokens" data-sources="FluentProvider">
+  <title>Theme values and CSS variables
+FluentProvider (supplies)</title>
+  <text x="1980" y="1611" class="aside-heading">Theme values and CSS variables</text>
+  <text x="1980" y="1631" class="aside-text">FluentProvider (provides)</text>
+  </g>
+  </g>
+  <g id="no-audited-link" data-nodes="Accordion AccordionParts Breadcrumb BreadcrumbParts Card CardParts DialogParts DialogTrigger DrawerHeaderNavigation Image Link ListItem MenuGroups MenuSplitGroup MenuTrigger MessageBar MessageBarParts Nav NavItems Overflow PopoverTrigger Skeleton SkeletonItem Swatches SwatchPicker SwatchPickerRow Tab TagPickerTriggers TeachingPopoverTrigger Text Toast ToastParts ToastTitle ToolbarGroups Tree TreeItem">
+  <path d="M32 2378H2496" stroke="#d4dce6"/>
+  <text x="32" y="2408" class="section-title">No CSS, render, or behavior link recorded in this audit</text>
+  <text x="32" y="2432" class="legend">This does not imply independence. Caller-only composition and proposed consolidations are not shown in this view.</text>
+  <text x="32" y="2460" class="aside-text">Accordion | AccordionItem / AccordionHeader / AccordionPanel | Breadcrumb | BreadcrumbItem / BreadcrumbDivider | Card | CardHeader / CardPreview / CardFooter | DialogHeader / DialogBody / DialogActions | DialogTrigger (headless export) |</text>
+<text x="32" y="2480" class="aside-text">DrawerHeaderNavigation | Image | Link | ListItem | MenuGroup / MenuGroupHeader / MenuDivider | MenuSplitGroup | MenuTrigger (headless export) | MessageBar | MessageBarTitle / MessageBarBody / MessageBarActions | Nav | NavItem / NavSubItem /</text>
+<text x="32" y="2500" class="aside-text">NavCategory / groups / headers / divider | Overflow (style-free) | PopoverTrigger (headless export) | Skeleton | SkeletonItem | ColorSwatch / ImageSwatch / EmptySwatch | SwatchPicker | SwatchPickerRow | Tab | TagPickerInput / TagPickerButton |</text>
+<text x="32" y="2520" class="aside-text">TeachingPopoverTrigger (headless export) | Text | Toast | ToastBody / ToastFooter | ToastTitle | ToolbarGroup / ToolbarRadioGroup | Tree | TreeItem</text>
+  </g>
+</svg>
