@@ -91,7 +91,7 @@
   }
 
   .AccordionHeader__button {
-    composes: FocusRingSelf from '../../../styles/FocusRing.module.css';
+    composes: FocusBorderSelf from '../../../styles/FocusOutlines.module.css';
 
     /* TODO: this should be extracted to another package */
     background-color: inherit;

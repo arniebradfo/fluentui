@@ -18,8 +18,8 @@
  */
 
 @layer fluent-components {
-  .DrawerHeader:not([data-scroll-state='none'])::after,
-  .DrawerFooter:not([data-scroll-state='none'])::before {
+  .DrawerHeaderSeparator:not([data-scroll-state='none'])::after,
+  .DrawerFooterSeparator:not([data-scroll-state='none'])::before {
     height: var(--strokeWidthThin);
     position: absolute;
     inset-inline: 0;
@@ -31,22 +31,22 @@
     content: '';
   }
 
-  .DrawerHeader::after {
+  .DrawerHeaderSeparator::after {
     bottom: 0;
   }
 
-  .DrawerFooter::before {
+  .DrawerFooterSeparator::before {
     top: 0;
   }
 
-  .DrawerHeader:is([data-scroll-state='middle'], [data-scroll-state='bottom'])::after,
-  .DrawerFooter:is([data-scroll-state='middle'], [data-scroll-state='top'])::before {
+  .DrawerHeaderSeparator:is([data-scroll-state='middle'], [data-scroll-state='bottom'])::after,
+  .DrawerFooterSeparator:is([data-scroll-state='middle'], [data-scroll-state='top'])::before {
     opacity: 1;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .DrawerHeader:not([data-scroll-state='none'])::after,
-    .DrawerFooter:not([data-scroll-state='none'])::before {
+    .DrawerHeaderSeparator:not([data-scroll-state='none'])::after,
+    .DrawerFooterSeparator:not([data-scroll-state='none'])::before {
       transition-duration: 0ms;
     }
   }

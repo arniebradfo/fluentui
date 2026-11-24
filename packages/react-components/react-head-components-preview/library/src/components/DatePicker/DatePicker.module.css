@@ -8,7 +8,7 @@
  * Headless component: [DatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/DatePicker.tsx).
  * Headless state: [useDatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/useDatePicker.tsx).
  * Headless render: [renderDatePicker.tsx](../../../../../react-headless-components-preview/library/src/components/DatePicker/renderDatePicker.tsx).
- * Composed CSS: [InputFrame.module.css](../Input/InputFrame.module.css), [FloatingSurface.module.css](../../styles/FloatingSurface.module.css).
+ * Composed CSS: [InputFrame.module.css](../Input/InputFrame.module.css), [OverlaySurface.module.css](../../styles/OverlaySurface.module.css).
  *
  * The frame follows react-input; the surface follows react-datepicker-compat.
  * Headless differences: the non-editable field is a native button rather than a read-only input,
@@ -148,8 +148,8 @@
   }
 
   .DatePicker__popupSurface {
-    composes: FloatingFrame FloatingShadow from '../../styles/FloatingSurface.module.css';
-    composes: FocusOutline from '../../styles/FocusRing.module.css';
+    composes: OverlayFrame OverlayBoxShadow from '../../styles/OverlaySurface.module.css';
+    composes: FocusOutline from '../../styles/FocusOutlines.module.css';
 
     box-sizing: border-box;
     padding: 0;

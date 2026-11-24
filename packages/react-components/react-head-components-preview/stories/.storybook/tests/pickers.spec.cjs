@@ -94,7 +94,7 @@ for (const direction of ['ltr', 'rtl']) {
   ]) {
     test(`${family} opens a field-width listbox at below-start (${direction})`, async ({ page }) => {
       await page.goto(
-        `/iframe.html?id=css-modules-style-primitives--picker-frame&viewMode=story&globals=direction:${direction}`,
+        `/iframe.html?id=css-modules-style-primitives--listbox-picker-frame&viewMode=story&globals=direction:${direction}`,
       );
       const region = page.getByRole('region', { name: 'Outline', exact: true });
       const field = region.locator(`.fui-${family === 'TagPicker' ? 'TagPickerControl' : family}`);

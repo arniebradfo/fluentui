@@ -12,6 +12,6 @@
 
 @layer fluent-components {
   .TagPickerList {
-    composes: PickerPopup from '../../Dropdown/Listbox/Listbox.module.css';
+    composes: ListboxPopupFrame from '../../Dropdown/Listbox/Listbox.module.css';
   }
 }

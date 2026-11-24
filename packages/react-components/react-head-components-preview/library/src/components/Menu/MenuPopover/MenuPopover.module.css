@@ -12,7 +12,7 @@
 
 @layer fluent-components {
   .MenuPopover {
-    composes: FloatingFrame FloatingShadow from '../../../styles/FloatingSurface.module.css';
+    composes: OverlayFrame OverlayBoxShadow from '../../../styles/OverlaySurface.module.css';
 
     margin: 0;
     box-sizing: border-box;

@@ -35,8 +35,8 @@
     }
   }
 
-  .PickerPopup {
-    composes: FloatingShadow from '../../../styles/FloatingSurface.module.css';
+  .ListboxPopupFrame {
+    composes: OverlayBoxShadow from '../../../styles/OverlaySurface.module.css';
 
     box-sizing: border-box;
     border-radius: var(--borderRadiusMedium);

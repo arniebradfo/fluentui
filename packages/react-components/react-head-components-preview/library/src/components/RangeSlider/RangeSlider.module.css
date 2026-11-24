@@ -166,7 +166,7 @@
 
   /* Styles shared by the startThumb and endThumb slots */
   .RangeSlider__thumb {
-    composes: FocusRingStroke from '../../styles/FocusRing.module.css';
+    composes: FocusBorder from '../../styles/FocusOutlines.module.css';
 
     grid-area: 2 / 2 / 2 / 2;
     position: absolute;

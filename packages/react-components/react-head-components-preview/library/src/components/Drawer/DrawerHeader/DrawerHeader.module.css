@@ -6,13 +6,13 @@
  * Headless component: [DrawerHeader.tsx](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeader/DrawerHeader.tsx).
  * Headless state: [useDrawerHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeader/useDrawerHeader.ts).
  * Headless render: [renderDrawerHeader.ts](../../../../../../react-headless-components-preview/library/src/components/Drawer/DrawerHeader/renderDrawerHeader.ts).
- * Composed CSS: [DrawerSeparators.module.css](../DrawerSeparators.module.css).
+ * Composed CSS: [DrawerScrollSeparators.module.css](../DrawerScrollSeparators.module.css).
  */
 
 @layer fluent-components;
 
 .DrawerHeader {
-  composes: DrawerHeader from '../DrawerSeparators.module.css';
+  composes: DrawerHeaderSeparator from '../DrawerScrollSeparators.module.css';
 }
 
 @layer fluent-components {

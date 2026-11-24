@@ -213,9 +213,9 @@ export const InputFocus = () => (
   </Review>
 );
 
-export const FocusRing = () => (
+export const FocusOutlines = () => (
   <Review
-    title="Focus ring"
+    title="Focus outlines"
     instructions="Tab through the controls, then try the arrow keys in the menu, listbox, and sliders. Compare rings on buttons, around fields or thumbs, and on the active listbox option."
   >
     <ExampleGroup label="Checkbox">
@@ -319,9 +319,9 @@ function FloatingDrawer() {
   );
 }
 
-export const FloatingSurfaces = () => (
+export const OverlaySurfaces = () => (
   <Review
-    title="Floating surfaces"
+    title="Overlay surfaces"
     instructions="Open each surface to compare its fill, stroke, corners, and shadow. Notice how the smaller tooltip shadow follows the arrow and the drawer keeps its square edge."
   >
     <ExampleGroup label="Anchored information">
@@ -396,9 +396,9 @@ const pickerStates: { label: string; appearance: TagPickerAppearance; invalid?: 
   { label: 'Disabled', appearance: 'outline', disabled: true },
 ];
 
-export const PickerFrame = () => (
+export const ListboxPickerFrame = () => (
   <Review
-    title="Picker frame and validation"
+    title="Listbox picker frame and validation"
     instructions="Compare the three pickers at rest, on hover, and on focus. The invalid borders are easiest to see before you focus those fields."
   >
     {pickerStates.map(({ label, appearance, invalid, disabled }) => (
@@ -419,10 +419,10 @@ export const PickerFrame = () => (
   </Review>
 );
 
-export const TagVisual = () => (
+export const TagLayout = () => (
   <Review
-    title="Tag visuals and hit areas"
-    instructions="Compare the icon, media, and text spacing across sizes. Tab to both InteractionTag buttons, then hover just above or below the extra-small buttons to try their extended hit area."
+    title="Tag layout and hit targets"
+    instructions="Compare the icon, media, and text spacing across sizes. Tab to both InteractionTag buttons, then hover just above or below the extra-small buttons to try their extended hit targets."
   >
     {(['medium', 'small', 'extra-small'] as const).map(size => (
       <ExampleGroup key={size} label={size}>

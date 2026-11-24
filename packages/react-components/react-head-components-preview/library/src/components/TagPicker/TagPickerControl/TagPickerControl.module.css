@@ -6,14 +6,14 @@
  * Headless component: [TagPickerControl.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/TagPickerControl.tsx).
  * Headless state: [useTagPickerControl.ts](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/useTagPickerControl.ts).
  * Headless render: [renderTagPickerControl.tsx](../../../../../../react-headless-components-preview/library/src/components/TagPicker/TagPickerControl/renderTagPickerControl.tsx).
- * Composed CSS: [PickerFrame.module.css](../../../styles/PickerFrame.module.css), [InputFocus.module.css](../../Input/InputFocus.module.css).
+ * Composed CSS: [ListboxPickerFrame.module.css](../../../styles/ListboxPickerFrame.module.css), [InputFocus.module.css](../../Input/InputFocus.module.css).
  *
  * Public headless owns the measured --fui-TagPickerControl-aside-width variable.
  */
 
 @layer fluent-components {
   .TagPickerControl {
-    composes: PickerFrame from '../../../styles/PickerFrame.module.css';
+    composes: ListboxPickerFrame from '../../../styles/ListboxPickerFrame.module.css';
     composes: InputFocus from '../../Input/InputFocus.module.css';
 
     align-items: center;

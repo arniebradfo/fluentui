@@ -14,7 +14,7 @@
 
 @layer fluent-components {
   .PopoverSurface {
-    composes: FloatingFrame FloatingArrowShadow from '../../../styles/FloatingSurface.module.css';
+    composes: OverlayFrame OverlayDropShadow from '../../../styles/OverlaySurface.module.css';
 
     /* The arrow is a square rotated 45 degrees. Multiply its triangle height by sqrt(2)
      * to get the edge length; the original helper uses 1.414 for this conversion. */

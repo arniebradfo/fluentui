@@ -14,7 +14,7 @@
 @layer fluent-components {
   /* Styles for the root slot. */
   .InfoButton {
-    composes: FocusRingStroke from '../../../styles/FocusRing.module.css';
+    composes: FocusBorder from '../../../styles/FocusOutlines.module.css';
 
     align-items: center;
     box-sizing: border-box;

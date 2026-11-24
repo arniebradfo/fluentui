@@ -8,7 +8,7 @@
  * Headless state: [useRatingItem.ts](../../../../../../react-headless-components-preview/library/src/components/Rating/RatingItem/useRatingItem.ts).
  * Headless render: [renderRatingItem.tsx](../../../../../../react-headless-components-preview/library/src/components/Rating/RatingItem/renderRatingItem.tsx).
  * Related Fluent sources: [createFocusOutlineStyle.ts](../../../../../../react-tabster/src/focus/createFocusOutlineStyle.ts).
- * Composed CSS: [FocusRing.module.css](../../../styles/FocusRing.module.css).
+ * Composed CSS: [FocusOutlines.module.css](../../../styles/FocusOutlines.module.css).
  * Icon stylesheet import: [Icon.css](../../../Icon.css); the icon package is an external dependency.
  *
  * Inherited focus reference: @fluentui/react-tabster,
@@ -19,7 +19,7 @@
 @layer fluent-components {
   /* Styles for the root slot */
   .RatingItem {
-    composes: FocusRing from '../../../styles/FocusRing.module.css';
+    composes: FocusBorderWithin from '../../../styles/FocusOutlines.module.css';
 
     position: relative;
 

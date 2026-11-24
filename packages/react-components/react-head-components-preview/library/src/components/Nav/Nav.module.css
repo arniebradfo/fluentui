@@ -212,9 +212,9 @@
   }
 
   .NavDrawer {
-    composes: FloatingShadow from '../../styles/FloatingSurface.module.css';
+    composes: OverlayBoxShadow from '../../styles/OverlaySurface.module.css';
 
-    --fui-floating-shadow: none;
+    --fui-overlay-box-shadow: none;
 
     box-sizing: border-box;
     display: flex;
@@ -250,7 +250,7 @@
     }
 
     &[data-type='overlay'] {
-      --fui-floating-shadow: var(--shadow64);
+      --fui-overlay-box-shadow: var(--shadow64);
 
       position: fixed;
       inset-block: 0;

@@ -7,15 +7,15 @@
  * Headless component: [InteractionTagSecondary.tsx](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagSecondary/InteractionTagSecondary.tsx).
  * Headless state: [useInteractionTagSecondary.ts](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagSecondary/useInteractionTagSecondary.ts).
  * Headless render: [renderInteractionTagSecondary.ts](../../../../../../react-headless-components-preview/library/src/components/InteractionTag/InteractionTagSecondary/renderInteractionTagSecondary.ts).
- * Composed CSS: [TagVisual.module.css](../../Tag/TagVisual.module.css).
+ * Composed CSS: [TagLayout.module.css](../../Tag/TagLayout.module.css).
  *
  * Native :focus-visible replaces legacy focus attributes. No motion is defined upstream.
  */
 
 @layer fluent-components {
   .InteractionTagSecondary {
-    composes: TagExtraSmallHitArea from '../../Tag/TagVisual.module.css';
-    composes: FocusOutline from '../../../styles/FocusRing.module.css';
+    composes: TagExtraSmallHitTarget from '../../Tag/TagLayout.module.css';
+    composes: FocusOutline from '../../../styles/FocusOutlines.module.css';
 
     /* Reset default button style. */
     font-family: inherit;

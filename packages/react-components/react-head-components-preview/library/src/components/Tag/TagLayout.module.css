@@ -18,7 +18,7 @@
  */
 
 @layer fluent-components {
-  .TagVisual {
+  .TagLayout {
     /* Inner horizontal space left and right of Tag. */
     --fui-tag-spacing: calc(var(--spacingHorizontalS) - var(--strokeWidthThin));
     --fui-tag-icon-size: var(--fontSizeBase500);
@@ -40,7 +40,7 @@
     }
   }
 
-  .TagExtraSmallHitArea[data-size='extra-small'] {
+  .TagExtraSmallHitTarget[data-size='extra-small'] {
     position: relative;
 
     /* Extend the pointer target without changing the visible height:
@@ -66,7 +66,7 @@
     }
   }
 
-  .TagVisual__icon {
+  .TagLayout__icon {
     grid-area: media;
     display: flex;
     box-sizing: content-box;
@@ -76,14 +76,14 @@
     font-size: var(--fui-tag-icon-size);
   }
 
-  .TagVisual__media {
+  .TagLayout__media {
     grid-area: media;
     display: flex;
     padding-inline-start: var(--strokeWidthThin);
     padding-inline-end: var(--fui-tag-media-spacing);
   }
 
-  .TagVisual__primaryText {
+  .TagLayout__primaryText {
     white-space: nowrap;
     padding-inline: var(--spacingHorizontalXXS);
     font-family: var(--fontFamilyBase);
@@ -109,7 +109,7 @@
     }
   }
 
-  .TagVisual__secondaryText {
+  .TagLayout__secondaryText {
     grid-area: secondary;
     padding-inline: var(--spacingHorizontalXXS);
     font-family: var(--fontFamilyBase);

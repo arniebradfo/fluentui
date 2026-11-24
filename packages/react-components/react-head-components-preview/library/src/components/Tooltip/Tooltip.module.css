@@ -20,7 +20,7 @@
     &[data-tooltip-content][data-appearance] {
       --fui-positioning-arrow-height: 8.484px;
       --fui-positioning-arrow-offset: -4.242px;
-      --fui-floating-arrow-shadow: 0 var(--spacingVerticalXS) var(--spacingVerticalS);
+      --fui-overlay-drop-shadow: 0 var(--spacingVerticalXS) var(--spacingVerticalS);
 
       box-sizing: border-box;
       max-width: 240px;

@@ -10,9 +10,9 @@
 
 @layer fluent-components {
   .Toast {
-    composes: FloatingFrame FloatingShadow from '../../styles/FloatingSurface.module.css';
+    composes: OverlayFrame OverlayBoxShadow from '../../styles/OverlaySurface.module.css';
 
-    --fui-floating-shadow: var(--shadow8);
+    --fui-overlay-box-shadow: var(--shadow8);
 
     display: grid;
     grid-template-columns: auto 1fr auto;

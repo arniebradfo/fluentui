@@ -6,14 +6,14 @@
  * Headless component: [Combobox.tsx](../../../../../react-headless-components-preview/library/src/components/Combobox/Combobox.tsx).
  * Headless state: [useCombobox.ts](../../../../../react-headless-components-preview/library/src/components/Combobox/useCombobox.ts).
  * Headless render: [renderCombobox.tsx](../../../../../react-headless-components-preview/library/src/components/Combobox/renderCombobox.tsx).
- * Composed CSS: [PickerFrame.module.css](../../styles/PickerFrame.module.css), [InputFocus.module.css](../Input/InputFocus.module.css).
+ * Composed CSS: [ListboxPickerFrame.module.css](../../styles/ListboxPickerFrame.module.css), [InputFocus.module.css](../Input/InputFocus.module.css).
  *
  * The styled Listbox supplies popup visuals; public headless owns native positioning.
  */
 
 @layer fluent-components {
   .Combobox {
-    composes: PickerFrame PickerValidation from '../../styles/PickerFrame.module.css';
+    composes: ListboxPickerFrame PickerInvalid from '../../styles/ListboxPickerFrame.module.css';
     composes: InputFocus from '../Input/InputFocus.module.css';
 
     --fui-combobox-end-padding: var(--spacingHorizontalMNudge);
@@ -144,6 +144,6 @@
   }
 
   .Combobox__listbox {
-    composes: PickerPopup from '../Dropdown/Listbox/Listbox.module.css';
+    composes: ListboxPopupFrame from '../Dropdown/Listbox/Listbox.module.css';
   }
 }

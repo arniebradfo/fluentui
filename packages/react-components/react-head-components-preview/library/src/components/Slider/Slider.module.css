@@ -22,7 +22,7 @@
 @layer fluent-components {
   /* Styles for the root slot */
   .Slider {
-    composes: FocusRingStroke from '../../styles/FocusRing.module.css';
+    composes: FocusBorder from '../../styles/FocusOutlines.module.css';
 
     --fui-Slider__thumb--size: 20px;
     --fui-Slider__inner-thumb--radius: 6px;

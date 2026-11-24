@@ -43,7 +43,7 @@
   /* Styles for the thumb slot */
   .ColorArea__thumb {
     composes: ColorThumb from '../ColorThumb.module.css';
-    composes: FocusRingStroke from '../../../styles/FocusRing.module.css';
+    composes: FocusBorder from '../../../styles/FocusOutlines.module.css';
 
     background-color: var(--fui-Area__thumb--color);
     transform: translate(-50%, 50%);

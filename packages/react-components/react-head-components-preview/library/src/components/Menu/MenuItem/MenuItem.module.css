@@ -12,7 +12,7 @@
 
 @layer fluent-components {
   .MenuItem {
-    composes: FocusRingSelf from '../../../styles/FocusRing.module.css';
+    composes: FocusBorderSelf from '../../../styles/FocusOutlines.module.css';
 
     border-radius: var(--borderRadiusMedium);
     position: relative;

@@ -13,12 +13,12 @@
 
 @layer fluent-components {
   .DialogSurface {
-    composes: FloatingFrame FloatingShadow from '../../../styles/FloatingSurface.module.css';
-    composes: InsetFocusOutline from '../../../styles/FocusRing.module.css';
+    composes: OverlayFrame OverlayBoxShadow from '../../../styles/OverlaySurface.module.css';
+    composes: InsetFocusOutline from '../../../styles/FocusOutlines.module.css';
 
     --fui-Dialog--surface-padding: var(--spacingHorizontalXXL);
     --fui-Dialog--gap: var(--spacingHorizontalS);
-    --fui-floating-shadow: var(--shadow64);
+    --fui-overlay-box-shadow: var(--shadow64);
 
     inset: 0;
     padding: var(--fui-Dialog--surface-padding);

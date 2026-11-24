@@ -15,7 +15,7 @@
 
 .OverlayDrawer {
   composes: Drawer from '../Drawer.module.css';
-  composes: InsetFocusOutline from '../../../styles/FocusRing.module.css';
+  composes: InsetFocusOutline from '../../../styles/FocusOutlines.module.css';
 }
 
 @layer fluent-components {

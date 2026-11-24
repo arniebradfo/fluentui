@@ -6,14 +6,14 @@
  * Headless component: [Checkbox.tsx](../../../../../react-headless-components-preview/library/src/components/Checkbox/Checkbox.tsx).
  * Headless state: [useCheckbox.ts](../../../../../react-headless-components-preview/library/src/components/Checkbox/useCheckbox.ts).
  * Headless render: [renderCheckbox.tsx](../../../../../react-headless-components-preview/library/src/components/Checkbox/renderCheckbox.tsx).
- * Composed CSS: [FocusRing.module.css](../../styles/FocusRing.module.css).
+ * Composed CSS: [FocusOutlines.module.css](../../styles/FocusOutlines.module.css).
  *
  * The styled Label supplies typography; native :focus-visible supplies keyboard modality.
  */
 
 @layer fluent-components {
   .Checkbox {
-    composes: FocusRing from '../../styles/FocusRing.module.css';
+    composes: FocusBorderWithin from '../../styles/FocusOutlines.module.css';
 
     position: relative;
     display: inline-flex;

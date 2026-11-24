@@ -5,12 +5,12 @@
  * - [radio-group.module.css](../../../../react-headless-components-preview/stories/src/RadioGroup/radio-group.module.css)
  * - [rating.module.css](../../../../react-headless-components-preview/stories/src/Rating/rating.module.css)
  *
- * FocusRingStroke paints a positioned ::after; the owning focus selector supplies content.
+ * FocusBorder draws a border on ::after; the owning focus selector supplies content.
  * The low-specificity drawing lets a consumer change the ring's inset or shape locally.
  */
 
 @layer fluent-components {
-  :where(.FocusRingStroke)::after {
+  :where(.FocusBorder)::after {
     position: absolute;
     pointer-events: none;
     z-index: 1;
@@ -23,21 +23,21 @@
     }
   }
 
-  .FocusRing {
-    composes: FocusRingStroke;
+  .FocusBorderWithin {
+    composes: FocusBorder;
   }
 
-  .FocusRingSelf {
-    composes: FocusRingStroke;
+  .FocusBorderSelf {
+    composes: FocusBorder;
   }
 
-  .FocusRing:focus,
-  .FocusRingSelf:focus {
+  .FocusBorderWithin:focus,
+  .FocusBorderSelf:focus {
     outline-style: none;
   }
 
-  .FocusRing:is(:focus-visible, :has(:focus-visible)),
-  .FocusRingSelf:focus-visible {
+  .FocusBorderWithin:is(:focus-visible, :has(:focus-visible)),
+  .FocusBorderSelf:focus-visible {
     border-color: transparent;
 
     &::after {

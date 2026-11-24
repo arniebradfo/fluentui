@@ -14,7 +14,7 @@
  */
 
 @layer fluent-components {
-  .PickerFrame {
+  .ListboxPickerFrame {
     border-radius: var(--borderRadiusMedium);
 
     &[data-appearance='outline'] {
@@ -59,7 +59,7 @@
   }
 
   /* Dropdown and Combobox preserve non-boolean aria-invalid values. */
-  .PickerValidation {
+  .PickerInvalid {
     &[data-invalid]:not([data-invalid='false'], [data-invalid='grammar'], [data-invalid='spelling']) {
       /* Give the invalid border extra specificity on hover. */
       &:not(:focus-within),
@@ -78,7 +78,7 @@
   }
 
   /* At equal specificity, the disabled border must beat the invalid border at rest. */
-  .PickerFrame[data-disabled][data-appearance] {
+  .ListboxPickerFrame[data-disabled][data-appearance] {
     cursor: not-allowed;
     background-color: var(--colorTransparentBackground);
     border-color: var(--colorNeutralStrokeDisabled);

@@ -32,7 +32,7 @@ for (const story of stories) {
 }
 
 test('default rating glyphs fill their item boxes', async ({ page }) => {
-  await page.goto('/iframe.html?id=css-modules-style-primitives--focus-ring&viewMode=story');
+  await page.goto('/iframe.html?id=css-modules-style-primitives--focus-outlines&viewMode=story');
   const rating = page.getByRole('radiogroup', { name: 'Interactive rating' });
   const items = rating.locator('.fui-RatingItem');
   await expect(items).toHaveCount(5);

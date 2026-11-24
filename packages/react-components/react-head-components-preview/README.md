@@ -136,7 +136,7 @@ their CSS Module identifiers.
 
 ### Shared style recipes
 
-- [FloatingSurface](./library/src/styles/FloatingSurface.module.css) separates
+- [OverlaySurface](./library/src/styles/OverlaySurface.module.css) separates
   the surface colors and frame from elevation. Popover, MenuPopover, DialogSurface,
   the DatePicker popup, and Toast share the framed surface. Tooltip and
   TeachingPopover inherit it through PopoverSurface. Picker popups use the same
@@ -157,23 +157,27 @@ their CSS Module identifiers.
   Both Input recipes style the control, not the
   [Field](./library/src/components/Field/Field.tsx) wrapper for labels, hints,
   and validation messages.
-- [PickerFrame](./library/src/styles/PickerFrame.module.css) gives Dropdown,
+- [ListboxPickerFrame](./library/src/styles/ListboxPickerFrame.module.css) gives Dropdown,
   Combobox, and TagPickerControl one source for appearance and disabled styles.
-  Dropdown and Combobox also share a validation class in that file. TagPicker
-  keeps its own invalid borders, and Select paints its frame on a native
-  `<select>` instead of the wrapper.
-- [FocusRing](./library/src/styles/FocusRing.module.css) shares the drawing
-  for keyboard focus. Checkbox, Radio, and RatingItem show the ring when
-  they or a descendant receive visible focus. AccordionHeader and MenuItem
-  use self-focus; Switch, sliders, and Option keep their own input or
-  active-option selectors. A native outline variant serves tags and layer
-  surfaces, without changing specialized focus styles such as Button's.
-- [TagVisual](./library/src/components/Tag/TagVisual.module.css) shares tag
-  spacing, text and media slots, and the extra-small pointer target. This lets
+  Dropdown and Combobox also share `PickerInvalid`. TagPicker keeps its own
+  invalid borders, and Select styles the frame on the native `<select>`.
+  [ListboxPopupFrame](./library/src/components/Dropdown/Listbox/Listbox.module.css)
+  styles the popup itself, not the control that opens it.
+- [FocusOutlines](./library/src/styles/FocusOutlines.module.css) distinguishes
+  the `FocusBorder` classes, which use `border` on `::after`, from
+  `FocusOutline` and `InsetFocusOutline`, which use CSS `outline`. Checkbox,
+  Radio, and RatingItem show the border when they or a descendant receive
+  visible focus. AccordionHeader and MenuItem use self-focus; Switch,
+  sliders, and Option keep their own input or active-option selectors.
+- [TagLayout](./library/src/components/Tag/TagLayout.module.css) shares tag
+  spacing, text and media slots, and the extra-small hit target. This lets
   InteractionTag reuse those styles without importing Tag's root styles.
   [ColorThumb](./library/src/components/ColorPicker/ColorThumb.module.css)
   shares the thumb outline and geometry for ColorArea and ColorSlider; each
   keeps its own position, fill, and focus policy.
+- [DrawerScrollSeparators](./library/src/components/Drawer/DrawerScrollSeparators.module.css)
+  shares the rules for the lines that appear at the header and footer as
+  the drawer body scrolls.
 
 Dropdown, Combobox, and TagPicker default to a listbox below the field,
 aligned to its start edge and matching its width. Callers can override

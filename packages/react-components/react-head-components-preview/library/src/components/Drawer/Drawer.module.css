@@ -14,7 +14,7 @@
 @layer fluent-components {
   /* Default shared styles for the Drawer component */
   .Drawer {
-    composes: FloatingSurface from '../../styles/FloatingSurface.module.css';
+    composes: OverlaySurfaceColors from '../../styles/OverlaySurface.module.css';
 
     --fui-Drawer--size: 320px;
 
