@@ -136,21 +136,38 @@ their CSS Module identifiers.
 
 ### Shared style recipes
 
+- [FloatingSurface](./library/src/styles/FloatingSurface.module.css) separates
+  the surface colors and frame from elevation. Popover, MenuPopover, DialogSurface,
+  the DatePicker popup, and Toast share the framed surface. Tooltip and
+  TeachingPopover inherit it through PopoverSurface. Picker popups use the same
+  box shadow without adopting its border, and Drawer uses the surface colors
+  without adopting its rounded frame. NavDrawer adds a shadow only in overlay mode.
+  Arrow shadows use a filter so they include the arrow; their depth can still differ.
+  Layout, visibility, positioning, and backdrops stay local.
+- [InputFrame](./library/src/components/Input/InputFrame.module.css) gives Input,
+  SearchBox (through Input), and DatePicker the same outer frame, spacing, and
+  appearance states. It composes InputFocus. The control slots,
+  validation selectors, and DatePicker's easing stay local.
+- [InputFocus](./library/src/components/Input/InputFocus.module.css) draws and animates
+  the underline without adding a frame. SpinButton, Dropdown, Combobox,
+  TagPickerControl, Textarea, and Select use it directly. The line covers the
+  root border by default. Exceptions stay local, such as Dropdown's clear-button
+  focus and Textarea's resize clearance. Select keeps its native control outline;
+  the wrapper's line follows the stroke-width token even with square corners.
+  Both Input recipes style the control, not the
+  [Field](./library/src/components/Field/Field.tsx) wrapper for labels, hints,
+  and validation messages.
 - [PickerFrame](./library/src/styles/PickerFrame.module.css) gives Dropdown,
   Combobox, and TagPickerControl one source for appearance and disabled styles.
   Dropdown and Combobox also share a validation class in that file. TagPicker
   keeps its own invalid borders, and Select paints its frame on a native
   `<select>` instead of the wrapper.
-- [FieldFocus](./library/src/styles/FieldFocus.module.css) draws and animates
-  the focus line for Input, SpinButton, Dropdown, Combobox, TagPickerControl,
-  Textarea, DatePicker, and Select. SearchBox inherits it through Input. Each
-  control positions the line and keeps its own outline and exceptions, such
-  as Dropdown's clear-button focus and Textarea's resize clearance. Select
-  keeps its native control outline; the wrapper's line now follows the
-  stroke-width token even with square corners.
-- [FocusRing](./library/src/styles/FocusRing.module.css) draws the same
-  keyboard-visible ring on Checkbox, Radio, and RatingItem. Controls that
-  listen for focus on a specific slot keep their selectors local.
+- [FocusRing](./library/src/styles/FocusRing.module.css) shares the drawing
+  for keyboard focus. Checkbox, Radio, and RatingItem show the ring when
+  they or a descendant receive visible focus. AccordionHeader and MenuItem
+  use self-focus; Switch, sliders, and Option keep their own input or
+  active-option selectors. A native outline variant serves tags and layer
+  surfaces, without changing specialized focus styles such as Button's.
 - [TagVisual](./library/src/components/Tag/TagVisual.module.css) shares tag
   spacing, text and media slots, and the extra-small pointer target. This lets
   InteractionTag reuse those styles without importing Tag's root styles.
@@ -158,9 +175,6 @@ their CSS Module identifiers.
   shares the thumb outline and geometry for ColorArea and ColorSlider; each
   keeps its own position, fill, and focus policy.
 
-Backdrop, positioning, and visibility rules stay with their surfaces.
-Tooltip and TeachingPopover already compose PopoverSurface; menus and
-listboxes do not need that whole surface style to share its theme tokens.
 Dropdown, Combobox, and TagPicker default to a listbox below the field,
 aligned to its start edge and matching its width. Callers can override
 those defaults, and the browser can flip the listbox to fit when it is not

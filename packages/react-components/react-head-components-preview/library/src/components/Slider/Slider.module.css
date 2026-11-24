@@ -22,6 +22,8 @@
 @layer fluent-components {
   /* Styles for the root slot */
   .Slider {
+    composes: FocusRingStroke from '../../styles/FocusRing.module.css';
+
     --fui-Slider__thumb--size: 20px;
     --fui-Slider__inner-thumb--radius: 6px;
     --fui-Slider__rail--size: 4px;
@@ -105,30 +107,17 @@
       }
     }
 
-    /* The element with the focus outline needs position: relative so the
-       pseudo-element can be properly positioned. The actual input owns focus. */
     &:has(> .Slider__input:focus-visible) {
       border-color: transparent;
 
       &::after {
         content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-        border-radius: var(--borderRadiusMedium);
         inset-block: 0;
         inset-inline: var(--spacingHorizontalXXS);
       }
 
       &[data-vertical]::after {
         inset-inline: calc(-1 * var(--spacingHorizontalSNudge));
-      }
-
-      @media (forced-colors: active) {
-        &::after {
-          border-color: Highlight;
-        }
       }
     }
 

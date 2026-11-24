@@ -15,6 +15,7 @@
 @layer fluent-components {
   .InteractionTagSecondary {
     composes: TagExtraSmallHitArea from '../../Tag/TagVisual.module.css';
+    composes: FocusOutline from '../../../styles/FocusRing.module.css';
 
     /* Reset default button style. */
     font-family: inherit;
@@ -34,10 +35,6 @@
     font-size: var(--fontSizeBase500);
     background-color: var(--colorNeutralBackground3);
     color: var(--colorNeutralForeground2);
-
-    &:focus-visible {
-      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-    }
 
     &[data-shape='circular'] {
       border-start-end-radius: var(--borderRadiusCircular);

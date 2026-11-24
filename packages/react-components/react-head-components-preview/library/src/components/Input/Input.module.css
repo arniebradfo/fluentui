@@ -7,72 +7,23 @@
  * Headless component: [Input.tsx](../../../../../react-headless-components-preview/library/src/components/Input/Input.tsx).
  * Headless state: [useInput.ts](../../../../../react-headless-components-preview/library/src/components/Input/useInput.ts).
  * Headless render: [renderInput.tsx](../../../../../react-headless-components-preview/library/src/components/Input/renderInput.tsx).
- * Composed CSS: [FieldFocus.module.css](../../styles/FieldFocus.module.css).
+ * Composed CSS: [InputFrame.module.css](./InputFrame.module.css).
  *
  * Logical spacing supports RTL; native :focus-within drives the focus indicator.
  */
 
 @layer fluent-components {
   .Input {
-    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+    composes: InputFrame from './InputFrame.module.css';
 
-    /* With no contentBefore or contentAfter, the input slot uses combined padding to increase its hit target.
-     * If there is contentBefore or contentAfter, then the root and input slots use their individual padding.
-     */
-    --fui-input-root-padding: var(--spacingHorizontalMNudge);
-    --fui-input-slot-padding: var(--spacingHorizontalXXS);
-    --fui-input-combined-padding: var(--spacingHorizontalM);
     --fui-input-icon-size: var(--fontSizeBase500);
 
-    display: inline-flex;
-    align-items: center;
-    flex-wrap: nowrap;
-    gap: var(--spacingHorizontalXXS);
-    border-radius: var(--borderRadiusMedium);
-    position: relative;
-    box-sizing: border-box;
-    vertical-align: middle;
-    /* size: medium (default) */
-    min-height: 32px;
-    font-family: var(--fontFamilyBase);
-    font-size: var(--fontSizeBase300);
-    font-weight: var(--fontWeightRegular);
-    line-height: var(--lineHeightBase300);
-    /* appearance: outline (default) */
-    background-color: var(--colorNeutralBackground1);
-    border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
-    border-bottom-color: var(--colorNeutralStrokeAccessible);
-
-    /* Extend the focus line from the padding edge over the root border. */
-    &::after {
-      inset-inline: calc(-1 * var(--strokeWidthThin));
-      bottom: calc(-1 * var(--strokeWidthThin));
-    }
-
-    &:focus-within {
-      outline: var(--strokeWidthThick) solid transparent;
-    }
-
     &[data-size='small'] {
-      --fui-input-root-padding: var(--spacingHorizontalSNudge);
-      --fui-input-combined-padding: var(--spacingHorizontalS);
       --fui-input-icon-size: var(--fontSizeBase400);
-
-      min-height: 24px;
-      font-size: var(--fontSizeBase200);
-      line-height: var(--lineHeightBase200);
     }
 
     &[data-size='large'] {
-      --fui-input-root-padding: var(--spacingHorizontalM);
-      --fui-input-slot-padding: var(--spacingHorizontalSNudge);
-      --fui-input-combined-padding: calc(var(--spacingHorizontalM) + var(--spacingHorizontalSNudge));
       --fui-input-icon-size: var(--fontSizeBase600);
-
-      min-height: 40px;
-      font-size: var(--fontSizeBase400);
-      line-height: var(--lineHeightBase400);
-      gap: var(--spacingHorizontalSNudge);
     }
 
     &[data-has-content-before] {
@@ -91,71 +42,7 @@
       }
     }
 
-    &[data-appearance='underline'] {
-      background-color: var(--colorTransparentBackground);
-      border-radius: 0;
-      /* The base border is specified above, but we only want a bottom border here. */
-      border-top-style: none;
-      border-inline-style: none;
-
-      &::after {
-        /* Make the focus underline match the width of the bottom border. */
-        inset-inline: 0;
-      }
-    }
-
-    &[data-appearance='filled-darker'],
-    &[data-appearance='filled-lighter'] {
-      border-color: var(--colorTransparentStroke);
-    }
-
-    &[data-appearance='filled-darker'] {
-      background-color: var(--colorNeutralBackground3);
-    }
-
-    &[data-appearance='filled-lighter'] {
-      background-color: var(--colorNeutralBackground1);
-    }
-
     &:not([data-disabled]) {
-      &[data-appearance='outline'] {
-        &:hover {
-          border-color: var(--colorNeutralStroke1Hover);
-          border-bottom-color: var(--colorNeutralStrokeAccessibleHover);
-        }
-
-        &:active,
-        &:focus-within {
-          border-color: var(--colorNeutralStroke1Pressed);
-          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
-        }
-      }
-
-      &[data-appearance='underline'] {
-        &:hover {
-          border-bottom-color: var(--colorNeutralStrokeAccessibleHover);
-        }
-
-        &:active,
-        &:focus-within {
-          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
-        }
-
-        &::after {
-          /* Remove rounded corners from the focus underline. */
-          border-radius: 0;
-        }
-      }
-
-      &[data-appearance='filled-darker'],
-      &[data-appearance='filled-lighter'] {
-        &:hover,
-        &:focus-within {
-          /* Also handles the pressed border color (:active). */
-          border-color: var(--colorTransparentStrokeInteractive);
-        }
-      }
-
       /* Headless preserves spelling/grammar values; only aria-invalid=true is red. */
       &[data-invalid='']:not(:focus-within),
       &[data-invalid='']:hover:not(:focus-within) {
@@ -164,20 +51,6 @@
     }
 
     &[data-disabled] {
-      cursor: not-allowed;
-      background-color: var(--colorTransparentBackground);
-      border-color: var(--colorNeutralStrokeDisabled);
-
-      /* Remove the focus border. */
-      &::after {
-        content: unset;
-      }
-
-      /* Remove the focus outline. */
-      &:focus-within {
-        outline-style: none;
-      }
-
       .Input__input {
         color: var(--colorNeutralForegroundDisabled);
         background-color: var(--colorTransparentBackground);
@@ -191,10 +64,6 @@
       .Input__contentBefore,
       .Input__contentAfter {
         color: var(--colorNeutralForegroundDisabled);
-      }
-
-      @media (forced-colors: active) {
-        border-color: GrayText;
       }
     }
   }

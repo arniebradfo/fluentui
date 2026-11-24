@@ -212,6 +212,10 @@
   }
 
   .NavDrawer {
+    composes: FloatingShadow from '../../styles/FloatingSurface.module.css';
+
+    --fui-floating-shadow: none;
+
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -246,11 +250,12 @@
     }
 
     &[data-type='overlay'] {
+      --fui-floating-shadow: var(--shadow64);
+
       position: fixed;
       inset-block: 0;
       inset-inline: 0 auto;
       margin: 0;
-      box-shadow: var(--shadow64);
       animation: navDrawerEnter var(--durationSlow) var(--curveDecelerateMid);
       --fui-NavDrawer-translate: -100%;
 

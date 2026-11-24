@@ -166,6 +166,8 @@
 
   /* Styles shared by the startThumb and endThumb slots */
   .RangeSlider__thumb {
+    composes: FocusRingStroke from '../../styles/FocusRing.module.css';
+
     grid-area: 2 / 2 / 2 / 2;
     position: absolute;
     width: var(--fui-RangeSlider__thumb--size);
@@ -199,24 +201,11 @@
       }
     }
 
-    /* createFocusOutlineStyle({ selector: 'focus-within', outlineOffset: 0 }). */
     &:has(> .RangeSlider__input:focus-visible) {
       border-color: transparent;
 
       &::after {
         content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-        border-radius: var(--borderRadiusMedium);
-        inset: calc(-1 * var(--strokeWidthThick));
-      }
-
-      @media (forced-colors: active) {
-        &::after {
-          border-color: Highlight;
-        }
       }
     }
 

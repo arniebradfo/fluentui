@@ -1,0 +1,137 @@
+/*
+ * Fluent style sources:
+ * - [useInputStyles.styles.ts](../../../../../react-input/library/src/components/Input/useInputStyles.styles.ts)
+ * - [useDatePickerStyles.styles.ts](../../../../../react-datepicker-compat/library/src/components/DatePicker/useDatePickerStyles.styles.ts)
+ *
+ * Input and DatePicker share this outer frame. Their slots and invalid-state selectors stay local.
+ */
+
+@layer fluent-components {
+  .InputFrame {
+    composes: InputFocus from './InputFocus.module.css';
+
+    /* With no side content, combined padding extends the input's hit target. */
+    --fui-input-root-padding: var(--spacingHorizontalMNudge);
+    --fui-input-slot-padding: var(--spacingHorizontalXXS);
+    --fui-input-combined-padding: var(--spacingHorizontalM);
+
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: var(--spacingHorizontalXXS);
+    border-radius: var(--borderRadiusMedium);
+    position: relative;
+    box-sizing: border-box;
+    vertical-align: middle;
+    min-height: 32px;
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase300);
+    font-weight: var(--fontWeightRegular);
+    line-height: var(--lineHeightBase300);
+    background-color: var(--colorNeutralBackground1);
+    border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
+    border-bottom-color: var(--colorNeutralStrokeAccessible);
+
+    &:focus-within {
+      outline: var(--strokeWidthThick) solid transparent;
+    }
+
+    &[data-appearance='underline'] {
+      background-color: var(--colorTransparentBackground);
+      border-radius: 0;
+      border-top-style: none;
+      border-inline-style: none;
+
+      &::after {
+        /* The underline appearance has no side borders. */
+        inset-inline: 0;
+      }
+    }
+
+    &[data-appearance='filled-darker'],
+    &[data-appearance='filled-lighter'] {
+      border-color: var(--colorTransparentStroke);
+    }
+
+    &[data-appearance='filled-darker'] {
+      background-color: var(--colorNeutralBackground3);
+    }
+
+    &:not([data-disabled]) {
+      &[data-appearance='outline'] {
+        &:hover {
+          border-color: var(--colorNeutralStroke1Hover);
+          border-bottom-color: var(--colorNeutralStrokeAccessibleHover);
+        }
+
+        &:active,
+        &:focus-within {
+          border-color: var(--colorNeutralStroke1Pressed);
+          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
+        }
+      }
+
+      &[data-appearance='underline'] {
+        &:hover {
+          border-bottom-color: var(--colorNeutralStrokeAccessibleHover);
+        }
+
+        &:active,
+        &:focus-within {
+          border-bottom-color: var(--colorNeutralStrokeAccessiblePressed);
+        }
+
+        &::after {
+          border-radius: 0;
+        }
+      }
+
+      &[data-appearance='filled-darker'],
+      &[data-appearance='filled-lighter'] {
+        &:hover,
+        &:focus-within {
+          border-color: var(--colorTransparentStrokeInteractive);
+        }
+      }
+    }
+
+    &[data-disabled] {
+      cursor: not-allowed;
+      background-color: var(--colorTransparentBackground);
+      border-color: var(--colorNeutralStrokeDisabled);
+
+      &::after {
+        content: none;
+      }
+
+      &:focus-within {
+        outline-style: none;
+      }
+
+      @media (forced-colors: active) {
+        border-color: GrayText;
+      }
+    }
+  }
+
+  /* Keep size defaults below component-specific spacing, such as SearchBox padding. */
+  :where(.InputFrame)[data-size='small'] {
+    --fui-input-root-padding: var(--spacingHorizontalSNudge);
+    --fui-input-combined-padding: var(--spacingHorizontalS);
+
+    min-height: 24px;
+    font-size: var(--fontSizeBase200);
+    line-height: var(--lineHeightBase200);
+  }
+
+  :where(.InputFrame)[data-size='large'] {
+    --fui-input-root-padding: var(--spacingHorizontalM);
+    --fui-input-slot-padding: var(--spacingHorizontalSNudge);
+    --fui-input-combined-padding: calc(var(--spacingHorizontalM) + var(--spacingHorizontalSNudge));
+
+    min-height: 40px;
+    font-size: var(--fontSizeBase400);
+    line-height: var(--lineHeightBase400);
+    gap: var(--spacingHorizontalSNudge);
+  }
+}

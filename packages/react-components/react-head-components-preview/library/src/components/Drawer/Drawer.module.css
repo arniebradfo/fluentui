@@ -14,6 +14,8 @@
 @layer fluent-components {
   /* Default shared styles for the Drawer component */
   .Drawer {
+    composes: FloatingSurface from '../../styles/FloatingSurface.module.css';
+
     --fui-Drawer--size: 320px;
 
     overflow: hidden;
@@ -26,8 +28,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    background-color: var(--colorNeutralBackground1);
-    color: var(--colorNeutralForeground1);
     font-family: var(--fontFamilyBase);
     font-size: var(--fontSizeBase300);
     font-weight: var(--fontWeightRegular);

@@ -34,4 +34,12 @@
       color: inherit;
     }
   }
+
+  .PickerPopup {
+    composes: FloatingShadow from '../../../styles/FloatingSurface.module.css';
+
+    box-sizing: border-box;
+    border-radius: var(--borderRadiusMedium);
+    max-height: 80vh;
+  }
 }

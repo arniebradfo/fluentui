@@ -15,6 +15,7 @@
 
 .OverlayDrawer {
   composes: Drawer from '../Drawer.module.css';
+  composes: InsetFocusOutline from '../../../styles/FocusRing.module.css';
 }
 
 @layer fluent-components {
@@ -60,21 +61,6 @@
     &[data-modal-type='non-modal']::backdrop,
     &[data-dialog-nested]::backdrop {
       background-color: var(--colorTransparentBackground);
-    }
-
-    &:focus {
-      outline: none;
-    }
-
-    &:focus-visible {
-      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-      outline-offset: calc(var(--strokeWidthThick) * -1);
-    }
-  }
-
-  @media (forced-colors: active) {
-    .OverlayDrawer[data-position]:focus-visible {
-      outline-color: Highlight;
     }
   }
 }

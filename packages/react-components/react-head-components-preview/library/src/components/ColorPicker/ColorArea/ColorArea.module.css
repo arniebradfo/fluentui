@@ -43,6 +43,7 @@
   /* Styles for the thumb slot */
   .ColorArea__thumb {
     composes: ColorThumb from '../ColorThumb.module.css';
+    composes: FocusRingStroke from '../../../styles/FocusRing.module.css';
 
     background-color: var(--fui-Area__thumb--color);
     transform: translate(-50%, 50%);
@@ -55,18 +56,7 @@
 
       &::after {
         content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
         border-radius: var(--borderRadiusCircular);
-        inset: calc(var(--strokeWidthThick) * -1);
-      }
-
-      @media (forced-colors: active) {
-        &::after {
-          border-color: Highlight;
-        }
       }
     }
   }

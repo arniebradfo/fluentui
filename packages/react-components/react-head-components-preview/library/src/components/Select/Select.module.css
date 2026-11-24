@@ -6,14 +6,14 @@
  * Headless component: [Select.tsx](../../../../../react-headless-components-preview/library/src/components/Select/Select.tsx).
  * Headless state: [useSelect.ts](../../../../../react-headless-components-preview/library/src/components/Select/useSelect.ts).
  * Headless render: [renderSelect.tsx](../../../../../react-headless-components-preview/library/src/components/Select/renderSelect.tsx).
- * Composed CSS: [FieldFocus.module.css](../../styles/FieldFocus.module.css).
+ * Composed CSS: [InputFocus.module.css](../Input/InputFocus.module.css).
  *
  * Logical positioning supports RTL; focus uses native :focus-within.
  */
 
 @layer fluent-components {
   .Select {
-    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+    composes: InputFocus from '../Input/InputFocus.module.css';
 
     --fui-select-icon-size: var(--fontSizeBase500);
     /* TODO: Should field heights be a set of global design tokens or constants? */

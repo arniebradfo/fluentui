@@ -6,7 +6,7 @@
  * Headless component: [Dropdown.tsx](../../../../../react-headless-components-preview/library/src/components/Dropdown/Dropdown.tsx).
  * Headless state: [useDropdown.ts](../../../../../react-headless-components-preview/library/src/components/Dropdown/useDropdown.ts).
  * Headless render: [renderDropdown.tsx](../../../../../react-headless-components-preview/library/src/components/Dropdown/renderDropdown.tsx).
- * Composed CSS: [PickerFrame.module.css](../../styles/PickerFrame.module.css), [FieldFocus.module.css](../../styles/FieldFocus.module.css).
+ * Composed CSS: [PickerFrame.module.css](../../styles/PickerFrame.module.css), [InputFocus.module.css](../Input/InputFocus.module.css).
  *
  * The styled Listbox supplies popup visuals; public headless owns native positioning.
  */
@@ -14,7 +14,7 @@
 @layer fluent-components {
   .Dropdown {
     composes: PickerFrame PickerValidation from '../../styles/PickerFrame.module.css';
-    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+    composes: InputFocus from '../Input/InputFocus.module.css';
 
     --fui-dropdown-icon-size: var(--fontSizeBase500);
     --fui-dropdown-icon-margin: var(--spacingHorizontalXXS);
@@ -30,12 +30,7 @@
       outline: var(--strokeWidthThick) solid transparent;
     }
 
-    &::after {
-      inset-inline: calc(-1 * var(--strokeWidthThin));
-      bottom: calc(-1 * var(--strokeWidthThin));
-    }
-
-    /* Clear-button focus hides the line even when pressed and FieldFocus loads later. */
+    /* Clear-button focus hides the line even when pressed and InputFocus loads later. */
     &:focus-within:has(.Dropdown__clearButton:focus)::after {
       border-bottom-color: initial;
       transform: scaleX(0);
@@ -129,6 +124,8 @@
   }
 
   .Dropdown__clearButton {
+    composes: FocusOutline from '../../styles/FocusRing.module.css';
+
     align-self: center;
     background-color: var(--colorTransparentBackground);
     border: none;
@@ -140,7 +137,6 @@
     position: relative;
 
     &:focus-visible {
-      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
       outline-offset: calc(-1 * var(--strokeWidthThick));
       border-radius: var(--borderRadiusMedium);
       z-index: 1;
@@ -148,10 +144,7 @@
   }
 
   .Dropdown__listbox {
-    box-sizing: border-box;
-    box-shadow: var(--shadow16);
-    border-radius: var(--borderRadiusMedium);
-    max-height: 80vh;
+    composes: PickerPopup from './Listbox/Listbox.module.css';
 
     &[popover][data-size] {
       /* Native popovers remain descendants of the trigger's visual tree. */

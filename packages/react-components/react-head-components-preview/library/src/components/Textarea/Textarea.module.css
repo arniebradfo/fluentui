@@ -6,29 +6,24 @@
  * Headless component: [Textarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/Textarea.tsx).
  * Headless state: [useTextarea.ts](../../../../../react-headless-components-preview/library/src/components/Textarea/useTextarea.ts).
  * Headless render: [renderTextarea.tsx](../../../../../react-headless-components-preview/library/src/components/Textarea/renderTextarea.tsx).
- * Composed CSS: [FieldFocus.module.css](../../styles/FieldFocus.module.css).
+ * Composed CSS: [InputFocus.module.css](../Input/InputFocus.module.css).
  */
 
 @layer fluent-components {
   /* Styles for the root (wrapper) slot. */
   .Textarea {
-    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+    composes: InputFocus from '../Input/InputFocus.module.css';
 
     display: inline-flex;
     box-sizing: border-box;
     position: relative;
-    /* Reserve one stroke below the native resize handle for the FieldFocus line. */
+    /* Reserve one stroke below the native resize handle for the InputFocus line. */
     padding: 0 0 var(--strokeWidthThick);
     margin: 0;
     border-radius: var(--borderRadiusMedium);
     vertical-align: top;
 
     &:not([data-disabled]) {
-      &::after {
-        inset-inline: calc(-1 * var(--strokeWidthThin));
-        bottom: calc(-1 * var(--strokeWidthThin));
-      }
-
       &:focus-within {
         outline: var(--strokeWidthThick) solid transparent;
       }

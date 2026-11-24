@@ -12,6 +12,8 @@
 
 @layer fluent-components {
   .Switch {
+    composes: FocusRingStroke from '../../styles/FocusRing.module.css';
+
     align-items: flex-start;
     box-sizing: border-box;
     display: inline-flex;
@@ -22,25 +24,11 @@
       outline-style: none;
     }
 
-    /* The element with the focus outline needs position: relative so the pseudo-element
-       can be properly positioned. Native input focus-visible supplies keyboard modality. */
     &:has(> .Switch__input:focus-visible) {
       border-color: transparent;
 
       &::after {
         content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-        border-radius: var(--borderRadiusMedium);
-        inset: calc(-1 * var(--strokeWidthThick));
-      }
-
-      @media (forced-colors: active) {
-        &::after {
-          border-color: Highlight;
-        }
       }
     }
 

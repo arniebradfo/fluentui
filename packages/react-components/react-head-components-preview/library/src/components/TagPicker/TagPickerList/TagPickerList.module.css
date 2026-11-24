@@ -12,9 +12,6 @@
 
 @layer fluent-components {
   .TagPickerList {
-    box-shadow: var(--shadow16);
-    border-radius: var(--borderRadiusMedium);
-    max-height: 80vh;
-    box-sizing: border-box;
+    composes: PickerPopup from '../../Dropdown/Listbox/Listbox.module.css';
   }
 }

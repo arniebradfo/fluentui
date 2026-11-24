@@ -12,6 +12,8 @@
 
 @layer fluent-components {
   .MenuItem {
+    composes: FocusRingSelf from '../../../styles/FocusRing.module.css';
+
     border-radius: var(--borderRadiusMedium);
     position: relative;
     color: var(--colorNeutralForeground2);
@@ -30,26 +32,6 @@
     cursor: pointer;
     gap: var(--spacingHorizontalXS);
     user-select: none;
-
-    &:focus,
-    &:focus-visible {
-      outline-style: none;
-    }
-
-    /* The element with the focus outline needs position: relative. */
-    &:focus-visible {
-      border-color: transparent;
-
-      &::after {
-        content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-        border-radius: var(--borderRadiusMedium);
-        inset: calc(-1 * var(--strokeWidthThick));
-      }
-    }
 
     &:not([data-disabled]):is(:hover, [data-submenu-open]) {
       background-color: var(--colorNeutralBackground1Hover);
@@ -129,10 +111,6 @@
         & > .MenuItem__content > .MenuItem__subText {
           color: HighlightText;
         }
-      }
-
-      &:focus-visible::after {
-        border-color: Highlight;
       }
 
       &[data-disabled] {

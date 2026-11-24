@@ -14,6 +14,8 @@
 @layer fluent-components {
   /* Styles for the root slot. */
   .InfoButton {
+    composes: FocusRingStroke from '../../../styles/FocusRing.module.css';
+
     align-items: center;
     box-sizing: border-box;
     display: inline-flex;
@@ -75,12 +77,6 @@
 
     &:focus-visible::after {
       content: '';
-      position: absolute;
-      pointer-events: none;
-      z-index: 1;
-      border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-      border-radius: var(--borderRadiusMedium);
-      inset: calc(-1 * var(--strokeWidthThick));
     }
 
     &[data-size='large'] {
@@ -100,10 +96,6 @@
         forced-color-adjust: none;
         background-color: Highlight;
         color: Canvas;
-      }
-
-      &:focus-visible::after {
-        border-color: Highlight;
       }
     }
   }

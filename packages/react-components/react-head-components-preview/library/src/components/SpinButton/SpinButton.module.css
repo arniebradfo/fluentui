@@ -6,14 +6,14 @@
  * Headless component: [SpinButton.tsx](../../../../../react-headless-components-preview/library/src/components/SpinButton/SpinButton.tsx).
  * Headless state: [useSpinButton.ts](../../../../../react-headless-components-preview/library/src/components/SpinButton/useSpinButton.ts).
  * Headless render: [renderSpinButton.tsx](../../../../../react-headless-components-preview/library/src/components/SpinButton/renderSpinButton.tsx).
- * Composed CSS: [FieldFocus.module.css](../../styles/FieldFocus.module.css).
+ * Composed CSS: [InputFocus.module.css](../Input/InputFocus.module.css).
  *
  * Logical spacing and corners support RTL; focus uses native :focus-within.
  */
 
 @layer fluent-components {
   .SpinButton {
-    composes: FieldFocus from '../../styles/FieldFocus.module.css';
+    composes: InputFocus from '../Input/InputFocus.module.css';
 
     --fui-spinbutton-button-hover-background: var(--colorSubtleBackgroundHover);
     --fui-spinbutton-button-pressed-background: var(--colorSubtleBackgroundPressed);

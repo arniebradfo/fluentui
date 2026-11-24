@@ -1,28 +1,56 @@
 import * as React from 'react';
 import { TagRegular } from '@fluentui/react-icons';
 import {
+  Accordion,
+  AccordionHeader,
+  AccordionItem,
+  AccordionPanel,
   AlphaSlider,
   Avatar,
+  Button,
   Checkbox,
   ColorArea,
   ColorSlider,
   Combobox,
   DatePicker,
+  Dialog,
+  DialogActions,
+  DialogBody,
+  DialogHeader,
+  DialogSurface,
+  DialogTitle,
+  DialogTrigger,
+  DrawerBody,
+  DrawerHeader,
+  DrawerHeaderTitle,
   Dropdown,
   Field,
   FluentProvider,
+  InfoLabel,
   Input,
   InteractionTag,
   InteractionTagPrimary,
   InteractionTagSecondary,
+  Menu,
+  MenuItem,
+  MenuList,
+  MenuPopover,
+  MenuTrigger,
   Option,
+  OverlayDrawer,
+  Popover,
+  PopoverSurface,
+  PopoverTrigger,
   Radio,
   RadioGroup,
+  RangeSlider,
   Rating,
   RatingDisplay,
   SearchBox,
   Select,
+  Slider,
   SpinButton,
+  Switch,
   Tag,
   TagPicker,
   TagPickerControl,
@@ -30,7 +58,13 @@ import {
   TagPickerInput,
   TagPickerList,
   TagPickerOption,
+  TeachingPopover,
+  TeachingPopoverBody,
+  TeachingPopoverSurface,
+  TeachingPopoverTitle,
+  TeachingPopoverTrigger,
   Textarea,
+  Tooltip,
   tokens,
   webLightTheme,
   type TagPickerAppearance,
@@ -125,9 +159,9 @@ function FruitTagPicker({
   );
 }
 
-export const FieldFocus = () => (
+export const InputFocus = () => (
   <Review
-    title="Field focus"
+    title="Input focus"
     instructions="Tab through the fields to compare their focus lines. Focus the Dropdown clear button, compare the Select corners, and drag the Textarea resize handle."
   >
     <ExampleGroup label="Text and number fields">
@@ -182,7 +216,7 @@ export const FieldFocus = () => (
 export const FocusRing = () => (
   <Review
     title="Focus ring"
-    instructions="Tab to compare the keyboard focus rings. Press Space to toggle a checkbox, or use the arrow keys to change the radio choice or rating."
+    instructions="Tab through the controls, then try the arrow keys in the menu, listbox, and sliders. Compare rings on buttons, around fields or thumbs, and on the active listbox option."
   >
     <ExampleGroup label="Checkbox">
       <Checkbox label="Unchecked" />
@@ -200,6 +234,155 @@ export const FocusRing = () => (
       <Rating aria-label="Interactive rating" defaultValue={2.5} step={0.5} />
       <RatingDisplay value={2.5} />
       <span>The read-only rating is not a Tab stop.</span>
+    </ExampleGroup>
+    <ExampleGroup label="Focus on the control">
+      <Accordion collapsible>
+        <AccordionItem value="focus">
+          <AccordionHeader>Accordion header</AccordionHeader>
+          <AccordionPanel>Focus stays on the header when you expand it.</AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+      <InfoLabel info="The ring is drawn around the info button.">InfoLabel</InfoLabel>
+      <Menu>
+        <MenuTrigger>
+          <Button>Open focus ring menu</Button>
+        </MenuTrigger>
+        <MenuPopover>
+          <MenuList>
+            <MenuItem>First command</MenuItem>
+            <MenuItem>Second command</MenuItem>
+          </MenuList>
+        </MenuPopover>
+      </Menu>
+    </ExampleGroup>
+    <ExampleGroup label="Focus on an input or an active option">
+      <Switch label="Toggle example" />
+      <Field label="Slider">
+        <Slider defaultValue={40} />
+      </Field>
+      <RangeSlider
+        aria-label="Range slider"
+        defaultValue={{ start: 25, end: 75 }}
+        startInput={{ 'aria-label': 'Start of range' }}
+        endInput={{ 'aria-label': 'End of range' }}
+      />
+      <Field label="Listbox option focus">
+        <Dropdown placeholder="Choose a fruit">{options}</Dropdown>
+      </Field>
+    </ExampleGroup>
+  </Review>
+);
+
+export const InputFrame = () => (
+  <Review
+    title="Input frame"
+    instructions="Compare the same appearance across the three fields. Tab and hover to check their borders, then try the smaller SearchBox and the editable DatePicker."
+  >
+    {(['outline', 'underline', 'filled-darker'] as const).map(appearance => (
+      <ExampleGroup key={appearance} label={appearance}>
+        <Field label="Input">
+          <Input appearance={appearance} placeholder="Name" />
+        </Field>
+        <Field label="SearchBox">
+          <SearchBox appearance={appearance} placeholder="Search" size="small" />
+        </Field>
+        <Field label="DatePicker">
+          <DatePicker appearance={appearance} allowTextInput today={referenceDate} defaultValue={referenceDate} />
+        </Field>
+      </ExampleGroup>
+    ))}
+    <ExampleGroup label="Invalid and disabled">
+      <Field label="Invalid Input" validationState="error">
+        <Input defaultValue="Check this value" />
+      </Field>
+      <Field label="Disabled DatePicker">
+        <DatePicker disabled allowTextInput today={referenceDate} defaultValue={referenceDate} />
+      </Field>
+    </ExampleGroup>
+  </Review>
+);
+
+function FloatingDrawer() {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <>
+      <Button onClick={() => setOpen(true)}>Open edge drawer</Button>
+      <OverlayDrawer aria-label="Edge drawer" position="end" open={open} onOpenChange={(_, data) => setOpen(data.open)}>
+        <DrawerHeader>
+          <DrawerHeaderTitle action={<Button onClick={() => setOpen(false)}>Close drawer</Button>}>
+            Edge drawer
+          </DrawerHeaderTitle>
+        </DrawerHeader>
+        <DrawerBody>The frame meets the edge of the viewport.</DrawerBody>
+      </OverlayDrawer>
+    </>
+  );
+}
+
+export const FloatingSurfaces = () => (
+  <Review
+    title="Floating surfaces"
+    instructions="Open each surface to compare its fill, stroke, corners, and shadow. Notice how the smaller tooltip shadow follows the arrow and the drawer keeps its square edge."
+  >
+    <ExampleGroup label="Anchored information">
+      <Tooltip content="A tooltip with an arrow" relationship="description" withArrow>
+        <Button>Hover or focus for tooltip</Button>
+      </Tooltip>
+      <Popover positioning="below-start" appearance="inverted" size="small" withArrow>
+        <PopoverTrigger>
+          <Button>Open popover</Button>
+        </PopoverTrigger>
+        <PopoverSurface aria-label="Inverted popover">This surface has an inverted fill.</PopoverSurface>
+      </Popover>
+      <TeachingPopover positioning="below-start" size="small">
+        <TeachingPopoverTrigger>
+          <Button>Open teaching popover</Button>
+        </TeachingPopoverTrigger>
+        <TeachingPopoverSurface aria-label="Teaching popover">
+          <TeachingPopoverBody>
+            <TeachingPopoverTitle>Teaching popover</TeachingPopoverTitle>
+            <p>The larger radius stays local to this surface.</p>
+          </TeachingPopoverBody>
+        </TeachingPopoverSurface>
+      </TeachingPopover>
+    </ExampleGroup>
+    <ExampleGroup label="Menus and pickers">
+      <Menu>
+        <MenuTrigger>
+          <Button>Open menu</Button>
+        </MenuTrigger>
+        <MenuPopover>
+          <MenuList>
+            <MenuItem>First command</MenuItem>
+            <MenuItem>Second command</MenuItem>
+          </MenuList>
+        </MenuPopover>
+      </Menu>
+      <Field label="Dropdown">
+        <Dropdown placeholder="Choose a fruit">{options}</Dropdown>
+      </Field>
+      <Field label="DatePicker">
+        <DatePicker today={referenceDate} defaultValue={referenceDate} />
+      </Field>
+    </ExampleGroup>
+    <ExampleGroup label="Dialog and drawer">
+      <Dialog>
+        <DialogTrigger>
+          <Button>Open dialog</Button>
+        </DialogTrigger>
+        <DialogSurface>
+          <DialogHeader>
+            <DialogTitle>Centered dialog</DialogTitle>
+          </DialogHeader>
+          <DialogBody>A deeper shadow separates this surface from the page.</DialogBody>
+          <DialogActions>
+            <DialogTrigger action="close">
+              <Button>Close dialog</Button>
+            </DialogTrigger>
+          </DialogActions>
+        </DialogSurface>
+      </Dialog>
+      <FloatingDrawer />
     </ExampleGroup>
   </Review>
 );

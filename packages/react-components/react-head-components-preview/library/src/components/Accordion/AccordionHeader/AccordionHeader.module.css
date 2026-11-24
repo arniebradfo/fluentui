@@ -91,6 +91,8 @@
   }
 
   .AccordionHeader__button {
+    composes: FocusRingSelf from '../../../styles/FocusRing.module.css';
+
     /* TODO: this should be extracted to another package */
     background-color: inherit;
     color: inherit;
@@ -111,32 +113,6 @@
     font-weight: var(--fontWeightRegular);
     line-height: var(--lineHeightBase300);
     box-sizing: border-box;
-
-    &:focus,
-    &:focus-visible {
-      outline-style: none;
-    }
-
-    &:focus-visible {
-      border-color: transparent;
-
-      /* The focus outline needs position: relative on its owning button. */
-      &::after {
-        content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-        border-radius: var(--borderRadiusMedium);
-        inset: calc(var(--strokeWidthThick) * -1);
-      }
-
-      @media (forced-colors: active) {
-        &::after {
-          border-color: Highlight;
-        }
-      }
-    }
   }
 
   .AccordionHeader__expandIcon,

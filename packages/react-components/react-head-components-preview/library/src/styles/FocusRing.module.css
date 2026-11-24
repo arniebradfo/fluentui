@@ -5,33 +5,63 @@
  * - [radio-group.module.css](../../../../react-headless-components-preview/stories/src/RadioGroup/radio-group.module.css)
  * - [rating.module.css](../../../../react-headless-components-preview/stories/src/Rating/rating.module.css)
  *
- * Compose on a positioned root that owns the keyboard focus ring for itself and its children.
+ * FocusRingStroke paints a positioned ::after; the owning focus selector supplies content.
+ * The low-specificity drawing lets a consumer change the ring's inset or shape locally.
  */
 
 @layer fluent-components {
-  .FocusRing {
-    &:focus {
-      outline-style: none;
+  :where(.FocusRingStroke)::after {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+    border-radius: var(--borderRadiusMedium);
+    inset: calc(-1 * var(--strokeWidthThick));
+
+    @media (forced-colors: active) {
+      border-color: Highlight;
     }
+  }
 
-    &:is(:focus-visible, :has(:focus-visible)) {
-      border-color: transparent;
+  .FocusRing {
+    composes: FocusRingStroke;
+  }
 
-      &::after {
-        content: '';
-        position: absolute;
-        pointer-events: none;
-        z-index: 1;
-        border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
-        border-radius: var(--borderRadiusMedium);
-        inset: calc(-1 * var(--strokeWidthThick));
-      }
+  .FocusRingSelf {
+    composes: FocusRingStroke;
+  }
 
-      @media (forced-colors: active) {
-        &::after {
-          border-color: Highlight;
-        }
-      }
+  .FocusRing:focus,
+  .FocusRingSelf:focus {
+    outline-style: none;
+  }
+
+  .FocusRing:is(:focus-visible, :has(:focus-visible)),
+  .FocusRingSelf:focus-visible {
+    border-color: transparent;
+
+    &::after {
+      content: '';
+    }
+  }
+
+  :where(.FocusOutline):focus-visible {
+    outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+  }
+
+  .InsetFocusOutline {
+    composes: FocusOutline;
+  }
+
+  :where(.InsetFocusOutline):focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  :where(.InsetFocusOutline):focus-visible {
+    outline-offset: calc(-1 * var(--strokeWidthThick));
+
+    @media (forced-colors: active) {
+      outline-color: Highlight;
     }
   }
 }

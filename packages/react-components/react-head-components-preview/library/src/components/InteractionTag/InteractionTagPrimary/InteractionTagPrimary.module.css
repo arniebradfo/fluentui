@@ -17,6 +17,7 @@
 @layer fluent-components {
   .InteractionTagPrimary {
     composes: TagVisual TagExtraSmallHitArea from '../../Tag/TagVisual.module.css';
+    composes: FocusOutline from '../../../styles/FocusRing.module.css';
 
     /* Reset default button style. */
     color: var(--colorNeutralForeground2);
@@ -36,7 +37,6 @@
     padding-inline-end: var(--fui-tag-spacing);
 
     &:focus-visible {
-      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
       z-index: 1;
     }
 
