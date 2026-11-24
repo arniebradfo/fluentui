@@ -1,0 +1,19 @@
+@layer fluent-components {
+  /* The single native input spans the grid. RangeSlider has one input per thumb. */
+  .SliderInput {
+    cursor: pointer;
+    opacity: 0;
+    grid-area: 1 / 1 / -1 / -1;
+    padding: 0;
+    margin: 0;
+    height: var(--fui-slider-input-thumb-size);
+    width: 100%;
+
+    :where([data-vertical], [data-orientation='vertical']) > & {
+      height: 100%;
+      width: var(--fui-slider-input-thumb-size);
+      writing-mode: vertical-lr;
+      direction: rtl;
+    }
+  }
+}

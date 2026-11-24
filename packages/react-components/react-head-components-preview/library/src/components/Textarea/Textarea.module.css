@@ -88,12 +88,10 @@
       }
 
       .Textarea__textarea {
+        --fui-input-placeholder-color: var(--colorNeutralForegroundDisabled);
+
         color: var(--colorNeutralForegroundDisabled);
         cursor: not-allowed;
-
-        &::placeholder {
-          color: var(--colorNeutralForegroundDisabled);
-        }
       }
     }
 
@@ -132,11 +130,10 @@
 
   /* Styles for the textarea slot. */
   .Textarea__textarea {
-    border-style: none;
+    composes: InputText from '../Input/InputText.module.css';
+
     margin: 0;
-    background-color: var(--colorTransparentBackground);
     box-sizing: border-box;
-    color: var(--colorNeutralForeground1);
     flex-grow: 1;
     font-family: var(--fontFamilyBase);
     font-size: var(--fontSizeBase300);
@@ -148,10 +145,5 @@
     padding: var(--spacingVerticalSNudge) calc(var(--spacingHorizontalMNudge) + var(--spacingHorizontalXXS));
     outline-style: none;
     resize: none;
-
-    &::placeholder {
-      color: var(--colorNeutralForeground4);
-      opacity: 1;
-    }
   }
 }

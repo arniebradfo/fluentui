@@ -154,9 +154,13 @@ their CSS Module identifiers.
   root border by default. Exceptions stay local, such as Dropdown's clear-button
   focus and Textarea's resize clearance. Select keeps its native control outline;
   the wrapper's line follows the stroke-width token even with square corners.
-  Both Input recipes style the control, not the
+  The Input recipes style the control, not the
   [Field](./library/src/components/Field/Field.tsx) wrapper for labels, hints,
   and validation messages.
+- [InputText](./library/src/components/Input/InputText.module.css) styles editable
+  text and placeholders for Input, SearchBox (through Input), editable
+  DatePicker, Combobox, SpinButton, Textarea, and TagPickerInput. The controls
+  still own sizing, padding, native focus, and disabled state.
 - [ListboxPickerFrame](./library/src/styles/ListboxPickerFrame.module.css) gives Dropdown,
   Combobox, and TagPickerControl one source for appearance and disabled styles.
   Dropdown and Combobox also share `PickerInvalid`. TagPicker keeps its own
@@ -177,7 +181,26 @@ their CSS Module identifiers.
   keeps its own position, fill, and focus policy.
 - [DrawerScrollSeparators](./library/src/components/Drawer/DrawerScrollSeparators.module.css)
   shares the rules for the lines that appear at the header and footer as
-  the drawer body scrolls.
+  the drawer body scrolls. NavDrawer uses the same line color, fade, and
+  reduced-motion treatment as Drawer.
+- [SliderTrack](./library/src/components/Slider/SliderTrack.module.css) gives Slider
+  and RangeSlider the same rail, tick marks, and thumb visuals. Progress fills,
+  focus, and overlapping thumbs stay local.
+  [SliderInput](./library/src/components/Slider/SliderInput.module.css) gives Slider
+  and ColorSlider (including AlphaSlider) the same single-input layout without
+  sharing their rails or gradients.
+- [Switch](./library/src/components/Switch/Switch.module.css) supplies the track
+  geometry, thumb travel, and motion used by MenuItemSwitch. The menu continues
+  to use menu state, not a nested Switch input.
+- [CheckedListItem](./library/src/components/List/ListItem/CheckedListItem.module.css)
+  supplies List and Tree's native selection marker, including the checked and
+  mixed glyphs. Tree's radio dot is local. Multiselect Option composes the
+  [Checkbox indicator](./library/src/components/Checkbox/Checkbox.module.css)
+  on its decorative slot without rendering a checkbox input.
+- [Swatch](./library/src/components/SwatchPicker/Swatch.module.css) shares the
+  size and shape of ColorSwatch, ImageSwatch, and EmptySwatch. The filled
+  swatches also share inset shadows for interaction states; EmptySwatch keeps
+  its dashed border and native outline.
 
 Dropdown, Combobox, and TagPicker default to a listbox below the field,
 aligned to its start edge and matching its width. Callers can override
@@ -187,6 +210,11 @@ pinned.
 For manual review, open **CSS Modules → Style primitives** in Storybook.
 The [review stories](./stories/src/StylePrimitives.stories.tsx) group the
 consumers of each shared stylesheet. Press Tab to review the focus states.
+Use **CSS Modules → Primitive comparisons** to compare the preview recipes
+with actual v9 components, including the v9 RangeSlider preview and compat
+DatePicker. The [comparison stories](./stories/src/PrimitiveComparisons.stories.tsx)
+use the same fixtures, theme, and direction on both sides. The drawer story
+lets you scroll all four bodies together.
 
 Prefer local selector grouping when it preserves specificity. `:is()` takes the
 specificity of its strongest branch, and `:where()` adds none. Use `:has()` for

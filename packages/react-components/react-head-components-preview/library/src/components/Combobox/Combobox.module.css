@@ -56,10 +56,10 @@
   }
 
   .Combobox__input {
+    composes: InputText from '../Input/InputText.module.css';
+
     align-self: stretch;
-    background-color: var(--colorTransparentBackground);
     border: none;
-    color: var(--colorNeutralForeground1);
     font-family: var(--fontFamilyBase);
     font-size: var(--fontSizeBase300);
     font-weight: var(--fontWeightRegular);
@@ -69,11 +69,6 @@
 
     &:focus {
       outline-style: none;
-    }
-
-    &::placeholder {
-      color: var(--colorNeutralForeground4);
-      opacity: 1;
     }
 
     &[data-size='small'] {
@@ -89,13 +84,11 @@
     }
 
     &:disabled {
+      --fui-input-placeholder-color: var(--colorNeutralForegroundDisabled);
+
       color: var(--colorNeutralForegroundDisabled);
       background-color: var(--colorTransparentBackground);
       cursor: not-allowed;
-
-      &::placeholder {
-        color: var(--colorNeutralForegroundDisabled);
-      }
     }
   }
 

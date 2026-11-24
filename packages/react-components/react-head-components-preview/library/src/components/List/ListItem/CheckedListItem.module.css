@@ -1,0 +1,76 @@
+/* Draw a selection marker on the native input without replacing its behavior. */
+@layer fluent-components {
+  .CheckedListItem {
+    position: relative;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    cursor: pointer;
+    border: var(--strokeWidthThin) solid var(--fui-list-check-border, var(--colorNeutralStrokeAccessible));
+    border-radius: var(--borderRadiusSmall);
+    background-color: var(
+      --fui-list-check-background,
+      var(--fui-list-check-empty-background, var(--colorTransparentBackground))
+    );
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      mask-position: center;
+      mask-repeat: no-repeat;
+      mask-size: 12px 12px;
+    }
+
+    &:hover {
+      --fui-list-check-border: var(--colorNeutralStrokeAccessibleHover);
+    }
+
+    &:focus-visible {
+      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
+      outline-offset: var(--strokeWidthThick);
+
+      @media (forced-colors: active) {
+        outline-color: Highlight;
+      }
+    }
+
+    /* Tree can also render a radio. Only checkboxes get these glyphs and colors. */
+    &:where([type='checkbox']) {
+      &:checked {
+        --fui-list-check-background: var(--colorCompoundBrandBackground);
+        --fui-list-check-border: var(--colorCompoundBrandBackground);
+        --fui-list-check-glyph: var(--colorNeutralForegroundInverted);
+
+        &::after {
+          /* Checkmark12Filled from @fluentui/react-icons. */
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M9.76 3.2c.3.29.32.76.04 1.06l-4.25 4.5a.75.75 0 0 1-1.08.02L2.22 6.53a.75.75 0 0 1 1.06-1.06l1.7 1.7L8.7 3.24a.75.75 0 0 1 1.06-.04'/%3E%3C/svg%3E");
+        }
+
+        &:hover {
+          --fui-list-check-background: var(--colorCompoundBrandBackgroundHover);
+          --fui-list-check-border: var(--colorCompoundBrandBackgroundHover);
+        }
+      }
+
+      &:indeterminate {
+        --fui-list-check-background: var(--fui-list-check-empty-background, var(--colorTransparentBackground));
+        --fui-list-check-border: var(--colorCompoundBrandStroke);
+        --fui-list-check-glyph: var(--colorCompoundBrandForeground1);
+
+        &::after {
+          /* Square12Filled from @fluentui/react-icons. */
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z'/%3E%3C/svg%3E");
+        }
+
+        &:hover {
+          --fui-list-check-border: var(--colorCompoundBrandStrokeHover);
+          --fui-list-check-glyph: var(--colorCompoundBrandForeground1Hover);
+        }
+      }
+    }
+  }
+}

@@ -12,6 +12,34 @@
  */
 
 @layer fluent-components {
+  .CheckboxIndicator {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--fui-Checkbox__indicator--color, var(--fui-checkbox-checked-foreground));
+    background-color: var(--fui-Checkbox__indicator--backgroundColor, var(--fui-checkbox-checked-background));
+    border-color: var(
+      --fui-Checkbox__indicator--borderColor,
+      var(--fui-checkbox-checked-background, var(--colorNeutralStrokeAccessible))
+    );
+    border-style: solid;
+    border-width: var(--strokeWidthThin);
+    border-radius: var(--borderRadiusSmall);
+    fill: currentColor;
+    font-size: var(--fontSizeBase200);
+    height: 16px;
+    width: 16px;
+  }
+
+  /* The listbox marks the visual slot selected. Checkbox owns its input state. */
+  .Checkbox:not([data-disabled])[data-checked=''] > .CheckboxIndicator,
+  .CheckboxIndicator[data-selected] {
+    --fui-checkbox-checked-background: var(--colorCompoundBrandBackground);
+    --fui-checkbox-checked-foreground: var(--colorNeutralForegroundInverted);
+  }
+
   .Checkbox {
     composes: FocusBorderWithin from '../../styles/FocusOutlines.module.css';
 
@@ -38,9 +66,6 @@
 
       &[data-checked=''] {
         color: var(--colorNeutralForeground1);
-        --fui-Checkbox__indicator--backgroundColor: var(--colorCompoundBrandBackground);
-        --fui-Checkbox__indicator--color: var(--colorNeutralForegroundInverted);
-        --fui-Checkbox__indicator--borderColor: var(--colorCompoundBrandBackground);
 
         &:hover {
           --fui-Checkbox__indicator--backgroundColor: var(--colorCompoundBrandBackgroundHover);
@@ -139,25 +164,12 @@
   }
 
   .Checkbox__indicator {
+    composes: CheckboxIndicator;
+
     align-self: flex-start;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
-    color: var(--fui-Checkbox__indicator--color);
-    background-color: var(--fui-Checkbox__indicator--backgroundColor);
-    border-color: var(--fui-Checkbox__indicator--borderColor, var(--colorNeutralStrokeAccessible));
-    border-style: solid;
-    border-width: var(--strokeWidthThin);
-    border-radius: var(--borderRadiusSmall);
     margin: var(--spacingVerticalS) var(--spacingHorizontalS);
-    fill: currentColor;
     pointer-events: none;
-    font-size: var(--fontSizeBase200);
-    height: 16px;
-    width: 16px;
   }
 
   /* Label supplies its own visual foundation; Checkbox adds layout and inherited control color. */

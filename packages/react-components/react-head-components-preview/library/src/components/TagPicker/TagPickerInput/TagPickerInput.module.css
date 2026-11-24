@@ -13,10 +13,10 @@
 
 @layer fluent-components {
   .TagPickerInput {
-    background-color: var(--colorTransparentBackground);
+    composes: InputText from '../../Input/InputText.module.css';
+
     border: none;
     box-sizing: border-box;
-    color: var(--colorNeutralForeground1);
     flex-grow: 1;
     font-family: var(--fontFamilyBase);
     font-size: var(--fontSizeBase300);
@@ -34,11 +34,6 @@
       outline-style: none;
     }
 
-    &::placeholder {
-      color: var(--colorNeutralForeground4);
-      opacity: 1;
-    }
-
     &::after {
       visibility: hidden;
       white-space: pre-wrap;
@@ -53,13 +48,11 @@
     }
 
     &[data-disabled] {
+      --fui-input-placeholder-color: var(--colorNeutralForegroundDisabled);
+
       color: var(--colorNeutralForegroundDisabled);
       background-color: var(--colorTransparentBackground);
       cursor: not-allowed;
-
-      &::placeholder {
-        color: var(--colorNeutralForegroundDisabled);
-      }
     }
   }
 }

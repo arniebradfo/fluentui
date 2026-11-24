@@ -1,0 +1,158 @@
+/* Slider and RangeSlider share the track and thumb visuals. The widgets own
+ * their progress values, native inputs, and focus targets. */
+@layer fluent-components {
+  .SliderLayout {
+    --fui-slider-thumb-size: 20px;
+    --fui-slider-inner-thumb-radius: 6px;
+    --fui-slider-rail-size: 4px;
+
+    position: relative;
+    display: inline-grid;
+    touch-action: none;
+    align-items: center;
+    justify-items: center;
+    min-height: 32px;
+
+    &[data-size='small'] {
+      --fui-slider-thumb-size: 16px;
+      --fui-slider-inner-thumb-radius: 5px;
+      --fui-slider-rail-size: 2px;
+
+      min-height: 24px;
+    }
+
+    /* Rail and thumb occupy the center cell; the space outside fits the thumb. */
+    &:not([data-vertical]) {
+      min-width: 120px;
+      grid-template-rows: 1fr var(--fui-slider-thumb-size) 1fr;
+      grid-template-columns: 1fr calc(100% - var(--fui-slider-thumb-size)) 1fr;
+    }
+
+    &[data-vertical] {
+      min-height: 120px;
+      grid-template-rows: 1fr calc(100% - var(--fui-slider-thumb-size)) 1fr;
+      grid-template-columns: 1fr var(--fui-slider-thumb-size) 1fr;
+    }
+
+    &:not([data-disabled]) {
+      --fui-slider-rail-color: var(--colorNeutralStrokeAccessible);
+      --fui-slider-fill-color: var(--colorCompoundBrandBackground);
+      --fui-slider-thumb-color: var(--colorCompoundBrandBackground);
+
+      &:hover {
+        --fui-slider-fill-color: var(--colorCompoundBrandBackgroundHover);
+        --fui-slider-thumb-color: var(--colorCompoundBrandBackgroundHover);
+      }
+
+      &:active {
+        --fui-slider-fill-color: var(--colorCompoundBrandBackgroundPressed);
+        --fui-slider-thumb-color: var(--colorCompoundBrandBackgroundPressed);
+      }
+
+      @media (forced-colors: active) {
+        --fui-slider-rail-color: CanvasText;
+        --fui-slider-fill-color: Highlight;
+        --fui-slider-thumb-color: Highlight;
+
+        &:hover {
+          --fui-slider-fill-color: Highlight;
+          --fui-slider-thumb-color: Highlight;
+        }
+      }
+    }
+
+    &[data-disabled] {
+      --fui-slider-rail-color: var(--colorNeutralBackgroundDisabled);
+      --fui-slider-fill-color: var(--colorNeutralForegroundDisabled);
+      --fui-slider-thumb-color: var(--colorNeutralForegroundDisabled);
+
+      @media (forced-colors: active) {
+        --fui-slider-rail-color: GrayText;
+        --fui-slider-fill-color: GrayText;
+        --fui-slider-thumb-color: GrayText;
+      }
+    }
+  }
+
+  .SliderRail {
+    border-radius: var(--borderRadiusXLarge);
+    pointer-events: none;
+    grid-area: 2 / 2 / 2 / 2;
+    position: relative;
+    forced-color-adjust: none;
+    outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
+
+    &::before {
+      content: '';
+      position: absolute;
+      --fui-slider-step-color: var(--colorNeutralBackground1);
+
+      background-image: repeating-linear-gradient(
+        var(--fui-slider-direction),
+        transparent 0%,
+        transparent calc(var(--fui-slider-step-percent) - var(--strokeWidthThin)),
+        var(--fui-slider-step-color) calc(var(--fui-slider-step-percent) - var(--strokeWidthThin)),
+        var(--fui-slider-step-color) var(--fui-slider-step-percent)
+      );
+
+      @media (forced-colors: active) {
+        --fui-slider-step-color: HighlightText;
+      }
+    }
+
+    .SliderLayout:not([data-vertical]) > & {
+      width: 100%;
+      height: var(--fui-slider-rail-size);
+
+      &::before {
+        inset-inline: calc(-1 * var(--strokeWidthThin));
+        height: var(--fui-slider-rail-size);
+      }
+    }
+
+    .SliderLayout[data-vertical] > & {
+      width: var(--fui-slider-rail-size);
+      height: 100%;
+
+      &::before {
+        width: var(--fui-slider-rail-size);
+        inset-block: calc(-1 * var(--strokeWidthThin));
+      }
+    }
+  }
+
+  .SliderThumb {
+    grid-area: 2 / 2 / 2 / 2;
+    position: absolute;
+    width: var(--fui-slider-thumb-size);
+    height: var(--fui-slider-thumb-size);
+    outline-style: none;
+    forced-color-adjust: none;
+    border-radius: var(--borderRadiusCircular);
+    box-shadow: 0 0 0 calc(var(--fui-slider-thumb-size) * 0.2) var(--colorNeutralBackground1) inset;
+    background-color: var(--fui-slider-thumb-color);
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--borderRadiusCircular);
+      box-sizing: border-box;
+      content: '';
+      border: calc(var(--fui-slider-thumb-size) * 0.05) solid var(--colorNeutralStroke1);
+    }
+
+    .SliderLayout:not([data-vertical]) > & {
+      transform: translateX(-50%);
+      inset-inline-start: var(--fui-slider-thumb-position);
+    }
+
+    .SliderLayout:not([data-vertical]):dir(rtl) > & {
+      transform: translateX(50%);
+    }
+
+    .SliderLayout[data-vertical] > & {
+      transform: translateY(50%);
+      bottom: var(--fui-slider-thumb-position);
+    }
+  }
+}

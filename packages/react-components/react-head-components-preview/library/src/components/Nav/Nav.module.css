@@ -309,39 +309,19 @@
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    position: relative;
     z-index: 2;
     width: 100%;
     max-width: 100%;
     align-self: stretch;
-
-    &::after {
-      content: '';
-      position: absolute;
-      inset-inline: 0;
-      height: var(--strokeWidthThin);
-      background-color: var(--colorNeutralStroke2);
-      opacity: 0;
-    }
-
-    &[data-scroll-state='middle']::after {
-      opacity: 1;
-    }
   }
 
   .NavDrawerHeader {
+    composes: DrawerHeaderSeparator from '../Drawer/DrawerScrollSeparators.module.css';
+
     margin: 0;
     gap: var(--spacingHorizontalS);
     padding-block: calc(var(--spacingVerticalXS) + var(--spacingVerticalXXS) / 2);
     padding-inline: calc(var(--spacingHorizontalM) + var(--spacingHorizontalXXS)) var(--spacingHorizontalXXL);
-
-    &::after {
-      bottom: 0;
-    }
-
-    &[data-scroll-state='bottom']::after {
-      opacity: 1;
-    }
   }
 
   .NavDrawerBody {
@@ -365,18 +345,12 @@
   }
 
   .NavDrawerFooter {
+    composes: DrawerFooterSeparator from '../Drawer/DrawerScrollSeparators.module.css';
+
     align-items: center;
     row-gap: var(--spacingVerticalXXS);
     padding: var(--spacingVerticalXXS) var(--spacingHorizontalXS) var(--spacingVerticalXXS)
       var(--spacingHorizontalMNudge);
-
-    &::after {
-      top: 0;
-    }
-
-    &[data-scroll-state='top']::after {
-      opacity: 1;
-    }
   }
 
   @keyframes navSelection {

@@ -7,7 +7,7 @@
  * Headless component: [Input.tsx](../../../../../react-headless-components-preview/library/src/components/Input/Input.tsx).
  * Headless state: [useInput.ts](../../../../../react-headless-components-preview/library/src/components/Input/useInput.ts).
  * Headless render: [renderInput.tsx](../../../../../react-headless-components-preview/library/src/components/Input/renderInput.tsx).
- * Composed CSS: [InputFrame.module.css](./InputFrame.module.css).
+ * Composed CSS: [InputFrame.module.css](./InputFrame.module.css), [InputText.module.css](./InputText.module.css).
  *
  * Logical spacing supports RTL; native :focus-within drives the focus indicator.
  */
@@ -52,13 +52,11 @@
 
     &[data-disabled] {
       .Input__input {
+        --fui-input-placeholder-color: var(--colorNeutralForegroundDisabled);
+
         color: var(--colorNeutralForegroundDisabled);
         background-color: var(--colorTransparentBackground);
         cursor: not-allowed;
-
-        &::placeholder {
-          color: var(--colorNeutralForegroundDisabled);
-        }
       }
 
       .Input__contentBefore,
@@ -69,26 +67,15 @@
   }
 
   .Input__input {
+    composes: InputText from './InputText.module.css';
+
     align-self: stretch;
     box-sizing: border-box;
     flex-grow: 1;
     min-width: 0;
-    border-style: none;
     padding-block: 0;
     padding-inline: var(--fui-input-combined-padding);
-    color: var(--colorNeutralForeground1);
-    background-color: var(--colorTransparentBackground);
     outline-style: none;
-    /* Inherit typography styles from root. */
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-
-    &::placeholder {
-      color: var(--colorNeutralForeground4);
-      opacity: 1;
-    }
   }
 
   .Input__contentBefore,

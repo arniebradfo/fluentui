@@ -18,6 +18,11 @@
  */
 
 @layer fluent-components {
+  .DrawerHeaderSeparator,
+  .DrawerFooterSeparator {
+    position: relative;
+  }
+
   .DrawerHeaderSeparator:not([data-scroll-state='none'])::after,
   .DrawerFooterSeparator:not([data-scroll-state='none'])::before {
     height: var(--strokeWidthThin);

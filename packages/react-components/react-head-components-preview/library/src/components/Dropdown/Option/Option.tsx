@@ -33,7 +33,12 @@ export const Option: ForwardRefComponent<OptionProps> = React.forwardRef<HTMLDiv
       'data-selected': state.selected ? '' : undefined,
       'data-multiselect': state.multiselect ? '' : undefined,
     });
-    state.checkIcon.className = [optionClassNames.checkIcon, styles.Option__checkIcon, state.checkIcon.className]
+    state.checkIcon.className = [
+      optionClassNames.checkIcon,
+      styles.Option__checkIcon,
+      state.multiselect && styles.Option__multiselectCheckIcon,
+      state.checkIcon.className,
+    ]
       .filter(Boolean)
       .join(' ');
   }

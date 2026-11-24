@@ -47,6 +47,70 @@ test('default rating glyphs fill their item boxes', async ({ page }) => {
   }
 });
 
+test('multiselect options draw the v9 checkbox marker without nesting a control', async ({ page }) => {
+  await page.goto('/iframe.html?id=css-modules-primitive-comparisons--checkbox-and-option&viewMode=story');
+  const stock = page.getByTestId('multiselect-options-stock');
+  const candidate = page.getByTestId('multiselect-options-candidate');
+  const stockPear = stock.getByRole('menuitemcheckbox', { name: 'Pear' });
+  const pear = candidate.getByRole('menuitemcheckbox', { name: 'Pear' });
+
+  await expect(pear).toBeVisible();
+  await expect(candidate.locator('input')).toHaveCount(0);
+  for (const option of [stockPear, pear]) {
+    await expect(option).toHaveAttribute('aria-checked', 'false');
+    await option.click();
+    await expect(option).toHaveAttribute('aria-checked', 'true');
+  }
+  await page.mouse.move(0, 0);
+
+  const marker = option => option.locator('.fui-Option__checkIcon');
+  const properties = ['width', 'height', 'backgroundColor', 'borderRadius', 'borderTopColor', 'color'];
+  await expect(marker(pear)).toHaveAttribute('aria-hidden', 'true');
+  expect(await marker(pear).evaluateAll(readStyles, properties)).toEqual(
+    await marker(stockPear).evaluateAll(readStyles, properties),
+  );
+});
+
+for (const reducedMotion of ['no-preference', 'reduce']) {
+  test(`NavDrawer uses Drawer scroll separators with reduced motion ${reducedMotion}`, async ({ page }) => {
+    await page.emulateMedia({ reducedMotion });
+    await page.goto('/iframe.html?id=css-modules-primitive-comparisons--drawer-scroll-separators&viewMode=story');
+    const drawer = page.getByTestId('drawer-candidate');
+    const nav = page.getByTestId('nav-drawer-candidate');
+    const readLine = (edge, pseudo) =>
+      edge.evaluate((node, selector) => {
+        const { backgroundColor, height, opacity, transitionDuration, transitionProperty } = getComputedStyle(
+          node,
+          selector,
+        );
+        return { backgroundColor, height, opacity, transitionDuration, transitionProperty };
+      }, pseudo);
+
+    for (const [state, headerOpacity, footerOpacity] of [
+      ['top', '0', '1'],
+      ['middle', '1', '1'],
+      ['bottom', '1', '0'],
+      ['top', '0', '1'],
+    ]) {
+      await page.getByRole('button', { name: `Scroll to ${state}` }).click();
+      for (const [edge, pseudo, opacity] of [
+        ['Header', '::after', headerOpacity],
+        ['Footer', '::before', footerOpacity],
+      ]) {
+        const drawerEdge = drawer.locator(`.fui-Drawer${edge}`);
+        const navEdge = nav.locator(`.fui-NavDrawer${edge}`);
+        await expect(drawerEdge).toHaveAttribute('data-scroll-state', state);
+        await expect(navEdge).toHaveAttribute('data-scroll-state', state);
+        await expect.poll(async () => (await readLine(drawerEdge, pseudo)).opacity).toBe(opacity);
+        const drawerLine = await readLine(drawerEdge, pseudo);
+        expect(drawerLine.transitionProperty).toBe('opacity');
+        expect(Number.parseFloat(drawerLine.transitionDuration) > 0).toBe(reducedMotion === 'no-preference');
+        await expect.poll(() => readLine(navEdge, pseudo)).toEqual(drawerLine);
+      }
+    }
+  });
+}
+
 for (const variant of ['light', 'dark', 'right-to-left']) {
   test(`matches representative stock visuals: ${variant}`, async ({ page }) => {
     await page.goto(`/iframe.html?id=css-modules-visual-comparison--${variant}&viewMode=story`);

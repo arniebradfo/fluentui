@@ -69,8 +69,8 @@
         cursor: not-allowed;
       }
 
-      .DatePicker__input::placeholder {
-        color: var(--colorNeutralForegroundDisabled);
+      .DatePicker__input {
+        --fui-input-placeholder-color: var(--colorNeutralForegroundDisabled);
       }
     }
   }
@@ -82,27 +82,20 @@
     flex-grow: 1;
     min-width: 0;
     margin: 0;
-    border-style: none;
     padding-block: 0;
-    color: var(--colorNeutralForeground1);
     background-color: transparent;
     outline-style: none;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
   }
 
   .DatePicker__input {
-    padding-inline: var(--fui-input-combined-padding) var(--fui-input-slot-padding);
+    composes: InputText from '../Input/InputText.module.css';
 
-    &::placeholder {
-      color: var(--colorNeutralForeground4);
-      opacity: 1;
-    }
+    padding-inline: var(--fui-input-combined-padding) var(--fui-input-slot-padding);
   }
 
   .DatePicker__trigger {
+    composes: InputText from '../Input/InputText.module.css';
+
     display: flex;
     align-items: center;
     gap: var(--fui-input-slot-padding);

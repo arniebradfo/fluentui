@@ -1,0 +1,17 @@
+@layer fluent-components {
+  /* The inner text control inherits its type scale unless the component sets one. */
+  :where(.InputText) {
+    background-color: var(--colorTransparentBackground);
+    border-style: none;
+    color: var(--colorNeutralForeground1);
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+
+    &::placeholder {
+      color: var(--fui-input-placeholder-color, var(--colorNeutralForeground4));
+      opacity: 1;
+    }
+  }
+}

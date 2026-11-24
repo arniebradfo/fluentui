@@ -24,180 +24,48 @@
 @layer fluent-components {
   /* Styles for the root slot */
   .RangeSlider {
-    --fui-RangeSlider__thumb--size: 20px;
-    --fui-RangeSlider__inner-thumb--radius: 6px;
-    --fui-RangeSlider__rail--size: 4px;
+    composes: SliderLayout from '../Slider/SliderTrack.module.css';
 
-    position: relative;
-    display: inline-grid;
-    touch-action: none;
-    align-items: center;
-    justify-items: center;
-    min-height: 32px;
-
-    &[data-size='small'] {
-      --fui-RangeSlider__thumb--size: 16px;
-      --fui-RangeSlider__inner-thumb--radius: 5px;
-      --fui-RangeSlider__rail--size: 2px;
-
-      min-height: 24px;
-    }
-
-    &:not([data-vertical]) {
-      min-width: 120px;
-      grid-template-rows: 1fr var(--fui-RangeSlider__thumb--size) 1fr;
-      grid-template-columns: 1fr calc(100% - var(--fui-RangeSlider__thumb--size)) 1fr;
-    }
-
-    &[data-vertical] {
-      min-height: 120px;
-      grid-template-rows: 1fr calc(100% - var(--fui-RangeSlider__thumb--size)) 1fr;
-      grid-template-columns: 1fr var(--fui-RangeSlider__thumb--size) 1fr;
-    }
-
-    &:not([data-disabled]) {
-      cursor: pointer;
-
-      --fui-RangeSlider__rail--color: var(--colorNeutralStrokeAccessible);
-      --fui-RangeSlider__progress--color: var(--colorCompoundBrandBackground);
-      --fui-RangeSlider__thumb--color: var(--colorCompoundBrandBackground);
-
-      &:hover {
-        --fui-RangeSlider__thumb--color: var(--colorCompoundBrandBackgroundHover);
-        --fui-RangeSlider__progress--color: var(--colorCompoundBrandBackgroundHover);
-      }
-
-      &:active {
-        --fui-RangeSlider__thumb--color: var(--colorCompoundBrandBackgroundPressed);
-        --fui-RangeSlider__progress--color: var(--colorCompoundBrandBackgroundPressed);
-      }
-
-      @media (forced-colors: active) {
-        --fui-RangeSlider__rail--color: CanvasText;
-        --fui-RangeSlider__thumb--color: Highlight;
-        --fui-RangeSlider__progress--color: Highlight;
-
-        &:hover {
-          --fui-RangeSlider__thumb--color: Highlight;
-          --fui-RangeSlider__progress--color: Highlight;
-        }
-      }
-    }
+    --fui-slider-direction: var(--fui-RangeSlider--direction);
+    --fui-slider-step-percent: var(--fui-RangeSlider--steps-percent);
+    cursor: pointer;
 
     &[data-disabled] {
       cursor: default;
-
-      --fui-RangeSlider__thumb--color: var(--colorNeutralForegroundDisabled);
-      --fui-RangeSlider__rail--color: var(--colorNeutralBackgroundDisabled);
-      --fui-RangeSlider__progress--color: var(--colorNeutralForegroundDisabled);
-
-      @media (forced-colors: active) {
-        --fui-RangeSlider__rail--color: GrayText;
-        --fui-RangeSlider__thumb--color: GrayText;
-        --fui-RangeSlider__progress--color: GrayText;
-      }
-    }
-
-    &:not([data-vertical]):dir(rtl) > .RangeSlider__thumb {
-      transform: translateX(50%);
     }
   }
 
-  /* Styles for the rail slot */
   .RangeSlider__rail {
-    border-radius: var(--borderRadiusXLarge);
-    pointer-events: none;
-    grid-area: 2 / 2 / 2 / 2;
-    position: relative;
-    forced-color-adjust: none;
+    composes: SliderRail from '../Slider/SliderTrack.module.css';
+
     /* The progress segment runs between the two thumbs. */
     background-image: linear-gradient(
-      var(--fui-RangeSlider--direction),
-      var(--fui-RangeSlider__rail--color) 0%,
-      var(--fui-RangeSlider__rail--color) var(--fui-RangeSlider--start-progress),
-      var(--fui-RangeSlider__progress--color) var(--fui-RangeSlider--start-progress),
-      var(--fui-RangeSlider__progress--color) var(--fui-RangeSlider--end-progress),
-      var(--fui-RangeSlider__rail--color) var(--fui-RangeSlider--end-progress)
+      var(--fui-slider-direction),
+      var(--fui-slider-rail-color) 0%,
+      var(--fui-slider-rail-color) var(--fui-RangeSlider--start-progress),
+      var(--fui-slider-fill-color) var(--fui-RangeSlider--start-progress),
+      var(--fui-slider-fill-color) var(--fui-RangeSlider--end-progress),
+      var(--fui-slider-rail-color) var(--fui-RangeSlider--end-progress)
     );
-    outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
-
-    &::before {
-      content: '';
-      position: absolute;
-      background-image: repeating-linear-gradient(
-        var(--fui-RangeSlider--direction),
-        transparent 0%,
-        transparent calc(var(--fui-RangeSlider--steps-percent) - var(--strokeWidthThin)),
-        var(--colorNeutralBackground1) calc(var(--fui-RangeSlider--steps-percent) - var(--strokeWidthThin)),
-        var(--colorNeutralBackground1) var(--fui-RangeSlider--steps-percent)
-      );
-
-      @media (forced-colors: active) {
-        background-image: repeating-linear-gradient(
-          var(--fui-RangeSlider--direction),
-          transparent 0%,
-          transparent calc(var(--fui-RangeSlider--steps-percent) - var(--strokeWidthThin)),
-          HighlightText calc(var(--fui-RangeSlider--steps-percent) - var(--strokeWidthThin)),
-          HighlightText var(--fui-RangeSlider--steps-percent)
-        );
-      }
-    }
-
-    .RangeSlider:not([data-vertical]) > & {
-      width: 100%;
-      height: var(--fui-RangeSlider__rail--size);
-
-      &::before {
-        inset-inline: calc(-1 * var(--strokeWidthThin));
-        height: var(--fui-RangeSlider__rail--size);
-      }
-    }
-
-    .RangeSlider[data-vertical] > & {
-      width: var(--fui-RangeSlider__rail--size);
-      height: 100%;
-
-      &::before {
-        width: var(--fui-RangeSlider__rail--size);
-        inset-block: calc(-1 * var(--strokeWidthThin));
-      }
-    }
   }
 
   /* Styles shared by the startThumb and endThumb slots */
   .RangeSlider__thumb {
     composes: FocusBorder from '../../styles/FocusOutlines.module.css';
+    composes: SliderThumb from '../Slider/SliderTrack.module.css';
 
-    grid-area: 2 / 2 / 2 / 2;
-    position: absolute;
-    width: var(--fui-RangeSlider__thumb--size);
-    height: var(--fui-RangeSlider__thumb--size);
     pointer-events: auto;
-    outline-style: none;
-    forced-color-adjust: none;
-    border-radius: var(--borderRadiusCircular);
-    box-shadow: 0 0 0 calc(var(--fui-RangeSlider__thumb--size) * 0.2) var(--colorNeutralBackground1) inset;
-    background-color: var(--fui-RangeSlider__thumb--color);
-
-    &::before {
-      position: absolute;
-      inset: 0;
-      border-radius: var(--borderRadiusCircular);
-      box-sizing: border-box;
-      content: '';
-      border: calc(var(--fui-RangeSlider__thumb--size) * 0.05) solid var(--colorNeutralStroke1);
-    }
 
     /* Applied per thumb, so one disabled thumb looks disabled while the other stays enabled. */
     &[data-disabled] {
-      --fui-RangeSlider__thumb--color: var(--colorNeutralForegroundDisabled);
+      --fui-slider-thumb-color: var(--colorNeutralForegroundDisabled);
 
       &::before {
         border-color: var(--colorNeutralForegroundDisabled);
       }
 
       @media (forced-colors: active) {
-        --fui-RangeSlider__thumb--color: GrayText;
+        --fui-slider-thumb-color: GrayText;
       }
     }
 
@@ -212,32 +80,22 @@
     .RangeSlider[data-thumbs-overlap] > &[data-active] {
       z-index: 1;
     }
-
-    .RangeSlider:not([data-vertical]) > & {
-      transform: translateX(-50%);
-      inset-inline-start: var(--fui-RangeSlider__thumb--position);
-    }
-
-    .RangeSlider[data-vertical] > & {
-      transform: translateY(50%);
-      bottom: var(--fui-RangeSlider__thumb--position);
-    }
   }
 
   /* Keep each thumb within the rail: at 0% or 100% the thumb center sits one inner radius in. */
   .RangeSlider__startThumb {
-    --fui-RangeSlider__thumb--position: clamp(
-      var(--fui-RangeSlider__inner-thumb--radius),
+    --fui-slider-thumb-position: clamp(
+      var(--fui-slider-inner-thumb-radius),
       var(--fui-RangeSlider--start-progress),
-      calc(100% - var(--fui-RangeSlider__inner-thumb--radius))
+      calc(100% - var(--fui-slider-inner-thumb-radius))
     );
   }
 
   .RangeSlider__endThumb {
-    --fui-RangeSlider__thumb--position: clamp(
-      var(--fui-RangeSlider__inner-thumb--radius),
+    --fui-slider-thumb-position: clamp(
+      var(--fui-slider-inner-thumb-radius),
       var(--fui-RangeSlider--end-progress),
-      calc(100% - var(--fui-RangeSlider__inner-thumb--radius))
+      calc(100% - var(--fui-slider-inner-thumb-radius))
     );
   }
 

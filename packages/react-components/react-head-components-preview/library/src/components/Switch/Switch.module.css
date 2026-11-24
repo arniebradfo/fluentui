@@ -11,6 +11,36 @@
  */
 
 @layer fluent-components {
+  .SwitchTrack {
+    --fui-switch-track-width: 40px;
+    --fui-switch-track-height: 20px;
+    --fui-switch-inline-direction: 1;
+    --fui-switch-thumb-travel: calc(
+      (var(--fui-switch-track-width) - var(--fui-switch-track-height)) * var(--fui-switch-inline-direction)
+    );
+
+    border-radius: var(--borderRadiusCircular);
+    border: var(--strokeWidthThin) solid;
+    line-height: 0;
+    box-sizing: border-box;
+    fill: currentColor;
+    flex-shrink: 0;
+    font-size: calc(var(--fontSizeBase500) - var(--spacingHorizontalXXS));
+    height: var(--fui-switch-track-height);
+    width: var(--fui-switch-track-width);
+    transition-duration: var(--durationNormal);
+    transition-timing-function: var(--curveEasyEase);
+    transition-property: background, border, color;
+
+    &:dir(rtl) {
+      --fui-switch-inline-direction: -1;
+    }
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition-duration: var(--fui-switch-reduced-motion-duration, 0.01ms);
+    }
+  }
+
   .Switch {
     composes: FocusBorder from '../../styles/FocusOutlines.module.css';
 
@@ -63,29 +93,18 @@
       }
     }
 
-    &:dir(rtl) > .Switch__input:checked ~ .Switch__indicator > * {
-      transform: translateX(-20px);
-    }
-
     /* Small size dimensions (from design mockup) */
     &[data-size='small'] {
       > .Switch__indicator {
+        --fui-switch-track-width: 32px;
+        --fui-switch-track-height: 16px;
+
         font-size: var(--fontSizeBase300);
-        height: 16px;
-        width: 32px;
       }
 
       /* Size is merged after label placement in the source, including label-above width. */
       > .Switch__input {
         width: calc(32px + 2 * var(--spacingHorizontalS));
-
-        &:checked ~ .Switch__indicator > * {
-          transform: translateX(16px);
-        }
-      }
-
-      &:dir(rtl) > .Switch__input:checked ~ .Switch__indicator > * {
-        transform: translateX(-16px);
       }
 
       > .Switch__label {
@@ -97,27 +116,11 @@
     }
   }
 
-  /* Thumb and track sizes used by the component. Medium size dimensions:
-     track 40 × 20px, thumb 18px, with 2px between thumb and track. */
   .Switch__indicator {
-    border-radius: var(--borderRadiusCircular);
-    border: var(--strokeWidthThin) solid;
-    line-height: 0;
-    box-sizing: border-box;
-    fill: currentColor;
-    flex-shrink: 0;
-    font-size: calc(var(--fontSizeBase500) - var(--spacingHorizontalXXS));
-    height: 20px;
+    composes: SwitchTrack;
+
     margin: var(--spacingVerticalS) var(--spacingHorizontalS);
     pointer-events: none;
-    transition-duration: var(--durationNormal);
-    transition-timing-function: var(--curveEasyEase);
-    transition-property: background, border, color;
-    width: 40px;
-
-    @media screen and (prefers-reduced-motion: reduce) {
-      transition-duration: 0.01ms;
-    }
 
     @media (forced-colors: active) {
       color: CanvasText;
@@ -126,15 +129,17 @@
         forced-color-adjust: none;
       }
     }
+  }
 
-    > * {
-      transition-duration: var(--durationNormal);
-      transition-timing-function: var(--curveEasyEase);
-      transition-property: transform;
+  /* Switch also moves custom direct children of its indicator slot. */
+  .SwitchThumbMotion,
+  .Switch__indicator > * {
+    transition-duration: var(--durationNormal);
+    transition-timing-function: var(--curveEasyEase);
+    transition-property: transform;
 
-      @media screen and (prefers-reduced-motion: reduce) {
-        transition-duration: 0.01ms;
-      }
+    @media screen and (prefers-reduced-motion: reduce) {
+      transition-duration: var(--fui-switch-reduced-motion-duration, 0.01ms);
     }
   }
 
@@ -152,7 +157,7 @@
 
     /* Checked (both enabled and disabled). Native :checked also covers uncontrolled state. */
     &:checked ~ .Switch__indicator > * {
-      transform: translateX(20px);
+      transform: translateX(var(--fui-switch-thumb-travel));
     }
 
     /* Disabled (both checked and unchecked) */

@@ -119,28 +119,14 @@
 
   /* Styles for the input slot */
   .ColorSlider__input {
-    cursor: pointer;
-    opacity: 0;
-    grid-area: 1 / 1 / -1 / -1;
-    padding: 0;
-    margin: 0;
+    composes: SliderInput from '../../Slider/SliderInput.module.css';
+
+    --fui-slider-input-thumb-size: var(--fui-Slider__thumb--size);
 
     &:focus-visible ~ .ColorSlider__thumb {
       border: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
       outline: var(--strokeWidthThick) solid var(--colorTransparentStroke);
       border-radius: var(--borderRadiusCircular);
-    }
-
-    .ColorSlider[data-orientation='horizontal'] > & {
-      height: var(--fui-Slider__thumb--size);
-      width: 100%;
-    }
-
-    .ColorSlider[data-orientation='vertical'] > & {
-      height: 100%;
-      width: var(--fui-Slider__thumb--size);
-      writing-mode: vertical-lr;
-      direction: rtl;
     }
   }
 }

@@ -168,13 +168,11 @@
       }
 
       & > .SpinButton__input {
+        --fui-input-placeholder-color: var(--colorNeutralForegroundDisabled);
+
         color: var(--colorNeutralForegroundDisabled);
         cursor: not-allowed;
         background-color: var(--colorTransparentBackground);
-
-        &::placeholder {
-          color: var(--colorNeutralForegroundDisabled);
-        }
       }
     }
 
@@ -186,23 +184,14 @@
   }
 
   .SpinButton__input {
+    composes: InputText from '../Input/InputText.module.css';
+
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     outline-style: none;
     border: 0;
     padding: 0;
-    color: var(--colorNeutralForeground1);
-    background-color: var(--colorTransparentBackground);
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
     width: 100%;
-
-    &::placeholder {
-      color: var(--colorNeutralForeground4);
-      opacity: 1;
-    }
   }
 
   .SpinButton__incrementButton,
