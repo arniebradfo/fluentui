@@ -15,20 +15,13 @@
 
 @layer fluent-components {
   .Option {
+    composes: ChoiceRow from '../../../styles/ChoiceRow.module.css';
     composes: FocusBorder from '../../../styles/FocusOutlines.module.css';
     composes: CheckboxIndicatorColors from '../../Checkbox/Checkbox.module.css';
 
     align-items: center;
-    border-radius: var(--borderRadiusMedium);
     color: var(--colorNeutralForeground1);
-    column-gap: var(--spacingHorizontalXS);
-    cursor: pointer;
-    display: flex;
-    font-family: var(--fontFamilyBase);
-    font-size: var(--fontSizeBase300);
-    line-height: var(--lineHeightBase300);
     padding: var(--spacingVerticalSNudge) var(--spacingHorizontalS);
-    position: relative;
 
     &:not([data-disabled]) {
       &:hover {

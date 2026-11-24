@@ -1,0 +1,12 @@
+@layer fluent-components {
+  .ChoiceGroupLabel {
+    color: var(--colorNeutralForeground3);
+    font-size: var(--fontSizeBase200);
+    font-weight: var(--fontWeightSemibold);
+  }
+
+  .ChoiceGroupSeparator,
+  .ChoiceGroupSeparatorAfter::after {
+    border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStroke2);
+  }
+}

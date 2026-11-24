@@ -13,13 +13,9 @@
 
 @layer fluent-components {
   .Select {
+    composes: InputAppearance from '../Input/InputAppearance.module.css';
     composes: InputFocus from '../Input/InputFocus.module.css';
-
-    --fui-select-icon-size: var(--fontSizeBase500);
-    /* TODO: Should field heights be a set of global design tokens or constants? */
-    --fui-select-field-height: 32px;
-    --fui-select-outer-padding: var(--spacingHorizontalMNudge);
-    --fui-select-inner-padding: var(--spacingHorizontalXXS);
+    composes: InputSize from '../Input/InputSize.module.css';
 
     align-items: center;
     box-sizing: border-box;
@@ -35,52 +31,29 @@
       pointer-events: none;
     }
 
-    &[data-size='small'] {
-      --fui-select-icon-size: var(--fontSizeBase400);
-      --fui-select-field-height: 24px;
-      --fui-select-outer-padding: var(--spacingHorizontalSNudge);
-
+    &:is(
+        [data-appearance='outline'],
+        [data-appearance='underline'],
+        [data-appearance='filled-lighter'],
+        [data-appearance='filled-darker']
+      )
       .Select__select {
-        font-size: var(--fontSizeBase200);
-        line-height: var(--lineHeightBase200);
-      }
-    }
-
-    &[data-size='large'] {
-      --fui-select-icon-size: var(--fontSizeBase600);
-      --fui-select-field-height: 40px;
-      --fui-select-outer-padding: var(--spacingHorizontalM);
-      --fui-select-inner-padding: var(--spacingHorizontalSNudge);
-
-      .Select__select {
-        font-size: var(--fontSizeBase400);
-        line-height: var(--lineHeightBase400);
-      }
+      background-color: var(--fui-input-background);
     }
 
     &[data-appearance='outline'] .Select__select {
-      background-color: var(--colorNeutralBackground1);
-      border-color: var(--colorNeutralStroke1);
-      border-bottom-color: var(--colorNeutralStrokeAccessible);
+      border-color: var(--fui-input-border-color);
+      border-bottom-color: var(--fui-input-bottom-border-color);
     }
 
     &[data-appearance='underline'] .Select__select {
-      background-color: var(--colorTransparentBackground);
-      border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStrokeAccessible);
+      border-bottom: var(--strokeWidthThin) solid var(--fui-input-bottom-border-color);
       border-radius: 0;
 
       & option {
         /* The transparent select bg means the option background must be set so the text is visible in dark themes. */
         background-color: var(--colorNeutralBackground1);
       }
-    }
-
-    &[data-appearance='filled-lighter'] .Select__select {
-      background-color: var(--colorNeutralBackground1);
-    }
-
-    &[data-appearance='filled-darker'] .Select__select {
-      background-color: var(--colorNeutralBackground3);
     }
 
     &:not([data-disabled]) {
@@ -125,7 +98,7 @@
       }
 
       .Select__icon {
-        color: var(--colorNeutralForegroundDisabled);
+        --fui-input-trailing-icon-color: var(--colorNeutralForegroundDisabled);
       }
 
       @media (forced-colors: active) {
@@ -135,7 +108,7 @@
         }
 
         .Select__icon {
-          color: GrayText;
+          --fui-input-trailing-icon-color: GrayText;
         }
       }
     }
@@ -152,11 +125,11 @@
     flex-grow: 1;
     max-width: 100%;
     padding-block: 0;
-    height: var(--fui-select-field-height);
+    height: var(--fui-input-height);
     /* Left padding is calculated from the outer padding + inner content padding values
      * since <select> can't have additional child content or custom inner layout.
      */
-    padding-inline-start: calc(var(--fui-select-outer-padding) + var(--fui-select-inner-padding));
+    padding-inline-start: calc(var(--fui-input-inline-padding) + var(--fui-input-slot-gap));
     /* Since the <select> element must span the full width and cannot have children,
      * the end padding needs to be calculated from the sum of the following:
      * 1. Field outer padding
@@ -165,13 +138,12 @@
      * 4. Content inner padding
      */
     padding-inline-end: calc(
-      var(--fui-select-outer-padding) + var(--fui-select-icon-size) + var(--fui-select-inner-padding) +
-        var(--fui-select-inner-padding)
+      var(--fui-input-inline-padding) + var(--fui-input-adornment-size) + 2 * var(--fui-input-slot-gap)
     );
     font-family: var(--fontFamilyBase);
-    font-size: var(--fontSizeBase300);
+    font-size: var(--fui-input-font-size);
     font-weight: var(--fontWeightRegular);
-    line-height: var(--lineHeightBase300);
+    line-height: var(--fui-input-line-height);
 
     &:focus {
       outline: var(--strokeWidthThick) solid transparent;
@@ -179,21 +151,13 @@
   }
 
   .Select__icon {
-    box-sizing: border-box;
-    color: var(--colorNeutralStrokeAccessible);
+    composes: InputTrailingIcon from '../Input/InputTrailingIcon.module.css';
+
     display: block;
     position: absolute;
     pointer-events: none;
-    font-size: var(--fui-select-icon-size);
-    height: var(--fui-select-icon-size);
-    width: var(--fui-select-icon-size);
-    inset-inline-end: var(--fui-select-outer-padding);
-
-    & svg {
-      /* The SVG must have display: block for accurate positioning;
-       * otherwise an extra inline space is inserted after the SVG element.
-       */
-      display: block;
-    }
+    height: var(--fui-input-adornment-size);
+    width: var(--fui-input-adornment-size);
+    inset-inline-end: var(--fui-input-inline-padding);
   }
 }

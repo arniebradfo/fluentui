@@ -15,13 +15,19 @@
 @layer fluent-components {
   .MenuButton {
     composes: Button from '../Button/Button.module.css';
+    composes: ButtonOnAppearance from '../Button/ButtonOnAppearance.module.css';
 
     /* Appearance variations. Hover/press continue to use the delegated Button rules. */
     &[data-open][data-appearance]:not(:hover, :active:focus-visible) {
-      background-color: var(--colorNeutralBackground1Selected);
+      background-color: var(--fui-button-on-background);
 
-      &:is([data-appearance='outline'], [data-appearance='secondary']) {
-        color: var(--colorNeutralForeground1Selected);
+      &:is(
+          [data-appearance='outline'],
+          [data-appearance='secondary'],
+          [data-appearance='subtle'],
+          [data-appearance='transparent']
+        ) {
+        color: var(--fui-button-on-foreground);
       }
 
       &:not(:focus-visible) {
@@ -29,38 +35,19 @@
       }
 
       &[data-appearance='outline'] {
+        /* Unlike a checked toggle, an open outline menu keeps its resting fill. */
         background-color: var(--colorTransparentBackground);
       }
 
-      &[data-appearance='primary'] {
-        background-color: var(--colorBrandBackgroundSelected);
+      &[data-appearance='outline'] {
+        background-color: var(--colorTransparentBackground);
+      }
 
+      &:is([data-appearance='primary'], [data-appearance='subtle'], [data-appearance='transparent']) {
         &:not(:focus-visible) {
           border-color: transparent;
         }
       }
-
-      &[data-appearance='subtle'] {
-        background-color: var(--colorSubtleBackgroundSelected);
-        color: var(--colorNeutralForeground2Selected);
-
-        &:not(:focus-visible) {
-          border-color: transparent;
-        }
-      }
-
-      &[data-appearance='transparent'] {
-        background-color: var(--colorTransparentBackgroundSelected);
-        color: var(--colorNeutralForeground2BrandSelected);
-
-        &:not(:focus-visible) {
-          border-color: transparent;
-        }
-      }
-    }
-
-    &[data-open][data-appearance='outline']:not(:focus-visible) {
-      border-width: var(--strokeWidthThicker);
     }
 
     &:not([data-icon-only]) .MenuButton__menuIcon {

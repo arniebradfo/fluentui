@@ -1,0 +1,32 @@
+@layer fluent-components {
+  /* The consumers choose when to use the resting colors instead of hover or press. */
+  .ButtonOnAppearance {
+    --fui-button-on-background: var(--colorNeutralBackground1Selected);
+    --fui-button-on-foreground: var(--colorNeutralForeground1Selected);
+
+    &[data-appearance='outline'] {
+      --fui-button-on-background: var(--colorTransparentBackgroundSelected);
+    }
+
+    &[data-appearance='primary'] {
+      --fui-button-on-background: var(--colorBrandBackgroundSelected);
+      --fui-button-on-foreground: var(--colorNeutralForegroundOnBrand);
+    }
+
+    &[data-appearance='subtle'] {
+      --fui-button-on-background: var(--colorSubtleBackgroundSelected);
+      --fui-button-on-foreground: var(--colorNeutralForeground2Selected);
+    }
+
+    &[data-appearance='transparent'] {
+      --fui-button-on-background: var(--colorTransparentBackgroundSelected);
+      --fui-button-on-foreground: var(--colorNeutralForeground2BrandSelected);
+    }
+  }
+
+  .ButtonOnAppearance:is([data-open], [data-checked]:where(:not([data-accessible])))[data-appearance='outline']:not(
+      :focus-visible
+    ) {
+    border-width: var(--strokeWidthThicker);
+  }
+}

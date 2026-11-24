@@ -59,13 +59,12 @@
     }
 
     &[data-has-selected-option] {
-      clip: rect(0px, 0px, 0px, 0px);
-      height: 1px;
       margin: calc(-1 * var(--strokeWidthThin));
-      overflow: hidden;
       padding: 0;
-      width: 1px;
-      position: absolute;
     }
+  }
+
+  .TagPickerButtonHidden {
+    composes: VisuallyHidden from '../../../styles/VisuallyHidden.module.css';
   }
 }

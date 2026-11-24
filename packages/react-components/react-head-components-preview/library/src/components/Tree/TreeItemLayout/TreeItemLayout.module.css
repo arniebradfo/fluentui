@@ -127,19 +127,12 @@
   }
 
   .TreeItemLayout__chevron {
-    transform: rotate(0deg);
-    transition: transform var(--durationNormal) var(--curveEasyEaseMax);
+    composes: DisclosureChevron from '../../../styles/DisclosureChevron.module.css';
 
-    &:dir(rtl) {
-      transform: rotate(180deg);
-    }
+    --fui-disclosure-chevron-easing: var(--curveEasyEaseMax);
 
     [data-open] > .TreeItemLayout > .TreeItemLayout__expandIcon > & {
       transform: rotate(90deg);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
     }
   }
 

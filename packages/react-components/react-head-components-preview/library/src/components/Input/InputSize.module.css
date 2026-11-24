@@ -1,0 +1,28 @@
+@layer fluent-components {
+  /* These are single-line input metrics, not a component-wide size scale. */
+  .InputSize {
+    --fui-input-height: 32px;
+    --fui-input-font-size: var(--fontSizeBase300);
+    --fui-input-line-height: var(--lineHeightBase300);
+    --fui-input-adornment-size: var(--fontSizeBase500);
+    --fui-input-inline-padding: var(--spacingHorizontalMNudge);
+    --fui-input-slot-gap: var(--spacingHorizontalXXS);
+
+    &[data-size='small'] {
+      --fui-input-height: 24px;
+      --fui-input-font-size: var(--fontSizeBase200);
+      --fui-input-line-height: var(--lineHeightBase200);
+      --fui-input-adornment-size: var(--fontSizeBase400);
+      --fui-input-inline-padding: var(--spacingHorizontalSNudge);
+    }
+
+    &[data-size='large'] {
+      --fui-input-height: 40px;
+      --fui-input-font-size: var(--fontSizeBase400);
+      --fui-input-line-height: var(--lineHeightBase400);
+      --fui-input-adornment-size: var(--fontSizeBase600);
+      --fui-input-inline-padding: var(--spacingHorizontalM);
+      --fui-input-slot-gap: var(--spacingHorizontalSNudge);
+    }
+  }
+}

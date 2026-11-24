@@ -202,6 +202,34 @@ their CSS Module identifiers.
   size and shape of ColorSwatch, ImageSwatch, and EmptySwatch. The filled
   swatches also share inset shadows for interaction states; EmptySwatch keeps
   its dashed border and native outline.
+- [InputAppearance](./library/src/components/Input/InputAppearance.module.css)
+  supplies resting frame colors without deciding which border wins on hover
+  and focus. [InputSize](./library/src/components/Input/InputSize.module.css)
+  supplies the single-line metrics; each control decides whether to use a
+  fixed height or a minimum. TagPicker has its own taller profile.
+  [InputTrailingIcon](./library/src/components/Input/InputTrailingIcon.module.css)
+  shares the glyph visuals, not clear-button focus or hit targets.
+- [ButtonOnAppearance](./library/src/components/Button/ButtonOnAppearance.module.css)
+  supplies the resting palette for checked ToggleButton and open MenuButton.
+  Their hover, press, focus, accessible checked, and forced-colors rules are
+  still separate.
+- [ChoiceRow](./library/src/styles/ChoiceRow.module.css) shares layout and type
+  for menu items and picker options. [ChoiceGroup](./library/src/styles/ChoiceGroup.module.css)
+  shares label type and separator borders. Each family decides how rows react
+  to focus, hover, and press, and where the group label and divider go.
+- [DisclosureChevron](./library/src/styles/DisclosureChevron.module.css) shares
+  the turn direction for a closed chevron and the reduced-motion rule for
+  Accordion, Tree, and Nav. Each owns its open angle and easing.
+  [BundledIconVariants](./library/src/styles/BundledIconVariants.module.css)
+  shares the regular/filled display switch on the Tab and Nav icon slots.
+- [VisuallyHidden](./library/src/styles/VisuallyHidden.module.css) clips the
+  Calendar announcement, Card checkbox, and hidden picker affordances without
+  removing them. It is not for transparent inputs that cover a hit target.
+  [SingleLineEllipsis](./library/src/styles/SingleLineEllipsis.module.css)
+  shares overflow drawing for fixed single-line slots in Calendar and DatePicker.
+- [Intent icons](./library/src/components/MessageBar/intentIcons.ts) gives
+  MessageBar and Toast the same four defaults; each still owns its slots and
+  icon colors.
 
 Dropdown, Combobox, and TagPicker default to a listbox below the field,
 aligned to its start edge and matching its width. Callers can override
@@ -216,6 +244,11 @@ with actual v9 components, including the v9 RangeSlider preview and compat
 DatePicker. The [comparison stories](./stories/src/PrimitiveComparisons.stories.tsx)
 use the same fixtures, theme, and direction on both sides. The drawer story
 lets you scroll all four bodies together.
+For the newer recipes, use **Input Appearances**, **Input Sizes And Actions**,
+**Selected Buttons**, **Choice Rows**, **Navigation Details**,
+**Focus And Clipped Content**, and **Feedback Details**. These include native
+focus and keyboard examples, not just resting screenshots. **Joined And
+Compact Controls** compares seams and small actions that keep their own styles.
 
 Prefer local selector grouping when it preserves specificity. `:is()` takes the
 specificity of its strongest branch, and `:where()` adds none. Use `:has()` for

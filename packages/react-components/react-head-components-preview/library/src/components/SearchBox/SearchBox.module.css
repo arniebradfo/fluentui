@@ -87,7 +87,7 @@
 
     /* Special case for icons (the most common case): center and size resizable glyphs. */
     & > svg {
-      font-size: var(--fui-input-icon-size);
+      font-size: var(--fui-input-adornment-size);
     }
   }
 }

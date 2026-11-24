@@ -15,13 +15,17 @@
 
 @layer fluent-components {
   .ListboxPickerFrame {
+    composes: InputAppearance from '../components/Input/InputAppearance.module.css';
+
     border-radius: var(--borderRadiusMedium);
 
-    &[data-appearance='outline'] {
-      background-color: var(--colorNeutralBackground1);
-      border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
-      border-bottom-color: var(--colorNeutralStrokeAccessible);
+    &:is([data-appearance='outline'], [data-appearance='filled-lighter'], [data-appearance='filled-darker']) {
+      background-color: var(--fui-input-background);
+      border: var(--strokeWidthThin) solid var(--fui-input-border-color);
+      border-bottom-color: var(--fui-input-bottom-border-color);
+    }
 
+    &[data-appearance='outline'] {
       &:not([data-disabled]) {
         /* Match upstream's focus-within < hover < active Griffel bucket priority. */
         &:focus-within {
@@ -42,19 +46,9 @@
     }
 
     &[data-appearance='underline'] {
-      background-color: var(--colorTransparentBackground);
-      border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStrokeAccessible);
+      background-color: var(--fui-input-background);
+      border-bottom: var(--strokeWidthThin) solid var(--fui-input-bottom-border-color);
       border-radius: 0;
-    }
-
-    &[data-appearance='filled-lighter'] {
-      background-color: var(--colorNeutralBackground1);
-      border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
-    }
-
-    &[data-appearance='filled-darker'] {
-      background-color: var(--colorNeutralBackground3);
-      border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
     }
   }
 

@@ -7,11 +7,8 @@ import {
   useMessageBarContextValues,
   type MessageBarProps as HeadlessMessageBarProps,
 } from '@fluentui/react-headless-components-preview/message-bar';
-import { InfoFilled } from '@fluentui/react-icons/headless/svg/info';
-import { WarningFilled } from '@fluentui/react-icons/headless/svg/warning';
-import { DiamondDismissFilled } from '@fluentui/react-icons/headless/svg/diamond-dismiss';
-import { CheckmarkCircleFilled } from '@fluentui/react-icons/headless/svg/checkmark-circle';
 import { slot, type ForwardRefComponent } from '@fluentui/react-utilities';
+import { intentIcons } from './intentIcons.js';
 import styles from './MessageBar.module.css';
 
 export {
@@ -33,13 +30,6 @@ export type MessageBarShape = 'rounded' | 'square';
 export type MessageBarProps = HeadlessMessageBarProps & {
   /** Rounded for component messages; square for page messages. @default 'rounded' */
   shape?: MessageBarShape;
-};
-
-const intentIcons = {
-  info: InfoFilled,
-  warning: WarningFilled,
-  error: DiamondDismissFilled,
-  success: CheckmarkCircleFilled,
 };
 
 export const MessageBar: ForwardRefComponent<MessageBarProps> = React.forwardRef<HTMLDivElement, MessageBarProps>(

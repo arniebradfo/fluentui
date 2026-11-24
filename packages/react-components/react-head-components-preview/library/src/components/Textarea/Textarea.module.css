@@ -12,6 +12,7 @@
 @layer fluent-components {
   /* Styles for the root (wrapper) slot. */
   .Textarea {
+    composes: InputAppearance from '../Input/InputAppearance.module.css';
     composes: InputFocus from '../Input/InputFocus.module.css';
 
     display: inline-flex;
@@ -28,29 +29,20 @@
         outline: var(--strokeWidthThick) solid transparent;
       }
 
-      &[data-appearance='filled-darker'],
-      &[data-appearance='filled-lighter'] {
-        border: var(--strokeWidthThin) solid var(--colorTransparentStroke);
+      &:is([data-appearance='outline'], [data-appearance='filled-darker'], [data-appearance='filled-lighter']) {
+        background-color: var(--fui-input-background);
+        border: var(--strokeWidthThin) solid var(--fui-input-border-color);
+        border-bottom-color: var(--fui-input-bottom-border-color);
+      }
 
+      &:is([data-appearance='filled-darker'], [data-appearance='filled-lighter']) {
         &:hover,
         &:focus-within {
           border-color: var(--colorTransparentStrokeInteractive);
         }
       }
 
-      &[data-appearance='filled-darker'] {
-        background-color: var(--colorNeutralBackground3);
-      }
-
-      &[data-appearance='filled-lighter'] {
-        background-color: var(--colorNeutralBackground1);
-      }
-
       &[data-appearance='outline'] {
-        background-color: var(--colorNeutralBackground1);
-        border: var(--strokeWidthThin) solid var(--colorNeutralStroke1);
-        border-bottom-color: var(--colorNeutralStrokeAccessible);
-
         /* Griffel orders the focus-within bucket before hover and active. */
         &:focus-within {
           border: var(--strokeWidthThin) solid var(--colorNeutralStroke1Pressed);

@@ -32,6 +32,18 @@
     flex-direction: column;
   }
 
+  .NavItem {
+    composes: FocusOutline from '../../styles/FocusOutlines.module.css';
+  }
+
+  .NavSubItem {
+    composes: FocusOutline from '../../styles/FocusOutlines.module.css';
+  }
+
+  .NavCategoryItem {
+    composes: FocusOutline from '../../styles/FocusOutlines.module.css';
+  }
+
   .NavItem,
   .NavSubItem,
   .NavCategoryItem {
@@ -67,7 +79,6 @@
     }
 
     &:focus-visible {
-      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
       outline-offset: calc(-1 * var(--strokeWidthThick));
     }
 
@@ -119,6 +130,8 @@
   }
 
   .NavItem__icon {
+    composes: BundledIconVariants from '../../styles/BundledIconVariants.module.css';
+
     display: grid;
     grid-template-areas: 'icon';
     flex-shrink: 0;
@@ -142,20 +155,16 @@
   }
 
   .NavCategoryItem__expandIcon {
+    composes: DisclosureChevron from '../../styles/DisclosureChevron.module.css';
+
+    --fui-disclosure-chevron-easing: var(--curveEasyEase);
+
     display: flex;
     flex-shrink: 0;
     margin-inline-start: auto;
     height: var(--lineHeightBase300);
     font-size: var(--fontSizeBase500);
-    transition: transform var(--durationNormal) var(--curveEasyEase);
-
-    &:dir(rtl) {
-      transform: rotate(180deg);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
+    transform: none;
   }
 
   .NavCategoryItem[data-expanded] > .NavCategoryItem__expandIcon {
@@ -392,24 +401,11 @@
   }
 }
 
-/* Existing Griffel icon bundles can have unlayered visibility rules. */
-.NavItem__icon {
-  & :global(.fui-Icon-filled) {
-    display: none;
-  }
-
-  & :global(.fui-Icon-regular) {
-    display: inline;
-  }
-}
-
 :is(.NavItem, .NavCategoryItem)[data-selected]:not([data-disabled]) .NavItem__icon {
-  & :global(.fui-Icon-filled) {
-    display: inline;
-    color: var(--colorNeutralForeground2BrandSelected);
-  }
+  --fui-icon-regular-display: none;
+  --fui-icon-filled-display: inline;
 
-  & :global(.fui-Icon-regular) {
-    display: none;
+  & :global(.fui-Icon-filled) {
+    color: var(--colorNeutralForeground2BrandSelected);
   }
 }

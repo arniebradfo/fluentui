@@ -44,14 +44,11 @@
   }
 
   .Calendar__liveRegion {
-    position: absolute;
-    width: 1px;
-    height: 1px;
+    composes: VisuallyHidden from '../../styles/VisuallyHidden.module.css';
+
     margin: -1px;
     padding: 0;
     border: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
     white-space: nowrap;
   }
 
@@ -66,6 +63,8 @@
   }
 
   .Calendar__goToTodayButton {
+    composes: FocusOutline from '../../styles/FocusOutlines.module.css';
+
     display: inline-flex;
     align-items: center;
     grid-column: -2 / -1;
@@ -92,10 +91,6 @@
 
     &:hover:active {
       color: var(--colorBrandForeground2);
-    }
-
-    &:focus-visible {
-      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
     }
 
     &:disabled,
@@ -189,6 +184,14 @@
     align-self: flex-end;
   }
 
+  .CalendarDay__navigationButton {
+    composes: FocusOutline from '../../styles/FocusOutlines.module.css';
+  }
+
+  .CalendarPicker__navigationButton {
+    composes: FocusOutline from '../../styles/FocusOutlines.module.css';
+  }
+
   .CalendarDay__navigationButton,
   .CalendarPicker__navigationButton {
     display: inline-flex;
@@ -210,16 +213,15 @@
     &:hover {
       background-color: var(--colorBrandBackgroundInvertedHover);
       color: var(--colorBrandForegroundOnLightHover);
+    }
+
+    &:hover:not(:focus-visible) {
       outline: var(--strokeWidthThin) solid var(--colorTransparentStroke);
     }
 
     &:hover:active {
       background-color: var(--colorBrandBackgroundInvertedPressed);
       color: var(--colorBrandForegroundOnLightPressed);
-    }
-
-    &:focus-visible {
-      outline: var(--strokeWidthThick) solid var(--colorStrokeFocus2);
     }
 
     &:disabled,
@@ -506,6 +508,8 @@
   }
 
   .CalendarPicker__heading {
+    composes: SingleLineEllipsis from '../../styles/SingleLineEllipsis.module.css';
+
     display: flex;
     align-items: center;
     flex-grow: 1;
@@ -521,9 +525,6 @@
     font-weight: var(--fontWeightSemibold);
     line-height: var(--lineHeightBase500);
     text-align: start;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 
     &:is(button) {
       cursor: pointer;

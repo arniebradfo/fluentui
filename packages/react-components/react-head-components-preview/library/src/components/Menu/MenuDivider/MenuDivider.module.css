@@ -10,8 +10,9 @@
 
 @layer fluent-components {
   .MenuDivider {
+    composes: ChoiceGroupSeparator from '../../../styles/ChoiceGroup.module.css';
+
     margin: var(--spacingVerticalXS) calc(-1 * (var(--spacingHorizontalXS) + var(--strokeWidthThin)));
     width: auto;
-    border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStroke2);
   }
 }

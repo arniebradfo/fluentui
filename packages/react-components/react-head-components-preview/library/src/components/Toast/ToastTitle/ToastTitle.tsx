@@ -6,12 +6,9 @@ import {
   useToastTitle,
   type ToastTitleProps,
 } from '@fluentui/react-headless-components-preview/toast';
-import { CheckmarkCircleFilled } from '@fluentui/react-icons/headless/svg/checkmark-circle';
-import { DiamondDismissFilled } from '@fluentui/react-icons/headless/svg/diamond-dismiss';
-import { InfoFilled } from '@fluentui/react-icons/headless/svg/info';
-import { WarningFilled } from '@fluentui/react-icons/headless/svg/warning';
 import { useBackgroundAppearance } from '@fluentui/react-shared-contexts';
 import { slot, type ForwardRefComponent } from '@fluentui/react-utilities';
+import { intentIcons } from '../../MessageBar/intentIcons.js';
 import styles from './ToastTitle.module.css';
 
 export type {
@@ -25,13 +22,6 @@ export const toastTitleClassNames = {
   media: 'fui-ToastTitle__media',
   action: 'fui-ToastTitle__action',
 } as const;
-
-const intentIcons = {
-  info: InfoFilled,
-  success: CheckmarkCircleFilled,
-  warning: WarningFilled,
-  error: DiamondDismissFilled,
-};
 
 export const ToastTitle: ForwardRefComponent<ToastTitleProps> = React.forwardRef<HTMLDivElement, ToastTitleProps>(
   (props, ref) => {

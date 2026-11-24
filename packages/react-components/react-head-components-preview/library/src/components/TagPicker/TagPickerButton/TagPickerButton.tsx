@@ -30,7 +30,12 @@ export const TagPickerButton: ForwardRefComponent<TagPickerButtonProps> = React.
     'data-size': size,
     'data-has-selected-option': state.hasSelectedOption ? '' : undefined,
   });
-  state.root.className = [tagPickerButtonClassNames.root, styles.TagPickerButton, state.root.className]
+  state.root.className = [
+    tagPickerButtonClassNames.root,
+    styles.TagPickerButton,
+    state.hasSelectedOption && styles.TagPickerButtonHidden,
+    state.root.className,
+  ]
     .filter(Boolean)
     .join(' ');
   return renderTagPickerButton(state);

@@ -1,0 +1,17 @@
+@layer fluent-components {
+  :where(.DisclosureChevron) {
+    transform: rotate(0deg);
+  }
+
+  .DisclosureChevron {
+    transition: transform var(--durationNormal) var(--fui-disclosure-chevron-easing);
+
+    &:dir(rtl) {
+      transform: rotate(180deg);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+}

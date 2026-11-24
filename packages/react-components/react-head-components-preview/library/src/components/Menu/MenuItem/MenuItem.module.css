@@ -12,10 +12,9 @@
 
 @layer fluent-components {
   .MenuItem {
+    composes: ChoiceRow from '../../../styles/ChoiceRow.module.css';
     composes: FocusBorderSelf from '../../../styles/FocusOutlines.module.css';
 
-    border-radius: var(--borderRadiusMedium);
-    position: relative;
     color: var(--colorNeutralForeground2);
     background-color: var(--colorNeutralBackground1);
     padding: var(--spacingVerticalSNudge);
@@ -23,14 +22,9 @@
     max-width: 290px;
     min-height: 32px;
     flex-shrink: 0;
-    display: flex;
     align-items: start;
-    font-family: var(--fontFamilyBase);
-    font-size: var(--fontSizeBase300);
     font-weight: var(--fontWeightRegular);
-    line-height: var(--lineHeightBase300);
-    cursor: pointer;
-    gap: var(--spacingHorizontalXS);
+    row-gap: var(--spacingHorizontalXS);
     user-select: none;
 
     &:not([data-disabled]):is(:hover, [data-submenu-open]) {

@@ -1,0 +1,21 @@
+@layer fluent-components {
+  /* The frame may be the root or a native control. Each consumer owns its state precedence. */
+  .InputAppearance {
+    --fui-input-background: var(--colorNeutralBackground1);
+    --fui-input-border-color: var(--colorNeutralStroke1);
+    --fui-input-bottom-border-color: var(--colorNeutralStrokeAccessible);
+
+    &[data-appearance='underline'] {
+      --fui-input-background: var(--colorTransparentBackground);
+    }
+
+    &:is([data-appearance='filled-darker'], [data-appearance='filled-lighter']) {
+      --fui-input-border-color: var(--colorTransparentStroke);
+      --fui-input-bottom-border-color: var(--colorTransparentStroke);
+    }
+
+    &[data-appearance='filled-darker'] {
+      --fui-input-background: var(--colorNeutralBackground3);
+    }
+  }
+}

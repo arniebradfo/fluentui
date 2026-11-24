@@ -12,13 +12,14 @@
 
 @layer fluent-components {
   .OptionGroup {
+    composes: ChoiceGroupSeparatorAfter from '../../../styles/ChoiceGroup.module.css';
+
     display: flex;
     flex-direction: column;
     row-gap: var(--spacingVerticalXXS);
 
     &:not(:last-child)::after {
       content: '';
-      border-bottom: var(--strokeWidthThin) solid var(--colorNeutralStroke2);
       display: block;
       padding-bottom: var(--spacingVerticalXS);
       margin: 0 calc(var(--spacingHorizontalXS) * -1) var(--spacingVerticalXS);
@@ -26,11 +27,10 @@
   }
 
   .OptionGroup__label {
+    composes: ChoiceGroupLabel from '../../../styles/ChoiceGroup.module.css';
+
     border-radius: var(--borderRadiusMedium);
-    color: var(--colorNeutralForeground3);
     display: block;
-    font-size: var(--fontSizeBase200);
-    font-weight: var(--fontWeightSemibold);
     line-height: var(--lineHeightBase200);
     padding: var(--spacingVerticalS) var(--spacingHorizontalSNudge);
   }

@@ -80,10 +80,6 @@
     }
 
     &[data-expand-icon-position='start'] {
-      &:dir(rtl) .AccordionHeader__chevron {
-        transform: rotate(180deg);
-      }
-
       &[data-open] .AccordionHeader__chevron {
         transform: rotate(90deg);
       }
@@ -129,13 +125,11 @@
   }
 
   .AccordionHeader__chevron {
+    composes: DisclosureChevron from '../../../styles/DisclosureChevron.module.css';
+
+    --fui-disclosure-chevron-easing: var(--curveDecelerateMid);
+
     display: inline;
     line-height: 0;
-    transform: rotate(0deg);
-    transition: transform var(--durationNormal) var(--curveDecelerateMid);
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
   }
 }

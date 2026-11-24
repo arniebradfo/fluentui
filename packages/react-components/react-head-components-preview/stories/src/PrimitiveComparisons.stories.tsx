@@ -1,14 +1,16 @@
 import * as React from 'react';
 import type { StoryContext, StoryObj } from '@storybook/react';
 import * as V9 from '@fluentui/react-components';
+import { Calendar as V9Calendar } from '@fluentui/react-calendar-compat';
 import { DatePicker as V9DatePicker } from '@fluentui/react-datepicker-compat';
+import { bundleIcon, Home20Filled, Home20Regular } from '@fluentui/react-icons';
 import { RangeSlider as V9RangeSlider } from '@fluentui/react-range-slider-preview';
 import * as Preview from '../../library/src';
 
 export default { title: 'CSS Modules/Primitive comparisons', parameters: { layout: 'fullscreen' } };
 
 const { tokens } = Preview;
-const stock = { ...V9, DatePicker: V9DatePicker, RangeSlider: V9RangeSlider };
+const stock = { ...V9, Calendar: V9Calendar, DatePicker: V9DatePicker, RangeSlider: V9RangeSlider };
 const columns = [
   { id: 'stock', title: 'Fluent v9 (Griffel)', ui: stock },
   { id: 'candidate', title: 'Head preview (CSS Modules)', ui: Preview },
@@ -431,6 +433,511 @@ export const InputPlaceholders: StoryObj = {
       globals={globals}
       instructions="Compare the empty fields, then type to see the text color and focus treatment. Try the dark theme and RTL from the toolbar."
       examples={inputExamples}
+    />
+  ),
+};
+
+const fruit = ['Apple', 'Pear'];
+const fruitOptions = (ui: UI) => fruit.map(name => <ui.Option key={name}>{name}</ui.Option>);
+const inputAppearances = ['outline', 'underline', 'filled-lighter', 'filled-darker'] as const;
+const inputSizes = ['small', 'medium', 'large'] as const;
+const fullWidth = { inlineSize: '100%' };
+
+export const InputAppearances: StoryObj = {
+  render: (_, { globals }) => (
+    <Comparison
+      globals={globals}
+      instructions="Tab to a field, then move the pointer over it without blurring it. Compare the bottom border separately from the animated underline. Try dark mode and RTL."
+      examples={[
+        ...inputAppearances.map(appearance => ({
+          id: `appearance-${appearance}`,
+          label: appearance,
+          render: (ui: UI) => (
+            <>
+              <ui.Input appearance={appearance} aria-label="Input" placeholder="Input" />
+              <ui.Combobox appearance={appearance} aria-label="Combobox" placeholder="Combobox">
+                {fruitOptions(ui)}
+              </ui.Combobox>
+              <ui.Dropdown appearance={appearance} aria-label="Dropdown" placeholder="Dropdown">
+                {fruitOptions(ui)}
+              </ui.Dropdown>
+              <ui.Select appearance={appearance} aria-label="Select">
+                <option>Native Select</option>
+                <option>Other value</option>
+              </ui.Select>
+              {appearance !== 'underline' && (
+                <ui.Textarea appearance={appearance} aria-label="Textarea" placeholder="Textarea" resize="both" />
+              )}
+            </>
+          ),
+        })),
+        {
+          id: 'appearance-states',
+          label: 'Disabled and invalid',
+          render: ui => (
+            <>
+              <ui.Input disabled appearance="filled-darker" aria-label="Disabled input" placeholder="Disabled input" />
+              <ui.Select disabled appearance="underline" aria-label="Disabled select">
+                <option>Disabled select</option>
+              </ui.Select>
+              <ui.Combobox aria-invalid aria-label="Invalid combobox" placeholder="Invalid combobox">
+                {fruitOptions(ui)}
+              </ui.Combobox>
+            </>
+          ),
+        },
+      ]}
+    />
+  ),
+};
+
+function TagPickerActionExample({ ui, size }: { ui: UI; size: 'medium' | 'large' | 'extra-large' }) {
+  const [selected, setSelected] = React.useState<string[]>(['Apple']);
+  return (
+    <ui.TagPicker
+      size={size}
+      selectedOptions={selected}
+      onOptionSelect={(_, data) => setSelected(data.selectedOptions)}
+    >
+      <ui.TagPickerControl>
+        <ui.TagPickerGroup aria-label="Selected fruit">
+          {selected.map(value => (
+            <ui.Tag key={value} value={value} dismissible>
+              {value}
+            </ui.Tag>
+          ))}
+        </ui.TagPickerGroup>
+        <ui.TagPickerButton aria-label={`Choose fruit (${size})`} />
+      </ui.TagPickerControl>
+      <ui.TagPickerList>
+        {fruit
+          .filter(value => !selected.includes(value))
+          .map(value => (
+            <ui.TagPickerOption key={value} value={value}>
+              {value}
+            </ui.TagPickerOption>
+          ))}
+      </ui.TagPickerList>
+    </ui.TagPicker>
+  );
+}
+
+export const InputSizesAndActions: StoryObj = {
+  render: (_, { globals }) => (
+    <Comparison
+      globals={globals}
+      instructions="Compare heights, glyph sizes, and the space at the end of each control. Clear Apple to switch back to the chevron. Open the tag pickers with the keyboard as well as by clicking the chevron."
+      examples={[
+        ...inputSizes.map(size => ({
+          id: `input-size-${size}`,
+          label: `Single-line inputs: ${size}`,
+          render: (ui: UI) => (
+            <>
+              <ui.Input size={size} aria-label="Input" placeholder="Input" />
+              <ui.Select size={size} aria-label="Select">
+                <option>Native Select</option>
+              </ui.Select>
+              <ui.Combobox
+                size={size}
+                clearable
+                aria-label="Combobox"
+                defaultValue="Apple"
+                defaultSelectedOptions={['Apple']}
+              >
+                {fruitOptions(ui)}
+              </ui.Combobox>
+              <ui.Dropdown
+                size={size}
+                clearable
+                aria-label="Dropdown"
+                defaultValue="Apple"
+                defaultSelectedOptions={['Apple']}
+              >
+                {fruitOptions(ui)}
+              </ui.Dropdown>
+            </>
+          ),
+        })),
+        {
+          id: 'tag-picker-sizes',
+          label: 'TagPicker: medium, large, extra-large',
+          render: ui => (
+            <>
+              <TagPickerActionExample ui={ui} size="medium" />
+              <TagPickerActionExample ui={ui} size="large" />
+              <TagPickerActionExample ui={ui} size="extra-large" />
+            </>
+          ),
+        },
+      ]}
+    />
+  ),
+};
+
+const HomeGlyph = bundleIcon(Home20Filled, Home20Regular);
+const buttonAppearances = ['secondary', 'primary', 'outline', 'subtle', 'transparent'] as const;
+
+export const SelectedButtons: StoryObj = {
+  render: (_, { globals }) => (
+    <Comparison
+      globals={globals}
+      instructions="Compare the checked toggle with a menu button while its menu is open. Move the pointer off the button to see its resting fill. Test keyboard focus separately, including the accessible toggle."
+      examples={[
+        ...buttonAppearances.map(appearance => ({
+          id: `button-${appearance}`,
+          label: appearance,
+          render: (ui: UI) => (
+            <div style={row}>
+              <ui.ToggleButton appearance={appearance} defaultChecked icon={<HomeGlyph />}>
+                Pin
+              </ui.ToggleButton>
+              <ui.Menu>
+                <ui.MenuTrigger disableButtonEnhancement>
+                  <ui.MenuButton appearance={appearance} icon={<HomeGlyph />}>
+                    Actions
+                  </ui.MenuButton>
+                </ui.MenuTrigger>
+                <ui.MenuPopover>
+                  <ui.MenuList>
+                    <ui.MenuItem>Unpin</ui.MenuItem>
+                  </ui.MenuList>
+                </ui.MenuPopover>
+              </ui.Menu>
+            </div>
+          ),
+        })),
+        {
+          id: 'button-exceptions',
+          label: 'Accessible checked and disabled',
+          render: ui => (
+            <>
+              <ui.ToggleButton appearance="primary" isAccessible defaultChecked>
+                Accessible checked
+              </ui.ToggleButton>
+              <ui.ToggleButton appearance="outline" disabled defaultChecked>
+                Disabled checked
+              </ui.ToggleButton>
+            </>
+          ),
+        },
+      ]}
+    />
+  ),
+};
+
+export const ChoiceRows: StoryObj = {
+  render: (_, { globals }) => (
+    <Comparison
+      globals={globals}
+      instructions="Compare row spacing, label type, divider lines, and the icon lanes. Hover and press each row, then use the arrow keys to see the different menu and listbox focus models."
+      examples={[
+        {
+          id: 'menu-rows',
+          label: 'Menu',
+          render: ui => (
+            <ui.MenuList aria-label="Places" style={fullWidth}>
+              <ui.MenuGroup>
+                <ui.MenuGroupHeader>Personal</ui.MenuGroupHeader>
+                <ui.MenuItem icon={<HomeGlyph />}>Home</ui.MenuItem>
+                <ui.MenuItem disabled>Archive</ui.MenuItem>
+              </ui.MenuGroup>
+              <ui.MenuDivider />
+              <ui.MenuGroup>
+                <ui.MenuGroupHeader>Shared</ui.MenuGroupHeader>
+                <ui.MenuItem>Library</ui.MenuItem>
+              </ui.MenuGroup>
+            </ui.MenuList>
+          ),
+        },
+        {
+          id: 'option-rows',
+          label: 'Listbox',
+          render: (ui, side) => (
+            <ui.Listbox {...(side === 'candidate' ? { popover: undefined } : {})} aria-label="Places" style={fullWidth}>
+              <ui.OptionGroup label="Personal">
+                <ui.Option>Home</ui.Option>
+                <ui.Option disabled>Archive</ui.Option>
+              </ui.OptionGroup>
+              <ui.OptionGroup label="Shared">
+                <ui.Option>Library</ui.Option>
+              </ui.OptionGroup>
+            </ui.Listbox>
+          ),
+        },
+      ]}
+    />
+  ),
+};
+
+export const NavigationDetails: StoryObj = {
+  render: (_, { globals }) => (
+    <Comparison
+      globals={globals}
+      instructions="Select items and expand the branches. Compare the bundled glyphs, rails, and focus outlines. Switch to RTL to see where chevrons point. Motion follows your system setting."
+      examples={[
+        {
+          id: 'nav-details',
+          label: 'Nav: selected glyph, rail, and category chevron',
+          render: ui => (
+            <ui.Nav aria-label="Places" defaultSelectedValue="home" style={fullWidth}>
+              <ui.NavItem value="home" icon={<HomeGlyph />}>
+                Home
+              </ui.NavItem>
+              <ui.NavItem value="other" icon={<HomeGlyph filled />}>
+                Other
+              </ui.NavItem>
+              <ui.NavCategory value="projects">
+                <ui.NavCategoryItem>Projects</ui.NavCategoryItem>
+                <ui.NavSubItemGroup>
+                  <ui.NavSubItem value="north">North</ui.NavSubItem>
+                </ui.NavSubItemGroup>
+              </ui.NavCategory>
+            </ui.Nav>
+          ),
+        },
+        {
+          id: 'tab-details',
+          label: 'Tab: selected glyph and horizontal or vertical rail',
+          render: ui => (
+            <>
+              <ui.TabList defaultSelectedValue="home" aria-label="Horizontal tabs">
+                <ui.Tab value="home" icon={<HomeGlyph />}>
+                  Home
+                </ui.Tab>
+                <ui.Tab value="other" icon={<HomeGlyph filled />}>
+                  Other
+                </ui.Tab>
+              </ui.TabList>
+              <ui.TabList vertical defaultSelectedValue="home" aria-label="Vertical tabs">
+                <ui.Tab value="home" icon={<HomeGlyph />}>
+                  Home
+                </ui.Tab>
+                <ui.Tab value="other" icon={<HomeGlyph />}>
+                  Other
+                </ui.Tab>
+              </ui.TabList>
+            </>
+          ),
+        },
+        {
+          id: 'disclosure-details',
+          label: 'Accordion and Tree: start and end chevrons',
+          render: ui => (
+            <>
+              <ui.Accordion multiple collapsible style={fullWidth}>
+                <ui.AccordionItem value="start">
+                  <ui.AccordionHeader>Start chevron</ui.AccordionHeader>
+                  <ui.AccordionPanel>Start panel</ui.AccordionPanel>
+                </ui.AccordionItem>
+                <ui.AccordionItem value="end">
+                  <ui.AccordionHeader expandIconPosition="end">End chevron</ui.AccordionHeader>
+                  <ui.AccordionPanel>End panel</ui.AccordionPanel>
+                </ui.AccordionItem>
+              </ui.Accordion>
+              <ui.Tree aria-label="Files">
+                <ui.TreeItem itemType="branch">
+                  <ui.TreeItemLayout>Folder</ui.TreeItemLayout>
+                  <ui.Tree>
+                    <ui.TreeItem itemType="leaf">
+                      <ui.TreeItemLayout>Notes</ui.TreeItemLayout>
+                    </ui.TreeItem>
+                  </ui.Tree>
+                </ui.TreeItem>
+              </ui.Tree>
+            </>
+          ),
+        },
+      ]}
+    />
+  ),
+};
+
+const comparisonDate = new Date(2026, 10, 13);
+const formatLongDate = () => 'Friday, November 13, 2026';
+export const FocusAndClippedContent: StoryObj = {
+  render: (_, { globals }) => (
+    <Comparison
+      globals={globals}
+      instructions="Tab through the Calendar buttons and selectable card. The Calendar announcement and card checkbox are not drawn at full size. The narrow DatePicker compares the compat input with the preview's button text."
+      examples={[
+        {
+          id: 'calendar-details',
+          label: 'Calendar keyboard focus',
+          render: (_, side) =>
+            side === 'stock' ? (
+              <V9Calendar today={comparisonDate} value={comparisonDate} showGoToToday />
+            ) : (
+              <Preview.Calendar today={comparisonDate} value={comparisonDate} layout="sideBySide" />
+            ),
+        },
+        {
+          id: 'card-details',
+          label: 'Selectable card',
+          render: ui => (
+            <ui.Card defaultSelected={false} aria-label="Project card">
+              Project notes
+            </ui.Card>
+          ),
+        },
+        {
+          id: 'truncated-date',
+          label: 'Constrained DatePicker value',
+          render: ui => (
+            <div style={{ inlineSize: `calc(${tokens.spacingHorizontalXXXL} * 4)` }}>
+              <ui.DatePicker
+                aria-label="Due date"
+                today={comparisonDate}
+                value={comparisonDate}
+                formatDate={formatLongDate}
+              />
+            </div>
+          ),
+        },
+        {
+          id: 'truncated-text',
+          label: 'Text: truncation with and without wrapping',
+          render: ui => (
+            <div style={{ inlineSize: `calc(${tokens.spacingHorizontalXXXL} * 4)` }}>
+              <ui.Text block truncate wrap={false}>
+                A long project title that does not wrap
+              </ui.Text>
+              <ui.Text block truncate>
+                A long project title that can still wrap
+              </ui.Text>
+            </div>
+          ),
+        },
+      ]}
+    />
+  ),
+};
+
+const intents = ['info', 'success', 'warning', 'error'] as const;
+
+function IntentToasts({ ui, side }: { ui: UI; side: 'stock' | 'candidate' }) {
+  const toasterId = `intent-toasts-${side}`;
+  const { dispatchToast, dismissAllToasts } = V9.useToastController(toasterId);
+  return (
+    <>
+      <ui.Button
+        onClick={() => {
+          for (const intent of intents) {
+            dispatchToast(
+              <ui.Toast>
+                <ui.ToastTitle>{intent}</ui.ToastTitle>
+              </ui.Toast>,
+              { intent, toastId: `${toasterId}-${intent}`, timeout: -1 },
+            );
+          }
+        }}
+      >
+        Show four toasts
+      </ui.Button>
+      <ui.Button onClick={dismissAllToasts}>Dismiss toasts</ui.Button>
+      <ui.Toaster inline toasterId={toasterId} />
+    </>
+  );
+}
+
+export const FeedbackDetails: StoryObj = {
+  render: (_, { globals }) => (
+    <Comparison
+      globals={globals}
+      instructions="Show the toasts in both columns. Compare the glyph shapes, not just their colors. Use your system's reduced-motion setting to compare how each loading indicator changes."
+      examples={[
+        {
+          id: 'status-bars',
+          label: 'MessageBar',
+          render: ui =>
+            intents.map(intent => (
+              <ui.MessageBar key={intent} intent={intent}>
+                <ui.MessageBarBody>{intent}</ui.MessageBarBody>
+              </ui.MessageBar>
+            )),
+        },
+        {
+          id: 'status-toasts',
+          label: 'Toast',
+          render: (ui, side) => <IntentToasts ui={ui} side={side} />,
+        },
+        {
+          id: 'status-motion',
+          label: 'Skeleton, ProgressBar, and Spinner keep separate motion',
+          render: ui => (
+            <div style={{ ...stack, width: '100%' }}>
+              <ui.Skeleton aria-label="Loading items" style={fullWidth}>
+                <ui.SkeletonItem />
+              </ui.Skeleton>
+              <ui.ProgressBar aria-label="Importing files" />
+              <ui.Spinner label="Syncing files" />
+            </div>
+          ),
+        },
+      ]}
+    />
+  ),
+};
+
+export const JoinedAndCompactControls: StoryObj = {
+  render: (_, { globals }) => (
+    <Comparison
+      globals={globals}
+      instructions="Tab across the joined actions and try RTL. Compare the seam while hovering each half. Open the two overlays to compare their small controls. These examples keep their styles separate."
+      examples={[
+        {
+          id: 'joined-split-button',
+          label: 'SplitButton: primary button draws the seam',
+          render: ui => (
+            <ui.Menu>
+              <ui.MenuTrigger disableButtonEnhancement>
+                {menuButton => (
+                  <ui.SplitButton appearance="primary" menuButton={menuButton}>
+                    Send
+                  </ui.SplitButton>
+                )}
+              </ui.MenuTrigger>
+              <ui.MenuPopover>
+                <ui.MenuList>
+                  <ui.MenuItem>Send tomorrow</ui.MenuItem>
+                </ui.MenuList>
+              </ui.MenuPopover>
+            </ui.Menu>
+          ),
+        },
+        {
+          id: 'joined-tag',
+          label: 'InteractionTag: secondary button draws the seam',
+          render: ui => (
+            <ui.InteractionTag shape="circular" appearance="outline">
+              <ui.InteractionTagPrimary hasSecondaryAction>Project</ui.InteractionTagPrimary>
+              <ui.InteractionTagSecondary aria-label="Remove Project" />
+            </ui.InteractionTag>
+          ),
+        },
+        {
+          id: 'compact-actions',
+          label: 'InfoButton trigger and TeachingPopover dismiss action',
+          render: ui => (
+            <div style={row}>
+              <ui.InfoButton aria-label="Project info" info="Project information" />
+              <ui.TeachingPopover>
+                <ui.TeachingPopoverTrigger>
+                  <ui.Button>Open tip</ui.Button>
+                </ui.TeachingPopoverTrigger>
+                <ui.TeachingPopoverSurface aria-label="Project tip">
+                  <ui.TeachingPopoverHeader dismissButton={{ 'aria-label': 'Dismiss tip' }}>
+                    Tips
+                  </ui.TeachingPopoverHeader>
+                  <ui.TeachingPopoverBody>
+                    <ui.TeachingPopoverTitle>Project tip</ui.TeachingPopoverTitle>
+                    Review milestones before you start.
+                  </ui.TeachingPopoverBody>
+                </ui.TeachingPopoverSurface>
+              </ui.TeachingPopover>
+            </div>
+          ),
+        },
+      ]}
     />
   ),
 };

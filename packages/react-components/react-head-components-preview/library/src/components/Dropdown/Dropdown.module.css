@@ -15,9 +15,7 @@
   .Dropdown {
     composes: ListboxPickerFrame PickerInvalid from '../../styles/ListboxPickerFrame.module.css';
     composes: InputFocus from '../Input/InputFocus.module.css';
-
-    --fui-dropdown-icon-size: var(--fontSizeBase500);
-    --fui-dropdown-icon-margin: var(--spacingHorizontalXXS);
+    composes: InputSize from '../Input/InputSize.module.css';
 
     box-sizing: border-box;
     display: inline-flex;
@@ -35,15 +33,6 @@
       border-bottom-color: initial;
       transform: scaleX(0);
     }
-
-    &[data-size='small'] {
-      --fui-dropdown-icon-size: var(--fontSizeBase400);
-    }
-
-    &[data-size='large'] {
-      --fui-dropdown-icon-size: var(--fontSizeBase600);
-      --fui-dropdown-icon-margin: var(--spacingHorizontalSNudge);
-    }
   }
 
   .Dropdown__button {
@@ -52,19 +41,19 @@
     border: none;
     box-sizing: border-box;
     color: var(--colorNeutralForeground1);
-    column-gap: var(--spacingHorizontalXXS);
+    column-gap: var(--fui-input-slot-gap);
     cursor: pointer;
     display: grid;
     font-family: var(--fontFamilyBase);
-    font-size: var(--fontSizeBase300);
+    font-size: var(--fui-input-font-size);
     font-weight: var(--fontWeightRegular);
-    line-height: var(--lineHeightBase300);
+    line-height: var(--fui-input-line-height);
     grid-template-columns: [content] 1fr [icon] auto [end];
     justify-content: space-between;
     text-align: left;
     width: 100%;
     padding-block: calc(var(--spacingVerticalMNudge) / 2);
-    padding-inline: calc(var(--spacingHorizontalMNudge) + var(--spacingHorizontalXXS)) var(--spacingHorizontalMNudge);
+    padding-inline: calc(var(--fui-input-inline-padding) + var(--fui-input-slot-gap)) var(--fui-input-inline-padding);
 
     &:focus {
       outline-style: none;
@@ -75,18 +64,11 @@
     }
 
     &[data-size='small'] {
-      font-size: var(--fontSizeBase200);
-      line-height: var(--lineHeightBase200);
       padding-block: calc(var(--spacingVerticalSNudge) / 2);
-      padding-inline: calc(var(--spacingHorizontalSNudge) + var(--spacingHorizontalXXS)) var(--spacingHorizontalSNudge);
     }
 
     &[data-size='large'] {
-      column-gap: var(--spacingHorizontalSNudge);
-      font-size: var(--fontSizeBase400);
-      line-height: var(--lineHeightBase400);
       padding-block: calc(var(--spacingVerticalS) - var(--strokeWidthThin));
-      padding-inline: calc(var(--spacingHorizontalM) + var(--spacingHorizontalSNudge)) var(--spacingHorizontalM);
     }
 
     &[data-placeholder] {
@@ -99,32 +81,13 @@
     }
   }
 
-  .Dropdown__expandIcon,
-  .Dropdown__clearButton {
-    box-sizing: border-box;
-    color: var(--colorNeutralStrokeAccessible);
-    display: block;
-    font-size: var(--fui-dropdown-icon-size);
-    grid-column: icon / end;
-    margin-inline-start: var(--fui-dropdown-icon-margin);
-
-    /* SVG display:block avoids extra inline space after the glyph. */
-    & svg {
-      display: block;
-    }
-
-    &[data-disabled] {
-      color: var(--colorNeutralForegroundDisabled);
-    }
-  }
-
-  .Dropdown__expandIcon[data-clearable],
-  .Dropdown__clearButton:not([data-clearable]) {
-    display: none;
+  .Dropdown__expandIcon {
+    composes: InputTrailingIcon from '../Input/InputTrailingIcon.module.css';
   }
 
   .Dropdown__clearButton {
     composes: FocusOutline from '../../styles/FocusOutlines.module.css';
+    composes: InputTrailingIcon from '../Input/InputTrailingIcon.module.css';
 
     align-self: center;
     background-color: var(--colorTransparentBackground);
@@ -141,6 +104,18 @@
       border-radius: var(--borderRadiusMedium);
       z-index: 1;
     }
+  }
+
+  .Dropdown__expandIcon,
+  .Dropdown__clearButton {
+    display: block;
+    grid-column: icon / end;
+    margin-inline-start: var(--fui-input-slot-gap);
+  }
+
+  .Dropdown__expandIcon[data-clearable],
+  .Dropdown__clearButton:not([data-clearable]) {
+    display: none;
   }
 
   .Dropdown__listbox {

@@ -1,0 +1,12 @@
+@layer fluent-components {
+  .ChoiceRow {
+    display: flex;
+    position: relative;
+    border-radius: var(--borderRadiusMedium);
+    column-gap: var(--spacingHorizontalXS);
+    cursor: pointer;
+    font-family: var(--fontFamilyBase);
+    font-size: var(--fontSizeBase300);
+    line-height: var(--lineHeightBase300);
+  }
+}

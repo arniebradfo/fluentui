@@ -419,6 +419,8 @@
 
   /* Styles for the icon slot. */
   .Tab__icon {
+    composes: BundledIconVariants from '../../../styles/BundledIconVariants.module.css';
+
     grid-column-start: 1;
     grid-row-start: 1;
     align-items: center;
@@ -470,19 +472,7 @@
   }
 }
 
-/* Bundled Fluent icons carry unlayered rules. Limit this adapter to the styled icon slot. */
-.Tab__icon :global(.fui-Icon-filled) {
-  display: none;
-}
-
-.Tab__icon :global(.fui-Icon-regular) {
-  display: inline;
-}
-
-.Tab[data-selected] > .Tab__icon :global(.fui-Icon-filled) {
-  display: inline;
-}
-
-.Tab[data-selected] > .Tab__icon :global(.fui-Icon-regular) {
-  display: none;
+.Tab[data-selected] > .Tab__icon {
+  --fui-icon-regular-display: none;
+  --fui-icon-filled-display: inline;
 }

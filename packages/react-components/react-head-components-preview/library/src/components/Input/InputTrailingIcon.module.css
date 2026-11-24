@@ -1,0 +1,15 @@
+@layer fluent-components {
+  .InputTrailingIcon {
+    box-sizing: border-box;
+    color: var(--fui-input-trailing-icon-color, var(--colorNeutralStrokeAccessible));
+    font-size: var(--fui-input-adornment-size);
+
+    & svg {
+      display: block;
+    }
+
+    &[data-disabled] {
+      color: var(--colorNeutralForegroundDisabled);
+    }
+  }
+}

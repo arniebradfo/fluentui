@@ -16,16 +16,6 @@
   .Input {
     composes: InputFrame from './InputFrame.module.css';
 
-    --fui-input-icon-size: var(--fontSizeBase500);
-
-    &[data-size='small'] {
-      --fui-input-icon-size: var(--fontSizeBase400);
-    }
-
-    &[data-size='large'] {
-      --fui-input-icon-size: var(--fontSizeBase600);
-    }
-
     &[data-has-content-before] {
       padding-inline-start: var(--fui-input-root-padding);
 
@@ -88,7 +78,7 @@
      * Ensure resizable icons show up with the proper font size for the resolved size.
      */
     & > svg {
-      font-size: var(--fui-input-icon-size);
+      font-size: var(--fui-input-adornment-size);
     }
   }
 }

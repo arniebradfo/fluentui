@@ -65,7 +65,14 @@ export const Combobox: ForwardRefComponent<ComboboxProps> = React.forwardRef<HTM
           'data-disabled': state.input.disabled ? '' : undefined,
           'data-clearable': state.showClearIcon ? '' : undefined,
         });
-        resolved.className = [comboboxClassNames[name], scopedClass, resolved.className].filter(Boolean).join(' ');
+        resolved.className = [
+          comboboxClassNames[name],
+          scopedClass,
+          name === 'expandIcon' && state.showClearIcon && styles.Combobox__expandIconHidden,
+          resolved.className,
+        ]
+          .filter(Boolean)
+          .join(' ');
       }
     }
     return renderCombobox(state, useComboboxContextValues(state));

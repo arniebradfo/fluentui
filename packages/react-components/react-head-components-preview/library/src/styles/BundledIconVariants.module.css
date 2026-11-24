@@ -1,0 +1,13 @@
+/* Keep these unlayered to match the bundled icons' own display rules. */
+.BundledIconVariants {
+  --fui-icon-regular-display: inline;
+  --fui-icon-filled-display: none;
+
+  & :global(.fui-Icon-regular) {
+    display: var(--fui-icon-regular-display);
+  }
+
+  & :global(.fui-Icon-filled) {
+    display: var(--fui-icon-filled-display);
+  }
+}
