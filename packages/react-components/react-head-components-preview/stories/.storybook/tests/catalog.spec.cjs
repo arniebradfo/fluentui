@@ -71,6 +71,42 @@ test('multiselect options draw the v9 checkbox marker without nesting a control'
   );
 });
 
+for (const theme of ['light', 'dark']) {
+  test(`multiselect option markers match Checkbox on hover and press in ${theme} theme`, async ({ page }) => {
+    await page.goto(
+      `/iframe.html?id=css-modules-primitive-comparisons--checkbox-and-option&viewMode=story&globals=theme:${theme}`,
+    );
+    const checkboxes = page.getByTestId('checkboxes-candidate');
+    const options = page.getByTestId('multiselect-options-candidate');
+    const readMarker = marker => marker.evaluateAll(readStyles, ['borderTopColor', 'backgroundColor']);
+    const sample = async (target, marker) => {
+      await target.hover();
+      const hover = await readMarker(marker);
+      await page.mouse.down();
+      const press = await readMarker(marker);
+      // Release outside the row so the press does not change selection.
+      await page.mouse.move(0, 0);
+      await page.mouse.up();
+      return { hover, press };
+    };
+
+    for (const [name, checked] of [
+      ['Apple', true],
+      ['Pear', false],
+    ]) {
+      const input = checkboxes.getByRole('checkbox', { name, exact: true });
+      const checkbox = checkboxes
+        .locator('.fui-Checkbox')
+        .filter({ has: page.getByRole('checkbox', { name, exact: true }) });
+      const option = options.getByRole('menuitemcheckbox', { name, exact: true });
+      await expect(input).toBeChecked({ checked });
+      await expect(option).toHaveAttribute('aria-checked', String(checked));
+      const expected = await sample(checkbox, checkbox.locator('.fui-Checkbox__indicator'));
+      expect.soft(await sample(option, option.locator('.fui-Option__checkIcon')), name).toEqual(expected);
+    }
+  });
+}
+
 for (const reducedMotion of ['no-preference', 'reduce']) {
   test(`NavDrawer uses Drawer scroll separators with reduced motion ${reducedMotion}`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion });

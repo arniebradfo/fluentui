@@ -16,6 +16,7 @@
 @layer fluent-components {
   .Option {
     composes: FocusBorder from '../../../styles/FocusOutlines.module.css';
+    composes: CheckboxIndicatorColors from '../../Checkbox/Checkbox.module.css';
 
     align-items: center;
     border-radius: var(--borderRadiusMedium);
@@ -33,19 +34,11 @@
       &:hover {
         background-color: var(--colorNeutralBackground1Hover);
         color: var(--colorNeutralForeground1Hover);
-
-        .Option__checkIcon {
-          border-color: var(--colorNeutralForeground1Hover);
-        }
       }
 
       &:active {
         background-color: var(--colorNeutralBackground1Pressed);
         color: var(--colorNeutralForeground1Pressed);
-
-        .Option__checkIcon {
-          border-color: var(--colorNeutralForeground1Hover);
-        }
       }
     }
 

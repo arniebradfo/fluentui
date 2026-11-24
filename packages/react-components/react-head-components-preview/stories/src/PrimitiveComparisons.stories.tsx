@@ -232,7 +232,7 @@ export const CheckboxAndOption: StoryObj = {
   render: (_, { globals }) => (
     <Comparison
       globals={globals}
-      instructions="Compare unchecked, checked, and disabled indicators. The listbox options keep their own selection and keyboard focus; they are not nested checkboxes."
+      instructions="Hover Apple (checked) and Pear (unchecked). The v9 option uses the row text color for its border. The preview uses Checkbox's hover and press colors. The options keep their own selection and keyboard focus."
       examples={[
         {
           id: 'checkboxes',

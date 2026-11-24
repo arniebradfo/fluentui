@@ -196,7 +196,8 @@ their CSS Module identifiers.
   supplies List and Tree's native selection marker, including the checked and
   mixed glyphs. Tree's radio dot is local. Multiselect Option composes the
   [Checkbox indicator](./library/src/components/Checkbox/Checkbox.module.css)
-  on its decorative slot without rendering a checkbox input.
+  on its decorative slot without rendering a checkbox input. The marker uses
+  Checkbox's hover and press colors instead of v9 Option's text-color border.
 - [Swatch](./library/src/components/SwatchPicker/Swatch.module.css) shares the
   size and shape of ColorSwatch, ImageSwatch, and EmptySwatch. The filled
   swatches also share inset shadows for interaction states; EmptySwatch keeps
